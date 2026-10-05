@@ -1,36 +1,159 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nelson Sivisstum — Developer Portfolio
 
-## Getting Started
+Personal portfolio website showcasing my background, technical skills, selected projects, and experience as a Full Stack Developer.
 
-First, run the development server:
+The project is designed to provide a clear overview of my development work while maintaining a modern, responsive, and accessible user experience.
+
+## 🚀 Live Website
+
+**Portfolio:** myportfolio.vercel.app
+
+## 👨‍💻 About
+
+I'm a developer focused on building practical, maintainable, and user-oriented software.
+
+This portfolio serves as a central place to present my projects, technical experience, and continuous learning journey.
+
+My main interests include full-stack development, software architecture, APIs, databases, and building reliable applications from end to end.
+
+## ✨ Features
+
+* Responsive design for desktop, tablet, and mobile
+* Project showcase with technical details
+* Skills and technology overview
+* Developer profile and background
+* Contact section
+* Modern UI with reusable components
+* Optimized performance and accessibility
+* SEO-friendly structure
+
+## 🛠️ Tech Stack
+
+* **Framework:** Next.js
+* **Language:** TypeScript
+* **UI:** React
+* **Styling:** [Add the styling solution actually used]
+* **Package Manager:** npm
+* **Deployment:** Vercel
+* **Version Control:** Git & GitHub
+
+> The stack listed above reflects the technologies currently used in this project.
+
+## 📁 Project Structure
+
+```text
+portfolio-nelson/
+├── app/
+│   ├── ...
+│   └── page.tsx
+├── components/
+│   └── ...
+├── public/
+│   └── ...
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+The project follows a component-based architecture, keeping pages, reusable UI components, and static assets organized separately.
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+Make sure you have installed:
+
+* Node.js
+* npm
+* Git
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone git@github.com:nelsonvis3/myportfolio.git
+cd myportfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔐 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+If environment variables are required, create a `.env.local` file based on the provided example:
 
-## Learn More
+```bash
+cp .env.example .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+Never commit private credentials, API keys, or other sensitive values to the repository.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Production Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To create a production build:
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To run the production server locally:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm start
+```
+
+## 🚀 Deployment
+
+The project is deployed using Vercel.
+
+Production deployments are generated from the GitHub repository.
+
+## 📸 Preview
+
+*Add screenshots or a preview image of the portfolio here.*
+
+## 📌 Featured Projects
+
+Some of the projects showcased in this portfolio include:
+
+* **Formosa Empleos** — Plataforma web que conecta empresas y postulantes.
+* **Ragnar Suplementos** — E-commerce desarrollado para una marca real de suplementos deportivos.
+* **EDL trip planner** — Aplicación full-stack que recibe origen, retiro, destino y horas de ciclo usadas, y devuelve la ruta en el mapa.
+
+More details about each project are available on the portfolio website.
+
+## 📚 Continuous Learning
+
+I'm continuously improving my skills through hands-on projects, technical study, and real-world development challenges.
+
+My current focus includes:
+
+* Full Stack Development
+* TypeScript
+* React & Next.js
+* Backend development
+* REST APIs
+* Databases
+* Git & GitHub
+* Software architecture
+* Deployment and cloud technologies
+
+## 📫 Contact
+
+If you'd like to discuss a project, collaboration, or professional opportunity, feel free to reach out through the contact information available on my portfolio.
+
+---
+
+Built with **Next.js, TypeScript, and React**.
