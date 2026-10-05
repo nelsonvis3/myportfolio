@@ -6,7 +6,7 @@ The project is designed to provide a clear overview of my development work while
 
 ## 🚀 Live Website
 
-**Portfolio:** myportfolio.vercel.app
+**Portfolio:** https://nelsonvis-portfolio.vercel.app/
 
 ## 👨‍💻 About
 
@@ -32,7 +32,7 @@ My main interests include full-stack development, software architecture, APIs, d
 * **Framework:** Next.js
 * **Language:** TypeScript
 * **UI:** React
-* **Styling:** [Add the styling solution actually used]
+* **Styling:** CSS3
 * **Package Manager:** npm
 * **Deployment:** Vercel
 * **Version Control:** Git & GitHub
