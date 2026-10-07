@@ -2,15 +2,15 @@ import type { TimelineItem } from "./types.js";
 
 export const timeline: TimelineItem[] = [
   {
-    "period": "2023",
+    "period": "Enero 2023",
     "text": "Finalización del bachillerato."
   },
   {
-    "period": "2026",
+    "period": "Junio 2026",
     "text": "Inicio y consolidación del aprendizaje en programación."
   },
   {
-    "period": "2026-2027",
+    "period": "Septiembre 2026",
     "text": "Desarrollo de proyectos web propios."
   },
   {
