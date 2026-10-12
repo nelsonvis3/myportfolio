@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-12T15:56:00.466Z",
+  "method": "Two cold loads; CPU4x, 1.6Mbps down,750Kbps up,150ms latency; Brave with software WebGL. Click event durations are not formal INP.",
+  "runs": [
+    {
+      "width": 390,
+      "run": 1,
+      "readyMs": 5288.5,
+      "lcp": 2060,
+      "cls": 0.07532680140075973,
+      "longTasks": [
+        58,
+        189,
+        230,
+        104,
+        74,
+        102,
+        70,
+        79,
+        59,
+        65,
+        85,
+        66,
+        69,
+        76,
+        59,
+        73,
+        66,
+        69,
+        66,
+        88,
+        72,
+        60,
+        60,
+        61,
+        60,
+        77,
+        55,
+        57,
+        75,
+        79,
+        60
+      ],
+      "events": [
+        {
+          "name": "pointerdown",
+          "duration": 152
+        },
+        {
+          "name": "pointerup",
+          "duration": 152
+        },
+        {
+          "name": "click",
+          "duration": 152
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "run": 1,
+      "readyMs": 5109.899999999907,
+      "lcp": 1928,
+      "cls": 0.00014643122669110082,
+      "longTasks": [
+        83,
+        84,
+        179,
+        214,
+        84,
+        93,
+        92,
+        78,
+        87,
+        81,
+        75,
+        100,
+        100,
+        76,
+        79,
+        66,
+        72,
+        73,
+        64,
+        71,
+        74,
+        73,
+        67,
+        74,
+        93,
+        84,
+        78,
+        67,
+        78
+      ],
+      "events": [
+        {
+          "name": "pointerdown",
+          "duration": 176
+        },
+        {
+          "name": "pointerup",
+          "duration": 176
+        },
+        {
+          "name": "click",
+          "duration": 176
+        }
+      ]
+    }
+  ]
+}

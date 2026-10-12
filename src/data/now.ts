@@ -1,15 +1,6 @@
-export const now: string[] = [
-  "Construyendo mi portfolio",
-  "Documentando mis proyectos",
-  "Profundizando JavaScript y TypeScript",
-  "Aprendiendo Node.js",
-  "Buscando mi primera oportunidad profesional"
-];
-
-export const steps: string[] = [
-  "aprender",
-  "entender",
-  "practicar",
-  "construir",
-  "revisar"
+export const now = [
+  "Profundizando en arquitectura SaaS y aislamiento de datos.",
+  "Mejorando la validación de cambios asistidos por IA.",
+  "Explorando automatización e integración de servicios.",
+  "Buscando mi primera oportunidad profesional."
 ];

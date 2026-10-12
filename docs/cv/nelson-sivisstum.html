@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nelson Sivisstum — Desarrollador Full Stack</title>
+<style>
+@font-face{font-family:Instrument;src:url('../../public/fonts/instrument-sans-latin.woff') format('woff');font-weight:400 700;font-display:swap}
+@font-face{font-family:Space;src:url('../../public/fonts/space-grotesk-latin.woff') format('woff');font-weight:300 700;font-display:swap}
+@page{size:A4;margin:14mm 16mm}
+*{box-sizing:border-box}body{margin:0;font:400 9.2pt/1.38 Instrument,Arial,sans-serif;color:#181f29;background:#fff}h1,h2,h3,p,ul{margin:0}h1,h2,h3{font-family:Space,Arial,sans-serif}h1{font-size:29pt;font-weight:500;letter-spacing:-1.5pt;line-height:1.1}h2{font-size:9.1pt;font-weight:700;letter-spacing:1pt;text-transform:uppercase;border-bottom:.7pt solid #a9b4c4;padding-bottom:5pt;margin:12pt 0 7pt;color:#243f40}h3{font-size:11pt;font-weight:600;letter-spacing:-.2pt;line-height:1.3}.role{font-size:11.5pt;color:#334e50;margin-top:5pt}.contact{font-size:8.4pt;color:#34414e;line-height:1.65;margin-top:9pt}a{color:inherit;text-decoration:none}p+p{margin-top:5pt}strong{font-weight:600}.skill-row{margin-top:3pt}.project{margin-top:8pt;break-inside:avoid}.project-head{display:flex;align-items:baseline;gap:14pt;justify-content:space-between}.project-type{font-size:8.2pt;color:#51616c}.project ul{padding-left:12pt;margin-top:4pt}.project li{padding-left:1pt;margin-top:3pt}.project li::marker{color:#334e50}.project-links{font-size:8pt;color:#4f606b;margin-top:4pt}.education-row{display:grid;grid-template-columns:1fr auto;gap:15pt;margin-top:4pt}.education-row span{font-size:8.5pt;color:#51616c}.languages{margin-top:10pt;font-size:8.6pt}.scope{font-size:8.1pt;color:#51616c}.education{break-inside:avoid}
+@media screen{body{max-width:210mm;margin:30px auto;padding:14mm 16mm;border:1px solid #ddd;box-shadow:0 8px 35px #ddd}html{background:#eee}@media(max-width:650px){body{margin:0;padding:22px;border:0}.project-head{display:block}.project-type{display:block;margin-top:3pt}.education-row{display:block}}}
+</style>
+</head>
+<body>
+<header>
+<h1>NELSON SIVISSTUM</h1>
+<p class="role">Desarrollador Web Junior · Full Stack &amp; AI-Assisted Engineering</p>
+<p class="contact">Formosa Capital, Argentina · <a href="tel:+541170625896">11-70625896</a> · <a href="mailto:nelsonsivisstum3@gmail.com">nelsonsivisstum3@gmail.com</a><br><a href="https://github.com/nelsonvis3">GitHub: github.com/nelsonvis3</a> · <a href="https://linkedin.com/in/nelson-sivisstum-4777a32b4">LinkedIn: nelson-sivisstum-4777a32b4</a><br><a href="https://nelsonvis-portfolio.vercel.app">Portfolio: nelsonvis-portfolio.vercel.app</a></p>
+</header>
+<main>
+<section aria-labelledby="perfil">
+<h2 id="perfil">Perfil profesional</h2>
+<p>Desarrollador autodidacta con proyectos de e-commerce y SaaS multi-tenant en React, Next.js, TypeScript y Python/Django. Uso Codex y Claude Code para analizar, implementar y revisar código, validando sus propuestas. Busco mi primera oportunidad profesional en un equipo donde aportar y seguir aprendiendo.</p>
+</section>
+<section aria-labelledby="habilidades">
+<h2 id="habilidades">Habilidades técnicas</h2>
+<p class="skill-row"><strong>Frontend:</strong> HTML · CSS · JavaScript · TypeScript · React · Next.js · Diseño responsive</p>
+<p class="skill-row"><strong>Backend y datos:</strong> Python · Django · Django REST Framework · PostgreSQL · SQLite · APIs REST</p>
+<p class="skill-row"><strong>SaaS:</strong> Multi-tenancy a nivel de aplicación · Membresías y roles · Sesiones / CSRF · Transacciones · Auditoría</p>
+<p class="skill-row"><strong>Herramientas:</strong> Git / GitHub · Linux · Docker Compose · Playwright · Codex · Claude Code</p>
+</section>
+<section aria-labelledby="proyectos">
+<h2 id="proyectos">Proyectos destacados</h2>
+<article class="project">
+<div class="project-head"><h3>LedgerCore / Fracxion</h3><span class="project-type">SaaS multi-tenant · Proyecto propio</span></div>
+<ul>
+<li>Desarrollé una aplicación de facturación interna con Next.js, TypeScript, Django REST Framework y PostgreSQL: empresas, clientes, catálogo, facturas, cobros y auditoría.</li>
+<li>Implementé contexto por empresa sobre una base compartida, con membresías, cinco roles y filtros de acceso en la API.</li>
+<li>Trabajé la consistencia de las operaciones mediante transacciones, bloqueos, importes Decimal, numeración por empresa y reversiones de cobros con trazabilidad.</li>
+</ul>
+<p class="scope">LedgerCore es el nombre de presentación de Fracxion. Validación local; facturación de gestión, sin emisión fiscal autorizada.</p>
+</article>
+<article class="project">
+<div class="project-head"><h3>Ragnar Suplementos</h3><span class="project-type">E-commerce · Marca real</span></div>
+<ul>
+<li>Desarrollé una tienda con Next.js y React, backend Django y PostgreSQL, catálogo con variantes y autenticación de usuarios.</li>
+<li>Implementé checkout invitado, reservas de inventario y cotizaciones de envío firmadas, con pagos configurables y revisión administrativa.</li>
+</ul>
+<p class="project-links"><a href="https://github.com/nelsonvis3/ragnarsuplementosfsa">github.com/nelsonvis3/ragnarsuplementosfsa</a></p>
+</article>
+<article class="project">
+<div class="project-head"><h3>RoadLedger</h3><span class="project-type">Planificador de viajes · Prototipo técnico</span></div>
+<ul>
+<li>Construí un prototipo con Django/DRF y React que integra geocodificación Photon, rutas OSRM y mapas con MapLibre.</li>
+<li>Implementé un modelo de planificación HOS 70/8, paradas, descansos y registros diarios imprimibles. Es un prototipo educativo, no un registro ELD.</li>
+</ul>
+<p class="project-links"><a href="https://github.com/nelsonvis3/ELD-trip-planner">github.com/nelsonvis3/ELD-trip-planner</a></p>
+</article>
+</section>
+<section class="education" aria-labelledby="formacion">
+<h2 id="formacion">Formación e idiomas</h2>
+<p class="education-row"><strong>CS50 · Programación web con Python y JavaScript</strong><span>Harvard / edX · En curso</span></p>
+<p class="education-row"><strong>Full Stack JavaScript</strong><span>The Odin Project · En curso</span></p>
+<p class="education-row"><strong>Front End Development Libraries</strong><span>freeCodeCamp · Certificado</span></p>
+<p class="education-row"><strong>Bachiller · E.P.E.P. N.° 179</strong><span>2016–2023</span></p>
+<p class="languages"><strong>Español:</strong> nativo · <strong>Inglés:</strong> A2, lectura técnica de documentación</p>
+</section>
+</main>
+</body>
+</html>

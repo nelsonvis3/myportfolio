@@ -15,6 +15,6 @@ export const timeline: TimelineItem[] = [
   },
   {
     "period": "Actualmente",
-    "text": "Formación continua y búsqueda de la primera oportunidad profesional."
+    "text": "Desarrollo Full Stack, arquitectura SaaS y un flujo de trabajo asistido por IA. Buscando mi primera oportunidad profesional."
   }
 ];

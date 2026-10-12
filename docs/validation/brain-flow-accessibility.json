@@ -1,0 +1,98 @@
+{
+  "axe": [
+    {
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button[data-brain-skill=\"0\"] > .brain-node-index[aria-hidden=\"true\"]"
+            ],
+            [
+              "button[data-brain-skill=\"0\"] > .brain-node-name"
+            ],
+            [
+              "button[data-brain-skill=\"0\"] > .brain-node-tools"
+            ],
+            [
+              "button[data-brain-skill=\"1\"] > .brain-node-index[aria-hidden=\"true\"]"
+            ],
+            [
+              "button[data-brain-skill=\"1\"] > .brain-node-name"
+            ],
+            [
+              "button[data-brain-skill=\"1\"] > .brain-node-tools"
+            ],
+            [
+              "button[data-brain-skill=\"2\"] > .brain-node-index[aria-hidden=\"true\"]"
+            ],
+            [
+              "button[data-brain-skill=\"2\"] > .brain-node-name"
+            ],
+            [
+              "button[data-brain-skill=\"2\"] > .brain-node-tools"
+            ],
+            [
+              "button[data-brain-skill=\"3\"] > .brain-node-index[aria-hidden=\"true\"]"
+            ],
+            [
+              "button[data-brain-skill=\"3\"] > .brain-node-name"
+            ],
+            [
+              "button[data-brain-skill=\"3\"] > .brain-node-tools"
+            ],
+            [
+              "span[data-pause-icon=\"\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "targets": [
+            [
+              "button[data-brain-skill=\"0\"] > .brain-node-index[aria-hidden=\"true\"]"
+            ],
+            [
+              "button[data-brain-skill=\"0\"] > .brain-node-name"
+            ],
+            [
+              "button[data-brain-skill=\"1\"] > .brain-node-index[aria-hidden=\"true\"]"
+            ],
+            [
+              "button[data-brain-skill=\"1\"] > .brain-node-name"
+            ],
+            [
+              "button[data-brain-skill=\"2\"] > .brain-node-index[aria-hidden=\"true\"]"
+            ],
+            [
+              "button[data-brain-skill=\"2\"] > .brain-node-name"
+            ],
+            [
+              "button[data-brain-skill=\"3\"] > .brain-node-index[aria-hidden=\"true\"]"
+            ],
+            [
+              "button[data-brain-skill=\"3\"] > .brain-node-name"
+            ],
+            [
+              "span[data-pause-icon=\"\"]"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "Reverse drag retraces the same cortical connections",
+    "Unavailable WebGL keeps manual skills and poster"
+  ],
+  "errors": [],
+  "status": "passed"
+}

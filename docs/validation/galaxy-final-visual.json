@@ -1,0 +1,47 @@
+[
+  {
+    "route": "/",
+    "width": 320,
+    "overflow": false
+  },
+  {
+    "route": "/proyectos/ragnar-suplementos/",
+    "width": 320,
+    "overflow": false
+  },
+  {
+    "route": "/proyectos/roadledger/",
+    "width": 320,
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "route": "/proyectos/ragnar-suplementos/",
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "route": "/proyectos/roadledger/",
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "/proyectos/ragnar-suplementos/",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "/proyectos/roadledger/",
+    "width": 768,
+    "overflow": false
+  }
+]

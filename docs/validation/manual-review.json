@@ -1,0 +1,480 @@
+{
+  "contrast": [
+    {
+      "width": 390,
+      "route": "/",
+      "target": ".hero-profile-mark",
+      "ratio": 11.62,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(10, 13, 18)",
+      "text": "↳",
+      "ariaHidden": true
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "a[aria-label=\"Ir a proyectos\"] > span[aria-hidden=\"true\"]",
+      "ratio": 11.62,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(10, 13, 18)",
+      "text": "↓",
+      "ariaHidden": true
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#step-build > .node-index",
+      "ratio": 4.8,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(24, 31, 41)",
+      "text": "02",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-input > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "01",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-input > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Receive",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-api > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "02",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-api > .pipeline-title[lang=\"en\"]",
+      "ratio": 17.45,
+      "foreground": "rgb(239, 243, 247)",
+      "background": "rgb(10, 13, 18)",
+      "text": "API",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-api > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Validate",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-intelligence > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "03",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-intelligence > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Assist",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-action > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "04",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-action > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Approve",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-result > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "05",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "target": "#auto-result > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Trace",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/proyectos/ledgercore/",
+      "target": ".arch-entry > span[aria-hidden=\"true\"]",
+      "ratio": 5.2,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(18, 23, 32)",
+      "text": "↓",
+      "ariaHidden": true
+    },
+    {
+      "width": 390,
+      "route": "/proyectos/ledgercore/",
+      "target": ".tenant-gate > span[aria-hidden=\"true\"]:nth-child(1)",
+      "ratio": 10.73,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(18, 23, 32)",
+      "text": "↓",
+      "ariaHidden": true
+    },
+    {
+      "width": 390,
+      "route": "/proyectos/ledgercore/",
+      "target": "span[aria-hidden=\"true\"]:nth-child(3)",
+      "ratio": 10.73,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(18, 23, 32)",
+      "text": "↓",
+      "ariaHidden": true
+    },
+    {
+      "width": 390,
+      "route": "/proyectos/ledgercore/",
+      "target": "tr:nth-child(3) > td:nth-child(5)",
+      "ratio": 17.45,
+      "foreground": "rgb(239, 243, 247)",
+      "background": "rgb(10, 13, 18)",
+      "text": "No",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/proyectos/ledgercore/",
+      "target": "tr:nth-child(4) > td:nth-child(5)",
+      "ratio": 17.45,
+      "foreground": "rgb(239, 243, 247)",
+      "background": "rgb(10, 13, 18)",
+      "text": "No",
+      "ariaHidden": false
+    },
+    {
+      "width": 390,
+      "route": "/proyectos/ledgercore/",
+      "target": "tr:nth-child(5) > td:nth-child(5)",
+      "ratio": 17.45,
+      "foreground": "rgb(239, 243, 247)",
+      "background": "rgb(10, 13, 18)",
+      "text": "No",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": ".hero-profile-mark",
+      "ratio": 11.62,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(10, 13, 18)",
+      "text": "↳",
+      "ariaHidden": true
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "a[aria-label=\"Ir a proyectos\"] > span[aria-hidden=\"true\"]",
+      "ratio": 11.62,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(10, 13, 18)",
+      "text": "↓",
+      "ariaHidden": true
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#step-plan > .node-arrow[aria-hidden=\"true\"]",
+      "ratio": 5.2,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(18, 23, 32)",
+      "text": "→",
+      "ariaHidden": true
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#step-build > .node-index",
+      "ratio": 4.8,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(24, 31, 41)",
+      "text": "02",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#step-build > span[lang=\"en\"]",
+      "ratio": 9.9,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(24, 31, 41)",
+      "text": "Build",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#step-build > .node-arrow[aria-hidden=\"true\"]",
+      "ratio": 4.8,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(24, 31, 41)",
+      "text": "→",
+      "ariaHidden": true
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#step-review > .node-arrow[aria-hidden=\"true\"]",
+      "ratio": 5.2,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(18, 23, 32)",
+      "text": "→",
+      "ariaHidden": true
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#step-test > .node-arrow[aria-hidden=\"true\"]",
+      "ratio": 5.2,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(18, 23, 32)",
+      "text": "→",
+      "ariaHidden": true
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#step-ship > .node-arrow[aria-hidden=\"true\"]",
+      "ratio": 5.2,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(18, 23, 32)",
+      "text": "→",
+      "ariaHidden": true
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-input > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "01",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-input > .pipeline-title[lang=\"en\"]",
+      "ratio": 11.62,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Input",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-input > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Receive",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-api > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "02",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-api > .pipeline-title[lang=\"en\"]",
+      "ratio": 17.45,
+      "foreground": "rgb(239, 243, 247)",
+      "background": "rgb(10, 13, 18)",
+      "text": "API",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-api > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Validate",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-intelligence > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "03",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-intelligence > .pipeline-title[lang=\"en\"]",
+      "ratio": 17.45,
+      "foreground": "rgb(239, 243, 247)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Intelligence",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-intelligence > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Assist",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-action > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "04",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-action > .pipeline-title[lang=\"en\"]",
+      "ratio": 17.45,
+      "foreground": "rgb(239, 243, 247)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Action",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-action > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Approve",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-result > .pipeline-number",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "05",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-result > .pipeline-title[lang=\"en\"]",
+      "ratio": 17.45,
+      "foreground": "rgb(239, 243, 247)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Result",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "target": "#auto-result > .pipeline-subtitle[lang=\"en\"]",
+      "ratio": 5.63,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(10, 13, 18)",
+      "text": "Trace",
+      "ariaHidden": false
+    },
+    {
+      "width": 1440,
+      "route": "/proyectos/ledgercore/",
+      "target": ".arch-entry > span[aria-hidden=\"true\"]",
+      "ratio": 5.2,
+      "foreground": "rgb(127, 139, 156)",
+      "background": "rgb(18, 23, 32)",
+      "text": "↓",
+      "ariaHidden": true
+    },
+    {
+      "width": 1440,
+      "route": "/proyectos/ledgercore/",
+      "target": ".tenant-gate > span[aria-hidden=\"true\"]:nth-child(1)",
+      "ratio": 10.73,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(18, 23, 32)",
+      "text": "↓",
+      "ariaHidden": true
+    },
+    {
+      "width": 1440,
+      "route": "/proyectos/ledgercore/",
+      "target": "span[aria-hidden=\"true\"]:nth-child(3)",
+      "ratio": 10.73,
+      "foreground": "rgb(117, 217, 203)",
+      "background": "rgb(18, 23, 32)",
+      "text": "↓",
+      "ariaHidden": true
+    }
+  ],
+  "checks": [
+    "Navigation clears active section on returning to hero",
+    "Changing reduced-motion preference at runtime removes WebGL",
+    "Keyboard and lightbox covered in browser.json"
+  ],
+  "note": "Computed solid foreground/background pairs supplement axe incomplete checks. Decorative SVG/arrow shapes were inspected visually; no screen-reader or physical-device test."
+}

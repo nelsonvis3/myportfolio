@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-12",
+  "build": "passed",
+  "metadata": "four routes; SITE_URL with reserved example domain and final build without domain",
+  "visualModules": [
+    "planet.js",
+    "projects.js"
+  ],
+  "publicMatchesDist": [
+    "cv.pdf",
+    "img/planet.webp",
+    "img/social-preview.png",
+    "img/ledgercore-overview.png",
+    "img/ledgercore-mobile.png",
+    "img/ragnar.webp",
+    "img/roadledger.webp"
+  ],
+  "obsoleteGalaxyAssets": "absent from final build",
+  "diff": "passed"
+}

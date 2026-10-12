@@ -16,8 +16,10 @@ export interface Project {
   desafios: string[];
   decisiones: string[];
   resultado: string | null;
+  category?: string;
+  imageCaption?: string;
 }
 
-export interface SkillGroup { title: string; items: string[]; learning: boolean }
+export interface SkillGroup { title: string; description: string; items: string[]; learning: boolean }
 export interface Course { name: string; detail: string; status: string }
 export interface TimelineItem { period: string; text: string }

@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-12",
+  "build": "npm run build passed (TypeScript + static generation)",
+  "diffCheck": "git diff --check passed",
+  "htmlPages": [
+    "dist/index.html",
+    "dist/proyectos/roadledger/index.html",
+    "dist/proyectos/ragnar-suplementos/index.html",
+    "dist/proyectos/ledgercore/index.html"
+  ],
+  "visualModules": [
+    "brain.js",
+    "projects.js"
+  ],
+  "siteUrlConfigured": false,
+  "sitemapOmitted": true,
+  "assets": [
+    {
+      "path": "img/brain.webp",
+      "bytes": 33162,
+      "sha256": "21ffd979dd0f574e09ee7aca8389ac80358c4c8ed5515c251ff4794f004d4e61",
+      "distMatches": true
+    },
+    {
+      "path": "img/ragnar-mobile.webp",
+      "bytes": 71818,
+      "sha256": "0b04a2ce5f4d8c73c6bebf10827c6a5c9b52b4f40802b64d01a85cc9a28ef14c",
+      "distMatches": true
+    },
+    {
+      "path": "img/roadledger-mobile.webp",
+      "bytes": 61326,
+      "sha256": "736a5cfe5fcbcd1afed88bc7362f63f04d9bef95d696e12ee725d5a19dafc530",
+      "distMatches": true
+    },
+    {
+      "path": "img/social-preview.png",
+      "bytes": 177174,
+      "sha256": "cecebc90a309af15fb186b39f8a8afc4663210fa76dcee08b69ed60cdba2350c",
+      "distMatches": true
+    },
+    {
+      "path": "models/cortex.bin",
+      "bytes": 172652,
+      "sha256": "fa8d8b95c3347f63f394f4165542b48e0a706d5c876eefafd5b91f24a86c2095",
+      "distMatches": true
+    },
+    {
+      "path": "models/folds.bin",
+      "bytes": 116668,
+      "sha256": "7eb232568e575b5ce97302f27dcc5d80ce14202c5dc937fdd09c43ed5ec87661",
+      "distMatches": true
+    },
+    {
+      "path": "models/LICENSE-nilearn.txt",
+      "bytes": 1575,
+      "sha256": "03ae849df6d8e68eb5074444ff0fab34e8370bdbedf7cabc9f5b5a30c4a8787c",
+      "distMatches": true
+    },
+    {
+      "path": "cv.pdf",
+      "bytes": 108321,
+      "sha256": "d24a4165a7d0c43917116334b76f04bd80e2748e3ba3e576d7290ef2fddca298",
+      "distMatches": true
+    }
+  ]
+}

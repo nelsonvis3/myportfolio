@@ -1,52 +1,10 @@
 import type { SkillGroup } from "./types.js";
-
 export const skills: SkillGroup[] = [
-  {
-    "title": "Frontend",
-    "items": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js"
-    ],
-    "learning": false
-  },
-  {
-    "title": "Backend",
-    "items": [
-      "Python",
-      "Django"
-    ],
-    "learning": false
-  },
-  {
-    "title": "Datos",
-    "items": [
-      "PostgreSQL",
-      "SQLite"
-    ],
-    "learning": false
-  },
-  {
-    "title": "Herramientas",
-    "items": [
-      "Git",
-      "GitHub",
-      "Linux"
-    ],
-    "learning": false
-  },
-  {
-    "title": "Profundizando en",
-    "items": [
-      "Desarrollo Full Stack con React, Next.js, TypeScript, Python y Django",
-      "Diseño y construcción de APIs REST",
-      'Git y GitHub como herramientas de trabajo profesional',
-      'Autenticación, autorización y seguridad',
-      'Bases de datos y modelado de información'
-    ],
-    "learning": true
-  }
+  { title: "Frontend", description: "Interfaces, formularios y estados que se entienden.", items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML / CSS"], learning: false },
+  { title: "Backend", description: "La lógica de negocio y sus límites viven en el servidor.", items: ["Python", "Django", "Django REST Framework", "APIs REST"], learning: false },
+  { title: "Databases", description: "Modelado de datos y persistencia con reglas explícitas.", items: ["PostgreSQL", "SQLite", "Transacciones", "Restricciones"], learning: false },
+  { title: "SaaS Architecture", description: "Aislamiento de aplicación sobre datos compartidos.", items: ["Multi-tenancy", "Membresías / roles", "Sesiones / CSRF", "Auditoría"], learning: false },
+  { title: "AI Development Tools", description: "Asistentes de desarrollo dentro de un proceso revisable.", items: ["OpenAI Codex", "Claude Code", "Análisis", "Implementación / revisión"], learning: false },
+  { title: "Automation", description: "Scripts y APIs en la práctica. Integración de agentes en exploración.", items: ["Scripts", "Integración de APIs", "Flujos de validación", "Agentes · exploración"], learning: true },
+  { title: "Development & Deployment", description: "Herramientas para construir, comprobar y preparar la entrega.", items: ["Git / GitHub", "Linux", "Docker Compose", "Playwright", "Ruff"], learning: false }
 ];

@@ -1,0 +1,394 @@
+[
+  {
+    "width": 390,
+    "route": "/",
+    "version": "4.14.0",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".galaxy-node-0 > span:nth-child(2)"
+          ],
+          [
+            ".galaxy-node-1 > span:nth-child(2)"
+          ],
+          [
+            ".galaxy-node-2 > span:nth-child(2)"
+          ],
+          [
+            ".galaxy-node-3 > span:nth-child(2)"
+          ],
+          [
+            ".hero-profile-mark"
+          ],
+          [
+            "a[aria-label=\"Ir a proyectos\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#step-build > .node-index"
+          ],
+          [
+            "#auto-input > .pipeline-number"
+          ],
+          [
+            "#auto-input > .pipeline-subtitle[lang=\"en\"]"
+          ],
+          [
+            "#auto-api > .pipeline-number"
+          ],
+          [
+            "#auto-api > .pipeline-title[lang=\"en\"]"
+          ],
+          [
+            "#auto-api > .pipeline-subtitle[lang=\"en\"]"
+          ],
+          [
+            "#auto-intelligence > .pipeline-number"
+          ],
+          [
+            "#auto-intelligence > .pipeline-subtitle[lang=\"en\"]"
+          ],
+          [
+            "#auto-action > .pipeline-number"
+          ],
+          [
+            "#auto-action > .pipeline-subtitle[lang=\"en\"]"
+          ],
+          [
+            "#auto-result > .pipeline-number"
+          ],
+          [
+            "#auto-result > .pipeline-subtitle[lang=\"en\"]"
+          ]
+        ]
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "nodes": [
+          [
+            "a[aria-label=\"Ir a proyectos\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 28
+  },
+  {
+    "width": 390,
+    "route": "/proyectos/ledgercore/",
+    "version": "4.14.0",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".arch-entry > span[aria-hidden=\"true\"]"
+          ],
+          [
+            ".tenant-gate > span[aria-hidden=\"true\"]:nth-child(1)"
+          ],
+          [
+            "span[aria-hidden=\"true\"]:nth-child(3)"
+          ],
+          [
+            "tr:nth-child(3) > td:nth-child(5)"
+          ],
+          [
+            "tr:nth-child(4) > td:nth-child(5)"
+          ],
+          [
+            "tr:nth-child(5) > td:nth-child(5)"
+          ]
+        ]
+      }
+    ],
+    "passes": 27
+  },
+  {
+    "width": 390,
+    "route": "/proyectos/ragnar-suplementos/",
+    "version": "4.14.0",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".arch-entry > span[aria-hidden=\"true\"]"
+          ],
+          [
+            ".arch-connector > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-0 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-1 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-2 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-3 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-4 > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 26
+  },
+  {
+    "width": 390,
+    "route": "/proyectos/roadledger/",
+    "version": "4.14.0",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".arch-entry > span[aria-hidden=\"true\"]"
+          ],
+          [
+            ".arch-connector > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-0 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-1 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-2 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-3 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-4 > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 26
+  },
+  {
+    "width": 1440,
+    "route": "/",
+    "version": "4.14.0",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".galaxy-node-0 > span:nth-child(2)"
+          ],
+          [
+            ".galaxy-node-0 > .galaxy-node-index[aria-hidden=\"true\"]"
+          ],
+          [
+            ".galaxy-node-1 > span:nth-child(2)"
+          ],
+          [
+            ".galaxy-node-1 > .galaxy-node-index[aria-hidden=\"true\"]"
+          ],
+          [
+            ".galaxy-node-2 > span:nth-child(2)"
+          ],
+          [
+            ".galaxy-node-2 > .galaxy-node-index[aria-hidden=\"true\"]"
+          ],
+          [
+            ".galaxy-node-3 > span:nth-child(2)"
+          ],
+          [
+            ".galaxy-node-3 > .galaxy-node-index[aria-hidden=\"true\"]"
+          ],
+          [
+            ".galaxy-core-label"
+          ],
+          [
+            ".hero-profile-mark"
+          ],
+          [
+            "a[aria-label=\"Ir a proyectos\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#step-plan > .node-arrow[aria-hidden=\"true\"]"
+          ],
+          [
+            "#step-build > .node-index"
+          ],
+          [
+            "#step-build > span[lang=\"en\"]"
+          ],
+          [
+            "#step-build > .node-arrow[aria-hidden=\"true\"]"
+          ],
+          [
+            "#step-review > .node-arrow[aria-hidden=\"true\"]"
+          ],
+          [
+            "#step-test > .node-arrow[aria-hidden=\"true\"]"
+          ],
+          [
+            "#step-ship > .node-arrow[aria-hidden=\"true\"]"
+          ],
+          [
+            "#auto-input > .pipeline-number"
+          ],
+          [
+            "#auto-input > .pipeline-title[lang=\"en\"]"
+          ],
+          [
+            "#auto-input > .pipeline-subtitle[lang=\"en\"]"
+          ],
+          [
+            "#auto-api > .pipeline-number"
+          ],
+          [
+            "#auto-api > .pipeline-title[lang=\"en\"]"
+          ],
+          [
+            "#auto-api > .pipeline-subtitle[lang=\"en\"]"
+          ],
+          [
+            "#auto-intelligence > .pipeline-number"
+          ],
+          [
+            "#auto-intelligence > .pipeline-title[lang=\"en\"]"
+          ],
+          [
+            "#auto-intelligence > .pipeline-subtitle[lang=\"en\"]"
+          ],
+          [
+            "#auto-action > .pipeline-number"
+          ],
+          [
+            "#auto-action > .pipeline-title[lang=\"en\"]"
+          ],
+          [
+            "#auto-action > .pipeline-subtitle[lang=\"en\"]"
+          ],
+          [
+            "#auto-result > .pipeline-number"
+          ],
+          [
+            "#auto-result > .pipeline-title[lang=\"en\"]"
+          ],
+          [
+            "#auto-result > .pipeline-subtitle[lang=\"en\"]"
+          ]
+        ]
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "nodes": [
+          [
+            "a[aria-label=\"Ir a proyectos\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 28
+  },
+  {
+    "width": 1440,
+    "route": "/proyectos/ledgercore/",
+    "version": "4.14.0",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".arch-entry > span[aria-hidden=\"true\"]"
+          ],
+          [
+            ".tenant-gate > span[aria-hidden=\"true\"]:nth-child(1)"
+          ],
+          [
+            "span[aria-hidden=\"true\"]:nth-child(3)"
+          ]
+        ]
+      }
+    ],
+    "passes": 27
+  },
+  {
+    "width": 1440,
+    "route": "/proyectos/ragnar-suplementos/",
+    "version": "4.14.0",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".arch-entry > span[aria-hidden=\"true\"]"
+          ],
+          [
+            ".arch-connector > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-0 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-1 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-2 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-3 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-checkout-4 > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 27
+  },
+  {
+    "width": 1440,
+    "route": "/proyectos/roadledger/",
+    "version": "4.14.0",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".arch-entry > span[aria-hidden=\"true\"]"
+          ],
+          [
+            ".arch-connector > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-0 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-1 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-2 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-3 > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#flow-planning-4 > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 27
+  }
+]

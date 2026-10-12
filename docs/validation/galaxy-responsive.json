@@ -1,0 +1,474 @@
+{
+  "date": "2026-10-11",
+  "browser": "156.0.8078.4",
+  "pages": [
+    {
+      "width": 320,
+      "route": "/",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "h1": 1,
+      "title": "Nelson Sivisstum — Full Stack & AI-Assisted Engineering",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 320,
+      "route": "/proyectos/ledgercore/",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "h1": 1,
+      "title": "LedgerCore — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 320,
+      "route": "/proyectos/ragnar-suplementos/",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "h1": 1,
+      "title": "Ragnar Suplementos — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 320,
+      "route": "/proyectos/roadledger/",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "h1": 1,
+      "title": "RoadLedger — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "h1": 1,
+      "title": "Nelson Sivisstum — Full Stack & AI-Assisted Engineering",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 390,
+      "route": "/proyectos/ledgercore/",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "h1": 1,
+      "title": "LedgerCore — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 390,
+      "route": "/proyectos/ragnar-suplementos/",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "h1": 1,
+      "title": "Ragnar Suplementos — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 390,
+      "route": "/proyectos/roadledger/",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "h1": 1,
+      "title": "RoadLedger — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "h1": 1,
+      "title": "Nelson Sivisstum — Full Stack & AI-Assisted Engineering",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 768,
+      "route": "/proyectos/ledgercore/",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "h1": 1,
+      "title": "LedgerCore — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 768,
+      "route": "/proyectos/ragnar-suplementos/",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "h1": 1,
+      "title": "Ragnar Suplementos — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 768,
+      "route": "/proyectos/roadledger/",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "h1": 1,
+      "title": "RoadLedger — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "h1": 1,
+      "title": "Nelson Sivisstum — Full Stack & AI-Assisted Engineering",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1024,
+      "route": "/proyectos/ledgercore/",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "h1": 1,
+      "title": "LedgerCore — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1024,
+      "route": "/proyectos/ragnar-suplementos/",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "h1": 1,
+      "title": "Ragnar Suplementos — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1024,
+      "route": "/proyectos/roadledger/",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "h1": 1,
+      "title": "RoadLedger — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "h1": 1,
+      "title": "Nelson Sivisstum — Full Stack & AI-Assisted Engineering",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1440,
+      "route": "/proyectos/ledgercore/",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "h1": 1,
+      "title": "LedgerCore — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1440,
+      "route": "/proyectos/ragnar-suplementos/",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "h1": 1,
+      "title": "Ragnar Suplementos — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1440,
+      "route": "/proyectos/roadledger/",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "h1": 1,
+      "title": "RoadLedger — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1920,
+      "route": "/",
+      "scrollWidth": 1920,
+      "viewport": 1920,
+      "h1": 1,
+      "title": "Nelson Sivisstum — Full Stack & AI-Assisted Engineering",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1920,
+      "route": "/proyectos/ledgercore/",
+      "scrollWidth": 1920,
+      "viewport": 1920,
+      "h1": 1,
+      "title": "LedgerCore — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1920,
+      "route": "/proyectos/ragnar-suplementos/",
+      "scrollWidth": 1920,
+      "viewport": 1920,
+      "h1": 1,
+      "title": "Ragnar Suplementos — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    },
+    {
+      "width": 1920,
+      "route": "/proyectos/roadledger/",
+      "scrollWidth": 1920,
+      "viewport": 1920,
+      "h1": 1,
+      "title": "RoadLedger — Case Study · Nelson Sivisstum",
+      "description": true,
+      "duplicates": [],
+      "broken": [],
+      "fonts": [
+        "Space Grotesk",
+        "Instrument Sans"
+      ],
+      "overflow": []
+    }
+  ],
+  "interactions": [
+    ".workflow step 1",
+    ".workflow step 2",
+    ".workflow step 3",
+    ".workflow step 4",
+    ".workflow step 5",
+    ".workflow Home",
+    ".workflow ArrowRight",
+    ".workflow ArrowLeft",
+    ".workflow End",
+    ".workflow wrap",
+    ".automation-diagram step 1",
+    ".automation-diagram step 2",
+    ".automation-diagram step 3",
+    ".automation-diagram step 4",
+    ".automation-diagram step 5",
+    ".automation-diagram Home",
+    ".automation-diagram ArrowRight",
+    ".automation-diagram ArrowLeft",
+    ".automation-diagram End",
+    ".automation-diagram wrap",
+    "details expands",
+    "details expands",
+    "details expands",
+    "mobile menu opens",
+    "mobile Escape restores focus",
+    "menu closes on navigation",
+    "vertical ArrowDown",
+    "vertical ArrowUp",
+    "vertical orientation",
+    "responsive tab orientation",
+    "tenant switches membership and explanation",
+    "image dialog opens",
+    "dialog Escape restores focus",
+    "skip link keyboard focus",
+    "skip link reaches main"
+  ],
+  "fallbacks": [
+    "No JavaScript: ten panels, navigation and static illustration remain available at 390px"
+  ],
+  "errors": [],
+  "localLinks": [
+    "/favicon.svg",
+    "/fonts/space-grotesk-latin.woff",
+    "/fonts/instrument-sans-latin.woff",
+    "/styles.css",
+    "/#main",
+    "/",
+    "/#proyectos",
+    "/#sobre-mi",
+    "/#enfoque",
+    "/#contacto",
+    "/img/galaxy.webp",
+    "/proyectos/ledgercore/",
+    "/img/ledgercore-overview.png",
+    "/proyectos/ragnar-suplementos/",
+    "/img/ragnar.webp",
+    "/proyectos/roadledger/",
+    "/img/roadledger.webp",
+    "/cv.pdf",
+    "/client.js",
+    "/proyectos/ledgercore/#main",
+    "/proyectos/ledgercore/#overview",
+    "/proyectos/ledgercore/#architecture",
+    "/proyectos/ledgercore/#multi-tenancy",
+    "/proyectos/ledgercore/#challenges",
+    "/proyectos/ledgercore/#ai-workflow",
+    "/proyectos/ledgercore/#results",
+    "/img/ledgercore-invoice.png",
+    "/proyectos/ragnar-suplementos/#main",
+    "/proyectos/ragnar-suplementos/#overview",
+    "/proyectos/ragnar-suplementos/#architecture",
+    "/proyectos/ragnar-suplementos/#checkout",
+    "/proyectos/ragnar-suplementos/#challenges",
+    "/proyectos/ragnar-suplementos/#decisions",
+    "/proyectos/ragnar-suplementos/#results",
+    "/proyectos/roadledger/#main",
+    "/proyectos/roadledger/#overview",
+    "/proyectos/roadledger/#architecture",
+    "/proyectos/roadledger/#planning",
+    "/proyectos/roadledger/#challenges",
+    "/proyectos/roadledger/#decisions",
+    "/proyectos/roadledger/#results"
+  ]
+}

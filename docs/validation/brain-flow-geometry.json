@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "command": "npm run build && node scripts/check-brain-flow.mjs",
+  "layouts": 11544,
+  "anchors": 4,
+  "widths": [230, 250, 288, 300, 350, 400, 542, 667],
+  "scope": "Pure geometry and layout calculations; browser validation is separate."
+}
