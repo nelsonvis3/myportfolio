@@ -1,7 +1,7 @@
 import type { Project } from "./types.js";
 
 // Nombre editorial de facturador-saas-api (Fracxion en la aplicación).
-// Evidencia y alcance: docs/CONTENT_EVIDENCE.md. No hay URL pública verificada.
+// Evidencia y alcance: docs/CONTENT_EVIDENCE.md. No hay demo pública verificada.
 export const ledgercore: Project = {
   id: "ledgercore",
   name: "LedgerCore",
@@ -9,7 +9,7 @@ export const ledgercore: Project = {
   subtitle: "Varias empresas. Un sistema. Cada dato en su lugar.",
   desc: "Una plataforma de gestión y facturación interna donde cada empresa tiene sus clientes, catálogo, comprobantes y cobros, con permisos y trazabilidad en cada operación.",
   stack: ["Next.js", "TypeScript", "Django REST Framework", "PostgreSQL", "Docker"],
-  repo: "",
+  repo: "https://github.com/nelsonvis3/fracxion-facturador",
   demo: "",
   img: ["/img/ledgercore-overview.png", "/img/ledgercore-invoice.png"],
   imageCaption: "Captura real del entorno local con datos sintéticos. La aplicación conserva su nombre original, Fracxion.",
