@@ -2,7 +2,7 @@ import { profile } from "../data/profile.js";
 import { socials, siteUrl } from "../data/socials.js";
 import { esc, ext, arrow } from "./shared.js";
 import { introBootstrap, introMarkup } from "./intro.js";
-const nav = [["proyectos", "Proyectos"], ["sobre-mi", "Sobre mí"], ["enfoque", "Cómo trabajo"], ["contacto", "Contacto"]];
+const nav = [["proyectos", "Work"], ["sobre-mi", "About"], ["enfoque", "AI & Automation"], ["contacto", "Contact"]];
 
 export function layout(title: string, description: string, path: string, body: string): string {
   const canonical = siteUrl ? siteUrl + path : "";
@@ -28,9 +28,9 @@ ${path === "/" ? introMarkup() : ""}
 <a class="skip-link" href="#main">Saltar al contenido</a>
 <header class="site-header"><div class="wrap"><nav class="main-nav" aria-label="Principal">
 <a class="identity" href="/"><span class="monogram" aria-hidden="true">n<span>s</span></span><span>Nelson<br> Sivisstum</span></a>
-<p class="nav-caption">Desarrollador Full Stack<br><span>Formosa, Argentina</span></p>
+<p class="nav-caption" lang="en">Independent developer<br><span>Formosa, Argentina</span></p>
 <button class="menu-toggle" id="menu" aria-expanded="false" aria-controls="nav-links">Menú <span aria-hidden="true">+</span></button>
-<ul id="nav-links">${nav.map(([id, name]) => `<li><a href="/#${id}" data-section="${id}">${name}<span class="nav-dot" aria-hidden="true"></span></a></li>`).join("")}</ul>
+<ul id="nav-links">${nav.map(([id, name]) => `<li><a href="/#${id}" data-section="${id}" lang="en">${name}<span class="nav-dot" aria-hidden="true"></span></a></li>`).join("")}</ul>
 </nav></div></header>
 <main id="main" tabindex="-1">${body}</main>
 <footer class="site-footer"><div class="wrap footer-line"><a href="/">© ${new Date().getFullYear()} Nelson Sivisstum</a><span lang="en">Design with intention. Engineer with precision.</span><a href="#main">Volver arriba ${arrow}</a></div></footer>

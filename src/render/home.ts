@@ -15,7 +15,7 @@ function hero(): string {
     <div class="hero-profile"><span class="hero-profile-mark" aria-hidden="true">↳</span><div><p>${esc(profile.intro)}</p><p class="hero-availability">${esc(profile.availability)} · ${esc(profile.location)}</p></div></div>
     <div class="hero-links"><a href="#proyectos">Explorar proyectos ${arrow}</a><a href="#contacto">Contactarme ${arrow}</a></div>
   </div>
-  <div class="hero-disciplines"><span><i>01</i>Interfaces y experiencia de uso</span><span><i>02</i>APIs y reglas de negocio</span><span><i>03</i>Datos y pruebas</span><a href="#proyectos" aria-label="Ir a proyectos"><span aria-hidden="true">↓</span></a></div>
+  <div class="hero-disciplines"><span lang="en"><i>01</i>Full Stack Development</span><span lang="en"><i>02</i>SaaS Engineering</span><span lang="en"><i>03</i>AI-Assisted Workflows</span><a href="#proyectos" aria-label="Ir a proyectos"><span aria-hidden="true">↓</span></a></div>
   </div></section>`;
 }
 
