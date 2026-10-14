@@ -1,3 +1,11 @@
+La edición de movimiento posterior agrega entrada Hyperframes, recorrido animado y tratamiento de herramientas. Sus pruebas están en [MOTION.md](MOTION.md) y [motion-review.json](validation/motion-review.json).
+
+# Validación editorial · 14 de octubre de 2026
+
+La edición actual incorpora la marca Fracxion, funciones y responsabilidades visibles, actualización de Ragnar, CV, metadatos y un estudio conceptual desplegable. Resultados y límites: [PORTFOLIO_REVIEW.md](PORTFOLIO_REVIEW.md). Evidencia: [editorial-review.json](validation/editorial-review.json).
+
+Las secciones siguientes conservan la evidencia histórica de la visualización anterior y sus versiones.
+
 # Validación — cerebro de líneas y proyectos con móvil
 
 12 de octubre de 2026. Comprobación local en Brave/Chromium mediante Playwright, sin publicar ni verificar producción.

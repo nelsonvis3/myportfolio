@@ -1,0 +1,1064 @@
+{
+  "date": "2026-10-14",
+  "checks": [
+    {
+      "name": "Hyperframes reproduce la entrada",
+      "passed": true
+    },
+    {
+      "name": "Contenido inerte durante introducción",
+      "passed": true
+    },
+    {
+      "name": "Finaliza y libera contenido y scroll",
+      "passed": true
+    },
+    {
+      "name": "No repite la entrada en la misma pestaña",
+      "passed": true
+    },
+    {
+      "name": "Permite omitir la entrada",
+      "passed": true
+    },
+    {
+      "name": "Escape omite la entrada",
+      "passed": true
+    },
+    {
+      "name": "Reinicia desde Input después de Result",
+      "passed": true,
+      "detail": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        0
+      ]
+    },
+    {
+      "name": "Secuencia automática Input → API → Intelligence → Action → Result",
+      "passed": true,
+      "detail": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        0
+      ]
+    },
+    {
+      "name": "Línea avanza durante el trayecto",
+      "passed": true
+    },
+    {
+      "name": "Panel sin saltos de altura",
+      "passed": true
+    },
+    {
+      "name": "Selección manual pausa y se conserva",
+      "passed": true
+    },
+    {
+      "name": "Reanuda desde la etapa elegida",
+      "passed": true
+    },
+    {
+      "name": "Botón de pausa detiene el recorrido",
+      "passed": true
+    },
+    {
+      "name": "Teclado End elige Result",
+      "passed": true
+    },
+    {
+      "name": "Fuera de pantalla no anima el recorrido",
+      "passed": true
+    },
+    {
+      "name": "Vuelve a animar al regresar",
+      "passed": true
+    },
+    {
+      "name": "Cerrar el estudio pausa la animación",
+      "passed": true
+    },
+    {
+      "name": "Escaneo de herramientas activo cuando es visible",
+      "passed": true
+    },
+    {
+      "name": "Movimiento reducido detiene escaneo",
+      "passed": true
+    },
+    {
+      "name": "Movimiento reducido: navegación manual",
+      "passed": true
+    },
+    {
+      "name": "Movimiento reducido conserva selección",
+      "passed": true
+    },
+    {
+      "name": "Responsive y extremos de línea 320",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "endpointError": 0,
+        "vertical": true
+      }
+    },
+    {
+      "name": "Responsive y extremos de línea 390",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "endpointError": 0,
+        "vertical": true
+      }
+    },
+    {
+      "name": "Axe con estudio abierto 390",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Responsive y extremos de línea 601",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "endpointError": 0,
+        "vertical": false
+      }
+    },
+    {
+      "name": "Responsive y extremos de línea 768",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "endpointError": 0,
+        "vertical": false
+      }
+    },
+    {
+      "name": "Responsive y extremos de línea 1024",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "endpointError": 0,
+        "vertical": false
+      }
+    },
+    {
+      "name": "Responsive y extremos de línea 1440",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "endpointError": 0,
+        "vertical": false
+      }
+    },
+    {
+      "name": "Axe con estudio abierto 1440",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Responsive y extremos de línea 1920",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "endpointError": 0,
+        "vertical": false
+      }
+    },
+    {
+      "name": "Intro móvil sin desbordamiento",
+      "passed": true
+    },
+    {
+      "name": "Movimiento reducido omite intro y sus descargas",
+      "passed": true
+    },
+    {
+      "name": "Fallo de composición libera el portfolio",
+      "passed": true
+    },
+    {
+      "name": "Fallo del módulo no bloquea el acceso",
+      "passed": true
+    },
+    {
+      "name": "Cambio a movimiento reducido durante la intro libera el contenido",
+      "passed": true
+    },
+    {
+      "name": "Ahorro de datos omite la introducción",
+      "passed": true
+    },
+    {
+      "name": "Sin JS portfolio visible y estudio manual",
+      "passed": true
+    },
+    {
+      "name": "Introducción solo usa recursos locales",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:4173/?intro=1",
+    "http://127.0.0.1:4173/fonts/space-grotesk-latin.woff",
+    "http://127.0.0.1:4173/fonts/instrument-sans-latin.woff",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/img/brain.webp",
+    "http://127.0.0.1:4173/client.js",
+    "http://127.0.0.1:4173/img/ledgercore-overview.png",
+    "http://127.0.0.1:4173/img/ledgercore-mobile.png",
+    "http://127.0.0.1:4173/visual/intro.js",
+    "http://127.0.0.1:4173/visual/process-motion.js",
+    "http://127.0.0.1:4173/visual/brain.js",
+    "http://127.0.0.1:4173/visual/projects.js",
+    "http://127.0.0.1:4173/favicon.svg",
+    "http://127.0.0.1:4173/intro/vendor/hyperframes-player.js",
+    "http://127.0.0.1:4173/intro/neural/index.html",
+    "http://127.0.0.1:4173/visual/brain-flow.js",
+    "http://127.0.0.1:4173/models/cortex.bin",
+    "http://127.0.0.1:4173/models/folds.bin",
+    "http://127.0.0.1:4173/intro/vendor/hyperframes-runtime.js",
+    "http://127.0.0.1:4173/intro/vendor/gsap.min.js",
+    "http://127.0.0.1:4173/fonts/instrument-sans-latin.woff",
+    "http://127.0.0.1:4173/fonts/space-grotesk-latin.woff",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/fonts/space-grotesk-latin.woff",
+    "http://127.0.0.1:4173/fonts/instrument-sans-latin.woff",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/img/brain.webp",
+    "http://127.0.0.1:4173/client.js",
+    "http://127.0.0.1:4173/visual/process-motion.js",
+    "http://127.0.0.1:4173/visual/brain.js",
+    "http://127.0.0.1:4173/visual/projects.js",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/fonts/space-grotesk-latin.woff",
+    "http://127.0.0.1:4173/fonts/instrument-sans-latin.woff",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/img/brain.webp",
+    "http://127.0.0.1:4173/client.js",
+    "http://127.0.0.1:4173/img/ledgercore-overview.png",
+    "http://127.0.0.1:4173/img/ledgercore-mobile.png",
+    "http://127.0.0.1:4173/visual/process-motion.js",
+    "http://127.0.0.1:4173/visual/brain.js",
+    "http://127.0.0.1:4173/visual/projects.js",
+    "http://127.0.0.1:4173/favicon.svg",
+    "http://127.0.0.1:4173/visual/brain-flow.js",
+    "http://127.0.0.1:4173/models/cortex.bin",
+    "http://127.0.0.1:4173/models/folds.bin",
+    "http://127.0.0.1:4173/?intro=1",
+    "http://127.0.0.1:4173/fonts/space-grotesk-latin.woff",
+    "http://127.0.0.1:4173/fonts/instrument-sans-latin.woff",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/img/brain.webp",
+    "http://127.0.0.1:4173/client.js",
+    "http://127.0.0.1:4173/visual/intro.js",
+    "http://127.0.0.1:4173/visual/process-motion.js",
+    "http://127.0.0.1:4173/visual/brain.js",
+    "http://127.0.0.1:4173/visual/projects.js",
+    "http://127.0.0.1:4173/img/ledgercore-overview.png",
+    "http://127.0.0.1:4173/img/ledgercore-mobile.png",
+    "http://127.0.0.1:4173/favicon.svg",
+    "http://127.0.0.1:4173/intro/vendor/hyperframes-player.js",
+    "http://127.0.0.1:4173/intro/neural/index.html",
+    "http://127.0.0.1:4173/visual/brain-flow.js",
+    "http://127.0.0.1:4173/models/cortex.bin",
+    "http://127.0.0.1:4173/models/folds.bin",
+    "http://127.0.0.1:4173/intro/vendor/hyperframes-runtime.js",
+    "http://127.0.0.1:4173/intro/vendor/gsap.min.js",
+    "http://127.0.0.1:4173/fonts/instrument-sans-latin.woff",
+    "http://127.0.0.1:4173/fonts/space-grotesk-latin.woff",
+    "http://127.0.0.1:4173/?intro=1",
+    "http://127.0.0.1:4173/fonts/space-grotesk-latin.woff",
+    "http://127.0.0.1:4173/fonts/instrument-sans-latin.woff",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/img/brain.webp",
+    "http://127.0.0.1:4173/client.js",
+    "http://127.0.0.1:4173/img/ledgercore-overview.png",
+    "http://127.0.0.1:4173/img/ledgercore-mobile.png",
+    "http://127.0.0.1:4173/visual/intro.js",
+    "http://127.0.0.1:4173/visual/process-motion.js",
+    "http://127.0.0.1:4173/visual/brain.js",
+    "http://127.0.0.1:4173/visual/projects.js",
+    "http://127.0.0.1:4173/favicon.svg",
+    "http://127.0.0.1:4173/intro/vendor/hyperframes-player.js",
+    "http://127.0.0.1:4173/intro/neural/index.html",
+    "http://127.0.0.1:4173/visual/brain-flow.js",
+    "http://127.0.0.1:4173/models/cortex.bin",
+    "http://127.0.0.1:4173/models/folds.bin",
+    "http://127.0.0.1:4173/intro/vendor/hyperframes-runtime.js",
+    "http://127.0.0.1:4173/intro/vendor/gsap.min.js",
+    "http://127.0.0.1:4173/fonts/instrument-sans-latin.woff",
+    "http://127.0.0.1:4173/fonts/space-grotesk-latin.woff",
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/fonts/space-grotesk-latin.woff",
+    "http://127.0.0.1:4173/fonts/instrument-sans-latin.woff",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/img/brain.webp",
+    "http://127.0.0.1:4173/client.js",
+    "http://127.0.0.1:4173/img/ledgercore-overview.png",
+    "http://127.0.0.1:4173/img/ledgercore-mobile.png",
+    "http://127.0.0.1:4173/visual/process-motion.js",
+    "http://127.0.0.1:4173/visual/brain.js",
+    "http://127.0.0.1:4173/visual/projects.js",
+    "http://127.0.0.1:4173/favicon.svg",
+    "http://127.0.0.1:4173/visual/brain-flow.js",
+    "http://127.0.0.1:4173/models/cortex.bin",
+    "http://127.0.0.1:4173/models/folds.bin",
+    "http://127.0.0.1:4173/img/ragnar.webp",
+    "http://127.0.0.1:4173/img/ragnar-mobile.webp",
+    "http://127.0.0.1:4173/img/roadledger.webp",
+    "http://127.0.0.1:4173/img/roadledger-mobile.webp"
+  ],
+  "pipeline": [
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "travel",
+      "dash": "21.1883, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "travel",
+      "dash": "66.5608, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "travel",
+      "dash": "108.919, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "travel",
+      "dash": "154.328, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "travel",
+      "dash": "196.687, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "travel",
+      "dash": "242.077, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "dwell",
+      "dash": "254.188, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "travel",
+      "dash": "284.438, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "travel",
+      "dash": "326.781, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "travel",
+      "dash": "369.16, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "travel",
+      "dash": "411.539, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "travel",
+      "dash": "453.9, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 1,
+      "phase": "travel",
+      "dash": "499.294, 1016.8",
+      "selected": "auto-api",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "dwell",
+      "dash": "508.391, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "travel",
+      "dash": "535.627, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "travel",
+      "dash": "578.006, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "travel",
+      "dash": "620.367, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "travel",
+      "dash": "665.761, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "travel",
+      "dash": "708.122, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 2,
+      "phase": "travel",
+      "dash": "750.483, 1016.8",
+      "selected": "auto-intelligence",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "dwell",
+      "dash": "762.594, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "travel",
+      "dash": "792.862, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "travel",
+      "dash": "835.223, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "travel",
+      "dash": "877.584, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "travel",
+      "dash": "922.996, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "travel",
+      "dash": "965.357, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 3,
+      "phase": "travel",
+      "dash": "1007.7, 1016.8",
+      "selected": "auto-action",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "dwell",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "reset",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 4,
+      "phase": "reset",
+      "dash": "1016.8, 1016.8",
+      "selected": "auto-result",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    },
+    {
+      "active": 0,
+      "phase": "dwell",
+      "dash": "0, 1016.8",
+      "selected": "auto-input",
+      "height": 242
+    }
+  ],
+  "passed": true,
+  "regression": {
+    "checks": [
+      {
+        "route": "/",
+        "width": 390,
+        "passed": true,
+        "overflow": false,
+        "broken": [],
+        "h1": 1
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "passed": true,
+        "overflow": false,
+        "broken": [],
+        "h1": 1
+      },
+      {
+        "route": "/proyectos/ledgercore/",
+        "width": 390,
+        "passed": true,
+        "overflow": false,
+        "broken": [],
+        "h1": 1
+      },
+      {
+        "route": "/proyectos/ledgercore/",
+        "width": 1440,
+        "passed": true,
+        "overflow": false,
+        "broken": [],
+        "h1": 1
+      },
+      {
+        "route": "/proyectos/ragnar-suplementos/",
+        "width": 390,
+        "passed": true,
+        "overflow": false,
+        "broken": [],
+        "h1": 1
+      },
+      {
+        "route": "/proyectos/ragnar-suplementos/",
+        "width": 1440,
+        "passed": true,
+        "overflow": false,
+        "broken": [],
+        "h1": 1
+      },
+      {
+        "route": "/proyectos/ragnar-suplementos/",
+        "name": "Pestañas del caso",
+        "passed": true
+      },
+      {
+        "route": "/proyectos/roadledger/",
+        "width": 390,
+        "passed": true,
+        "overflow": false,
+        "broken": [],
+        "h1": 1
+      },
+      {
+        "route": "/proyectos/roadledger/",
+        "width": 1440,
+        "passed": true,
+        "overflow": false,
+        "broken": [],
+        "h1": 1
+      },
+      {
+        "route": "/proyectos/roadledger/",
+        "name": "Pestañas del caso",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "passed": true
+  },
+  "artifactCheck": {
+    "publicMatchesDist": true,
+    "vendorPresent": true,
+    "cssMatchesSources": true,
+    "clientSha256": "ed6b2dddf03f1b7677742ab7dd1d9f9f086f3dcefd5b347b71a2300edd87c4c9",
+    "pipelineControllerSha256": "a0b578be496a38711fa6a602d29467e7460dd26c3904d4ef6fe8f56ab8efadec",
+    "introControllerSha256": "40447d9f27e480992773712f50328c6aef4f16adfdc5646368fe10c1eb73e4aa"
+  }
+}

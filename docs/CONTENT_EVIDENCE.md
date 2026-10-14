@@ -1,10 +1,10 @@
-# Evidencia del contenido — actualizado el 12 de octubre de 2026
+# Evidencia del contenido — actualizado el 14 de octubre de 2026
 
 ## Fuentes y criterio
 
 El nuevo caso de estudio se redactó después de inspeccionar el checkout local `facturador-saas-api`. No se dedujo la arquitectura del nombre del proyecto. Se consultaron su código, dependencias, documentación y capturas. Las afirmaciones sobre la suite del SaaS corresponden a lo documentado allí; no se volvió a ejecutar esa suite durante la reconstrucción del portfolio.
 
-La marca de presentación **LedgerCore** corresponde al proyecto denominado **Fracxion** en su interfaz. No se modificó el repositorio de la aplicación. Las imágenes son copias intactas de capturas de un entorno de prueba con datos sintéticos; no son mockups generados por IA. El encuadre del portfolio utiliza HTML/CSS sobre esas capturas.
+La marca visible es **Fracxion**, consistente con GitHub y la interfaz. `ledgercore` se conserva únicamente como identificador histórico de ruta y recursos. No se modificó el repositorio de la aplicación. Las imágenes son copias intactas de capturas de un entorno de prueba con datos sintéticos; no son mockups generados por IA. El encuadre del portfolio utiliza HTML/CSS sobre esas capturas.
 
 ## Correspondencia entre afirmaciones y código
 
@@ -46,7 +46,7 @@ Ragnar y RoadLedger conservan los PNG originales y utilizan derivados WebP compr
 - El uso de Codex en el SaaS se apoya en el contexto documentado de trabajo previo. No se adjudica cada módulo a un modelo específico ni se inventa un porcentaje de código generado.
 - El usuario confirmó en esta conversación que utiliza Claude Code para analizar, implementar y revisar código. Esa confirmación respalda su descripción general, no la autoría de módulos concretos del SaaS.
 - “AI Automation” distingue scripts, integración de APIs y validaciones de los agentes y la orquestación, identificados como exploración. No se atribuye dominio de n8n, Make u otros productos no verificados.
-- Usar IA para desarrollar no implica que LedgerCore incorpore IA como funcionalidad de usuario.
+- Usar IA para desarrollar no implica que Fracxion incorpore IA como funcionalidad de usuario.
 - Formación, trayectoria y redes provienen de las fuentes del portfolio. No se verificaron certificados ni el estado actual de los despliegues externos. Los nuevos casos de Ragnar y RoadLedger se contrastaron con sus repositorios locales, como se detalla abajo.
 - El usuario autorizó actualizar también el CV: se reemplazó Formosa Empleos por LedgerCore, se incorporó el trabajo con Codex y Claude Code y se preservaron sus datos de contacto, formación e idiomas. Los cursos se presentan con su estado declarado, sin reproducir las fechas contradictorias del PDF anterior. La URL del portfolio procede de ese PDF y no acredita un nuevo despliegue. Fuente editable: `docs/cv/nelson-sivisstum.html`.
 - No se encontró un remoto Git del Facturador en el checkout inspeccionado. Por eso no se inventó un enlace GitHub ni una demo.
@@ -100,3 +100,9 @@ La última indicación reemplaza el planeta por un cerebro compuesto solo de lí
 | `public/img/roadledger-mobile.webp` | Captura del estado inicial real de RoadLedger a 390 × 844 y DPR 2. Se sirvió una copia temporal de su código mediante Django en localhost:4182; no se completó el formulario ni se calculó una ruta. No se modificó el repositorio original. |
 
 Ambos archivos tienen 780 × 1688 píxeles. Los precios visibles de Ragnar pertenecen a su catálogo de demostración; no son resultados comerciales. RoadLedger muestra el formulario antes de planificar, sin atribuir una ruta o resultado inexistente. Las pantallas de teléfono no son interfaces reconstruidas ni generadas por IA.
+
+## Actualización editorial de Ragnar y Fracxion
+
+Se contrastaron los README públicos y las copias locales. El README público de Ragnar consultado es anterior al local: confirmación de correo, recuperación y panel web se describen a partir de `ragnar-v2/README.md`, `backend/store/views.py`, `catalog_admin.py` y `permissions.py`. No se atribuyen estas novedades a un despliegue público.
+
+La edición agrega las funciones de uso cotidiano de Fracxion, el ejemplo de importes de su README y las transiciones de sesión documentadas con Hyperframes/GSAP. Las fuentes y comprobaciones de esta edición están en [PORTFOLIO_REVIEW.md](PORTFOLIO_REVIEW.md).

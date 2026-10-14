@@ -1,0 +1,552 @@
+{
+  "date": "2026-10-14",
+  "base": "http://127.0.0.1:4173",
+  "browser": "Brave / Chromium vía Playwright",
+  "layouts": [
+    {
+      "route": "/",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 601,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ledgercore/",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ledgercore/",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ledgercore/",
+      "width": 601,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ledgercore/",
+      "width": 768,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ledgercore/",
+      "width": 1024,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ledgercore/",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ledgercore/",
+      "width": 1920,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ragnar-suplementos/",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ragnar-suplementos/",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ragnar-suplementos/",
+      "width": 601,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ragnar-suplementos/",
+      "width": 768,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ragnar-suplementos/",
+      "width": 1024,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ragnar-suplementos/",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ragnar-suplementos/",
+      "width": 1920,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/roadledger/",
+      "width": 320,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/roadledger/",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/roadledger/",
+      "width": 601,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/roadledger/",
+      "width": 768,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/roadledger/",
+      "width": 1024,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/roadledger/",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/roadledger/",
+      "width": 1920,
+      "overflow": false,
+      "brokenImages": [],
+      "duplicateIds": [],
+      "h1": 1
+    }
+  ],
+  "interactions": [
+    {
+      "name": "Menú móvil abre",
+      "passed": true
+    },
+    {
+      "name": "Escape cierra menú",
+      "passed": true
+    },
+    {
+      "name": "Estudio conceptual cerrado al cargar",
+      "passed": true
+    },
+    {
+      "name": "Estudio conceptual se puede explorar",
+      "passed": true
+    },
+    {
+      "name": "Diagrama conceptual conserva sus pestañas",
+      "passed": true
+    },
+    {
+      "name": "Móvil: proyectos y CV antes del cerebro",
+      "passed": true
+    },
+    {
+      "name": "Marca Fracxion y funciones presentes en portada",
+      "passed": true
+    },
+    {
+      "name": "CV accesible desde portada",
+      "passed": true
+    },
+    {
+      "name": "Tres repositorios enlazados desde proyectos",
+      "passed": true
+    },
+    {
+      "name": "Selección de desarrollo con IA",
+      "passed": true
+    },
+    {
+      "name": "Teclado vuelve a Frontend",
+      "passed": true
+    },
+    {
+      "name": "Diagrama cambia a empresa B",
+      "passed": true
+    },
+    {
+      "name": "Recorrido comercial completo",
+      "passed": true
+    },
+    {
+      "name": "Ampliar captura",
+      "passed": true
+    },
+    {
+      "name": "Cerrar captura",
+      "passed": true
+    },
+    {
+      "name": "Ragnar actualizado: correo y administración",
+      "passed": true
+    },
+    {
+      "name": "Checkout muestra resolución del pedido",
+      "passed": true
+    },
+    {
+      "name": "Planificador conserva navegación del proceso",
+      "passed": true
+    },
+    {
+      "name": "Sin JavaScript: proyectos y CV disponibles",
+      "passed": true
+    },
+    {
+      "name": "WebGL carga y permite pausar",
+      "passed": true
+    },
+    {
+      "name": "WebGL: cuatro áreas en cuatro anchos sin cruces ni etiquetas fuera del visor",
+      "passed": true
+    }
+  ],
+  "accessibility": [
+    {
+      "route": "/",
+      "width": 390,
+      "violations": [],
+      "manualReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "violations": [],
+      "manualReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/proyectos/ledgercore/",
+      "width": 390,
+      "violations": [],
+      "manualReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/proyectos/ledgercore/",
+      "width": 1440,
+      "violations": [],
+      "manualReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/proyectos/ragnar-suplementos/",
+      "width": 390,
+      "violations": [],
+      "manualReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/proyectos/ragnar-suplementos/",
+      "width": 1440,
+      "violations": [],
+      "manualReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/proyectos/roadledger/",
+      "width": 390,
+      "violations": [],
+      "manualReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/proyectos/roadledger/",
+      "width": 1440,
+      "violations": [],
+      "manualReview": [
+        "color-contrast"
+      ]
+    }
+  ],
+  "errors": [],
+  "assets": [
+    {
+      "url": "http://127.0.0.1:4173/styles.css",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/img/brain.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/cv.pdf",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/proyectos/ledgercore/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/img/ledgercore-overview.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/img/ledgercore-mobile.png",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/proyectos/ragnar-suplementos/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/img/ragnar.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/img/ragnar-mobile.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/proyectos/roadledger/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/img/roadledger.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/img/roadledger-mobile.webp",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/client.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:4173/img/ledgercore-invoice.png",
+      "status": 200
+    }
+  ],
+  "brainStates": [
+    {
+      "width": 320,
+      "active": "0",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 320,
+      "active": "1",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 320,
+      "active": "2",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 320,
+      "active": "3",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 390,
+      "active": "0",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 390,
+      "active": "1",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 390,
+      "active": "2",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 390,
+      "active": "3",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 768,
+      "active": "0",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 768,
+      "active": "1",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 768,
+      "active": "2",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 768,
+      "active": "3",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 1440,
+      "active": "0",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 1440,
+      "active": "1",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 1440,
+      "active": "2",
+      "outside": [],
+      "overlaps": []
+    },
+    {
+      "width": 1440,
+      "active": "3",
+      "outside": [],
+      "overlaps": []
+    }
+  ],
+  "passed": true,
+  "artifactCheck": {
+    "passed": true,
+    "publicMatchesDist": true,
+    "legacyNextArtifactsAbsent": true,
+    "cvSha256": "5fc040fed218c8fedce0688d96c72ae930c9e94347b0733fea7077cbc3b19431",
+    "socialPreviewSha256": "7913a9f2d7b959197b93158bcea3c1f334a5f78d83cd85e15e5c72d9c2901c72"
+  }
+}

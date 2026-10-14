@@ -80,6 +80,7 @@ a:hover>.arrow { transform: translate(3px,-3px); }
 .hero-profile { grid-column: 1/5; grid-row: 2; display: flex; align-items: flex-start; gap: 25px; margin-top: 36px; }
 .hero-profile-mark { font-size: 30px; line-height: 1; color: var(--accent); }
 .hero-profile p { font-size: 14px; line-height: 1.8; max-width: 355px; }
+.hero-profile .hero-availability { font-size: 12px; color: var(--accent); margin-top: 16px; }
 .hero-links { grid-column: 6/8; grid-row: 2; margin-top: 36px; align-self: center; }
 .hero-links a { font-size: 12px; line-height: 1.5; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; min-height: 44px; }
 .hero-links a+a { border-top: 1px solid var(--line); }
@@ -243,6 +244,13 @@ a:hover>.arrow { transform: translate(3px,-3px); }
 .workflow-output p { margin-top: 15px; color: var(--ink); }
 .engineering-principle { font-family: var(--display); font-size: clamp(25px,3.1vw,46px); letter-spacing: -.045em; color: var(--secondary); text-align: right; border-top: 1px solid var(--line); padding-top: 30px; margin-top: 45px; }
 .engineering-principle span { color: var(--ink); }
+.automation-section { padding-block:64px; }
+.automation-study>summary { display:flex; align-items:center; justify-content:space-between; gap:24px; cursor:pointer; list-style:none; padding-block:22px; border-block:1px solid var(--line); }
+.automation-study>summary::-webkit-details-marker { display:none; }
+.automation-study-title { display:block; font:400 clamp(20px,2.4vw,34px)/1.3 var(--display); color:var(--ink); margin-top:12px; }
+.automation-study-action { color:var(--accent); font-size:12px; flex-shrink:0; }
+.automation-study[open]>summary { margin-bottom:56px; }
+@media(max-width:600px) { .automation-study>summary { align-items:flex-start; flex-direction:column; }.automation-study-action { width:100%; display:flex; justify-content:space-between; } }
 /* Automation is a diagram with five selectable nodes, not a services grid. */
 .automation-intro { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px 70px; align-items: end; }
 .automation-intro>.eyebrow { grid-column: 1/-1; }
@@ -401,3 +409,43 @@ a:hover>.arrow { transform: translate(3px,-3px); }
 @media(prefers-reduced-motion:reduce) {
   .pipeline-node:hover .pipeline-shape,.contact-heading:hover .arrow { transform: none; }
 }
+/* Motion is confined to the connector and the edges of the tool index. */
+.pipeline-route { display:none; position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; }
+.flow-motion-ready .pipeline-route { display:block; }
+.flow-motion-ready .pipeline-nodes::before { display:none; }
+.route-track,.route-progress { fill:none; stroke:var(--line); stroke-width:1; }
+.route-progress { stroke:var(--accent); stroke-width:1.5; filter:drop-shadow(0 0 4px #75d9cb66); }
+.route-particle { fill:#c5fff3; filter:drop-shadow(0 0 5px #75d9cb); opacity:0; }
+[data-flow-running=true] .route-particle { opacity:.95; }
+.pipeline-node.flow-visited .pipeline-shape { color:#6ba99f; }
+.flow-motion-ready .pipeline-node[aria-selected=true] .pipeline-shape { box-shadow:0 0 28px #75d9cb0d; }
+.flow-motion-ready .automation-panel { min-height:var(--flow-panel-height,242px); }
+.flow-playback { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:24px; color:var(--secondary); font-size:10px; }
+.flow-playback button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:8px 14px; border:1px solid var(--line); background:transparent; color:var(--accent); font:inherit; cursor:pointer; }
+.flow-playback button:hover { border-color:var(--accent); }
+[data-tool-motion] .tool-entry { position:relative; isolation:isolate; overflow:hidden; padding-right:58px; }
+[data-tool-motion] .tool-entry::before { content:''; position:absolute; top:0; left:0; width:32%; height:1px; background:linear-gradient(90deg,transparent,#75d9cb99,transparent); opacity:0; animation:tool-scan 10s ease-in-out infinite; animation-play-state:paused; }
+[data-tool-motion] .tool-entry::after { content:''; position:absolute; right:0; top:14px; width:12px; height:12px; border-top:1px solid #75d9cb44; border-right:1px solid #75d9cb44; transition:border-color 240ms; }
+[data-tool-motion] .tool-entry:hover::after { border-color:var(--accent); }
+.tool-sigil { position:absolute; top:47px; right:4px; width:36px; height:36px; color:var(--accent); opacity:.55; }
+.tool-sigil svg { width:100%; height:100%; }
+[data-tool-motion] .tool-entry:nth-child(2)::before { animation-delay:5s; }
+[data-tool-motion][data-motion-visible=true] .tool-entry::before { animation-play-state:running; }
+@keyframes tool-scan { 0%,12% { opacity:0; transform:translateX(-110%); } 20% { opacity:.65; } 44% { opacity:.65; } 52%,100% { opacity:0; transform:translateX(420%); } }
+@media(max-width:600px) { .flow-playback { align-items:flex-start; flex-direction:column; gap:6px; }.flow-playback button { min-height:44px; }.tool-sigil { width:30px; height:30px; } }
+@media(prefers-reduced-motion:reduce) { [data-tool-motion] .tool-entry::before { display:none; }.route-particle { display:none; } }
+/* Intro markup remains absent from the visual and accessibility tree without JS. */
+html { scrollbar-gutter:stable; }
+html.intro-active { overflow:hidden; }
+.portfolio-intro { display:none; position:fixed; inset:0; z-index:1000; background:#0a0d12; overflow:hidden; }
+.intro-active .portfolio-intro { display:block; }
+.intro-player { position:absolute; inset:0; }
+.intro-player hyperframes-player { display:block; width:100%; height:100%; background:#0a0d12; }
+.intro-fallback { position:absolute; inset:0; display:grid; align-content:center; justify-items:center; gap:28px; }
+.intro-fallback>span { font:500 90px/1 var(--display); letter-spacing:-.19em; padding-right:16px; }
+.intro-fallback>span>span { color:var(--accent); display:inline-block; transform:translateY(-8px); }
+.intro-fallback p { font-size:10px; letter-spacing:.25em; }
+.portfolio-intro[data-ready=true] .intro-fallback { display:none; }
+.intro-skip { position:absolute; right:clamp(24px,4vw,64px); bottom:clamp(24px,4vw,50px); display:flex; gap:28px; align-items:center; background:transparent; color:var(--secondary); border:0; border-bottom:1px solid var(--line); padding:12px 0; min-height:48px; font:inherit; font-size:12px; cursor:pointer; }
+.intro-skip:hover { color:var(--accent); border-color:var(--accent); }
+@media(prefers-reduced-motion:reduce) { .portfolio-intro { display:none!important; }html.intro-active { overflow:visible; } }

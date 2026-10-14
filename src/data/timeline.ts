@@ -15,6 +15,6 @@ export const timeline: TimelineItem[] = [
   },
   {
     "period": "Actualmente",
-    "text": "Desarrollo Full Stack, arquitectura SaaS y un flujo de trabajo asistido por IA. Buscando mi primera oportunidad profesional."
+    "text": "Desarrollo de Ragnar Suplementos, Fracxion y RoadLedger con React y Django. Busco mi primera oportunidad profesional en un equipo de desarrollo."
   }
 ];

@@ -1,6 +1,6 @@
 export const now = [
   "Profundizando en arquitectura SaaS y aislamiento de datos.",
-  "Mejorando la validación de cambios asistidos por IA.",
+  "Mejorando pruebas de permisos, inventario y operaciones concurrentes.",
   "Explorando automatización e integración de servicios.",
   "Buscando mi primera oportunidad profesional."
 ];

@@ -19,10 +19,10 @@ export const caseStudies: Record<string, ProjectStudy> = {
       paragraphs: [
         "Una marca de suplementos necesita vender productos y combos sin perder el control del inventario. El desafío no termina en mostrar un catálogo: una compra puede repetirse, un pago puede llegar tarde y varios artículos pueden consumir el mismo stock.",
         "Ragnar conecta una tienda en Next.js con una API Django que concentra catálogo, precios, pedidos y administración. La experiencia permite comprar como invitado o con una cuenta, elegir retiro o envío y utilizar los medios de pago habilitados.",
-        "El trabajo une interfaz y operación comercial: un carrito persistente del lado del usuario, y reglas de validación, reserva y conciliación del lado del servidor."
+        "Desarrollé la tienda, la API y el panel de catálogo. Trabajé tanto en el recorrido del comprador como en las herramientas que necesita el negocio para cargar artículos, actualizar precios y stock, y revisar pedidos."
       ],
-      features: ["Catálogo por categorías, sabores y combos de productos", "Carrito persistente y checkout invitado con cuentas opcionales", "Cotización de envío firmada y opción de retiro", "Reservas de inventario, vencimiento y restitución de unidades", "Mercado Pago y medios manuales configurables", "Gestión de pedidos y revisiones desde Django Admin"],
-      scope: "Los medios de pago dependen de la configuración del entorno. La revisión de este caso comprobó su implementación en código; no incluyó compras reales ni una verificación del despliegue público."
+      features: ["Explorar productos por categoría, seleccionar sabores y comprar combos con precio propio.", "Conservar el carrito entre visitas y hacer un pedido como invitado o con una cuenta.", "Elegir retiro o cotizar envío local desde Formosa a partir de la dirección y la distancia por carretera.", "Pagar con Mercado Pago, transferencia a Personal Pay o al retirar/recibir, según los medios habilitados.", "Reservar inventario durante el pedido y devolver las unidades disponibles cuando se cancela o vence.", "Administrar productos y combos desde un panel web: cargar imágenes, editar sabores, precios y stock, buscar artículos y cambiar su publicación.", "Crear cuentas con confirmación de correo y recuperar la contraseña mediante un enlace.", "Revisar pedidos y pagos manuales en Django Admin; recibir consultas, reclamos y solicitudes de arrepentimiento.", "Usar la tienda desde escritorio o móvil, con preferencia de tema claro u oscuro."],
+      scope: "El caso describe la implementación local actual. Mercado Pago, Cloudinary y correo requieren configuración propia. Las capturas usan datos de demostración; no acreditan compras reales ni disponibilidad del despliegue."
     },
     architecture: {
       heading: "La tienda presenta.<br>El servidor decide.",
@@ -30,10 +30,11 @@ export const caseStudies: Record<string, ProjectStudy> = {
       frontend: "Next.js + React", frontendDetail: "TypeScript · Tailwind CSS\nZustand / carrito y sesión",
       backend: "Django + DRF", backendDetail: "Catálogo · Pedidos · Inventario\nAdministración y pagos", connection: "REST API",
       services: [{name:"PostgreSQL",detail:"Catálogo, pedidos e inventario"},{name:"Mercado Pago",detail:"Integración configurable"},{name:"Nominatim / OSRM",detail:"Geocodificación y ruta de envío"}],
-      caption: "Esquema del código actual. Django Admin opera sobre los mismos modelos y servicios. Las integraciones externas requieren configuración y disponibilidad de sus proveedores.",
+      caption: "El panel /administracion gestiona el catálogo; Django Admin también permite operar sobre pedidos y pagos manuales. Cloudinary almacena las imágenes cargadas desde el panel; el correo gestiona confirmaciones y recuperación de acceso.",
       paragraphs: [
         "Django es la fuente de verdad para precios y disponibilidad. El navegador envía identificadores y cantidades; la API vuelve a consultar el catálogo antes de crear un pedido. Los datos de productos heredados de la versión anterior no gobiernan este flujo.",
-        "Zustand persiste carrito y sesión en el navegador. Las cuentas opcionales utilizan JWT; el checkout también acepta invitados. El registro actual entrega la sesión directamente y no exige una confirmación de correo.",
+        "Zustand persiste carrito y sesión en el navegador. Las cuentas opcionales utilizan JWT. El registro crea una cuenta pendiente y envía un enlace: el usuario debe confirmar su correo antes de iniciar sesión. La recuperación de contraseña también utiliza un enlace por correo. Comprar como invitado sigue siendo posible.",
+        "El panel /administracion permite gestionar productos, combos e imágenes desde la web. Cada operación exige un superusuario activo en Django. El panel /admin/ concentra pedidos, pagos manuales, solicitudes de atención y usuarios.",
         "Cada ItemPedido conserva nombre, sabor, precio unitario y, para un combo, sus componentes. Ese contexto permite interpretar la compra aunque el catálogo cambie después."
       ]
     },
@@ -53,7 +54,8 @@ export const caseStudies: Record<string, ProjectStudy> = {
       {title:"Reintentar sin duplicar.",problem:"Un doble clic, una red lenta o una respuesta perdida pueden repetir la misma intención de compra.",solution:"Una clave UUID, una restricción única y el hash de los datos distinguen un reintento de una compra diferente. El navegador conserva la clave mientras la solicitud no cambia.",source:"CarritoDrawer.tsx · crear_preferencia · respuesta_checkout_existente"},
       {title:"Compartir stock entre productos y combos.",problem:"El mismo producto puede aparecer por separado y como componente de varios combos en una sola compra.",solution:"La API acumula cantidades por producto y bloquea las filas en un orden consistente. Los componentes reservados quedan guardados en el ítem, de modo que una edición posterior del combo no cambie qué unidades devolver.",source:"backend/store/views.py · ItemPedido.componentes_combo"},
       {title:"Conciliar pagos que llegan después.",problem:"Una notificación puede repetirse, informar un importe distinto o llegar cuando la reserva ya venció.",solution:"El webhook valida su firma y consulta al proveedor. Se comprueban referencia, moneda e importe; los casos ambiguos pasan a estados como revision_pago o revisar_stock, con resolución administrativa.",source:"firma_webhook_valida · procesar_notificacion_pago · backend/store/orders.py"},
-      {title:"Cotizar con dependencias externas.",problem:"La geocodificación y el ruteo pueden fallar, y un precio calculado antes de confirmar puede quedar desactualizado.",solution:"Timeouts, caché y pausas acotan el uso de proveedores. La firma y el vencimiento impiden aceptar una cotización alterada o antigua. Los errores se comunican como situaciones reintentables.",source:"backend/store/shipping.py · cotizar_envio · crear_preferencia"}
+      {title:"Cotizar con dependencias externas.",problem:"La geocodificación y el ruteo pueden fallar, y un precio calculado antes de confirmar puede quedar desactualizado.",solution:"Timeouts, caché y pausas acotan el uso de proveedores. La firma y el vencimiento impiden aceptar una cotización alterada o antigua. Los errores se comunican como situaciones reintentables.",source:"backend/store/shipping.py · cotizar_envio · crear_preferencia"},
+      {title:"Editar el catálogo sin pisar una compra.",problem:"El stock puede cambiar mientras el administrador tiene abierto un formulario. Eliminar un producto con pedidos también puede dejar incompleto su historial.",solution:"La edición compara el stock anterior con el vigente y devuelve un conflicto si cambió. La API impide eliminar artículos con historial o dependencias; despublicarlos permite retirarlos de la tienda y conservar las referencias.",source:"backend/store/catalog_admin.py · stock_anterior · backend/store/permissions.py"}
     ],
     decisions: [
       {title:"Autoridad en el backend.",text:"Precios, variantes y disponibilidad se revalidan al confirmar. El estado del carrito orienta la compra; la API decide si puede convertirse en un pedido."},
@@ -64,11 +66,11 @@ export const caseStudies: Record<string, ProjectStudy> = {
     ],
     results: {
       text:"Una tienda que conecta la experiencia de compra con las reglas de su operación: el catálogo, los pedidos, las reservas y los pagos comparten una misma base de datos y de decisiones.",
-      implemented:"Catálogo → carrito → cotización → validación → reserva → pago o revisión → administración.",
-      evidence:"Caso contrastado con el código local de ragnar-v2. La captura documenta la portada; los diagramas explican los flujos inspeccionados. Esta revisión no ejecutó compras ni la aplicación completa.",
+      implemented:"Catálogo administrable → carrito → retiro o envío → pedido → reserva → pago o revisión. Cuentas con confirmación de correo y recuperación de acceso.",
+      evidence:"README y código local de ragnar-v2 contrastados para esta actualización. La documentación del proyecto incluye pruebas de permisos, catálogo e integridad del inventario. Las capturas muestran entornos locales; las pruebas de negocio no se volvieron a ejecutar al editar el portfolio.",
       next:"Verificar en el entorno de destino los medios de pago habilitados, webhooks, expiración de reservas y entrega de correo; comprobar compras reales antes de afirmar operación en producción.",
       learning:"El checkout continúa después de redirigir al proveedor. Diseñar reintentos, expiración y revisión es tan importante como el formulario. Los combos obligan a pensar en inventario compartido y los snapshots evitan perder el contexto de una compra.",
-      source:"Código revisado en ragnar-v2 durante esta iteración. Fuentes principales: lib/api.ts, backend/store/models.py, views.py, orders.py y shipping.py. Sin métricas comerciales ni disponibilidad pública inferidas."
+      source:"Fuentes: README de Ragnar y código local de lib/api.ts, backend/store/views.py, catalog_admin.py, orders.py y shipping.py. La copia local incorpora funciones posteriores al README público consultado."
     }
   },
   roadledger: {

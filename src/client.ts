@@ -1,5 +1,8 @@
 // Progressive enhancement: all content and links exist in the generated HTML.
 document.body.classList.add("js");
+if (document.documentElement.classList.contains("intro-active")) {
+  void import("./visual/intro.js").then(({ mountIntro }) => mountIntro()).catch(() => {});
+}
 const menu = document.querySelector<HTMLButtonElement>("#menu");
 const navigation = document.querySelector<HTMLUListElement>("#nav-links");
 const mainNav = document.querySelector<HTMLElement>(".main-nav");
@@ -33,7 +36,7 @@ for (const container of document.querySelectorAll<HTMLElement>("[data-tabs]")) {
   const narrow = matchMedia("(max-width: 600px)");
   const orient = () => tablist?.setAttribute("aria-orientation", tablist.hasAttribute("data-vertical-mobile") && narrow.matches ? "vertical" : "horizontal");
   orient(); narrow.addEventListener("change", orient);
-  function select(index: number, focus = false): void {
+  function select(index: number, focus = false, manual = false): void {
     tabs.forEach((tab, i) => {
       tab.setAttribute("role", "tab");
       tab.setAttribute("aria-selected", String(i === index));
@@ -43,9 +46,10 @@ for (const container of document.querySelectorAll<HTMLElement>("[data-tabs]")) {
       panels[i].hidden = i !== index;
     });
     if (focus) tabs[index]?.focus();
+    container.dispatchEvent(new CustomEvent("portfolio:tabchange", { detail: { index, manual } }));
   }
   tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => select(index));
+    tab.addEventListener("click", () => select(index, false, true));
     tab.addEventListener("keydown", event => {
       const keys: Record<string, number> = {
         ArrowRight: (index + 1) % tabs.length,
@@ -55,12 +59,15 @@ for (const container of document.querySelectorAll<HTMLElement>("[data-tabs]")) {
       };
       if (event.key in keys) {
         event.preventDefault();
-        select(keys[event.key], true);
+        select(keys[event.key], true, true);
       }
     });
   });
   container.classList.add("enhanced");
   select(Number(container.dataset.initial ?? 0));
+  if (container.hasAttribute("data-flow-motion")) {
+    void import("./visual/process-motion.js").then(({ mountPipelineMotion }) => mountPipelineMotion(container, index => select(index))).catch(() => {});
+  }
 }
 
 const tenantExplanations: Record<string, string> = {
@@ -136,6 +143,7 @@ if (document.querySelector("[data-brain]")) {
   const enhance = () => {
     void import("./visual/brain.js").then(({ mountSkillBrain }) => mountSkillBrain(document.querySelector<HTMLElement>("[data-brain]")!)).catch(() => {});
     void import("./visual/projects.js").then(({ mountProjectDepth }) => mountProjectDepth()).catch(() => {});
+    void import("./visual/process-motion.js").then(({ mountToolMotion }) => mountToolMotion()).catch(() => {});
   };
   if (document.readyState === "complete") enhance();
   else window.addEventListener("load", enhance, { once: true });

@@ -13,6 +13,8 @@ export interface Project {
   solucion: string | null;
   arquitectura: string | null;
   funcionalidades: string[];
+  highlights: string[];
+  contribution: string;
   desafios: string[];
   decisiones: string[];
   resultado: string | null;

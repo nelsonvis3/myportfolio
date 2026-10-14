@@ -1,5 +1,8 @@
 // Progressive enhancement: all content and links exist in the generated HTML.
 document.body.classList.add("js");
+if (document.documentElement.classList.contains("intro-active")) {
+    void import("./visual/intro.js").then(({ mountIntro }) => mountIntro()).catch(() => { });
+}
 const menu = document.querySelector("#menu");
 const navigation = document.querySelector("#nav-links");
 const mainNav = document.querySelector(".main-nav");
@@ -37,7 +40,7 @@ for (const container of document.querySelectorAll("[data-tabs]")) {
     const orient = () => tablist?.setAttribute("aria-orientation", tablist.hasAttribute("data-vertical-mobile") && narrow.matches ? "vertical" : "horizontal");
     orient();
     narrow.addEventListener("change", orient);
-    function select(index, focus = false) {
+    function select(index, focus = false, manual = false) {
         tabs.forEach((tab, i) => {
             tab.setAttribute("role", "tab");
             tab.setAttribute("aria-selected", String(i === index));
@@ -48,9 +51,10 @@ for (const container of document.querySelectorAll("[data-tabs]")) {
         });
         if (focus)
             tabs[index]?.focus();
+        container.dispatchEvent(new CustomEvent("portfolio:tabchange", { detail: { index, manual } }));
     }
     tabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => select(index));
+        tab.addEventListener("click", () => select(index, false, true));
         tab.addEventListener("keydown", event => {
             const keys = {
                 ArrowRight: (index + 1) % tabs.length,
@@ -60,12 +64,15 @@ for (const container of document.querySelectorAll("[data-tabs]")) {
             };
             if (event.key in keys) {
                 event.preventDefault();
-                select(keys[event.key], true);
+                select(keys[event.key], true, true);
             }
         });
     });
     container.classList.add("enhanced");
     select(Number(container.dataset.initial ?? 0));
+    if (container.hasAttribute("data-flow-motion")) {
+        void import("./visual/process-motion.js").then(({ mountPipelineMotion }) => mountPipelineMotion(container, index => select(index))).catch(() => { });
+    }
 }
 const tenantExplanations = {
     a: "Empresa A: el rol owner puede operar sobre sus datos. Los datos de B quedan fuera de esta consulta.",
@@ -145,6 +152,7 @@ if (document.querySelector("[data-brain]")) {
     const enhance = () => {
         void import("./visual/brain.js").then(({ mountSkillBrain }) => mountSkillBrain(document.querySelector("[data-brain]"))).catch(() => { });
         void import("./visual/projects.js").then(({ mountProjectDepth }) => mountProjectDepth()).catch(() => { });
+        void import("./visual/process-motion.js").then(({ mountToolMotion }) => mountToolMotion()).catch(() => { });
     };
     if (document.readyState === "complete")
         enhance();
