@@ -26,13 +26,13 @@ El build copia únicamente los archivos de navegador necesarios a `dist/intro/ve
 
 ## Recorrido Input → Result
 
-El estudio de automatización conserva sus botones y paneles. Al abrirlo y entrar en pantalla, una línea avanza por Input → API → Intelligence → Action → Result. El foco visual cambia al llegar al siguiente nodo; el foco del teclado permanece bajo control del visitante.
+El estudio de automatización conserva sus botones y paneles. La sección se muestra directamente en la página. Al entrar en pantalla, una línea avanza por Input → API → Intelligence → Action → Result. El foco visual cambia al llegar al siguiente nodo; el foco del teclado permanece bajo control del visitante.
 
-Cada etapa espera 2,6 segundos antes de recorrer la conexión durante 1,4 segundos. Result se mantiene 3,2 segundos; la línea se desvanece durante 500 ms y el ciclo vuelve a Input. El panel reserva la altura máxima de sus cinco contenidos para evitar saltos de la página.
+Cada etapa espera 2,6 segundos antes de recorrer la conexión durante 1,4 segundos. Al llegar a Result, el recorrido se pausa automáticamente y conserva la línea completa. El botón Reiniciar recorrido permite volver a Input de forma explícita. El panel reserva la altura máxima de sus cinco contenidos para evitar saltos de la página.
 
 - Pausar/Reanudar controla el recorrido.
 - Elegir una etapa con clic o teclado detiene el avance automático y conserva la selección. Reanudar continúa desde allí.
-- Se suspende al cerrar el estudio, salir de pantalla, esconder la pestaña o enfocar sus botones/paneles con el teclado.
+- Se suspende al salir de pantalla, esconder la pestaña o enfocar sus botones/paneles con el teclado.
 - Con movimiento reducido no hay recorrido automático; los controles manuales siguen funcionando.
 - En móvil, la línea pasa a orientación vertical y se recalcula al cambiar el tamaño. Sus extremos se obtienen de los centros reales de los iconos.
 
@@ -56,3 +56,11 @@ El tratamiento es intencionalmente leve: un trazo de escaneo sobre el borde supe
 Evidencia: [reporte completo](validation/motion-review.json), [trazo en escritorio](screenshots/motion-pipeline-travel-1440.png), [trazo móvil](screenshots/motion-pipeline-travel-390.png), [entrada móvil](screenshots/motion-intro-390.png) y [tratamiento de herramientas](screenshots/motion-tools-1440.png).
 
 Las pruebas de negocio de Ragnar/Fracxion y la publicación en Vercel no forman parte de esta edición de movimiento. Los scripts temporales de revisión se eliminan al terminar; las fuentes de animación, los recursos necesarios y la evidencia se conservan.
+
+## Corrección de presentación
+
+A pedido del propietario, se retiró el desplegable que ocultaba Systems that work smarter y sus cinco etapas. La sección y las que siguen vuelven a formar parte del recorrido visible. Se retiró únicamente el enlace Descargar CV del hero, conservando sus enlaces a proyectos y contacto y su distribución existente. La descarga permanece en Sobre mí. Se conservan las animaciones solicitadas.
+
+El recorrido ahora se detiene automáticamente en Result con el trazo completo; Reiniciar recorrido vuelve a Input solo por acción del visitante.
+
+Validación de esta corrección: build correcto, 52 comprobaciones de visibilidad, selección y pausa en Result superadas en 320/390/768/1440 px, sin errores JavaScript. Evidencia: [visibility-restoration.json](validation/visibility-restoration.json). Se comprobó además que los cambios de código de esta corrección se limitan al hero y a la sección de automatización.

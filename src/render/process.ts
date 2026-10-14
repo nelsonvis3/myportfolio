@@ -29,7 +29,6 @@ function nodeShape(index: number): string {
 
 export function automationSection(): string {
   return `<section id="automatizacion" class="section automation-section"><div class="wrap">
-  <details class="automation-study"><summary><span><span class="small-label">EXPLORACIÓN / 03</span><span class="automation-study-title">Diseño de un flujo de automatización</span></span><span class="automation-study-action">Ver estudio conceptual <span aria-hidden="true">+</span></span></summary>
   <div class="automation-intro">${label("03", "AI Automation / Concept study")}<h2 lang="en">Systems that<br><span class="indent">work smarter.</span></h2><p>Explorar cómo conectar datos, servicios y decisiones.<br>Un estudio de flujo, desde la entrada hasta un resultado trazable.</p></div>
   <div class="automation-diagram" data-tabs data-flow-motion data-initial="0"><div class="diagram-topline"><span class="diagram-id">FLOW STUDY / 001</span><span class="concept-status"><i></i>Diagrama conceptual · sin servicios conectados</span></div>
   <div class="flow-playback" hidden><span data-flow-label>Recorrido automático · 01 / 05</span><button type="button" data-flow-toggle>Pausar recorrido <span aria-hidden="true">Ⅱ</span></button></div>
@@ -37,5 +36,5 @@ export function automationSection(): string {
   <div class="human-check"><span></span><p>HUMAN REVIEW BEFORE ACTION</p><span></span></div>
   <div class="automation-panels">${automation.map((step, i) => `<div class="automation-panel" data-panel="${step.id}" id="auto-panel-${step.id}" aria-labelledby="auto-${step.id}"><div><span class="small-label">0${i + 1} / ${step.name}</span><h3>${step.title}</h3><p>${step.text}</p></div><div class="automation-example"><span class="small-label">ILLUSTRATIVE SCENARIO</span><p>${step.example}</p><span class="automation-output">↳ ${step.output}</span></div></div>`).join("")}</div>
   </div><p class="automation-note">Esta pieza explica una arquitectura posible. No ejecuta agentes, llamadas a APIs ni acciones automáticas.</p>
-  </details></div></section>`;
+  </div></section>`;
 }

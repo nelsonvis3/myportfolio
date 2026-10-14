@@ -245,12 +245,6 @@ a:hover>.arrow { transform: translate(3px,-3px); }
 .engineering-principle { font-family: var(--display); font-size: clamp(25px,3.1vw,46px); letter-spacing: -.045em; color: var(--secondary); text-align: right; border-top: 1px solid var(--line); padding-top: 30px; margin-top: 45px; }
 .engineering-principle span { color: var(--ink); }
 .automation-section { padding-block:64px; }
-.automation-study>summary { display:flex; align-items:center; justify-content:space-between; gap:24px; cursor:pointer; list-style:none; padding-block:22px; border-block:1px solid var(--line); }
-.automation-study>summary::-webkit-details-marker { display:none; }
-.automation-study-title { display:block; font:400 clamp(20px,2.4vw,34px)/1.3 var(--display); color:var(--ink); margin-top:12px; }
-.automation-study-action { color:var(--accent); font-size:12px; flex-shrink:0; }
-.automation-study[open]>summary { margin-bottom:56px; }
-@media(max-width:600px) { .automation-study>summary { align-items:flex-start; flex-direction:column; }.automation-study-action { width:100%; display:flex; justify-content:space-between; } }
 /* Automation is a diagram with five selectable nodes, not a services grid. */
 .automation-intro { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px 70px; align-items: end; }
 .automation-intro>.eyebrow { grid-column: 1/-1; }

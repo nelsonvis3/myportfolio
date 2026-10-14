@@ -80,7 +80,7 @@ La publicación debe hacerse sobre el hosting elegido por el propietario. Esta r
 
 - Menú móvil con estado expandido y cierre con Escape o selección de enlace.
 - Cinco etapas de desarrollo: Plan → Build → Review → Test → Ship. Plan incluye el diseño.
-- Estudio de automatización opcional en un bloque desplegable, con cinco nodos: Input → API → Intelligence → Action → Result. No ejecutan servicios reales.
+- Sección de automatización visible en la página, con cinco nodos: Input → API → Intelligence → Action → Result. No ejecutan servicios reales.
 - Los diagramas de portada y los procesos de Ragnar/RoadLedger funcionan con teclado: flechas, Home y End. Automatización, checkout y planificación pasan a orientación vertical en móvil.
 - Los tres proyectos tienen Overview, arquitectura, desafíos, decisiones y resultados, con índice y navegación al siguiente caso.
 - Ejemplo interactivo de contexto por empresa con estado anunciado. Es un diagrama, no una conexión al SaaS.

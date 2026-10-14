@@ -1,0 +1,214 @@
+{
+  "checks": [
+    {
+      "name": "Sección visible sin desplegable 320",
+      "passed": true
+    },
+    {
+      "name": "Cinco opciones visibles 320",
+      "passed": true
+    },
+    {
+      "name": "Secciones posteriores visibles 320",
+      "passed": true
+    },
+    {
+      "name": "Hero recupera proyectos y contacto 320",
+      "passed": true
+    },
+    {
+      "name": "CV disponible en Sobre mí 320",
+      "passed": true
+    },
+    {
+      "name": "Sin desbordamiento 320",
+      "passed": true
+    },
+    {
+      "name": "Opción input seleccionable 320",
+      "passed": true
+    },
+    {
+      "name": "Opción api seleccionable 320",
+      "passed": true
+    },
+    {
+      "name": "Opción intelligence seleccionable 320",
+      "passed": true
+    },
+    {
+      "name": "Opción action seleccionable 320",
+      "passed": true
+    },
+    {
+      "name": "Opción result seleccionable 320",
+      "passed": true
+    },
+    {
+      "name": "Sección visible sin desplegable 390",
+      "passed": true
+    },
+    {
+      "name": "Cinco opciones visibles 390",
+      "passed": true
+    },
+    {
+      "name": "Secciones posteriores visibles 390",
+      "passed": true
+    },
+    {
+      "name": "Hero recupera proyectos y contacto 390",
+      "passed": true
+    },
+    {
+      "name": "CV disponible en Sobre mí 390",
+      "passed": true
+    },
+    {
+      "name": "Sin desbordamiento 390",
+      "passed": true
+    },
+    {
+      "name": "Distribución móvil preservada",
+      "passed": true
+    },
+    {
+      "name": "Opción input seleccionable 390",
+      "passed": true
+    },
+    {
+      "name": "Opción api seleccionable 390",
+      "passed": true
+    },
+    {
+      "name": "Opción intelligence seleccionable 390",
+      "passed": true
+    },
+    {
+      "name": "Opción action seleccionable 390",
+      "passed": true
+    },
+    {
+      "name": "Opción result seleccionable 390",
+      "passed": true
+    },
+    {
+      "name": "Sección visible sin desplegable 768",
+      "passed": true
+    },
+    {
+      "name": "Cinco opciones visibles 768",
+      "passed": true
+    },
+    {
+      "name": "Secciones posteriores visibles 768",
+      "passed": true
+    },
+    {
+      "name": "Hero recupera proyectos y contacto 768",
+      "passed": true
+    },
+    {
+      "name": "CV disponible en Sobre mí 768",
+      "passed": true
+    },
+    {
+      "name": "Sin desbordamiento 768",
+      "passed": true
+    },
+    {
+      "name": "Opción input seleccionable 768",
+      "passed": true
+    },
+    {
+      "name": "Opción api seleccionable 768",
+      "passed": true
+    },
+    {
+      "name": "Opción intelligence seleccionable 768",
+      "passed": true
+    },
+    {
+      "name": "Opción action seleccionable 768",
+      "passed": true
+    },
+    {
+      "name": "Opción result seleccionable 768",
+      "passed": true
+    },
+    {
+      "name": "Sección visible sin desplegable 1440",
+      "passed": true
+    },
+    {
+      "name": "Cinco opciones visibles 1440",
+      "passed": true
+    },
+    {
+      "name": "Secciones posteriores visibles 1440",
+      "passed": true
+    },
+    {
+      "name": "Hero recupera proyectos y contacto 1440",
+      "passed": true
+    },
+    {
+      "name": "CV disponible en Sobre mí 1440",
+      "passed": true
+    },
+    {
+      "name": "Sin desbordamiento 1440",
+      "passed": true
+    },
+    {
+      "name": "Opción input seleccionable 1440",
+      "passed": true
+    },
+    {
+      "name": "Opción api seleccionable 1440",
+      "passed": true
+    },
+    {
+      "name": "Opción intelligence seleccionable 1440",
+      "passed": true
+    },
+    {
+      "name": "Opción action seleccionable 1440",
+      "passed": true
+    },
+    {
+      "name": "Opción result seleccionable 1440",
+      "passed": true
+    },
+    {
+      "name": "Animación Input → API conservada",
+      "passed": true
+    },
+    {
+      "name": "Result pausa automáticamente",
+      "passed": true
+    },
+    {
+      "name": "Línea completa al finalizar",
+      "passed": true
+    },
+    {
+      "name": "Result permanece detenido y no reinicia solo",
+      "passed": true
+    },
+    {
+      "name": "Reinicio explícito vuelve a Input",
+      "passed": true
+    },
+    {
+      "name": "Reinicio continúa el recorrido",
+      "passed": true
+    },
+    {
+      "name": "Sin JavaScript: sección y opciones visibles",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

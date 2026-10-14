@@ -10,12 +10,11 @@ export function mountPipelineMotion(root: HTMLElement, select: (index: number) =
   const controls = root.querySelector<HTMLElement>(".flow-playback")!;
   const toggle = root.querySelector<HTMLButtonElement>("[data-flow-toggle]")!;
   const label = root.querySelector<HTMLElement>("[data-flow-label]")!;
-  const details = root.closest("details");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const dwell = 2600, travel = 1400, finish = 3200, reset = 500;
+  const dwell = 2600, travel = 1400;
   let active = Math.max(0, tabs.findIndex(tab => tab.getAttribute("aria-selected") === "true"));
   let elapsed = 0, frame = 0, previous = 0, visible = false, userPaused = false, focused = false;
-  let phase: "dwell" | "travel" | "reset" = "dwell";
+  let phase: "dwell" | "travel" = "dwell";
   let lengths: number[] = [], total = 0;
 
   function paint(): void {
@@ -25,7 +24,6 @@ export function mountPipelineMotion(root: HTMLElement, select: (index: number) =
     progress.style.strokeDasharray = `${distance} ${total}`;
     const point = track.getPointAtLength(distance);
     particle.setAttribute("cx", String(point.x)); particle.setAttribute("cy", String(point.y));
-    svg.style.opacity = phase === "reset" ? String(1 - elapsed / reset) : "1";
     tabs.forEach((tab, index) => tab.classList.toggle("flow-visited", index < active));
     root.dataset.flowStage = String(active);
     root.dataset.flowPhase = phase;
@@ -59,15 +57,16 @@ export function mountPipelineMotion(root: HTMLElement, select: (index: number) =
   }
 
   function canRun(): boolean {
-    return visible && (!details || details.open) && !document.hidden && !reduced.matches && !userPaused && !focused;
+    return visible && !document.hidden && !reduced.matches && !userPaused && !focused;
   }
 
   function sync(): void {
     const running = canRun();
     root.dataset.flowRunning = String(running);
     toggle.hidden = reduced.matches;
-    toggle.textContent = userPaused ? "Reanudar recorrido ▷" : "Pausar recorrido Ⅱ";
-    const state = reduced.matches ? "Movimiento reducido · navegación manual" : userPaused ? "Recorrido en pausa" : "Recorrido automático";
+    const completed = userPaused && active === tabs.length - 1;
+    toggle.textContent = completed ? "Reiniciar recorrido ▷" : userPaused ? "Reanudar recorrido ▷" : "Pausar recorrido Ⅱ";
+    const state = reduced.matches ? "Movimiento reducido · navegación manual" : completed ? "Recorrido completado" : userPaused ? "Recorrido en pausa" : "Recorrido automático";
     label.textContent = `${state} · ${String(active + 1).padStart(2, "0")} / 05`;
     if (running && !frame) { previous = 0; frame = requestAnimationFrame(tick); }
     if (!running && frame) { cancelAnimationFrame(frame); frame = 0; previous = 0; }
@@ -75,6 +74,7 @@ export function mountPipelineMotion(root: HTMLElement, select: (index: number) =
 
   function arrive(index: number): void {
     active = index; phase = "dwell"; elapsed = 0;
+    if (active === tabs.length - 1) userPaused = true;
     select(active);
     if (!reduced.matches) panels[active].animate([{ opacity: .45, transform: "translateY(3px)" }, { opacity: 1, transform: "translateY(0)" }], { duration: 280, easing: "ease-out" });
     sync();
@@ -85,13 +85,12 @@ export function mountPipelineMotion(root: HTMLElement, select: (index: number) =
     if (!canRun()) { sync(); return; }
     if (previous) elapsed += Math.min(now - previous, 64);
     previous = now;
-    if (phase === "dwell" && elapsed >= (active === tabs.length - 1 ? finish : dwell)) {
-      phase = active === tabs.length - 1 ? "reset" : "travel"; elapsed = 0;
+    if (phase === "dwell" && elapsed >= dwell) {
+      phase = "travel"; elapsed = 0;
     } else if (phase === "travel" && elapsed >= travel) arrive(active + 1);
-    else if (phase === "reset" && elapsed >= reset) arrive(0);
     paint();
     // arrive() may schedule the next frame while updating the controls.
-    if (!frame) frame = requestAnimationFrame(tick);
+    if (canRun() && !frame) frame = requestAnimationFrame(tick);
   }
 
   root.addEventListener("portfolio:tabchange", event => {
@@ -100,10 +99,18 @@ export function mountPipelineMotion(root: HTMLElement, select: (index: number) =
     active = change.index; phase = "dwell"; elapsed = 0; userPaused = true;
     paint(); sync();
   });
-  toggle.addEventListener("click", () => { userPaused = !userPaused; sync(); });
+  toggle.addEventListener("click", () => {
+    if (userPaused && active === tabs.length - 1) {
+      userPaused = false;
+      arrive(0);
+      paint();
+    } else {
+      userPaused = !userPaused;
+      sync();
+    }
+  });
   root.addEventListener("focusin", () => { focused = rail.contains(document.activeElement) || panels.some(panel => panel.contains(document.activeElement)); sync(); });
   root.addEventListener("focusout", () => { queueMicrotask(() => { focused = rail.contains(document.activeElement) || panels.some(panel => panel.contains(document.activeElement)); sync(); }); });
-  details?.addEventListener("toggle", () => { if (details.open) measure(); sync(); });
   document.addEventListener("visibilitychange", sync);
   reduced.addEventListener("change", () => { phase = "dwell"; elapsed = 0; paint(); sync(); });
   new ResizeObserver(measure).observe(rail);

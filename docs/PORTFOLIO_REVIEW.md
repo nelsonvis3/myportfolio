@@ -1,5 +1,9 @@
 # Revisión del portfolio · 14 de octubre de 2026
 
+## Corrección posterior a revisión del propietario
+
+Se restauró la visibilidad directa de Systems that work smarter y sus cinco opciones, se quitó únicamente Descargar CV del hero y se conservó la distribución de sus enlaces restantes. El desplegable y la ubicación del CV descritos abajo corresponden a la primera edición y fueron revertidos. El resto del informe conserva la evidencia histórica.
+
 ## Criterio de selección Full Stack
 
 El objetivo es que una persona que evalúa una candidatura entienda el stack, las funciones de cada proyecto y el trabajo realizado antes de entrar en los detalles de arquitectura. El perfil conserva el objetivo de primera oportunidad profesional. La revisión utiliza criterio de selección senior; no atribuye al candidato experiencia laboral, antigüedad ni un cargo senior.
