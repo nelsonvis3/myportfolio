@@ -1,17 +1,19 @@
 # CV de Nelson Sivisstum
 
-El usuario autorizó esta actualización junto con la reconstrucción del portfolio. Se sustituyó Formosa Empleos por Fracxion y se incorporó el trabajo con Codex y Claude Code. Se mantuvieron contacto, formación e idiomas; los cursos muestran su estado declarado, sin fechas de certificación no verificadas.
+Versiones de una página A4 con texto seleccionable y enlaces de contacto.
 
-- Fuente: [nelson-sivisstum.html](nelson-sivisstum.html).
-- PDF publicado por el portfolio: [public/cv.pdf](../../public/cv.pdf).
-- [Vista previa de la página A4](../screenshots/cv.png).
+| Idioma | Fuente editable | PDF |
+| --- | --- | --- |
+| Español | [nelson-sivisstum.html](nelson-sivisstum.html) | [cv.pdf](../../public/cv.pdf) |
+| Inglés | [nelson-sivisstum-en.html](nelson-sivisstum-en.html) | [cv-en.pdf](../../public/cv-en.pdf) |
 
-Para editar, modificar el HTML y abrirlo en Chromium/Chrome desde el disco. Las fuentes son locales y las rutas apuntan a `public/fonts/`. Imprimir a PDF en A4, escala 100 %, sin encabezado ni pie del navegador; la hoja define sus propios márgenes de 14 × 16 mm. Guardar el resultado en `public/cv.pdf` y ejecutar `npm run build` para actualizar la descarga en `dist/`.
+## Actualizar
 
-El PDF se exportó con Chromium mediante Playwright, con `preferCSSPageSize`, `printBackground` y `tagged` activados. Se comprobó que tiene una página, conserva texto seleccionable y no contiene Formosa Empleos. Se revisó su composición renderizada. El etiquetado no equivale a una certificación PDF/UA.
+1. Editar el HTML del idioma correspondiente.
+2. Abrirlo en un navegador Chromium e imprimir a PDF: A4, escala 100 %, sin encabezados ni pies del navegador. La hoja define márgenes de 13 × 15 mm.
+3. Guardar el PDF en `public/cv.pdf` o `public/cv-en.pdf`.
+4. Ejecutar `npm run build` para actualizar las descargas de `dist/`.
 
-La dirección pública del portfolio y los enlaces de contacto provienen del CV anterior. No implican que esta nueva versión esté desplegada en ese dominio.
+Las versiones del 15 de octubre de 2026 se exportaron con Brave/Chromium mediante Playwright. Ambos PDF tienen una página. Los proyectos independientes y la experiencia laboral adicional aparecen por separado; el nivel de inglés declarado es A2.
 
-## Actualización editorial · 14 de octubre de 2026
-
-La versión actual utiliza Fracxion como marca única, agrega su repositorio y detalla el panel de catálogo y la compra en Ragnar. El perfil prioriza React, Next.js, Django, APIs y pruebas. Se conservan los datos de formación e idiomas ya declarados. El PDF fue reexportado con Brave/Chromium y Playwright: A4, una página, fuentes locales, texto seleccionable y enlaces.
+Las cifras de pruebas de Fracxion corresponden a validaciones locales documentadas por ese proyecto. No representan métricas de uso comercial ni una ejecución de pruebas durante la exportación del CV.

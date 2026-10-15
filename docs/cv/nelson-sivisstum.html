@@ -1,71 +1,9 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nelson Sivisstum — Desarrollador Full Stack</title>
-<style>
-@font-face{font-family:Instrument;src:url('../../public/fonts/instrument-sans-latin.woff') format('woff');font-weight:400 700;font-display:swap}
-@font-face{font-family:Space;src:url('../../public/fonts/space-grotesk-latin.woff') format('woff');font-weight:300 700;font-display:swap}
-@page{size:A4;margin:14mm 16mm}
-*{box-sizing:border-box}body{margin:0;font:400 9.2pt/1.38 Instrument,Arial,sans-serif;color:#181f29;background:#fff}h1,h2,h3,p,ul{margin:0}h1,h2,h3{font-family:Space,Arial,sans-serif}h1{font-size:29pt;font-weight:500;letter-spacing:-1.5pt;line-height:1.1}h2{font-size:9.1pt;font-weight:700;letter-spacing:1pt;text-transform:uppercase;border-bottom:.7pt solid #a9b4c4;padding-bottom:5pt;margin:12pt 0 7pt;color:#243f40}h3{font-size:11pt;font-weight:600;letter-spacing:-.2pt;line-height:1.3}.role{font-size:11.5pt;color:#334e50;margin-top:5pt}.contact{font-size:8.4pt;color:#34414e;line-height:1.65;margin-top:9pt}a{color:inherit;text-decoration:none}p+p{margin-top:5pt}strong{font-weight:600}.skill-row{margin-top:3pt}.project{margin-top:8pt;break-inside:avoid}.project-head{display:flex;align-items:baseline;gap:14pt;justify-content:space-between}.project-type{font-size:8.2pt;color:#51616c}.project ul{padding-left:12pt;margin-top:4pt}.project li{padding-left:1pt;margin-top:3pt}.project li::marker{color:#334e50}.project-links{font-size:8pt;color:#4f606b;margin-top:4pt}.education-row{display:grid;grid-template-columns:1fr auto;gap:15pt;margin-top:4pt}.education-row span{font-size:8.5pt;color:#51616c}.languages{margin-top:10pt;font-size:8.6pt}.scope{font-size:8.1pt;color:#51616c}.education{break-inside:avoid}
-@media screen{body{max-width:210mm;margin:30px auto;padding:14mm 16mm;border:1px solid #ddd;box-shadow:0 8px 35px #ddd}html{background:#eee}@media(max-width:650px){body{margin:0;padding:22px;border:0}.project-head{display:block}.project-type{display:block;margin-top:3pt}.education-row{display:block}}}
-</style>
-</head>
-<body>
-<header>
-<h1>NELSON SIVISSTUM</h1>
-<p class="role">Desarrollador Full Stack Junior · React, Next.js y Django</p>
-<p class="contact">Formosa Capital, Argentina · <a href="tel:+541170625896">11-70625896</a> · <a href="mailto:nelsonsivisstum3@gmail.com">nelsonsivisstum3@gmail.com</a><br><a href="https://github.com/nelsonvis3">GitHub: github.com/nelsonvis3</a> · <a href="https://linkedin.com/in/nelson-sivisstum-4777a32b4">LinkedIn: nelson-sivisstum-4777a32b4</a><br><a href="https://nelsonvis-portfolio.vercel.app">Portfolio: nelsonvis-portfolio.vercel.app</a></p>
-</header>
-<main>
-<section aria-labelledby="perfil">
-<h2 id="perfil">Perfil profesional</h2>
-<p>Desarrollador autodidacta con proyectos de gestión comercial y e-commerce en React, Next.js, TypeScript y Python/Django. Trabajo en interfaces, APIs REST y modelos de datos, con pruebas de permisos y reglas de negocio. Busco mi primera oportunidad profesional para aportar y seguir aprendiendo en equipo.</p>
-</section>
-<section aria-labelledby="habilidades">
-<h2 id="habilidades">Habilidades técnicas</h2>
-<p class="skill-row"><strong>Frontend:</strong> HTML · CSS · JavaScript · TypeScript · React · Next.js · Diseño responsive</p>
-<p class="skill-row"><strong>Backend y datos:</strong> Python · Django · Django REST Framework · PostgreSQL · SQLite · APIs REST</p>
-<p class="skill-row"><strong>SaaS:</strong> Multi-tenancy a nivel de aplicación · Membresías y roles · Sesiones / CSRF · Transacciones · Auditoría</p>
-<p class="skill-row"><strong>Herramientas:</strong> Git / GitHub · Linux · Docker Compose · Playwright · Codex · Claude Code</p>
-</section>
-<section aria-labelledby="proyectos">
-<h2 id="proyectos">Proyectos destacados</h2>
-<article class="project">
-<div class="project-head"><h3>Fracxion</h3><span class="project-type">SaaS multi-tenant · Proyecto propio</span></div>
-<ul>
-<li>Desarrollé una aplicación de facturación interna con Next.js, TypeScript, Django REST Framework y PostgreSQL: empresas, clientes, catálogo, facturas, cobros y auditoría.</li>
-<li>Implementé contexto por empresa sobre una base compartida, con membresías, cinco roles y filtros de acceso en la API.</li>
-<li>Trabajé la consistencia de las operaciones mediante transacciones, bloqueos, importes Decimal, numeración por empresa y reversiones de cobros con trazabilidad.</li>
-</ul>
-<p class="scope">Validación local; comprobantes de gestión interna, sin emisión fiscal autorizada.</p>
-<p class="project-links"><a href="https://github.com/nelsonvis3/fracxion-facturador">github.com/nelsonvis3/fracxion-facturador</a></p>
-</article>
-<article class="project">
-<div class="project-head"><h3>Ragnar Suplementos</h3><span class="project-type">E-commerce · Marca real</span></div>
-<ul>
-<li>Desarrollé la tienda y el panel de catálogo con Next.js, React y Django: productos, sabores, combos, imágenes, precios y stock.</li>
-<li>Implementé carrito persistente, checkout invitado, reservas de stock y cotizaciones de envío; integración configurable con Mercado Pago y revisión de pedidos.</li>
-</ul>
-<p class="project-links"><a href="https://github.com/nelsonvis3/ragnarsuplementosfsa">github.com/nelsonvis3/ragnarsuplementosfsa</a></p>
-</article>
-<article class="project">
-<div class="project-head"><h3>RoadLedger</h3><span class="project-type">Planificador de viajes · Prototipo técnico</span></div>
-<ul>
-<li>Construí un prototipo con Django/DRF y React que integra geocodificación Photon, rutas OSRM y mapas con MapLibre.</li>
-<li>Implementé un modelo de planificación HOS 70/8, paradas, descansos y registros diarios imprimibles. Es un prototipo educativo, no un registro ELD.</li>
-</ul>
-<p class="project-links"><a href="https://github.com/nelsonvis3/ELD-trip-planner">github.com/nelsonvis3/ELD-trip-planner</a></p>
-</article>
-</section>
-<section class="education" aria-labelledby="formacion">
-<h2 id="formacion">Formación e idiomas</h2>
-<p class="education-row"><strong>CS50 · Programación web con Python y JavaScript</strong><span>Harvard / edX · En curso</span></p>
-<p class="education-row"><strong>Full Stack JavaScript</strong><span>The Odin Project · En curso</span></p>
-<p class="education-row"><strong>Front End Development Libraries</strong><span>freeCodeCamp · Certificado</span></p>
-<p class="education-row"><strong>Bachiller · E.P.E.P. N.° 179</strong><span>2016–2023</span></p>
-<p class="languages"><strong>Español:</strong> nativo · <strong>Inglés:</strong> A2, lectura técnica de documentación</p>
-</section>
-</main>
-</body>
-</html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>CV_Nelson_Sivisstum_ES</title><style>@page{size:A4;margin:13mm 15mm}*{box-sizing:border-box}body{font-family:Arial,sans-serif;color:#18212b;font-size:9.5pt;line-height:1.31;margin:0}h1{font-size:25pt;letter-spacing:-.8px;margin:0 0 2px}header{border-bottom:2px solid #207477;padding-bottom:9px;margin-bottom:11px}.role{font-size:11.3pt;font-weight:700;color:#207477;margin:0 0 5px}.contact{font-size:8.7pt;line-height:1.55;margin:0}a{color:#185d67;text-decoration:none}h2{font-size:10pt;letter-spacing:.7px;text-transform:uppercase;color:#185d67;margin:12px 0 5px}h3{font-size:10pt;margin:8px 0 3px}p{margin:3px 0 6px}ul{margin:3px 0 7px;padding-left:15px}li{padding-left:1px;margin-bottom:3px}.meta{color:#465464;font-size:8.6pt}.small{font-size:8.6pt}section{break-inside:avoid}.letter{font-size:11pt;line-height:1.55}.letter p{margin:0 0 15px}.letter header{margin-bottom:28px}.letter h1{font-size:25pt}</style></head><body class=""><header><h1>NELSON SIVISSTUM</h1><p class="role">Desarrollador Full Stack | React, Next.js, Python y Django</p><p class="contact">Formosa, Argentina · +54 11 7062-5896 · <a href="mailto:nelsonsivisstum3@gmail.com">nelsonsivisstum3@gmail.com</a><br><a href="https://github.com/nelsonvis3">github.com/nelsonvis3</a> · <a href="https://nelsonvis-portfolio.vercel.app/">nelsonvis-portfolio.vercel.app</a><br><a href="https://www.linkedin.com/in/nelson-sivisstum-4777a32b4/">linkedin.com/in/nelson-sivisstum-4777a32b4</a></p></header>
+<section><h2>Perfil profesional</h2><p>Desarrollador Full Stack con proyectos propios de gestión comercial y e-commerce. Desarrollo interfaces con React, Next.js y TypeScript y APIs REST con Django y PostgreSQL. Mi trabajo incluye permisos por empresa, transacciones, inventario y pruebas automatizadas. Busco incorporarme a un equipo de desarrollo y contribuir a la evolución de productos web.</p></section>
+<section><h2>Habilidades técnicas</h2><p><b>Frontend:</b> JavaScript, TypeScript, React, Next.js, HTML, CSS, Tailwind CSS.<br><b>Backend y datos:</b> Python, Django, Django REST Framework, PostgreSQL, APIs REST, SQL.<br><b>Calidad y herramientas:</b> Git, Linux, Docker Compose, pruebas Django, Playwright, GitHub Actions.<br><b>Áreas aplicadas:</b> autenticación, autorización, multi-tenancy, transacciones y auditoría.<br><b>Desarrollo asistido por IA:</b> Codex y Claude Code; revisión de cambios y pruebas.</p></section>
+<section><h2>Proyectos de desarrollo</h2><p class="meta">Proyectos independientes · 2026</p>
+<h3>Fracxion · Gestión comercial multiempresa</h3><p class="meta"><a href="https://github.com/nelsonvis3/fracxion-facturador">github.com/nelsonvis3/fracxion-facturador</a> · Next.js, TypeScript, Django/DRF, PostgreSQL</p><ul><li>Desarrollé clientes, catálogo, facturas internas, cobros y auditoría con aislamiento de datos por empresa y permisos por rol.</li><li>Implementé cálculos con Decimal, transacciones y bloqueos de filas para coordinar numeración y pagos concurrentes; las reversiones conservan el historial.</li><li>El proyecto documenta 216 pruebas backend, 91 % de cobertura de sentencias y 35 escenarios E2E aprobados en validaciones locales.</li></ul>
+<h3>Ragnar Suplementos · E-commerce</h3><p class="meta"><a href="https://github.com/nelsonvis3/ragnarsuplementosfsa">github.com/nelsonvis3/ragnarsuplementosfsa</a> · Next.js, React, Django, PostgreSQL</p><ul><li>Desarrollé catálogo, variantes, combos, carrito persistente y checkout invitado, con precios y disponibilidad validados por la API.</li><li>Implementé reservas de stock y cotizaciones de envío; trabajé en reintentos de checkout, integración configurable con Mercado Pago y administración del catálogo.</li></ul>
+<h3>RoadLedger · Prototipo de planificación de viajes</h3><p class="meta"><a href="https://github.com/nelsonvis3/ELD-trip-planner">github.com/nelsonvis3/ELD-trip-planner</a> · Python, Django/DRF, React, MapLibre</p><ul><li>Integré geocodificación y rutas con un modelo temporal que genera mapa, paradas, descansos y registros diarios imprimibles. Prototipo educativo, sin certificación ELD.</li></ul></section>
+<section><h2>Experiencia laboral adicional</h2><p><b>Hakuna Matata · Atención al público</b> | abr.–may. 2026<br>Atención de pedidos y coordinación con el equipo de sala y cocina.<br><b>Brosta S.R.L. · Limpieza y mantenimiento</b> | abr.–ago. 2025<br>Elaboración de informes operativos y acompañamiento de personal nuevo.</p></section>
+<section><h2>Formación e idiomas</h2><p>CS50’s Web Programming with Python and JavaScript · Harvard / edX · En curso<br>Full Stack JavaScript · The Odin Project · En curso<br>Front End Development Libraries · freeCodeCamp · Certificado, 2026<br>Bachiller · E.P.E.P. N.º 179 · 2016–2023<br><b>Español:</b> nativo · <b>Inglés:</b> A2, lectura técnica de documentación</p></section></body></html>
