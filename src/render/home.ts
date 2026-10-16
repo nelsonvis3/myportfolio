@@ -23,7 +23,7 @@ function media(p: Project, videos: Videos, cls: string): string {
 }
 
 function journey(c: Content, videos: Videos): string {
-  const data = c.projects.map(p => ({ id: p.id, name: p.name, sub: p.tagline, img: p.images[0].src, video: videos[p.id]?.src ?? null }));
+  const data = c.projects.map(p => ({ id: p.id, name: p.name, sub: p.tagline, img: p.images[0].src, video: videos[p.id]?.src ?? null, poster: videos[p.id]?.poster ?? null }));
   const first = c.projects[0];
   return `<section class="journey" data-journey aria-label="${esc(c.ui.carouselLabel)}">
   <div class="stage" data-stage>

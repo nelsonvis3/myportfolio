@@ -3,7 +3,7 @@ import * as THREE from "three";
 /** Carrusel de proyectos: paneles curvos con la captura real de cada proyecto,
  * repartidos en un anillo que gira. El texto se muestra en HTML, no en WebGL. */
 
-export interface ProjectInfo { id: string; name: string; sub: string; img: string; video: string | null }
+export interface ProjectInfo { id: string; name: string; sub: string; img: string; video: string | null; poster: string | null }
 
 const vertexShader = /* glsl */ `
   uniform float uBend;
@@ -34,7 +34,8 @@ const fragmentShader = /* glsl */ `
     vec3 image = texture2D(uMap, uv).rgb;
     vec3 base = mix(uBase, image, uReady);
     float light = mix(0.42, 1.0, uFocus) + uHover * 0.08;
-    vec3 color = base * light;
+    // Fuera de foco el panel se funde con el fondo: oscurece en tema oscuro y aclara en el claro.
+    vec3 color = mix(uBase, base, light);
     float sheen = smoothstep(0.35, 0.0, abs(vUv.y + vUv.x * 0.35 - 0.8 - sin(uTime * 0.3) * 0.15)) * 0.06 * uFocus;
     float edge = smoothstep(0.012, 0.0, abs(d + 0.004));
     color += uAccent * edge * mix(0.25, 0.9, uFocus) + sheen;
@@ -64,7 +65,8 @@ export class Carousel {
           uAccent: { value: new THREE.Color("#ffffff") }, uBase: { value: new THREE.Color("#0a0a0a") },
         },
       });
-      loader.load(project.img, texture => {
+      // El póster es el primer cuadro del video: mismo encuadre y proporción, sin salto al cambiar.
+      loader.load(project.poster ?? project.img, texture => {
         texture.colorSpace = THREE.SRGBColorSpace;
         texture.anisotropy = maxAnisotropy;
         const image = texture.image as { width: number; height: number };
@@ -72,12 +74,13 @@ export class Carousel {
         material.uniforms.uImageAspect.value = image.width / image.height;
         material.uniforms.uReady.value = 1;
       });
-      // Video de Hyperframes: reemplaza la captura cuando ya tiene el primer cuadro.
+      // Video de Hyperframes: reemplaza al póster recién cuando se reproduce. Una VideoTexture de un
+      // video que nunca se reprodujo no tiene cuadros y se ve negra en los paneles de los costados.
       let video: HTMLVideoElement | null = null;
       if (project.video) {
         video = document.createElement("video");
         Object.assign(video, { src: project.video, muted: true, loop: true, playsInline: true, preload: "auto", crossOrigin: "anonymous" });
-        video.addEventListener("loadeddata", () => {
+        video.addEventListener("playing", () => {
           const texture = new THREE.VideoTexture(video!);
           texture.colorSpace = THREE.SRGBColorSpace;
           material.uniforms.uMap.value = texture;
