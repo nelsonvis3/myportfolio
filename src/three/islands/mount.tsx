@@ -9,22 +9,10 @@ export function mountIslands(): void {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const fine = matchMedia("(pointer: fine)").matches;
 
-  for (const el of document.querySelectorAll<HTMLElement>('[data-island="proximity"]')) {
-    if (!fine) continue; // depende del puntero; en táctil queda el título estático
-    const label = el.dataset.label ?? el.textContent ?? "";
-    const root = createRoot(el);
-    root.render(
-      <VariableProximity
-        label={label}
-        className="proximity"
-        fromFontVariationSettings="'wght' 760, 'wdth' 62"
-        toFontVariationSettings="'wght' 900, 'wdth' 150"
-        radius={190}
-        falloff="gaussian"
-        smoothing={0.25}
-      />,
-    );
-  }
+  // Depende del puntero: en táctil queda el título estático. Se monta con el primer movimiento del mouse
+  // porque reemplaza las letras del h1, y ese re-render al cargar pasaba a contar como el LCP de la página.
+  const proximity = [...document.querySelectorAll<HTMLElement>('[data-island="proximity"]')];
+  if (fine && proximity.length) addEventListener("pointermove", () => proximity.forEach(mountProximity), { once: true, passive: true });
 
   for (const el of document.querySelectorAll<HTMLElement>('[data-island="type"]')) {
     const texts = JSON.parse(el.dataset.texts ?? "[]") as string[];
@@ -57,4 +45,19 @@ export function mountIslands(): void {
       <TextPressure text={label} fontFamily="Anybody Variable" fontUrl="" italic={false} flex={false} textColor="currentColor" minFontSize={48} />,
     );
   }
+}
+
+function mountProximity(el: HTMLElement): void {
+  const label = el.dataset.label ?? el.textContent ?? "";
+  createRoot(el).render(
+    <VariableProximity
+      label={label}
+      className="proximity"
+      fromFontVariationSettings="'wght' 760, 'wdth' 62"
+      toFontVariationSettings="'wght' 900, 'wdth' 150"
+      radius={190}
+      falloff="gaussian"
+      smoothing={0.25}
+    />,
+  );
 }
