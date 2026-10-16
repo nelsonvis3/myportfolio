@@ -19,7 +19,8 @@ write(join(dist, "styles.css"), ["styles.css", "journey.css"].map(file => readFi
 // JS del navegador: client (todas las páginas) y home (3D + efectos de texto de React Bits).
 const common = { bundle: true, format: "esm" as const, target: "es2020", minify: true, legalComments: "eof" as const, logLevel: "warning" as const };
 await bundle({ ...common, entryPoints: [join(root, "src", "client.ts")], outfile: join(dist, "client.js") });
-await bundle({ ...common, entryPoints: [join(root, "src", "three", "main.ts")], outfile: join(dist, "home.js"), jsx: "automatic", loader: { ".css": "empty" } });
+// La home se divide en chunks: home.js es chico y la escena y las islas llegan con import() (ver three/main.ts).
+await bundle({ ...common, entryPoints: { home: join(root, "src", "three", "main.ts") }, outdir: dist, splitting: true, chunkNames: "chunks/[name]-[hash]", jsx: "automatic", loader: { ".css": "empty" } });
 
 // Videos de los proyectos (renderizados con Hyperframes, ver video/README.md).
 const ids = content.es.projects.map(p => p.id);
