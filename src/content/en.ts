@@ -224,7 +224,7 @@ export const en: Content = {
         { name: "Each item keeps what was bought", detail: "Name, flavor, price and components stay on the order even if the catalog changes later." },
       ],
       status: {
-        works: "It works locally: managed catalog, cart, pickup or delivery, order, stock reservation and payment or review, with optional accounts. It has 52 backend tests.",
+        works: "It works locally: managed catalog, cart, pickup or delivery, order, stock reservation and payment or review, with optional accounts. It has 54 backend tests.",
         missing: "There is no public demo or real sales yet. Payment methods, webhooks, reservation expiry and email delivery still need testing on a server, and the Mercado Pago flow has no tests.",
       },
       learning: "Checkout doesn't end when the customer leaves to pay. Designing retries, expirations and reviews mattered as much as the form, and bundles made me think of inventory as something shared.",

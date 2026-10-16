@@ -226,7 +226,7 @@ export const es: Content = {
         { name: "Cada ítem guarda lo que se compró", detail: "Nombre, sabor, precio y componentes quedan en el pedido aunque el catálogo cambie después." },
       ],
       status: {
-        works: "Funciona en local: catálogo administrable, carrito, retiro o envío, pedido, reserva de stock y pago o revisión, con cuenta opcional. Tiene 52 tests de backend.",
+        works: "Funciona en local: catálogo administrable, carrito, retiro o envío, pedido, reserva de stock y pago o revisión, con cuenta opcional. Tiene 54 tests de backend.",
         missing: "Todavía no hay demo pública ni ventas reales. Falta probar en un servidor los medios de pago, los webhooks, el vencimiento de reservas y el envío de correos, y el flujo de Mercado Pago no tiene tests.",
       },
       learning: "El checkout no termina cuando el cliente se va a pagar. Pensar reintentos, vencimientos y revisiones fue tan importante como el formulario, y los combos me obligaron a pensar el inventario como algo compartido.",
