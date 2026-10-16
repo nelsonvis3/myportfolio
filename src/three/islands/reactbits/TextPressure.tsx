@@ -396,7 +396,8 @@ const TextPressure: React.FC<TextPressureProps> = ({
     fontWeight: 100,
     width: '100%',
     color: textColor,
-    display: flex ? 'flex' : undefined,
+    // El título es un span (va dentro del h2 de la página): sin block ignora el ancho y el centrado.
+    display: flex ? 'flex' : 'block',
     justifyContent: flex ? 'space-between' : undefined,
     '--text-pressure-stroke-width': `${strokeWidth}px`,
     '--text-pressure-stroke-color': strokeColor
