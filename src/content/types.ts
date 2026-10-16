@@ -11,8 +11,10 @@ export interface Project {
   summary: string;
   images: { src: string; alt: string }[];
   repo: string;
-  demo: string;
+  demo: string;          // vacío: se muestra "Demo en preparación"
   demoLabel: string;
+  video: string;         // video externo (presentación, recorrido); vacío si no hay
+  videoLabel: string;
   stack: string[];
   role: string;
   highlights: string[];
@@ -38,7 +40,7 @@ export interface Content {
     role: string; heroLine: string; viewProjects: string; downloadCv: string; heroMeta: string; scrollCue: string;
     carouselLabel: string; prev: string; next: string; openProject: string; carouselHint: string; countOf: string;
     detailLabel: string; backToCarousel: string; whatItDoes: string; myPart: string;
-    readCase: string; viewCode: string; projectsTitle: string; brainAlt: string;
+    readCase: string; viewCode: string; demoSoon: string; projectsTitle: string; brainAlt: string;
     caseBack: string; caseStack: string; caseRole: string; caseProblem: string; caseSolution: string; caseFeatures: string;
     caseArchitecture: string; caseChallenges: string; caseDecisions: string; caseStatus: string; caseWorks: string;
     caseMissing: string; caseLearning: string; caseNext: string; caseProblemLabel: string; caseSolutionLabel: string; caseCode: string;

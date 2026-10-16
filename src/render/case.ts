@@ -1,6 +1,6 @@
 import type { Content, Project } from "../content/types.js";
 import { casePath, homePath } from "../content/site.js";
-import { esc, ext } from "./shared.js";
+import { esc, ext, projectLinks } from "./shared.js";
 import type { Videos } from "./home.js";
 
 const section = (id: string, title: string, body: string) =>
@@ -24,7 +24,7 @@ export function casePage(c: Content, p: Project, videos: Videos): string {
     </dl>
     <div class="actions">
       ${p.repo ? `<a class="btn btn-solid" ${ext(p.repo)}>${esc(u.viewCode)}</a>` : ""}
-      ${p.demo ? `<a class="btn" ${ext(p.demo)}>${esc(p.demoLabel)}</a>` : ""}
+      ${projectLinks(c, p)}
     </div>
   </header>
   <figure class="case-media">

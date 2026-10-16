@@ -49,6 +49,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .btn:hover { background: var(--fg); color: var(--bg); }
 .btn-solid { background: var(--fg); color: var(--bg); }
 .btn-solid:hover { background: transparent; color: var(--fg); }
+.btn.is-pending, .btn.is-pending:hover { border-style: dashed; background: transparent; color: var(--muted); cursor: default; }
 
 /* Encabezado */
 .skip { position: fixed; z-index: 100; top: 10px; left: 10px; padding: 10px 16px; background: var(--fg); color: var(--bg); clip-path: inset(50%); }

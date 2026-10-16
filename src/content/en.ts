@@ -27,7 +27,7 @@ export const en: Content = {
     openProject: "Open project", carouselHint: "Drag or use the arrows to turn it. Click the front project to open it.",
     countOf: "{n} of {total}",
     detailLabel: "Project details", backToCarousel: "Back to the carousel",
-    whatItDoes: "What it does", myPart: "My part", readCase: "Read the full case study", viewCode: "View code",
+    whatItDoes: "What it does", myPart: "My part", readCase: "Read the full case study", viewCode: "View code", demoSoon: "Demo coming soon",
     projectsTitle: "Projects", brainAlt: "",
     caseBack: "Back to projects", caseStack: "Stack", caseRole: "My part",
     caseProblem: "The problem", caseSolution: "The solution", caseFeatures: "What it lets you do",
@@ -93,7 +93,7 @@ export const en: Content = {
       ...base["fracxion"],
       kind: "Multi-company business management",
       tagline: "Customers, invoices and payments for several companies in one system.",
-      summary: "A business management system to handle customers, products and services, issue internal invoices and record partial or full payments. Each company works with its own data and permissions.",
+      summary: "A business management system to handle customers, products and services, issue internal invoices, record payments and keep track of purchases, expenses and inventory. Each company works with its own data and permissions.",
       images: [
         { src: "/img/fracxion-overview.png", alt: "Company overview in Fracxion, with its management modules" },
         { src: "/img/fracxion-invoice.png", alt: "Internal invoice detail in Fracxion" },
@@ -103,6 +103,7 @@ export const en: Content = {
         "Customers and catalog kept separate per company, with role-based access.",
         "Internal invoices: draft, numbered issue and printing.",
         "Partial payments, outstanding balance and reversals with history.",
+        "Purchases, expenses, inventory and reports in CSV, Excel or PDF.",
       ],
       problem: [
         "Running several companies on one platform means keeping their data apart, controlling who can do what, and keeping a reliable history of every document and every payment.",
@@ -112,20 +113,23 @@ export const en: Content = {
         "A Next.js frontend connected to a Django REST Framework API. Each account is tied to a company through a membership with a role, and the backend checks that link before reading or changing any data.",
       ],
       features: [
-        "Create an account with its company, sign in, pick a workspace and recover access by email.",
+        "Create an account with its company, verify the email, turn on a second factor (TOTP) and invite other people with a role.",
         "Add, edit, search and deactivate customers without losing their references.",
         "Manage products and services with SKU, unit, currency, price and tax.",
         "Prepare internal invoices as drafts, calculate amounts on the server, issue them with per-company numbering and print them.",
         "Record partial or full payments, see the outstanding balance and reverse a payment with a reason.",
+        "Buy from suppliers, receive goods that add stock and record expenses with their payments.",
+        "See what was invoiced, collected and overdue per period, export reports and schedule due-date alerts.",
         "See who did each operation, when, and what changed.",
       ],
       architecture: {
-        text: "Next.js and React build the interface, Django REST Framework exposes the API and PostgreSQL stores users, sessions and business data. The Docker Compose setup uses Caddy as a proxy, Gunicorn for Django and Redis to share sign-in rate limits.",
+        text: "Next.js and React build the interface, Django REST Framework exposes the API and PostgreSQL stores users, sessions and business data. The Docker Compose setup uses Caddy as a proxy, Gunicorn for Django and Redis to share sign-in rate limits. A separate worker runs reports and alerts from a queue stored in PostgreSQL.",
         parts: [
           { name: "Next.js + React", detail: "Navigation, forms and interface states." },
           { name: "Django + DRF", detail: "Authentication, permissions, validation and business operations." },
           { name: "PostgreSQL", detail: "Data, sessions, constraints and row locks." },
           { name: "Caddy, Gunicorn, Redis", detail: "HTTPS proxy, Django server and shared limits." },
+          { name: "run_jobs worker", detail: "Scheduled reports and alerts, with retries." },
         ],
       },
       flow: {
@@ -152,8 +156,8 @@ export const en: Content = {
         { name: "Audit in the same transaction", detail: "If the audit record fails, the operation is rolled back too." },
       ],
       status: {
-        works: "The full flow works locally: sign-up, customers, catalog, issuing, payment and reversal, with PostgreSQL, Docker, and concurrency and browser tests.",
-        missing: "It isn't deployed. Fiscal invoicing with ARCA, credit and debit notes, member invitations and load testing are still missing.",
+        works: "It works locally and passes CI. It has 367 backend tests with 92% coverage and 53 Playwright browser scenarios (measured on October 16, 2026).",
+        missing: "It isn't deployed: the Oracle Cloud setup is ready, but the domain, email and backups still need checking. It has no fiscal invoicing with ARCA, no credit or debit notes and no load testing.",
       },
       learning: "Operations that move money force you to think about what happens when two requests arrive at once. Locking the right row and testing that case against real PostgreSQL connections taught me more than any form.",
     },
@@ -161,17 +165,17 @@ export const en: Content = {
       ...base["ragnar-suplementos"],
       kind: "E-commerce",
       tagline: "An online store for a supplement shop in Formosa.",
-      summary: "Shoppers pick products, flavors and bundles, keep their cart and place an order for pickup or delivery. The business manages the catalog, stock and orders from the Django admin.",
+      summary: "Shoppers pick products, flavors and bundles, keep their cart and place an order for pickup or delivery. The shop manages products, bundles, prices, stock and photos from a web panel, and handles orders in the Django admin.",
       images: [
         { src: "/img/ragnar.webp", alt: "Home page of the Ragnar Suplementos store" },
         { src: "/img/ragnar-mobile.webp", alt: "Ragnar Suplementos catalog on a phone" },
       ],
-      demoLabel: "Watch the presentation",
-      role: "I built the store and the API, set up the Django admin and worked on orders, inventory reservations and the payment and shipping integrations.",
+      videoLabel: "Watch the presentation",
+      role: "I built the store and the API, built the catalog admin panel and worked on orders, inventory reservations and the payment and shipping integrations.",
       highlights: [
         "Products and bundles with flavors, a persistent cart and guest checkout.",
         "Local pickup or delivery, with configurable payment methods.",
-        "Products, bundles, stock and orders managed from the Django admin.",
+        "A web panel for the catalog and the Django admin for orders and manual payments.",
       ],
       problem: [
         "A supplement brand needs to sell products and bundles without losing control of its inventory. A purchase can be retried, a payment can arrive late and several items can draw from the same stock.",
@@ -182,11 +186,11 @@ export const en: Content = {
       ],
       features: [
         "Browse products by category, pick flavors and buy bundles with their own price.",
-        "Keep the cart between visits and check out as a guest or with an account.",
+        "Keep the cart between visits and check out as a guest or with an account, which confirms its email and can reset its password.",
         "Choose pickup or get a delivery quote from Formosa based on road distance.",
         "Pay with Mercado Pago, bank transfer or on pickup, depending on what's enabled.",
         "Reserve stock while an order is pending and release it if it's cancelled or expires.",
-        "Manage products, bundles, images, prices and stock from the Django admin.",
+        "Manage products, bundles, prices, stock and one photo per flavor from the /administracion panel.",
         "Review orders and manual payments, and receive questions, complaints and cancellation requests.",
       ],
       architecture: {
@@ -220,8 +224,8 @@ export const en: Content = {
         { name: "Each item keeps what was bought", detail: "Name, flavor, price and components stay on the order even if the catalog changes later." },
       ],
       status: {
-        works: "It works locally: managed catalog, cart, pickup or delivery, order, stock reservation and payment or review, with optional accounts.",
-        missing: "It isn't running with real sales yet. Payment methods, webhooks, reservation expiry and email delivery still need testing on a server.",
+        works: "It works locally: managed catalog, cart, pickup or delivery, order, stock reservation and payment or review, with optional accounts. It has 52 backend tests.",
+        missing: "There is no public demo or real sales yet. Payment methods, webhooks, reservation expiry and email delivery still need testing on a server, and the Mercado Pago flow has no tests.",
       },
       learning: "Checkout doesn't end when the customer leaves to pay. Designing retries, expirations and reviews mattered as much as the form, and bundles made me think of inventory as something shared.",
     },
@@ -231,7 +235,7 @@ export const en: Content = {
       tagline: "A truck trip's route, its stops and its daily logs.",
       summary: "A full stack prototype that connects geocoding, routing and an hours-of-service model to show a trip on a map, a timeline and printable daily logs.",
       images: [
-        { src: "/img/roadledger.webp", alt: "RoadLedger's form and starting map" },
+        { src: "/img/roadledger.webp", alt: "RoadLedger with the route from Chicago to Phoenix through Denver" },
         { src: "/img/roadledger-mobile.webp", alt: "RoadLedger on a phone" },
       ],
       demoLabel: "Open demo",
@@ -286,7 +290,7 @@ export const en: Content = {
         { name: "Assumptions in plain sight", detail: "Average speed, cycle hours and time zone are part of the model and are shown." },
       ],
       status: {
-        works: "The prototype is deployed on Render and calculates the route, events and daily logs. It has 12 tests covering validation, the API contract and time boundaries.",
+        works: "The prototype is deployed on Render and calculates the route, events and daily logs. On the free plan the first load takes about 30 seconds. It has 12 tests covering validation, the API contract and time boundaries.",
         missing: "It routes with a car profile, without truck restrictions, traffic or parking, and it doesn't rebuild a full eight-day history.",
       },
       learning: "Keeping the calculation separate from external services let me test the rules with controlled inputs. The midnight splits needed their own tests.",

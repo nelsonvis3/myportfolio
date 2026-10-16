@@ -1,6 +1,6 @@
 import type { Content, Project } from "../content/types.js";
 import { socials, casePath } from "../content/site.js";
-import { esc, ext, json } from "./shared.js";
+import { esc, ext, json, projectLinks } from "./shared.js";
 
 // Home: hero 3D → entrada al cerebro → carrusel → IA → sobre mí → stack → contacto.
 // Todo el contenido está en el HTML; el 3D y los efectos de texto son mejoras progresivas.
@@ -11,7 +11,7 @@ function actions(c: Content, p: Project): string {
   return `<div class="actions">
     <a class="btn btn-solid" href="${casePath(c.lang, p.id)}">${esc(c.ui.readCase)}</a>
     ${p.repo ? `<a class="btn" ${ext(p.repo)}>${esc(c.ui.viewCode)}</a>` : ""}
-    ${p.demo ? `<a class="btn" ${ext(p.demo)}>${esc(p.demoLabel)}</a>` : ""}
+    ${projectLinks(c, p)}
   </div>`;
 }
 
