@@ -45,3 +45,6 @@ next-env.d.ts
 
 # renders intermedios de Hyperframes
 /video/renders/
+
+# estado local de Hyperframes (rutas de la máquina que renderiza)
+/video/.hyperframes/
