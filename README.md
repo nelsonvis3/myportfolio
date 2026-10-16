@@ -61,7 +61,7 @@ public/          Imágenes, videos, fuentes, modelo del cerebro y CV
 video/           Composición de Hyperframes para los videos de los proyectos
 ```
 
-Para volver a renderizar los videos de los proyectos, seguí [video/README.md](video/README.md). El CV se edita en HTML y se exporta a PDF: [docs/cv/README.md](docs/cv/README.md).
+Para volver a renderizar los videos de los proyectos, seguí [video/README.md](video/README.md). Los CV que se descargan son `public/cv.pdf` y `public/cv-en.pdf` ([docs/cv/README.md](docs/cv/README.md)).
 
 ## Publicación
 
