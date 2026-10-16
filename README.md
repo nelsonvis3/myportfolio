@@ -73,7 +73,11 @@ Para compilar con otro dominio:
 SITE_URL=https://mi-dominio.com npm run build
 ```
 
-## Licencias de terceros
+## Licencia
+
+El código del sitio tiene licencia MIT ([LICENSE](LICENSE)). Los textos, el CV y las capturas de mis proyectos no forman parte de esa licencia.
+
+### Licencias de terceros
 
 - Componentes de React Bits (MIT + Commons Clause) en `src/three/islands/reactbits/`, con su aviso en cada archivo.
 - Fuentes Anybody y Martian Mono (SIL Open Font License) en `public/fonts/`.
