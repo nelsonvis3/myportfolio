@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# build output (Vercel corre npm run build)
+/dist
+
+# renders intermedios de Hyperframes
+/video/renders/

@@ -1,46 +1,48 @@
-import { mkdirSync, writeFileSync, copyFileSync, rmSync, existsSync, cpSync, readFileSync, readdirSync } from "node:fs";
+import { mkdirSync, writeFileSync, rmSync, existsSync, cpSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { projects } from "./data/projects.js";
-import { profile } from "./data/profile.js";
-import { siteUrl } from "./data/socials.js";
+import { build as bundle } from "esbuild";
+import { content, langs, siteUrl, homePath, casePath, other } from "./content/site.js";
 import { layout } from "./render/layout.js";
-import { home } from "./render/home.js";
-import { ledgerCase } from "./render/cases.js";
-import { projectCase } from "./render/project-cases.js";
-import { esc, projectUrl } from "./render/shared.js";
-import { createRequire } from "node:module";
-import { getHyperframeRuntimeScript } from "@hyperframes/core/runtime-script";
+import { home, type Videos } from "./render/home.js";
+import { casePage } from "./render/case.js";
+
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
 const dist = join(root, "dist");
-function write(path: string, text: string): void {
-  mkdirSync(dirname(path), { recursive: true });
-  writeFileSync(path, text);
-}
+const write = (path: string, text: string) => { mkdirSync(dirname(path), { recursive: true }); writeFileSync(path, text); };
+
 rmSync(dist, { recursive: true, force: true });
 cpSync(join(root, "public"), dist, { recursive: true });
-// Vendor only the browser files required by the intro; no CDN calls at runtime.
-const require = createRequire(import.meta.url);
-const vendor = join(dist, "intro", "vendor");
-mkdirSync(vendor, { recursive: true });
-copyFileSync(join(dirname(require.resolve("@hyperframes/player")), "hyperframes-player.global.js"), join(vendor, "hyperframes-player.js"));
-copyFileSync(require.resolve("gsap/dist/gsap.min.js"), join(vendor, "gsap.min.js"));
-writeFileSync(join(vendor, "hyperframes-runtime.js"), getHyperframeRuntimeScript());
-copyFileSync(join(dirname(require.resolve("@hyperframes/core/package.json")), "LICENSE"), join(vendor, "LICENSE-hyperframes.txt"));
-writeFileSync(join(vendor, "README.txt"), "Hyperframes core/player 0.8.155 — https://github.com/heygen-com/hyperframes\nApache-2.0: LICENSE-hyperframes.txt\nGSAP 3.15.0 — https://gsap.com/standard-license/\nBrowser files generated from pinned npm packages by src/build.ts.\n");
-write(join(dist, "styles.css"), ["styles.css", "brain.css", "showcase.css", "cases.css"].map(file => readFileSync(join(root, "src", file), "utf8")).join("\n"));
-copyFileSync(join(here, "client.js"), join(dist, "client.js"));
-mkdirSync(join(dist, "visual"), { recursive: true });
-for (const file of readdirSync(join(root, "src", "visual")).filter(file => file.endsWith(".ts"))) {
-  copyFileSync(join(here, "visual", file.replace(/\.ts$/, ".js")), join(dist, "visual", file.replace(/\.ts$/, ".js")));
+write(join(dist, "styles.css"), ["styles.css", "journey.css"].map(file => readFileSync(join(root, "src", file), "utf8")).join("\n"));
+
+// JS del navegador: client (todas las páginas) y home (3D + efectos de texto de React Bits).
+const common = { bundle: true, format: "esm" as const, target: "es2020", minify: true, legalComments: "eof" as const, logLevel: "warning" as const };
+await bundle({ ...common, entryPoints: [join(root, "src", "client.ts")], outfile: join(dist, "client.js") });
+await bundle({ ...common, entryPoints: [join(root, "src", "three", "main.ts")], outfile: join(dist, "home.js"), jsx: "automatic", loader: { ".css": "empty" } });
+
+// Videos de los proyectos (renderizados con Hyperframes, ver video/README.md).
+const ids = content.es.projects.map(p => p.id);
+const videos: Videos = Object.fromEntries(ids.map(id => [id,
+  existsSync(join(root, "public", "video", `${id}.mp4`)) ? { src: `/video/${id}.mp4`, poster: `/video/${id}.jpg` } : undefined]));
+
+const urls: string[] = [];
+for (const lang of langs) {
+  const c = content[lang], alt = other(lang);
+  write(join(dist, homePath(lang), "index.html"), layout({
+    c, home: true, title: c.meta.title, description: c.meta.description,
+    path: homePath(lang), altPath: homePath(alt), body: home(c, videos), scripts: ["/home.js"],
+  }));
+  urls.push(homePath(lang));
+  for (const p of c.projects) {
+    write(join(dist, casePath(lang, p.id), "index.html"), layout({
+      c, title: `${p.name}: ${p.tagline} | Nelson Sivisstum`, description: p.summary,
+      path: casePath(lang, p.id), altPath: casePath(alt, p.id), body: casePage(c, p, videos),
+    }));
+    urls.push(casePath(lang, p.id));
+  }
 }
-write(join(dist, "index.html"), layout(`${profile.name} — Full Stack · React, Next.js y Django`, profile.description, "/", home()));
-for (const project of projects) {
-  write(join(dist, "proyectos", project.id, "index.html"), layout(`${project.name} — Case Study · ${profile.name}`, project.desc, projectUrl(project), project.id === "ledgercore" ? ledgerCase() : projectCase(project)));
-}
-const urls = ["/", ...projects.map(projectUrl)];
-if (siteUrl) write(join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url => `<url><loc>${esc(siteUrl + url)}</loc></url>`).join("")}</urlset>\n`);
-write(join(dist, "robots.txt"), `User-agent: *\nAllow: /\n${siteUrl ? `\nSitemap: ${siteUrl}/sitemap.xml\n` : ""}`);
-if (!existsSync(join(dist, "cv.pdf"))) throw new Error("Falta public/cv.pdf");
-console.log(`dist/ generado: ${urls.length} páginas. ${siteUrl ? `Dominio: ${siteUrl}` : "SITE_URL sin configurar: canonical y sitemap omitidos."}`);
+write(join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(url => `<url><loc>${siteUrl}${url}</loc></url>`).join("")}</urlset>\n`);
+write(join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`);
+for (const file of ["cv.pdf", "cv-en.pdf"]) if (!existsSync(join(dist, file))) throw new Error(`Falta public/${file}`);
+console.log(`dist/ generado: ${urls.length} páginas (es + en). Dominio: ${siteUrl}`);
