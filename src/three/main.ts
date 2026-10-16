@@ -350,4 +350,10 @@ async function start(): Promise<void> {
 }
 
 mountIslands();
-void start().catch(() => { root.classList.remove("is-3d"); document.querySelector(".scene-canvas")?.remove(); });
+
+// La escena arranca cuando la página ya pintó su versión 2D: la imagen del cerebro es el LCP y es un
+// render de la misma escena, así que el cambio no se nota y armar las partículas no demora el primer pintado.
+const boot = () => void start().catch(() => { root.classList.remove("is-3d"); document.querySelector(".scene-canvas")?.remove(); });
+const whenIdle = (fn: () => void) => ("requestIdleCallback" in window ? requestIdleCallback(fn, { timeout: 1200 }) : setTimeout(fn, 150));
+if (document.readyState === "complete") whenIdle(boot);
+else addEventListener("load", () => whenIdle(boot), { once: true });

@@ -79,7 +79,8 @@ export class Carousel {
       let video: HTMLVideoElement | null = null;
       if (project.video) {
         video = document.createElement("video");
-        Object.assign(video, { src: project.video, muted: true, loop: true, playsInline: true, preload: "auto", crossOrigin: "anonymous" });
+        // preload "none": cada video se descarga recién cuando su panel llega al frente y se reproduce.
+        Object.assign(video, { src: project.video, muted: true, loop: true, playsInline: true, preload: "none", crossOrigin: "anonymous" });
         video.addEventListener("playing", () => {
           const texture = new THREE.VideoTexture(video!);
           texture.colorSpace = THREE.SRGBColorSpace;
