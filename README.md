@@ -61,6 +61,8 @@ public/          Imágenes, videos, fuentes, modelo del cerebro y CV
 video/           Composición de Hyperframes para los videos de los proyectos
 ```
 
+Para volver a renderizar los videos de los proyectos, seguí [video/README.md](video/README.md). El CV se edita en HTML y se exporta a PDF: [docs/cv/README.md](docs/cv/README.md).
+
 ## Publicación
 
 Vercel corre `npm run build` y publica `dist/`. `dist/` no está en el repositorio.

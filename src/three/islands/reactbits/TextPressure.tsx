@@ -1,7 +1,7 @@
 /**
  * TextPressure: componente de React Bits (https://reactbits.dev, github.com/DavidHDev/react-bits).
  * Licencia MIT + Commons Clause, Copyright (c) 2026 David Haz. Se usa como parte de este sitio;
- * los componentes no se redistribuyen por separado. Cambios locales: renderiza un <span> (el título real es el <h2> que lo contiene), sin @import externo y sin mayúsculas forzadas.
+ * los componentes no se redistribuyen por separado. Cambios locales: renderiza un <span> con display block (el título real es el <h2> que lo contiene), sin @import externo y sin mayúsculas forzadas.
  */
 
 // Component ported from https://codepen.io/JuanFuentes/full/rgXKGQ
