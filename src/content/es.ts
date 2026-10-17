@@ -27,7 +27,7 @@ export const es: Content = {
     projectsTitle: "Proyectos", brainAlt: "",
     caseBack: "Volver a proyectos", caseStack: "Stack", caseRole: "Mi parte",
     caseProblem: "El problema", caseSolution: "La solución", caseFeatures: "Qué permite hacer",
-    caseImageFull: "Tocá la imagen para verla completa", caseVideoFull: "Tocá el video para verlo completo", caseUsage: "Cómo se usa",
+    caseImageFull: "Tocá la imagen para verla completa", caseVideoFull: "Tocá el video para verlo completo", caseUsage: "Cómo se usa", backToTop: "Volver al inicio", caseBackHome: "Ir al inicio",
     caseArchitecture: "Arquitectura", caseChallenges: "Desafíos", caseDecisions: "Decisiones",
     caseStatus: "Estado", caseWorks: "Qué funciona", caseMissing: "Qué falta", caseLearning: "Qué aprendí",
     caseNext: "Siguiente proyecto", caseProblemLabel: "Problema", caseSolutionLabel: "Solución", caseCode: "En el código",

@@ -7,6 +7,10 @@ html.lenis, html.lenis body { height: auto; }
 .scene-canvas.is-hidden { opacity: 0; }
 .home .header { position: fixed; inset: 0 0 auto; background: transparent; border-bottom-color: transparent; }
 .home.past-journey .header, html:not(.is-3d) .home .header { background: var(--bg); border-bottom-color: var(--line); }
+/* Dentro del cerebro y del carrusel el encabezado se esconde (client.ts lo muestra con .nav-peek). */
+.home .header { transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .45s ease, background-color .35s, border-color .35s; }
+.home.nav-auto:not(.nav-peek) .header:not(:focus-within) { transform: translateY(-100%); opacity: 0; }
+.home.nav-auto.nav-peek .header { background: var(--glass); backdrop-filter: blur(10px); }
 
 /* Hero */
 .journey { position: relative; z-index: 1; }

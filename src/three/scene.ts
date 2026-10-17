@@ -158,6 +158,9 @@ export async function start(): Promise<void> {
   gsap.to(state, { p: 1, ease: "none", scrollTrigger: { trigger: journeyEl, start: "top top", end: "bottom bottom", scrub: 0.9 } });
   gsap.to(state, { q: 1, ease: "none", scrollTrigger: { trigger: aiEl, start: "top 85%", end: () => layout.narrow ? "top -20%" : "top -60%", scrub: 0.9 } });
 
+  // "Volver al inicio" del pie: con Lenis, para que el recorrido vuelva hacia atrás suave.
+  document.addEventListener("scroll-to-top", event => { event.preventDefault(); lenis.scrollTo(0, { duration: 2.4 }); });
+
   // Posición de scroll donde el carrusel queda completo; la usan los links a #proyectos.
   const carouselScrollY = () => journeyEl.offsetTop + (journeyEl.offsetHeight - innerHeight) * 0.53;
   const anchorId = document.querySelector<HTMLElement>(".journey-anchor")?.id ?? "";
@@ -281,7 +284,9 @@ export async function start(): Promise<void> {
     for (const entry of entries) (entry.target as HTMLElement).dataset.inView = String(entry.isIntersecting);
     visible = journeyEl.dataset.inView === "true" || aiEl.dataset.inView === "true";
     // También acá: si se llega directo más abajo (link a #contacto) el loop no corre y el encabezado quedaba transparente.
-    document.body.classList.toggle("past-journey", journeyEl.getBoundingClientRect().bottom <= innerHeight);
+    const past = journeyEl.getBoundingClientRect().bottom <= innerHeight;
+    document.body.classList.toggle("past-journey", past);
+    if (past) document.body.classList.remove("nav-auto");
     canvas.classList.toggle("is-hidden", !visible);
     renderer.setAnimationLoop(visible && !document.hidden ? frame : null);
   });
@@ -297,6 +302,7 @@ export async function start(): Promise<void> {
     const exit = smooth(0.94, 1, p);
     const inJourney = p < 0.999;
     document.body.classList.toggle("past-journey", !inJourney);
+    document.body.classList.toggle("nav-auto", inJourney && p > 0.06);
 
     // Hero → interior del cerebro.
     const heroFade = 1 - smooth(0.02, 0.13, p);

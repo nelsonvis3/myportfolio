@@ -73,6 +73,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* Pie */
 .footer { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 28px var(--gutter); border-top: 1px solid var(--line); background: var(--bg); font-size: 12.5px; color: var(--muted); }
 .footer a { color: var(--fg); }
+.to-top { text-decoration: none; font-weight: 600; }
+.to-top:hover { text-decoration: underline; }
 
 /* Sobre mí */
 .about-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: clamp(64px, 8vw, 120px); padding-top: 32px; border-top: 1px solid var(--line); }
@@ -162,6 +164,7 @@ video[data-fullscreen]:fullscreen { aspect-ratio: auto; object-fit: contain; bac
 .next span { font-size: 12.5px; color: var(--muted); }
 .next strong { font: 820 clamp(3rem, 9vw, 9rem)/.9 var(--display); font-stretch: 62%; transition: font-stretch .5s cubic-bezier(.6,0,.2,1); }
 .next:hover strong { font-stretch: 130%; }
+.case-end { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
 
 @media (max-width: 900px) {
   .split, .case-section, .case-meta, .status { grid-template-columns: 1fr; }

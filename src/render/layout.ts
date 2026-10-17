@@ -70,6 +70,7 @@ ${themeBoot}
 <footer class="footer">
   <span>© ${new Date().getFullYear()} Nelson Sivisstum</span>
   <a href="mailto:${socials.email}">${socials.email}</a>
+  <a class="to-top" href="#main" data-to-top>${esc(c.ui.backToTop)} <span aria-hidden="true">↑</span></a>
 </footer>
 <script type="module" src="/client.js"></script>
 ${scripts.map(src => `<script type="module" src="${src}"></script>`).join("\n")}

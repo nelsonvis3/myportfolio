@@ -78,3 +78,26 @@ for (const figure of still ? [] : document.querySelectorAll<HTMLElement>("[data-
     onScroll();
   }
 }
+
+// "Volver al inicio": la home lo maneja con Lenis (scene.ts); en el resto, scroll nativo.
+for (const link of document.querySelectorAll<HTMLAnchorElement>("[data-to-top]")) {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    if (document.dispatchEvent(new CustomEvent("scroll-to-top", { cancelable: true }))) scrollTo({ top: 0, behavior: still ? "auto" : "smooth" });
+  });
+}
+
+// Home: mientras el encabezado está escondido (.nav-auto), aparece al acercar el mouse arriba o al scrollear hacia arriba.
+if (document.body.classList.contains("home")) {
+  const body = document.body;
+  let lastY = scrollY;
+  addEventListener("pointermove", event => {
+    if (event.pointerType !== "mouse") return;
+    const header = document.querySelector(".header");
+    body.classList.toggle("nav-peek", event.clientY < 90 || !!header?.matches(":hover"));
+  }, { passive: true });
+  addEventListener("scroll", () => {
+    const y = scrollY;
+    if (Math.abs(y - lastY) > 8) { body.classList.toggle("nav-peek", y < lastY); lastY = y; }
+  }, { passive: true });
+}

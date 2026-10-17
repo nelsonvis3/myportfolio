@@ -82,5 +82,9 @@ export function casePage(c: Content, p: Project, clips: Clips): string {
   ${section("status", u.caseStatus, `<div class="status"><div><h3>${esc(u.caseWorks)}</h3><p>${esc(p.status.works)}</p></div><div><h3>${esc(u.caseMissing)}</h3><p>${esc(p.status.missing)}</p></div></div>`)}
   ${section("learning", u.caseLearning, `<p class="learning">${esc(p.learning)}</p>`)}
   <a class="next" href="${casePath(c.lang, next.id)}"><span>${esc(u.caseNext)}</span><strong>${esc(next.name)}</strong></a>
+  <nav class="case-end" aria-label="${esc(u.caseBack)}">
+    <a class="btn btn-solid" href="${homePath(c.lang)}#${c.ids.projects}"><span aria-hidden="true">←</span>&nbsp;${esc(u.caseBack)}</a>
+    <a class="btn" href="${homePath(c.lang)}">${esc(u.caseBackHome)}</a>
+  </nav>
 </article>`;
 }

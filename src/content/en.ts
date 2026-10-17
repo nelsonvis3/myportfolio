@@ -31,7 +31,7 @@ export const en: Content = {
     projectsTitle: "Projects", brainAlt: "",
     caseBack: "Back to projects", caseStack: "Stack", caseRole: "My part",
     caseProblem: "The problem", caseSolution: "The solution", caseFeatures: "What it lets you do",
-    caseImageFull: "Tap the image to see it full size", caseVideoFull: "Tap the video to see all of it", caseUsage: "How it works",
+    caseImageFull: "Tap the image to see it full size", caseVideoFull: "Tap the video to see all of it", caseUsage: "How it works", backToTop: "Back to top", caseBackHome: "Go to home",
     caseArchitecture: "Architecture", caseChallenges: "Challenges", caseDecisions: "Decisions",
     caseStatus: "Status", caseWorks: "What works", caseMissing: "What's missing", caseLearning: "What I learned",
     caseNext: "Next project", caseProblemLabel: "Problem", caseSolutionLabel: "Solution", caseCode: "In the code",
