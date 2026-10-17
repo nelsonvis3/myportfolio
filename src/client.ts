@@ -1,4 +1,4 @@
-// Todas las páginas: menú mobile y cambio de tema claro/oscuro.
+// Todas las páginas: menú mobile, cambio de tema claro/oscuro y video del caso de estudio en pantalla completa.
 const root = document.documentElement;
 document.body.classList.add("js");
 
@@ -24,3 +24,13 @@ const close = (focus = false) => { links?.classList.remove("open"); menu?.setAtt
 menu?.addEventListener("click", () => menu.setAttribute("aria-expanded", String(links?.classList.toggle("open") ?? false)));
 links?.addEventListener("click", event => { if ((event.target as Element).closest("a")) close(); });
 document.addEventListener("keydown", event => { if (event.key === "Escape" && menu?.getAttribute("aria-expanded") === "true") close(true); });
+
+// Caso de estudio: en el celular el video se ve recortado; tocarlo lo abre completo. iPhone no tiene
+// requestFullscreen en elementos, solo webkitEnterFullscreen en el video.
+for (const video of document.querySelectorAll<HTMLVideoElement & { webkitEnterFullscreen?: () => void }>("[data-fullscreen]")) {
+  video.addEventListener("click", () => {
+    if (!matchMedia("(max-width: 760px)").matches) return;
+    if (video.requestFullscreen) void video.requestFullscreen().catch(() => video.webkitEnterFullscreen?.());
+    else video.webkitEnterFullscreen?.();
+  });
+}

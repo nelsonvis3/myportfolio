@@ -9,7 +9,9 @@ export interface Project {
   kind: string;
   tagline: string;
   summary: string;
-  images: { src: string; alt: string }[];
+  // images[0]: portada. images[1]: va con "La solución". phone: captura de celular (se muestra a tamaño de celular);
+  // mobileSrc: recorte legible para pantallas chicas de una captura de escritorio.
+  images: { src: string; alt: string; phone?: boolean; mobileSrc?: string }[];
   repo: string;
   demo: string;          // vacío: se muestra "Demo en preparación"
   demoLabel: string;
@@ -41,7 +43,7 @@ export interface Content {
     carouselLabel: string; prev: string; next: string; openProject: string; carouselHint: string; countOf: string;
     detailLabel: string; backToCarousel: string; whatItDoes: string; myPart: string;
     readCase: string; viewCode: string; demoSoon: string; projectsTitle: string; brainAlt: string;
-    caseBack: string; caseStack: string; caseRole: string; caseProblem: string; caseSolution: string; caseFeatures: string;
+    caseBack: string; caseStack: string; caseRole: string; caseProblem: string; caseSolution: string; caseFeatures: string; caseImageFull: string; caseVideoFull: string;
     caseArchitecture: string; caseChallenges: string; caseDecisions: string; caseStatus: string; caseWorks: string;
     caseMissing: string; caseLearning: string; caseNext: string; caseProblemLabel: string; caseSolutionLabel: string; caseCode: string;
   };

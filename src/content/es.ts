@@ -27,6 +27,7 @@ export const es: Content = {
     projectsTitle: "Proyectos", brainAlt: "",
     caseBack: "Volver a proyectos", caseStack: "Stack", caseRole: "Mi parte",
     caseProblem: "El problema", caseSolution: "La solución", caseFeatures: "Qué permite hacer",
+    caseImageFull: "Tocá la imagen para verla completa", caseVideoFull: "Tocá el video para verlo completo",
     caseArchitecture: "Arquitectura", caseChallenges: "Desafíos", caseDecisions: "Decisiones",
     caseStatus: "Estado", caseWorks: "Qué funciona", caseMissing: "Qué falta", caseLearning: "Qué aprendí",
     caseNext: "Siguiente proyecto", caseProblemLabel: "Problema", caseSolutionLabel: "Solución", caseCode: "En el código",
@@ -93,7 +94,7 @@ export const es: Content = {
       summary: "Sistema de gestión comercial para administrar clientes, productos y servicios, emitir facturas internas, registrar cobros y llevar compras, gastos e inventario. Cada empresa trabaja con sus propios datos y permisos.",
       images: [
         { src: "/img/fracxion-overview.png", alt: "Resumen de una empresa en Fracxion, con los módulos de gestión" },
-        { src: "/img/fracxion-invoice.png", alt: "Detalle de una factura interna en Fracxion" },
+        { src: "/img/fracxion-invoice.png", alt: "Detalle de una factura interna en Fracxion", mobileSrc: "/img/fracxion-invoice-mobile.webp" },
       ],
       repo: "https://github.com/nelsonvis3/fracxion-facturador", demo: "", demoLabel: "", video: "", videoLabel: "",
       stack: ["Next.js", "TypeScript", "Django REST Framework", "PostgreSQL", "Docker"],
@@ -168,7 +169,7 @@ export const es: Content = {
       summary: "Permite elegir productos, sabores y combos, conservar el carrito y hacer un pedido con retiro o envío. El local carga productos, combos, precios, stock y fotos desde un panel web, y maneja los pedidos desde Django Admin.",
       images: [
         { src: "/img/ragnar.webp", alt: "Portada de la tienda Ragnar Suplementos" },
-        { src: "/img/ragnar-mobile.webp", alt: "Catálogo de Ragnar Suplementos en el celular" },
+        { src: "/img/ragnar-mobile.webp", alt: "Catálogo de Ragnar Suplementos en el celular", phone: true },
       ],
       repo: "https://github.com/nelsonvis3/ragnarsuplementosfsa", demo: "", demoLabel: "",
       video: "https://www.linkedin.com/posts/nelson-sivisstum-4777a32b4_hola-este-es-un-proyecto-con-el-que-vengo-ugcPost-7512357993775136768-y74V/", videoLabel: "Ver presentación",
@@ -239,7 +240,7 @@ export const es: Content = {
       summary: "Prototipo full stack que conecta geocodificación, ruteo y un modelo de horas de manejo para mostrar un viaje en un mapa, una cronología y registros diarios imprimibles.",
       images: [
         { src: "/img/roadledger.webp", alt: "RoadLedger con la ruta de Chicago a Phoenix pasando por Denver" },
-        { src: "/img/roadledger-mobile.webp", alt: "RoadLedger en el celular" },
+        { src: "/img/roadledger-mobile.webp", alt: "RoadLedger en el celular", phone: true },
       ],
       repo: "https://github.com/nelsonvis3/ELD-trip-planner", demo: "https://eld-trip-planner-5as7.onrender.com/", demoLabel: "Abrir demo", video: "", videoLabel: "",
       stack: ["Django REST Framework", "React", "MapLibre", "OSRM", "Python"],

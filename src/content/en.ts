@@ -31,6 +31,7 @@ export const en: Content = {
     projectsTitle: "Projects", brainAlt: "",
     caseBack: "Back to projects", caseStack: "Stack", caseRole: "My part",
     caseProblem: "The problem", caseSolution: "The solution", caseFeatures: "What it lets you do",
+    caseImageFull: "Tap the image to see it full size", caseVideoFull: "Tap the video to see all of it",
     caseArchitecture: "Architecture", caseChallenges: "Challenges", caseDecisions: "Decisions",
     caseStatus: "Status", caseWorks: "What works", caseMissing: "What's missing", caseLearning: "What I learned",
     caseNext: "Next project", caseProblemLabel: "Problem", caseSolutionLabel: "Solution", caseCode: "In the code",
@@ -96,7 +97,7 @@ export const en: Content = {
       summary: "A business management system to handle customers, products and services, issue internal invoices, record payments and keep track of purchases, expenses and inventory. Each company works with its own data and permissions.",
       images: [
         { src: "/img/fracxion-overview.png", alt: "Company overview in Fracxion, with its management modules" },
-        { src: "/img/fracxion-invoice.png", alt: "Internal invoice detail in Fracxion" },
+        { src: "/img/fracxion-invoice.png", alt: "Internal invoice detail in Fracxion", mobileSrc: "/img/fracxion-invoice-mobile.webp" },
       ],
       role: "I built the interface, the API, the company model and the invoicing and payment services, plus the tests and the documentation of the business flow.",
       highlights: [
@@ -168,7 +169,7 @@ export const en: Content = {
       summary: "Shoppers pick products, flavors and bundles, keep their cart and place an order for pickup or delivery. The shop manages products, bundles, prices, stock and photos from a web panel, and handles orders in the Django admin.",
       images: [
         { src: "/img/ragnar.webp", alt: "Home page of the Ragnar Suplementos store" },
-        { src: "/img/ragnar-mobile.webp", alt: "Ragnar Suplementos catalog on a phone" },
+        { src: "/img/ragnar-mobile.webp", alt: "Ragnar Suplementos catalog on a phone", phone: true },
       ],
       videoLabel: "Watch the presentation",
       role: "I built the store and the API, built the catalog admin panel and worked on orders, inventory reservations and the payment and shipping integrations.",
@@ -236,7 +237,7 @@ export const en: Content = {
       summary: "A full stack prototype that connects geocoding, routing and an hours-of-service model to show a trip on a map, a timeline and printable daily logs.",
       images: [
         { src: "/img/roadledger.webp", alt: "RoadLedger with the route from Chicago to Phoenix through Denver" },
-        { src: "/img/roadledger-mobile.webp", alt: "RoadLedger on a phone" },
+        { src: "/img/roadledger-mobile.webp", alt: "RoadLedger on a phone", phone: true },
       ],
       demoLabel: "Open demo",
       role: "I built the prototype in Django and React, integrated geocoding and routing, and built the map, the timeline and the daily logs.",
