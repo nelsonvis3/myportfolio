@@ -1,11 +1,9 @@
 import type { Content, Project } from "../content/types.js";
 import { socials, casePath } from "../content/site.js";
-import { esc, ext, json, projectLinks } from "./shared.js";
+import { cover, esc, ext, json, projectLinks } from "./shared.js";
 
 // Home: hero 3D → entrada al cerebro → carrusel → IA → sobre mí → stack → contacto.
 // Todo el contenido está en el HTML; el 3D y los efectos de texto son mejoras progresivas.
-
-export type Videos = Record<string, { src: string; poster: string } | undefined>;
 
 function actions(c: Content, p: Project): string {
   return `<div class="actions">
@@ -15,15 +13,8 @@ function actions(c: Content, p: Project): string {
   </div>`;
 }
 
-function media(p: Project, videos: Videos, cls: string): string {
-  const v = videos[p.id];
-  return v
-    ? `<video class="${cls}" src="${v.src}" poster="${v.poster}" muted loop playsinline preload="none" aria-label="${esc(p.images[0].alt)}"></video>`
-    : `<img class="${cls}" src="${esc(p.images[0].src)}" alt="${esc(p.images[0].alt)}" loading="lazy">`;
-}
-
-function journey(c: Content, videos: Videos): string {
-  const data = c.projects.map(p => ({ id: p.id, name: p.name, sub: p.tagline, img: p.images[0].src, video: videos[p.id]?.src ?? null, poster: videos[p.id]?.poster ?? null }));
+function journey(c: Content): string {
+  const data = c.projects.map(p => ({ id: p.id, name: p.name, sub: p.tagline, img: p.images[0].src, phone: p.phoneShot }));
   const first = c.projects[0];
   return `<section class="journey" data-journey aria-label="${esc(c.ui.carouselLabel)}">
   <div class="stage" data-stage>
@@ -70,7 +61,7 @@ function journey(c: Content, videos: Videos): string {
 <dialog class="detail" id="project-detail" aria-label="${esc(c.ui.detailLabel)}" data-lenis-prevent>
   <button type="button" class="detail-close" data-detail-close>${esc(c.ui.backToCarousel)}</button>
   ${c.projects.map(p => `<article class="detail-body" data-project-detail="${esc(p.id)}" hidden aria-labelledby="detail-${esc(p.id)}">
-    ${media(p, videos, "detail-media")}
+    ${cover(p, "detail-media")}
     <div class="detail-copy">
       <p class="kind">${esc(p.kind)}</p>
       <h2 id="detail-${esc(p.id)}">${esc(p.name)}</h2>
@@ -158,6 +149,6 @@ function contact(c: Content): string {
 </div></section>`;
 }
 
-export function home(c: Content, videos: Videos): string {
-  return `${journey(c, videos)}${ai(c)}${about(c)}${stack(c)}${contact(c)}`;
+export function home(c: Content): string {
+  return `${journey(c)}${ai(c)}${about(c)}${stack(c)}${contact(c)}`;
 }

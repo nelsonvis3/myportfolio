@@ -2,6 +2,8 @@ export type Lang = "es" | "en";
 
 export interface Challenge { title: string; problem: string; solution: string; source: string }
 export interface Part { name: string; detail: string }
+// clip: nombre de public/clips/<clip>-desktop.mp4 y, si existe, <clip>-mobile.mp4 (grabado en el celular).
+export interface UsageStep extends Part { clip: string }
 
 export interface Project {
   id: string;            // también es el slug de la URL
@@ -12,6 +14,7 @@ export interface Project {
   // images[0]: portada. images[1]: va con "La solución". phone: captura de celular (se muestra a tamaño de celular);
   // mobileSrc: recorte legible para pantallas chicas de una captura de escritorio.
   images: { src: string; alt: string; phone?: boolean; mobileSrc?: string }[];
+  phoneShot: string;     // captura de celular para la portada 3D del proyecto
   repo: string;
   demo: string;          // vacío: se muestra "Demo en preparación"
   demoLabel: string;
@@ -24,6 +27,7 @@ export interface Project {
   solution: string[];
   features: string[];
   architecture: { text: string; parts: Part[] };
+  usage?: UsageStep[];  // "Cómo se usa": pasos con un clip cada uno
   flow: { title: string; steps: Part[] };
   challenges: Challenge[];
   decisions: Part[];
@@ -43,7 +47,7 @@ export interface Content {
     carouselLabel: string; prev: string; next: string; openProject: string; carouselHint: string; countOf: string;
     detailLabel: string; backToCarousel: string; whatItDoes: string; myPart: string;
     readCase: string; viewCode: string; demoSoon: string; projectsTitle: string; brainAlt: string;
-    caseBack: string; caseStack: string; caseRole: string; caseProblem: string; caseSolution: string; caseFeatures: string; caseImageFull: string; caseVideoFull: string;
+    caseBack: string; caseStack: string; caseRole: string; caseProblem: string; caseSolution: string; caseFeatures: string; caseImageFull: string; caseVideoFull: string; caseUsage: string;
     caseArchitecture: string; caseChallenges: string; caseDecisions: string; caseStatus: string; caseWorks: string;
     caseMissing: string; caseLearning: string; caseNext: string; caseProblemLabel: string; caseSolutionLabel: string; caseCode: string;
   };

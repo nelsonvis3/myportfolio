@@ -6,12 +6,12 @@ Mi portfolio de desarrollador full stack, en español y en inglés, con tema cla
 
 ![Portada del portfolio](public/img/social-preview.png)
 
-> English summary: my developer portfolio. A static site generated with TypeScript, with a three.js scene on the home page (a particle brain you scroll into, then a 3D project carousel), text effects from React Bits and project videos rendered with Hyperframes. Spanish and English versions, light and dark themes.
+> English summary: my developer portfolio. A static site generated with TypeScript, with a three.js scene on the home page (a particle brain you scroll into, then a 3D project carousel), text effects from React Bits and short screen recordings of each project. Spanish and English versions, light and dark themes.
 
 ## Qué hay en el sitio
 
-- Una portada con mi nombre y un cerebro hecho de partículas. Al bajar, la cámara entra al cerebro, las partículas se abren en un túnel y aparece un carrusel 3D con mis tres proyectos.
-- Un click en el proyecto del frente abre su detalle. Cada proyecto tiene además un caso de estudio completo.
+- Una portada con mi nombre y un cerebro hecho de partículas. Al bajar, la cámara entra al cerebro, las partículas se abren en un túnel y de ellas se arma un carrusel 3D con mis tres proyectos (la pantalla de escritorio y la del celular de cada uno).
+- Un click en el proyecto del frente abre su detalle. Cada proyecto tiene además un caso de estudio completo, con clips cortos de cómo se usa (grabados en escritorio y en el celular).
 - Una sección sobre cómo uso la IA para programar, sobre mí, el stack y el contacto.
 - Sin WebGL, con movimiento reducido o sin JavaScript, el sitio se ve completo en 2D.
 
@@ -22,7 +22,7 @@ Mi portfolio de desarrollador full stack, en español y en inglés, con tema cla
 | Generador | TypeScript propio: `src/build.ts` arma ocho páginas HTML (cuatro por idioma) |
 | Escena 3D | three.js, GSAP ScrollTrigger y Lenis |
 | Efectos de texto | React Bits: VariableProximity, TextType y TextPressure |
-| Videos | Hyperframes (composición en `video/`) |
+| Clips | Grabaciones de cada proyecto, editadas con FFmpeg (`public/clips/`) |
 | Tipografía | Anybody y Martian Mono, las dos con eje de ancho variable (OFL) |
 | Publicación | Vercel |
 
@@ -58,10 +58,9 @@ src/
   styles.css     Sistema visual en blanco y negro
   journey.css    Estilos de la home y de la escena 3D
 public/          Imágenes, videos, fuentes, modelo del cerebro y CV
-video/           Composición de Hyperframes para los videos de los proyectos
 ```
 
-Para volver a renderizar los videos de los proyectos, seguí [video/README.md](video/README.md). Los CV que se descargan son `public/cv.pdf` y `public/cv-en.pdf` ([docs/cv/README.md](docs/cv/README.md)).
+Los clips de "Cómo se usa" están en `public/clips/`: `<proyecto>-<n>-desktop.mp4` y, si existe, `<proyecto>-<n>-mobile.mp4`, cada uno con su póster `.webp`. El build los detecta solos. Los CV que se descargan son `public/cv.pdf` y `public/cv-en.pdf` ([docs/cv/README.md](docs/cv/README.md)).
 
 ## Publicación
 

@@ -27,7 +27,7 @@ export const es: Content = {
     projectsTitle: "Proyectos", brainAlt: "",
     caseBack: "Volver a proyectos", caseStack: "Stack", caseRole: "Mi parte",
     caseProblem: "El problema", caseSolution: "La solución", caseFeatures: "Qué permite hacer",
-    caseImageFull: "Tocá la imagen para verla completa", caseVideoFull: "Tocá el video para verlo completo",
+    caseImageFull: "Tocá la imagen para verla completa", caseVideoFull: "Tocá el video para verlo completo", caseUsage: "Cómo se usa",
     caseArchitecture: "Arquitectura", caseChallenges: "Desafíos", caseDecisions: "Decisiones",
     caseStatus: "Estado", caseWorks: "Qué funciona", caseMissing: "Qué falta", caseLearning: "Qué aprendí",
     caseNext: "Siguiente proyecto", caseProblemLabel: "Problema", caseSolutionLabel: "Solución", caseCode: "En el código",
@@ -96,6 +96,7 @@ export const es: Content = {
         { src: "/img/fracxion-overview.png", alt: "Resumen de una empresa en Fracxion, con los módulos de gestión" },
         { src: "/img/fracxion-invoice.png", alt: "Detalle de una factura interna en Fracxion", mobileSrc: "/img/fracxion-invoice-mobile.webp" },
       ],
+      phoneShot: "/img/fracxion-mobile.webp",
       repo: "https://github.com/nelsonvis3/fracxion-facturador", demo: "", demoLabel: "", video: "", videoLabel: "",
       stack: ["Next.js", "TypeScript", "Django REST Framework", "PostgreSQL", "Docker"],
       role: "Desarrollé la interfaz, la API, el modelo de empresas y los servicios de facturación y cobros, más las pruebas y la documentación del recorrido comercial.",
@@ -132,6 +133,11 @@ export const es: Content = {
           { name: "Worker run_jobs", detail: "Informes y alertas programadas, con reintentos." },
         ],
       },
+      usage: [
+        { name: "Entrar a la empresa", detail: "Después de iniciar sesión, cada persona elige con qué empresa trabajar y entra a su tablero.", clip: "fracxion-1" },
+        { name: "Cargar un producto", detail: "Cada producto o servicio tiene tipo, unidad, moneda, precio e impuesto.", clip: "fracxion-2" },
+        { name: "Auditoría y equipo", detail: "Cada cambio queda en el historial, y el equipo se invita con un rol para esa empresa.", clip: "fracxion-3" },
+      ],
       flow: {
         title: "Un recorrido comercial",
         steps: [
@@ -171,6 +177,7 @@ export const es: Content = {
         { src: "/img/ragnar.webp", alt: "Portada de la tienda Ragnar Suplementos" },
         { src: "/img/ragnar-mobile.webp", alt: "Catálogo de Ragnar Suplementos en el celular", phone: true },
       ],
+      phoneShot: "/img/ragnar-mobile.webp",
       repo: "https://github.com/nelsonvis3/ragnarsuplementosfsa", demo: "", demoLabel: "",
       video: "https://www.linkedin.com/posts/nelson-sivisstum-4777a32b4_hola-este-es-un-proyecto-con-el-que-vengo-ugcPost-7512357993775136768-y74V/", videoLabel: "Ver presentación",
       stack: ["Next.js", "React", "TypeScript", "Django", "PostgreSQL", "Zustand"],
@@ -205,6 +212,11 @@ export const es: Content = {
           { name: "Mercado Pago, Nominatim, OSRM", detail: "Pagos y cálculo de envíos." },
         ],
       },
+      usage: [
+        { name: "Elegir el producto", detail: "Del catálogo a la ficha: se elige el sabor y el producto entra al carrito.", clip: "ragnar-1" },
+        { name: "Envío y pedido", detail: "Con envío a domicilio, el costo sale de la distancia hasta la dirección. Al confirmar, el pedido reserva el stock.", clip: "ragnar-2" },
+        { name: "Panel administrativo", detail: "El local ve lo publicado y lo que no tiene stock, y puede despublicar un artículo sin borrarlo.", clip: "ragnar-3" },
+      ],
       flow: {
         title: "Del carrito al pedido",
         steps: [
@@ -242,6 +254,7 @@ export const es: Content = {
         { src: "/img/roadledger.webp", alt: "RoadLedger con la ruta de Chicago a Phoenix pasando por Denver" },
         { src: "/img/roadledger-mobile.webp", alt: "RoadLedger en el celular", phone: true },
       ],
+      phoneShot: "/img/roadledger-mobile.webp",
       repo: "https://github.com/nelsonvis3/ELD-trip-planner", demo: "https://eld-trip-planner-5as7.onrender.com/", demoLabel: "Abrir demo", video: "", videoLabel: "",
       stack: ["Django REST Framework", "React", "MapLibre", "OSRM", "Python"],
       role: "Desarrollé el prototipo en Django y React, integré la geocodificación y las rutas, y armé el mapa, la cronología y los registros diarios.",

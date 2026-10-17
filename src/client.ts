@@ -1,4 +1,4 @@
-// Todas las páginas: menú mobile, cambio de tema claro/oscuro y video del caso de estudio en pantalla completa.
+// Todas las páginas: menú mobile y cambio de tema claro/oscuro. Casos de estudio: clips y portada 3D.
 const root = document.documentElement;
 document.body.classList.add("js");
 
@@ -25,7 +25,7 @@ menu?.addEventListener("click", () => menu.setAttribute("aria-expanded", String(
 links?.addEventListener("click", event => { if ((event.target as Element).closest("a")) close(); });
 document.addEventListener("keydown", event => { if (event.key === "Escape" && menu?.getAttribute("aria-expanded") === "true") close(true); });
 
-// Caso de estudio: en el celular el video se ve recortado; tocarlo lo abre completo. iPhone no tiene
+// Clips de escritorio en el celular: se ven chicos; tocarlos los abre en pantalla completa. iPhone no tiene
 // requestFullscreen en elementos, solo webkitEnterFullscreen en el video.
 for (const video of document.querySelectorAll<HTMLVideoElement & { webkitEnterFullscreen?: () => void }>("[data-fullscreen]")) {
   video.addEventListener("click", () => {
@@ -33,4 +33,48 @@ for (const video of document.querySelectorAll<HTMLVideoElement & { webkitEnterFu
     if (video.requestFullscreen) void video.requestFullscreen().catch(() => video.webkitEnterFullscreen?.());
     else video.webkitEnterFullscreen?.();
   });
+}
+
+const small = matchMedia("(max-width: 760px)").matches;
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Clips de "Cómo se usa": cada uno se reproduce solo mientras está en pantalla. Con movimiento reducido
+// quedan quietos, con controles para reproducirlos a mano.
+const clips = [...document.querySelectorAll<HTMLVideoElement>("[data-clip]")];
+for (const video of clips) {
+  if (small && video.dataset.posterMobile) video.poster = video.dataset.posterMobile;
+  if (still) video.controls = true;
+}
+if (!still && clips.length) {
+  const watcher = new IntersectionObserver(entries => {
+    for (const { target, isIntersecting } of entries) {
+      const video = target as HTMLVideoElement;
+      if (isIntersecting) void video.play().catch(() => {}); else video.pause();
+    }
+  }, { threshold: 0.45 });
+  clips.forEach(video => watcher.observe(video));
+}
+
+// Portada 3D: con mouse se inclina hacia el puntero; en táctil gira apenas mientras pasa por la pantalla.
+for (const figure of still ? [] : document.querySelectorAll<HTMLElement>("[data-cover]")) {
+  const scene = figure.querySelector<HTMLElement>(".cover3d-scene");
+  if (!scene) continue;
+  const tilt = (rx: number, ry: number) => { scene.style.setProperty("--rx", `${rx.toFixed(2)}deg`); scene.style.setProperty("--ry", `${ry.toFixed(2)}deg`); };
+  if (matchMedia("(pointer: fine)").matches) {
+    figure.addEventListener("pointermove", event => {
+      const r = figure.getBoundingClientRect();
+      tilt(7 - ((event.clientY - r.top) / r.height - 0.5) * 8, -13 + ((event.clientX - r.left) / r.width - 0.5) * 14);
+    });
+    figure.addEventListener("pointerleave", () => tilt(7, -13));
+  } else {
+    let queued = false;
+    const onScroll = () => {
+      queued = false;
+      const r = figure.getBoundingClientRect();
+      const t = Math.min(1, Math.max(0, 1 - (r.top + r.height / 2) / innerHeight));
+      tilt(9 - t * 6, -18 + t * 12);
+    };
+    addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(onScroll); } }, { passive: true });
+    onScroll();
+  }
 }

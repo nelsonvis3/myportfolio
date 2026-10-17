@@ -40,7 +40,8 @@ export async function start(): Promise<void> {
   renderer.setPixelRatio(pixelRatio);
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(35, innerWidth / innerHeight, 0.05, 80);
+  const FOV = 35;
+  const camera = new THREE.PerspectiveCamera(FOV, innerWidth / innerHeight, 0.05, 80);
 
   let brain: BrainPoints;
   try { brain = await createBrain(mobile); } catch { renderer.dispose(); return; }
@@ -49,7 +50,8 @@ export async function start(): Promise<void> {
   brainGroup.add(brain.points);
   scene.add(brainGroup);
 
-  const carousel = new Carousel(projects, renderer.capabilities.getMaxAnisotropy());
+  // Sin reflejo en el piso en el celular: son el doble de paneles para dibujar.
+  const carousel = new Carousel(projects, renderer.capabilities.getMaxAnisotropy(), !mobile);
   scene.add(carousel.group);
 
   await document.fonts.load("700 230px 'Martian Mono Variable'").catch(() => []);
@@ -89,7 +91,7 @@ export async function start(): Promise<void> {
   const heroCopy = document.querySelector<HTMLElement>("[data-hero]")!;
   const glyphSlot = document.querySelector<HTMLElement>("[data-ai-glyphs]");
   const halfAt = (distance: number) => {
-    const h = distance * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+    const h = distance * Math.tan(THREE.MathUtils.degToRad(FOV / 2));
     return { h, w: h * camera.aspect };
   };
   function resize(): void {
@@ -114,7 +116,7 @@ export async function start(): Promise<void> {
     }
     // El panel del frente ocupa casi todo el ancho (o el alto, si la pantalla es angosta).
     const panelW = 2.4, panelH = panelW / 1.6;
-    const tan = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+    const tan = Math.tan(THREE.MathUtils.degToRad(FOV / 2));
     const fillW = layout.narrow ? 0.84 : 0.56, fillH = layout.narrow ? 0.36 : 0.56;
     const distance = Math.max(panelW / (fillW * 2 * tan * camera.aspect), panelH / (fillH * 2 * tan));
     const radius = layout.narrow ? 2.1 : 2.6;
@@ -181,7 +183,7 @@ export async function start(): Promise<void> {
   const dialog = document.querySelector<HTMLDialogElement>("#project-detail")!;
   ui.inert = true;
 
-  let rot = 0, rotTarget = 0, lastInteraction = -10, hovered = -1, front = 0, uiVisible = false;
+  let rotTarget = 0, spin = 0, spinVel = 0, swirl = 0, lastInteraction = -10, hovered = -1, front = 0, uiVisible = false;
   const AUTO_STEP = 6; // segundos que cada proyecto queda al frente antes de girar
   let lastAdvance = 0, lastScrollRotation = 0;
   const touch = () => { lastInteraction = performance.now() / 1000; };
@@ -191,7 +193,6 @@ export async function start(): Promise<void> {
     const whole = Math.min(Math.floor(s), projects.length - 2);
     return -(whole + smooth(0.25, 0.75, s - whole)) * carousel.step;
   };
-  const totalRotation = () => rot + scrollRotation();
   const goTo = (index: number) => { touch(); rotTarget += carousel.deltaTo(index, rotTarget + scrollRotation()); };
 
   ui.querySelector("[data-carousel-prev]")!.addEventListener("click", () => goTo((front - 1 + projects.length) % projects.length));
@@ -234,7 +235,7 @@ export async function start(): Promise<void> {
   const pick = (clientX: number, clientY: number): number => {
     pointer.set((clientX / canvas.clientWidth) * 2 - 1, -(clientY / canvas.clientHeight) * 2 + 1);
     raycaster.setFromCamera(pointer, camera);
-    const hit = raycaster.intersectObjects(carousel.panels, false)[0];
+    const hit = raycaster.intersectObjects(carousel.targets, false)[0];
     return hit ? (hit.object.userData.index as number) : -1;
   };
   stage.addEventListener("pointerdown", event => {
@@ -312,8 +313,11 @@ export async function start(): Promise<void> {
     const idle = time - lastInteraction > 3.5 && !dragging && !pointerInside && !dialog.open;
     if (!idle || show < 0.9) lastAdvance = time;
     else if (time - lastAdvance > AUTO_STEP) { lastAdvance = time; rotTarget += carousel.deltaTo((front + 1) % projects.length, rotTarget + scrollRotation()); }
-    rot += (rotTarget - rot) * Math.min(1, dt * 3.2);
-    const rotation = totalRotation();
+    // Giro con resorte: sigue al objetivo (scroll, flechas, arrastre y automático) y se asienta con un rebote leve.
+    const K = 38, damping = 2 * Math.sqrt(K) * 0.7;
+    spinVel += ((rotTarget + scrollTurn - spin) * K - spinVel * damping) * dt;
+    spin += spinVel * dt;
+    const rotation = spin;
     const newFront = carousel.frontIndex(rotation);
     if (newFront !== front) {
       front = newFront;
@@ -340,15 +344,20 @@ export async function start(): Promise<void> {
     brainGroup.position.set(mix(layout.heroX, 0, enter), mix(layout.heroY, 0, enter), 0);
     brainGroup.scale.setScalar(mix(layout.heroScale, 1.25, enter));
     brainGroup.rotation.y = time * 0.12 * (1 - expand) - 0.35;
-    brainGroup.rotation.z = time * 0.02 * expand;
+    // El túnel de partículas gira con el carrusel: da sensación de velocidad.
+    swirl += spinVel * dt * 0.45 * show;
+    brainGroup.rotation.z = time * 0.02 * expand + swirl;
     const u = brain.material.uniforms;
     u.uTime.value = time; u.uExpand.value = expand;
     u.uOpacity.value = inJourney ? (1 - exit) * mix(1, 0.75, show) : 0;
     brain.points.visible = inJourney;
 
     carousel.group.position.set(0, layout.carouselY, layout.carouselZ);
-    carousel.update(rotation, show * (1 - exit), hovered, time);
-    carousel.play(uiVisible && !dialog.open ? front : -1);
+    // Los paneles se arman desde las partículas al entrar y se deshacen al salir.
+    carousel.update(rotation, spinVel, show * (1 - exit), smooth(0.37, 0.49, p) * (1 - exit), hovered, time);
+    // Durante el giro la lente se abre un poco.
+    const fov = FOV + Math.min(7, Math.abs(spinVel) * 2.4) * show;
+    if (Math.abs(camera.fov - fov) > 0.01) { camera.fov = fov; camera.updateProjectionMatrix(); }
     carousel.group.visible = show > 0.001 && inJourney;
 
     // Sección de IA.

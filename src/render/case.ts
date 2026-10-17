@@ -1,7 +1,9 @@
 import type { Content, Project } from "../content/types.js";
 import { casePath, homePath } from "../content/site.js";
-import { esc, ext, projectLinks } from "./shared.js";
-import type { Videos } from "./home.js";
+import { cover, esc, ext, projectLinks } from "./shared.js";
+
+/** Clips de "Cómo se usa" que existen en public/clips (los arma build.ts). */
+export type Clips = Record<string, { desktop: string; poster: string; size: [number, number]; mobile?: string; mobilePoster?: string }>;
 
 const section = (id: string, title: string, body: string) =>
   `<section class="case-section" aria-labelledby="${id}"><h2 id="${id}">${esc(title)}</h2><div class="case-content">${body}</div></section>`;
@@ -25,11 +27,30 @@ function solution(c: Content, p: Project): string {
   ${figure}`;
 }
 
-export function casePage(c: Content, p: Project, videos: Videos): string {
+/** "Cómo se usa": un clip por paso. En el celular se usa el clip grabado en el celular si existe;
+ * si no, el de escritorio, que se puede tocar para verlo en pantalla completa. Los reproduce client.ts. */
+function usage(c: Content, p: Project, clips: Clips): string {
+  const steps = (p.usage ?? []).filter(s => clips[s.clip]);
+  if (!steps.length) return "";
+  // A todo el ancho: el clip muestra la página entera y así se lee casi a tamaño real.
+  return `<section class="case-section case-usage" aria-labelledby="usage"><h2 id="usage">${esc(c.ui.caseUsage)}</h2><ol class="usage">${steps.map((s, i) => {
+    const clip = clips[s.clip];
+    return `<li class="usage-step">
+      <div class="usage-text"><span class="usage-n">${String(i + 1).padStart(2, "0")}</span><h3>${esc(s.name)}</h3><p>${esc(s.detail)}</p></div>
+      <figure class="usage-clip${clip.mobile ? " has-mobile" : ""}">
+        <video muted loop playsinline preload="none" width="${clip.size[0]}" height="${clip.size[1]}" poster="${clip.poster}"${clip.mobilePoster ? ` data-poster-mobile="${clip.mobilePoster}"` : ""} data-clip${clip.mobile ? "" : " data-fullscreen"} aria-label="${esc(s.name)}">
+          ${clip.mobile ? `<source src="${clip.mobile}" type="video/mp4" media="(max-width: 760px)">` : ""}<source src="${clip.desktop}" type="video/mp4">
+        </video>
+        ${clip.mobile ? "" : `<figcaption class="case-media-hint">${esc(c.ui.caseVideoFull)}</figcaption>`}
+      </figure>
+    </li>`;
+  }).join("")}</ol></section>`;
+}
+
+export function casePage(c: Content, p: Project, clips: Clips): string {
   const u = c.ui;
   const index = c.projects.findIndex(x => x.id === p.id);
   const next = c.projects[(index + 1) % c.projects.length];
-  const video = videos[p.id];
   return `<article class="case wrap">
   <a class="back" href="${homePath(c.lang)}#${c.ids.projects}">${esc(u.caseBack)}</a>
   <header class="case-header">
@@ -45,14 +66,10 @@ export function casePage(c: Content, p: Project, videos: Videos): string {
       ${projectLinks(c, p)}
     </div>
   </header>
-  <figure class="case-media">
-    ${video
-      ? `<video src="${video.src}" poster="${video.poster}" autoplay muted loop playsinline aria-label="${esc(p.images[0].alt)}" data-fullscreen></video>
-    <figcaption class="case-media-hint">${esc(u.caseVideoFull)}</figcaption>`
-      : `<img src="${esc(p.images[0].src)}" alt="${esc(p.images[0].alt)}">`}
-  </figure>
+  ${cover(p, "case-cover")}
   ${section("problem", u.caseProblem, paragraphs(p.problem))}
   ${solution(c, p)}
+  ${usage(c, p, clips)}
   ${section("architecture", u.caseArchitecture, `<p>${esc(p.architecture.text)}</p><dl class="parts">${p.architecture.parts.map(part => `<div><dt>${esc(part.name)}</dt><dd>${esc(part.detail)}</dd></div>`).join("")}</dl>`)}
   ${section("flow", p.flow.title, `<ol class="steps">${p.flow.steps.map(s => `<li><strong>${esc(s.name)}</strong><p>${esc(s.detail)}</p></li>`).join("")}</ol>`)}
   ${section("challenges", u.caseChallenges, p.challenges.map(ch => `<div class="challenge">

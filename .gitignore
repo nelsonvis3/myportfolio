@@ -43,8 +43,3 @@ next-env.d.ts
 # build output (Vercel corre npm run build)
 /dist
 
-# renders intermedios de Hyperframes
-/video/renders/
-
-# estado local de Hyperframes (rutas de la máquina que renderiza)
-/video/.hyperframes/

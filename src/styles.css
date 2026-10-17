@@ -107,16 +107,38 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .case-meta dt, .parts dt { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
 .case-meta dd { max-width: 60ch; }
 .case-media { margin-top: clamp(48px, 6vw, 96px); border: 1px solid var(--line); }
-.case-media img, .case-media video { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.case-media img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
 .case-media-secondary { max-width: 860px; margin-left: auto; margin-right: auto; }
 .case-media-secondary img { aspect-ratio: auto; }
 .case-media-secondary a { display: block; }
 .case-media-hint { display: none; }
-.case-media video:fullscreen { aspect-ratio: auto; object-fit: contain; background: #000; }
+video[data-fullscreen]:fullscreen { aspect-ratio: auto; object-fit: contain; background: #000; }
 /* Captura de celular: al lado del texto de "La solución", a tamaño de celular. */
 .solution-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 280px); gap: 32px clamp(32px, 4vw, 64px); align-items: start; }
 .case-phone { border: 1px solid var(--line); border-radius: 28px; overflow: hidden; position: sticky; top: calc(var(--header) + 24px); }
 .case-phone img { width: 100%; height: auto; }
+
+/* Portada 3D: captura de escritorio en perspectiva con la de celular delante. client.ts mueve --rx y --ry. */
+.cover3d { margin: clamp(40px, 6vw, 96px) 0 0; padding: clamp(12px, 3vw, 40px) 0 clamp(28px, 5vw, 64px); perspective: 1800px; }
+.cover3d-scene { position: relative; width: min(100%, 1180px); margin-inline: auto; transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 7deg)) rotateY(var(--ry, -13deg)); transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+.cover3d-desk { width: 84%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 50px 90px -40px rgba(0,0,0,.6), 0 18px 36px -24px rgba(0,0,0,.5); }
+.cover3d-phone { position: absolute; right: 1%; bottom: -9%; width: 23%; aspect-ratio: 390 / 844; object-fit: cover; object-position: top;
+  border: 5px solid #0b0b0b; border-radius: 24px; background: #0b0b0b; transform: translateZ(110px);
+  box-shadow: 0 40px 70px -24px rgba(0,0,0,.7); }
+[data-theme="light"] .cover3d-desk { box-shadow: 0 50px 90px -40px rgba(0,0,0,.35), 0 18px 36px -24px rgba(0,0,0,.25); }
+
+/* Cómo se usa: un paso por fila, el texto al costado del clip. */
+.case-section.case-usage { grid-template-columns: minmax(0, 1fr); }
+.case-section.case-usage > h2 { position: static; }
+.usage-step { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 28px 0 48px; border-top: 1px solid var(--line); }
+.usage-text { display: grid; grid-template-columns: 3.2em 1fr; align-items: baseline; }
+.usage-n { font-size: 12.5px; color: var(--muted); grid-row: span 2; }
+.usage-text h3 { margin: 0 !important; }
+.usage-text p { margin-top: 8px; max-width: 60ch; }
+.usage-clip { border: 1px solid var(--line); background: var(--bg); }
+.usage-clip video { width: 100%; height: auto; background: var(--line); }
 .case-section { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px clamp(40px, 6vw, 120px); padding-top: clamp(64px, 8vw, 120px); }
 .case-section > h2 { font-size: clamp(2rem, 3.6vw, 3.4rem); align-self: start; position: sticky; top: calc(var(--header) + 24px); }
 .case-content > * + * { margin-top: 1.1em; }
@@ -161,7 +183,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .wordmark { font-size: 13px; font-stretch: 110%; }
   /* El video es una pantalla de escritorio: en el celular se recorta en vertical hacia la derecha, donde aparece
      la versión de celular, y tocarlo lo abre completo (client.ts). */
-  .case-media video, video.detail-media { aspect-ratio: 4 / 5; object-position: 85% 50%; }
+  /* El clip grabado en el celular se ve como un celular; el de escritorio, a lo ancho y con pantalla completa al tocarlo. */
+  .usage-clip.has-mobile { width: min(300px, 80%); margin-inline: auto; border-radius: 30px; overflow: hidden; border: 5px solid #0b0b0b; }
+  .usage-clip.has-mobile video { aspect-ratio: 390 / 844; }
+  .cover3d { padding-bottom: 40px; }
+  .cover3d-desk { width: 88%; border-radius: 8px; }
+  .cover3d-phone { width: 28%; border-width: 3px; border-radius: 14px; bottom: -14%; }
   .case-media-hint { display: block; padding: 10px 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
 }
 @media (prefers-reduced-motion: reduce) {

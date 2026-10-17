@@ -60,7 +60,7 @@ html.lenis, html.lenis body { height: auto; }
 .detail-close { position: sticky; top: 0; z-index: 2; display: block; margin-left: auto; min-height: 46px; padding: 0 20px; border-left: 1px solid var(--fg); border-bottom: 1px solid var(--fg); background: var(--bg); font-size: 13px; }
 .detail-close:hover { background: var(--fg); color: var(--bg); }
 .detail-body { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 44px; padding: 8px 40px 40px; }
-.detail-media { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border: 1px solid var(--line); position: sticky; top: 62px; }
+.detail-media { margin: 0; padding: 12px 0 32px; position: sticky; top: 62px; align-self: start; }
 .detail-copy h2 { margin-top: 6px; font-size: clamp(2.6rem, 5vw, 4.6rem); font-stretch: 70%; }
 .detail-copy .tagline { margin-top: 12px; font: 600 1.2rem/1.25 var(--display); }
 .detail-copy > p { margin-top: 14px; max-width: 60ch; }
