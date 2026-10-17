@@ -44,11 +44,13 @@ const fragmentShader = /* glsl */ `
   }
 `;
 
+interface Slot { material: THREE.ShaderMaterial; video: HTMLVideoElement | null; poster: THREE.Texture | null; frames: THREE.VideoTexture | null }
+
 export class Carousel {
   readonly group = new THREE.Group();
   readonly panels: THREE.Mesh<THREE.PlaneGeometry, THREE.ShaderMaterial>[] = [];
   readonly step: number;
-  private readonly videos: (HTMLVideoElement | null)[] = [];
+  private readonly slots: Slot[] = [];
   width = 2.4;
   height = 1.5;
   radius = 2.2;
@@ -65,36 +67,46 @@ export class Carousel {
           uAccent: { value: new THREE.Color("#ffffff") }, uBase: { value: new THREE.Color("#0a0a0a") },
         },
       });
+      const slot: Slot = { material, video: null, poster: null, frames: null };
       // El póster es el primer cuadro del video: mismo encuadre y proporción, sin salto al cambiar.
       loader.load(project.poster ?? project.img, texture => {
         texture.colorSpace = THREE.SRGBColorSpace;
         texture.anisotropy = maxAnisotropy;
-        const image = texture.image as { width: number; height: number };
-        material.uniforms.uMap.value = texture;
-        material.uniforms.uImageAspect.value = image.width / image.height;
-        material.uniforms.uReady.value = 1;
+        slot.poster = texture;
+        if (material.uniforms.uMap.value === null) this.show(slot, texture);
       });
-      // Video de Hyperframes: reemplaza al póster recién cuando se reproduce. Una VideoTexture de un
-      // video que nunca se reprodujo no tiene cuadros y se ve negra en los paneles de los costados.
-      let video: HTMLVideoElement | null = null;
+      // Video de Hyperframes: reemplaza al póster recién cuando el navegador entrega un cuadro.
+      // Una VideoTexture sin cuadros se ve negra (al arrancar, mientras carga o si el video se traba).
       if (project.video) {
-        video = document.createElement("video");
+        const video = document.createElement("video");
         // preload "none": cada video se descarga recién cuando su panel llega al frente y se reproduce.
         Object.assign(video, { src: project.video, muted: true, loop: true, playsInline: true, preload: "none", crossOrigin: "anonymous" });
+        const onFrame = () => {
+          if (video.paused) return;
+          slot.frames ??= Object.assign(new THREE.VideoTexture(video), { colorSpace: THREE.SRGBColorSpace });
+          slot.frames.needsUpdate = true;
+          this.show(slot, slot.frames);
+        };
         video.addEventListener("playing", () => {
-          const texture = new THREE.VideoTexture(video!);
-          texture.colorSpace = THREE.SRGBColorSpace;
-          material.uniforms.uMap.value = texture;
-          material.uniforms.uImageAspect.value = video!.videoWidth / video!.videoHeight;
-          material.uniforms.uReady.value = 1;
-        }, { once: true });
+          if (typeof video.requestVideoFrameCallback === "function") video.requestVideoFrameCallback(onFrame);
+          else video.addEventListener("timeupdate", onFrame, { once: true });
+        });
+        slot.video = video;
       }
-      this.videos.push(video);
+      this.slots.push(slot);
       const mesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 40, 1), material);
       mesh.userData.index = this.panels.length;
       this.panels.push(mesh);
       this.group.add(mesh);
     });
+  }
+
+  private show(slot: Slot, texture: THREE.Texture): void {
+    const image = texture.image as { width?: number; height?: number; videoWidth?: number; videoHeight?: number };
+    const u = slot.material.uniforms;
+    u.uMap.value = texture;
+    u.uImageAspect.value = (image.videoWidth || image.width || 16) / (image.videoHeight || image.height || 10);
+    u.uReady.value = 1;
   }
 
   resize(width: number, height: number, radius: number): void {
@@ -113,23 +125,32 @@ export class Carousel {
       const angle = i * this.step + rotation;
       const facing = Math.cos(angle);
       panel.position.set(Math.sin(angle) * this.radius, 0, Math.cos(angle) * this.radius);
-      panel.rotation.y = angle * 0.38;
+      // Periódico en el ángulo: después de una vuelta entera el panel vuelve al frente derecho.
+      // Con `angle * 0.38` el giro acumulado lo dejaba de espaldas y se veía un panel liso.
+      panel.rotation.y = Math.sin(angle) * 0.4;
       const focus = Math.pow(Math.max(0, facing), 3);
       const u = panel.material.uniforms;
       u.uFocus.value = focus;
       u.uOpacity.value = opacity * (0.55 + 0.45 * (facing * 0.5 + 0.5));
       u.uHover.value += ((hovered === i ? 1 : 0) - u.uHover.value) * 0.15;
       u.uTime.value = time;
-      panel.renderOrder = Math.round(facing * 10);
+      panel.renderOrder = Math.round(facing * 100);
     });
   }
 
   /** Reproduce solo el video del panel del frente (index = -1 pausa todos). */
   play(index: number): void {
-    this.videos.forEach((video, i) => {
+    this.slots.forEach((slot, i) => {
+      const video = slot.video;
       if (!video) return;
       if (i === index) { if (video.paused) void video.play().catch(() => {}); }
-      else if (!video.paused) video.pause();
+      else if (!video.paused) {
+        // Al salir del frente vuelve al póster (el primer cuadro) y el video al inicio:
+        // la próxima vez arranca igual que el póster y no queda un cuadro viejo ni uno vacío.
+        video.pause();
+        video.currentTime = 0;
+        if (slot.poster) this.show(slot, slot.poster);
+      }
     });
   }
 

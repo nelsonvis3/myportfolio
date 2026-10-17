@@ -56,10 +56,10 @@ const vertexShader = /* glsl */ `
     float depth = -mv.z;
     float burst = e * (1.0 - e) * 4.0;
     float size = (1.0 + burst * 1.4) * uSize * mix(0.55, 1.05, aFold) * (0.6 + aSeed * 0.8) * mix(1.0, 2.1, e);
-    gl_PointSize = clamp(size * mix(1.0, 0.7, uLight) * uPixelRatio / max(depth, 0.05), 0.0, mix(42.0, 18.0, uLight) * uPixelRatio);
+    gl_PointSize = clamp(size * mix(1.0, 0.85, uLight) * uPixelRatio / max(depth, 0.05), 0.0, mix(42.0, 24.0, uLight) * uPixelRatio);
     float pulse = pow(0.5 + 0.5 * sin(position.y * 6.0 - position.z * 3.0 - uTime * 1.1), 12.0);
     vColor = mix(uColorA, uColorB, clamp(aFold * 0.7 + pulse * aFold, 0.0, 1.0));
-    vAlpha = uOpacity * mix(0.38, 0.95, aFold) * smoothstep(0.15, 0.9, depth) * (1.0 - smoothstep(13.0, 18.0, depth) * e) * (1.0 + burst * 0.8) * (1.0 + pulse * aFold * 0.6) * mix(1.0, 0.85, uLight);
+    vAlpha = uOpacity * mix(0.38, 0.95, aFold) * smoothstep(0.15, 0.9, depth) * (1.0 - smoothstep(13.0, 18.0, depth) * e) * (1.0 + burst * 0.8) * (1.0 + pulse * aFold * 0.6) * mix(1.0, 1.4, uLight);
   }
 `;
 

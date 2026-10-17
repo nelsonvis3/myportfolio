@@ -81,6 +81,7 @@ html.lenis, html.lenis body { height: auto; }
 .ai-card p { margin-top: 12px; transform: translateZ(20px); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; transform: translateZ(12px); }
 .chips li { font-size: 12.5px; padding: 6px 12px; border: 1px solid var(--line); }
+.ai-glyphs { display: none; }
 .ai-rule { position: relative; z-index: 1; padding: 90px 0 clamp(96px, 12vw, 160px); }
 .ai-rule h3 { font-size: clamp(1.9rem, 3vw, 3rem); font-stretch: 110%; }
 .ai-rule p { margin-top: 16px; max-width: 60ch; }
@@ -122,8 +123,19 @@ html.lenis, html.lenis body { height: auto; }
   .carousel-controls { justify-content: space-between; }
   .carousel-controls .btn { flex: 1; }
   .ai-cards { grid-template-columns: 1fr; }
+  /* Celulares bajos (iPhone SE y similares): texto del hero más compacto para dejarle lugar al cerebro. */
+  @media (max-height: 720px) {
+    .hero-name { font-size: clamp(3.4rem, 17vw, 5.5rem); }
+    .hero-role { margin-top: 14px; font-size: 1.1rem; }
+    .hero-line { margin-top: 8px; }
+    .hero .actions { margin-top: 18px; }
+    .hero-meta { margin-top: 14px; }
+    .is-3d .hero { bottom: 5svh; }
+  }
   .is-3d .ai-track { height: auto; }
   .is-3d .ai-stage { position: relative; height: auto; display: block; }
   .is-3d .ai-head { min-height: 92svh; }
+  /* Lugar de los símbolos >_ y </> (los dibuja el canvas siguiendo esta caja). */
+  .is-3d .ai-glyphs { display: block; height: 40vw; margin-top: 16px; }
   .is-3d .ai-cards { margin-top: 24px; }
 }

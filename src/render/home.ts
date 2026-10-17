@@ -67,7 +67,7 @@ function journey(c: Content, videos: Videos): string {
   </div>
   <script type="application/json" id="journey-data">${json(data)}</script>
 </section>
-<dialog class="detail" id="project-detail" aria-label="${esc(c.ui.detailLabel)}">
+<dialog class="detail" id="project-detail" aria-label="${esc(c.ui.detailLabel)}" data-lenis-prevent>
   <button type="button" class="detail-close" data-detail-close>${esc(c.ui.backToCarousel)}</button>
   ${c.projects.map(p => `<article class="detail-body" data-project-detail="${esc(p.id)}" hidden aria-labelledby="detail-${esc(p.id)}">
     ${media(p, videos, "detail-media")}
@@ -99,6 +99,7 @@ function ai(c: Content): string {
       <h2 id="ai-title">${esc(c.ai.title)}</h2>
       <p class="ai-lead">${esc(c.ai.lead)}</p>
       <p class="ai-prompt" data-island="type" data-prefix=">_ " data-texts="${esc(JSON.stringify(aiPrompts[c.lang]))}"><span>&gt;_ ${esc(aiPrompts[c.lang][0])}</span></p>
+      <div class="ai-glyphs" aria-hidden="true" data-ai-glyphs></div>
     </div>
     <div class="wrap ai-cards">${c.ai.cards.map(card => `<article class="ai-card" data-tilt>
       <h3>${esc(card.name)}</h3>

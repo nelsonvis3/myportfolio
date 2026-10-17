@@ -66,7 +66,7 @@ export async function start(): Promise<void> {
   function applyTheme(): void {
     const light = root.dataset.theme === "light";
     const ink = new THREE.Color(light ? "#000000" : "#ffffff");
-    const soft = new THREE.Color(light ? "#5a5a5a" : "#8f8f8f");
+    const soft = new THREE.Color(light ? "#1c1c1c" : "#8f8f8f");
     for (const material of [brain.material, ...glyphs.map(g => g.material)]) {
       material.uniforms.uColorA.value.copy(soft);
       material.uniforms.uColorB.value.copy(ink);
@@ -85,21 +85,29 @@ export async function start(): Promise<void> {
 
   // ---------- Layout ----------
   const HERO_Z = 6.5, INSIDE_Z = -1.0;
-  const layout = { heroX: 0, heroY: 0, heroScale: 1, carouselZ: -7, carouselY: 0, viewDistance: 4, narrow: false };
+  const layout = { heroX: 0, heroY: 0, heroScale: 1, carouselZ: -7, carouselY: 0, viewDistance: 4, narrow: false, unitsPerPx: 0.01 };
+  const heroCopy = document.querySelector<HTMLElement>("[data-hero]")!;
+  const glyphSlot = document.querySelector<HTMLElement>("[data-ai-glyphs]");
   const halfAt = (distance: number) => {
     const h = distance * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     return { h, w: h * camera.aspect };
   };
   function resize(): void {
-    const w = innerWidth, h = innerHeight;
+    // El canvas mide 100lvh: en mobile no cambia cuando aparece o se esconde la barra del navegador,
+    // y el dibujo no se estira (antes usaba innerHeight, que sí cambia).
+    const w = canvas.clientWidth || innerWidth, h = canvas.clientHeight || innerHeight;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     layout.narrow = camera.aspect < 0.9;
     const hero = halfAt(HERO_Z);
+    layout.unitsPerPx = (hero.h * 2) / h;
     if (layout.narrow) {
-      layout.heroX = 0; layout.heroY = hero.h * 0.4;
-      layout.heroScale = Math.min(hero.w * 0.78, hero.h * 0.42);
+      // Mobile: el cerebro ocupa el espacio libre entre el encabezado y el texto del hero.
+      const header = document.querySelector<HTMLElement>(".header")?.offsetHeight ?? 72;
+      const room = Math.max(60, heroCopy.offsetTop - header - 20);
+      layout.heroX = 0; layout.heroY = hero.h - (header + 10 + room / 2) * layout.unitsPerPx;
+      layout.heroScale = Math.min(hero.w * 0.78, (room / 2) * layout.unitsPerPx / 0.72);
     } else {
       layout.heroX = hero.w * 0.42; layout.heroY = -hero.h * 0.02;
       layout.heroScale = hero.h * 0.72;
@@ -120,15 +128,22 @@ export async function start(): Promise<void> {
     const glyphWidth = layout.narrow ? ai.w * 0.6 : ai.w * 0.34;
     glyphs.forEach((g, i) => {
       const side = i === 0 ? -1 : 1;
-      // Desktop: a la derecha del título; mobile: uno al lado del otro, debajo del texto.
-      if (layout.narrow) g.points.position.set(side * ai.w * 0.44, ai.h * 0.05, 0);
+      // Desktop: a la derecha del título; mobile: uno al lado del otro, en su lugar dentro del texto (ver frame).
+      if (layout.narrow) g.points.position.set(side * ai.w * 0.44, 0, 0);
       else g.points.position.set(ai.w * (side < 0 ? 0.22 : 0.64), ai.h * 0.3, 0);
       g.points.scale.setScalar(glyphWidth);
       g.material.uniforms.uSize.value = mobile ? 24 : 22;
     });
   }
   resize();
-  addEventListener("resize", () => { resize(); ScrollTrigger.refresh(); });
+  void document.fonts.ready.then(resize);
+  let lastWidth = innerWidth;
+  addEventListener("resize", () => {
+    resize();
+    if (mobile && innerWidth === lastWidth) return;
+    lastWidth = innerWidth;
+    ScrollTrigger.refresh();
+  });
 
   // ---------- Scroll ----------
   gsap.registerPlugin(ScrollTrigger);
@@ -156,7 +171,6 @@ export async function start(): Promise<void> {
   if (anchorId && location.hash === `#${anchorId}`) requestAnimationFrame(() => lenis.scrollTo(carouselScrollY(), { immediate: true }));
 
   // ---------- UI del hero y del carrusel ----------
-  const heroCopy = document.querySelector<HTMLElement>("[data-hero]")!;
   const cue = document.querySelector<HTMLElement>("[data-scroll-cue]")!;
   const stage = document.querySelector<HTMLElement>("[data-stage]")!;
   const ui = document.querySelector<HTMLElement>("[data-carousel-ui]")!;
@@ -169,7 +183,7 @@ export async function start(): Promise<void> {
 
   let rot = 0, rotTarget = 0, lastInteraction = -10, hovered = -1, front = 0, uiVisible = false;
   const AUTO_STEP = 6; // segundos que cada proyecto queda al frente antes de girar
-  let lastAdvance = 0;
+  let lastAdvance = 0, lastScrollRotation = 0;
   const touch = () => { lastInteraction = performance.now() / 1000; };
   // El scroll avanza de a un proyecto, con pausas en las que cada panel queda centrado.
   const scrollRotation = () => {
@@ -218,7 +232,7 @@ export async function start(): Promise<void> {
   const pointer = new THREE.Vector2(), parallax = new THREE.Vector2(), parallaxTarget = new THREE.Vector2();
   let dragging = false, dragStartX = 0, dragLastX = 0, dragMoved = 0, pointerInside = false;
   const pick = (clientX: number, clientY: number): number => {
-    pointer.set((clientX / innerWidth) * 2 - 1, -(clientY / innerHeight) * 2 + 1);
+    pointer.set((clientX / canvas.clientWidth) * 2 - 1, -(clientY / canvas.clientHeight) * 2 + 1);
     raycaster.setFromCamera(pointer, camera);
     const hit = raycaster.intersectObjects(carousel.panels, false)[0];
     return hit ? (hit.object.userData.index as number) : -1;
@@ -265,6 +279,8 @@ export async function start(): Promise<void> {
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) (entry.target as HTMLElement).dataset.inView = String(entry.isIntersecting);
     visible = journeyEl.dataset.inView === "true" || aiEl.dataset.inView === "true";
+    // También acá: si se llega directo más abajo (link a #contacto) el loop no corre y el encabezado quedaba transparente.
+    document.body.classList.toggle("past-journey", journeyEl.getBoundingClientRect().bottom <= innerHeight);
     canvas.classList.toggle("is-hidden", !visible);
     renderer.setAnimationLoop(visible && !document.hidden ? frame : null);
   });
@@ -288,7 +304,11 @@ export async function start(): Promise<void> {
     heroCopy.inert = heroFade < 0.1;
     cue.style.opacity = String(1 - smooth(0.0, 0.05, p));
 
-    // Giro del carrusel: automático, por scroll y por arrastre.
+    // Giro del carrusel: automático, por scroll y por arrastre. Mientras el scroll lo está girando
+    // (incluida la cola del scrub) no corre el automático, si no los dos giros se suman.
+    const scrollTurn = scrollRotation();
+    if (Math.abs(scrollTurn - lastScrollRotation) > 1e-4) touch();
+    lastScrollRotation = scrollTurn;
     const idle = time - lastInteraction > 3.5 && !dragging && !pointerInside && !dialog.open;
     if (!idle || show < 0.9) lastAdvance = time;
     else if (time - lastAdvance > AUTO_STEP) { lastAdvance = time; rotTarget += carousel.deltaTo((front + 1) % projects.length, rotTarget + scrollRotation()); }
@@ -334,7 +354,11 @@ export async function start(): Promise<void> {
     // Sección de IA.
     const form = smooth(0.0, 0.75, state.q);
     energyGroup.visible = !inJourney;
-    energyGroup.position.y = smooth(0.8, 1, state.q) * 0.15;
+    // Mobile: la sección no queda fija, así que los símbolos siguen su lugar en el texto en vez de taparlo.
+    if (layout.narrow && glyphSlot) {
+      const slot = glyphSlot.getBoundingClientRect();
+      energyGroup.position.y = halfAt(HERO_Z).h - (slot.top + slot.height / 2) * layout.unitsPerPx;
+    } else energyGroup.position.y = smooth(0.8, 1, state.q) * 0.15;
     aiEl!.style.setProperty("--reveal", layout.narrow ? "1" : smooth(0.5, 0.85, state.q).toFixed(3));
     glyphs.forEach(g => {
       g.material.uniforms.uTime.value = time;

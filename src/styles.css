@@ -145,7 +145,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .nav a { display: block; padding: 14px 0; font-size: 15px; }
   .stack-rows > div, .parts > div { grid-template-columns: 1fr; gap: 8px; }
   .contact-title { font-size: 16vw; font-stretch: 100%; }
-  .contact-email { font-size: 6.2vw; word-break: normal; overflow-wrap: anywhere; }
+  .contact-email { font-size: 6.2vw; font-stretch: 75%; word-break: normal; overflow-wrap: anywhere; }
   .wordmark { font-size: 13px; font-stretch: 110%; }
 }
 @media (prefers-reduced-motion: reduce) {
