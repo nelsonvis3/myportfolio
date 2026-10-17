@@ -18,6 +18,9 @@
 * { box-sizing: border-box; }
 html { scroll-padding-top: calc(var(--header) + 16px); -webkit-text-size-adjust: 100%; }
 html, body { overflow-x: clip; }
+/* La página scrollea sin barra visible; la única barra es la del detalle de un proyecto (journey.css). */
+html { scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
 body { margin: 0; background: var(--bg); color: var(--fg); font: 360 15px/1.72 var(--text); font-stretch: 87.5%; -webkit-font-smoothing: antialiased; transition: background-color .35s ease, color .35s ease; }
 body:has(dialog[open]) { overflow: hidden; }
 h1, h2, h3, p, figure, dl, dd, ol, ul { margin: 0; }
