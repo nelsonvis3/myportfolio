@@ -17,6 +17,7 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const smooth = (a: number, b: number, v: number) => { const t = clamp01((v - a) / (b - a)); return t * t * (3 - 2 * t); };
 const mix = (a: number, b: number, t: number) => a + (b - a) * t;
+const wrapAngle = (a: number) => Math.atan2(Math.sin(a), Math.cos(a));
 
 function webglAvailable(): boolean {
   try { const c = document.createElement("canvas"); return !!(c.getContext("webgl2") || c.getContext("webgl")); } catch { return false; }
@@ -186,7 +187,7 @@ export async function start(): Promise<void> {
   const dialog = document.querySelector<HTMLDialogElement>("#project-detail")!;
   ui.inert = true;
 
-  let rotTarget = 0, spin = 0, spinVel = 0, swirl = 0, lastInteraction = -10, hovered = -1, front = 0, uiVisible = false;
+  let rotTarget = 0, spin = 0, spinVel = 0, swirl = 0, brainSpin = 0, lastInteraction = -10, hovered = -1, front = 0, uiVisible = false;
   const AUTO_STEP = 6; // segundos que cada proyecto queda al frente antes de girar
   let lastAdvance = 0, lastScrollRotation = 0;
   const touch = () => { lastInteraction = performance.now() / 1000; };
@@ -349,10 +350,16 @@ export async function start(): Promise<void> {
 
     brainGroup.position.set(mix(layout.heroX, 0, enter), mix(layout.heroY, 0, enter), 0);
     brainGroup.scale.setScalar(mix(layout.heroScale, 1.25, enter));
-    brainGroup.rotation.y = time * 0.12 * (1 - expand) - 0.35;
+    // Los giros se acumulan y se escalan por la transición, así el cerebro vuelve derecho al hero y el túnel
+    // queda alineado. Se normalizan solo cuando una vuelta entera no se nota, y se deshacen por el camino corto.
+    brainSpin += 0.12 * (1 - expand) * dt;
+    if (expand < 0.001) brainSpin = wrapAngle(brainSpin);
+    brainGroup.rotation.y = brainSpin * (1 - expand) - 0.35;
     // El túnel de partículas gira con el carrusel: da sensación de velocidad.
-    swirl += spinVel * dt * 0.45 * show;
-    brainGroup.rotation.z = time * 0.02 * expand + swirl;
+    swirl += (0.02 * expand + spinVel * 0.45 * show) * dt;
+    if (expand > 0.999) swirl = wrapAngle(swirl);
+    else if (expand < 0.001) swirl = 0;
+    brainGroup.rotation.z = swirl * expand;
     const u = brain.material.uniforms;
     u.uTime.value = time; u.uExpand.value = expand;
     u.uOpacity.value = inJourney ? (1 - exit) * mix(1, 0.75, show) : 0;
