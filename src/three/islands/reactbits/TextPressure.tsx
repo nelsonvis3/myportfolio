@@ -1,7 +1,7 @@
 /**
  * TextPressure: componente de React Bits (https://reactbits.dev, github.com/DavidHDev/react-bits).
  * Licencia MIT + Commons Clause, Copyright (c) 2026 David Haz. Se usa como parte de este sitio;
- * los componentes no se redistribuyen por separado. Cambios locales: renderiza un <span> con display block (el título real es el <h2> que lo contiene), sin @import externo y sin mayúsculas forzadas.
+ * los componentes no se redistribuyen por separado. Cambios locales: renderiza un <span> con display block (el título real es el <h2> que lo contiene), sin @import externo, sin mayúsculas forzadas con `hoverOnly` (quieto en `restPressure` hasta que el puntero entra al título) `widthRange` para fuentes con otro eje de ancho `fontScale` para achicar el tamaño calculado y `align` para alinear el título.
  */
 
 // Component ported from https://codepen.io/JuanFuentes/full/rgXKGQ
@@ -25,12 +25,17 @@ interface TextPressureProps {
   idle?: IdleMode;
   idleSpeed?: number;
   clickRipple?: boolean;
+  hoverOnly?: boolean;
+  restPressure?: number;
+  widthRange?: [number, number];
   textColor?: string;
   pressureColor?: string;
   strokeColor?: string;
   strokeWidth?: number;
   className?: string;
   minFontSize?: number;
+  fontScale?: number;
+  align?: 'left' | 'center';
 }
 
 interface Point {
@@ -52,6 +57,9 @@ interface PressureOptions {
   idle: IdleMode;
   idleSpeed: number;
   clickRipple: boolean;
+  hoverOnly: boolean;
+  restPressure: number;
+  widthRange: [number, number];
   textColor: string;
   pressureColor: string;
 }
@@ -127,6 +135,9 @@ const TextPressure: React.FC<TextPressureProps> = ({
   idle = 'none',
   idleSpeed = 1,
   clickRipple = true,
+  hoverOnly = false,
+  restPressure = 0.7,
+  widthRange = [5, 205],
 
   textColor = 'currentColor',
   pressureColor = '',
@@ -134,7 +145,9 @@ const TextPressure: React.FC<TextPressureProps> = ({
   strokeWidth = 3,
   className = '',
 
-  minFontSize = 24
+  minFontSize = 24,
+  fontScale = 1,
+  align = 'center'
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const titleRef = useRef<HTMLSpanElement | null>(null);
@@ -152,6 +165,9 @@ const TextPressure: React.FC<TextPressureProps> = ({
     idle,
     idleSpeed,
     clickRipple,
+    hoverOnly,
+    restPressure,
+    widthRange,
     textColor,
     pressureColor
   });
@@ -175,11 +191,14 @@ const TextPressure: React.FC<TextPressureProps> = ({
       idle,
       idleSpeed,
       clickRipple,
+      hoverOnly,
+      restPressure,
+      widthRange,
       textColor,
       pressureColor
     };
     wakeRef.current?.();
-  }, [width, weight, italic, alpha, radius, smoothing, idle, idleSpeed, clickRipple, textColor, pressureColor]);
+  }, [width, weight, italic, alpha, radius, smoothing, idle, idleSpeed, clickRipple, hoverOnly, restPressure, widthRange, textColor, pressureColor]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -252,7 +271,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
 
     const resize = () => {
       const { width: containerW, height: containerH } = container.getBoundingClientRect();
-      const nextFontSize = Math.max(chars.length ? containerW / (chars.length / 2) : minFontSize, minFontSize);
+      const nextFontSize = Math.max(chars.length ? (containerW / (chars.length / 2)) * fontScale : minFontSize, minFontSize);
       setFontSize(nextFontSize);
       setScaleY(scale && containerH > 0 ? containerH / nextFontSize : 1);
     };
@@ -261,7 +280,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
     const observer = new ResizeObserver(resize);
     observer.observe(container);
     return () => observer.disconnect();
-  }, [chars.length, minFontSize, scale]);
+  }, [chars.length, minFontSize, fontScale, scale]);
 
   useEffect(() => {
     const title = titleRef.current;
@@ -274,7 +293,8 @@ const TextPressure: React.FC<TextPressureProps> = ({
     let last = 0;
     let idleFrames = 0;
     let clock = 0;
-    let engage = optionsRef.current.idle === 'wave' || optionsRef.current.idle === 'pulse' ? 0 : 1;
+    let engage =
+      optionsRef.current.idle === 'wave' || optionsRef.current.idle === 'pulse' || optionsRef.current.hoverOnly ? 0 : 1;
 
     const tick = (now: number) => {
       rafId = 0;
@@ -292,7 +312,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
       mouse.y += (cursor.y - mouse.y) * follow;
 
       let present = 1;
-      if (idleMode !== 'none') {
+      if (idleMode !== 'none' || options.hoverOnly) {
         const box = container.getBoundingClientRect();
         const inside = cursor.x >= box.left && cursor.x <= box.right && cursor.y >= box.top && cursor.y <= box.bottom;
         present = cursor.seen && inside ? 1 : 0;
@@ -301,6 +321,8 @@ const TextPressure: React.FC<TextPressureProps> = ({
       if (Math.abs(present - engage) < 0.002) engage = present;
       const idling = idleMode !== 'none' && engage < 1;
       if (idling) clock += (elapsed / 1000) * options.idleSpeed;
+      // Fuera del título queda quieto: todas las letras con la misma presión.
+      const settled = idleMode === 'none' && options.hoverOnly && engage < 1;
 
       const ripples = ripplesRef.current;
       while (ripples.length && now - ripples[0].start > RIPPLE_LIFE * 1000) ripples.shift();
@@ -325,13 +347,16 @@ const TextPressure: React.FC<TextPressureProps> = ({
           const position = (center.x - titleRect.left) / Math.max(titleRect.width, 1);
           const resting = getIdlePressure(idleMode, position, clock, spread);
           pressure = resting + (pressure - resting) * engage;
+        } else if (settled) {
+          pressure = options.restPressure + (pressure - options.restPressure) * engage;
         }
         if (ripples.length) {
           const swell = getRipplePressure(ripples, center, now, titleRect.width);
           pressure = 1 - (1 - pressure) * (1 - swell);
         }
 
-        const wdth = options.width ? Math.floor(5 + 200 * pressure) : 100;
+        const [minWdth, maxWdth] = options.widthRange;
+        const wdth = options.width ? Math.floor(minWdth + (maxWdth - minWdth) * pressure) : 100;
         const wght = options.weight ? Math.floor(100 + 900 * pressure) : 400;
         const italVal = options.italic ? pressure.toFixed(2) : '0';
         const alphaVal = options.alpha ? pressure.toFixed(2) : '';
@@ -390,7 +415,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
     transform: `scale(1, ${scaleY})`,
     transformOrigin: 'center top',
     margin: 0,
-    textAlign: 'center',
+    textAlign: align,
     userSelect: 'none',
     whiteSpace: 'nowrap',
     fontWeight: 100,

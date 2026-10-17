@@ -1,6 +1,6 @@
 import type { Content, Project } from "../content/types.js";
 import { socials, casePath } from "../content/site.js";
-import { cover, esc, ext, json, projectLinks } from "./shared.js";
+import { esc, ext, json, projectLinks } from "./shared.js";
 
 // Home: hero 3D → entrada al cerebro → carrusel → IA → sobre mí → stack → contacto.
 // Todo el contenido está en el HTML; el 3D y los efectos de texto son mejoras progresivas.
@@ -14,7 +14,7 @@ function actions(c: Content, p: Project): string {
 }
 
 function journey(c: Content): string {
-  const data = c.projects.map(p => ({ id: p.id, name: p.name, sub: p.tagline, img: p.images[0].src, phone: p.phoneShot }));
+  const data = c.projects.map(p => ({ id: p.id, name: p.name, sub: p.tagline, img: p.images[0].src, phone: p.phoneShot, href: casePath(c.lang, p.id) }));
   const first = c.projects[0];
   return `<section class="journey" data-journey aria-label="${esc(c.ui.carouselLabel)}">
   <div class="stage" data-stage>
@@ -38,7 +38,7 @@ function journey(c: Content): string {
       </div>
       <div class="carousel-controls" role="group" aria-label="${esc(c.ui.carouselLabel)}">
         <button type="button" class="square" data-carousel-prev aria-label="${esc(c.ui.prev)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button type="button" class="btn btn-solid" data-carousel-open>${esc(c.ui.openProject)}</button>
+        <a class="btn btn-solid" href="${casePath(c.lang, first.id)}" data-carousel-open>${esc(c.ui.openProject)}</a>
         <button type="button" class="square" data-carousel-next aria-label="${esc(c.ui.next)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
       <p class="carousel-hint">${esc(c.ui.carouselHint)}</p>
@@ -57,25 +57,7 @@ function journey(c: Content): string {
     </li>`).join("")}</ul>
   </div>
   <script type="application/json" id="journey-data">${json(data)}</script>
-</section>
-<dialog class="detail" id="project-detail" aria-label="${esc(c.ui.detailLabel)}" data-lenis-prevent>
-  <button type="button" class="detail-close" data-detail-close>${esc(c.ui.backToCarousel)}</button>
-  ${c.projects.map(p => `<article class="detail-body" data-project-detail="${esc(p.id)}" hidden aria-labelledby="detail-${esc(p.id)}">
-    ${cover(p, "detail-media")}
-    <div class="detail-copy">
-      <p class="kind">${esc(p.kind)}</p>
-      <h2 id="detail-${esc(p.id)}">${esc(p.name)}</h2>
-      <p class="tagline">${esc(p.tagline)}</p>
-      <p>${esc(p.summary)}</p>
-      <h3>${esc(c.ui.whatItDoes)}</h3>
-      <ul class="list">${p.highlights.map(h => `<li>${esc(h)}</li>`).join("")}</ul>
-      <h3>${esc(c.ui.myPart)}</h3>
-      <p>${esc(p.role)}</p>
-      <p class="stack-line">${p.stack.map(esc).join(" / ")}</p>
-      ${actions(c, p)}
-    </div>
-  </article>`).join("")}
-</dialog>`;
+</section>`;
 }
 
 const aiPrompts = {

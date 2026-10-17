@@ -48,15 +48,15 @@ ${themeBoot}
 <meta property="og:image:alt" content="${esc(c.meta.ogAlt)}"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/fonts/anybody-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 <script type="application/ld+json">${schema}</script>
 </head>
 <body class="${home ? "home" : "page"}">
 <a class="skip" href="#main">${esc(c.ui.skip)}</a>
 <header class="header">
-  <a class="wordmark" href="${homeHref}">Nelson Sivisstum</a>
+  <a class="wordmark" href="${homeHref}" aria-label="Nelson Sivisstum"><span aria-hidden="true">N<span class="wordmark-rest"><span>elson&nbsp;</span></span>S<span class="wordmark-rest"><span>ivisstum</span></span></span></a>
   <nav class="nav" aria-label="${c.lang === "es" ? "Principal" : "Main"}">
     <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-links">${esc(c.ui.menu)}</button>
     <ul id="nav-links">${nav.map(([id, label]) => `<li><a href="${anchor(id)}">${esc(label)}</a></li>`).join("")}</ul>

@@ -15,7 +15,7 @@ Sitio estático en TypeScript (español e inglés) con una escena three.js en la
 - `scene.ts`: escena, scroll (GSAP ScrollTrigger + Lenis) y layout. El canvas mide 100lvh: medir con `canvas.clientHeight`, no `innerHeight`.
 - `carousel.ts`: cada proyecto es la captura de escritorio (`images[0]`) más la de celular (`phoneShot`); no usa video. El giro es un resorte sobre `rotTarget + scrollRotation()`.
 - El encabezado se esconde durante el recorrido (`body.nav-auto`) y `client.ts` lo muestra con `.nav-peek`.
-- El diálogo de detalle necesita `data-lenis-prevent` para poder scrollear.
+- Abrir un proyecto del carrusel (botón o click en el panel del frente) hace un zoom corto y navega al caso completo.
 
 ## Casos de estudio y clips
 

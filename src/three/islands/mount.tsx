@@ -3,6 +3,9 @@ import VariableProximity from "./reactbits/VariableProximity";
 import TextType from "./reactbits/TextType";
 import TextPressure from "./reactbits/TextPressure";
 
+// Eje de ancho de Mona Sans.
+const WDTH: [number, number] = [75, 125];
+
 /** Monta los efectos de texto de React Bits sobre el HTML que ya existe.
  * El texto original queda para lectores de pantalla y para quien no carga JS. */
 export function mountIslands(): void {
@@ -42,7 +45,7 @@ export function mountIslands(): void {
     sr.textContent = label;
     el.replaceChildren(sr, holder);
     createRoot(holder).render(
-      <TextPressure text={label} fontFamily="Anybody Variable" fontUrl="" italic={false} flex={false} textColor="currentColor" minFontSize={48} />,
+      <TextPressure text={label} fontFamily="Mona Sans Variable" fontUrl="" italic={false} flex={false} hoverOnly restPressure={0.7} widthRange={WDTH} fontScale={0.65} align="left" textColor="currentColor" minFontSize={48} />,
     );
   }
 }
@@ -53,8 +56,8 @@ function mountProximity(el: HTMLElement): void {
     <VariableProximity
       label={label}
       className="proximity"
-      fromFontVariationSettings="'wght' 760, 'wdth' 62"
-      toFontVariationSettings="'wght' 900, 'wdth' 150"
+      fromFontVariationSettings="'wght' 760, 'wdth' 75"
+      toFontVariationSettings="'wght' 900, 'wdth' 125"
       radius={190}
       falloff="gaussian"
       smoothing={0.25}

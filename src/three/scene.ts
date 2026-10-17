@@ -55,7 +55,7 @@ export async function start(): Promise<void> {
   const carousel = new Carousel(projects, renderer.capabilities.getMaxAnisotropy(), !mobile);
   scene.add(carousel.group);
 
-  await document.fonts.load("700 230px 'Martian Mono Variable'").catch(() => []);
+  await document.fonts.load("700 230px 'Inter Variable'").catch(() => []);
   const glyphCount = mobile ? 3200 : 7000;
   const glyphs = [
     new EnergyGlyph(">_", glyphCount, 11, -1),
@@ -183,8 +183,7 @@ export async function start(): Promise<void> {
   const nameEl = ui.querySelector<HTMLElement>("[data-carousel-name]")!;
   const subEl = ui.querySelector<HTMLElement>("[data-carousel-sub]")!;
   const countEl = ui.querySelector<HTMLElement>("[data-carousel-count]")!;
-  const openButton = ui.querySelector<HTMLButtonElement>("[data-carousel-open]")!;
-  const dialog = document.querySelector<HTMLDialogElement>("#project-detail")!;
+  const openLink = ui.querySelector<HTMLAnchorElement>("[data-carousel-open]")!;
   ui.inert = true;
 
   let rotTarget = 0, spin = 0, spinVel = 0, swirl = 0, brainSpin = 0, lastInteraction = -10, hovered = -1, front = 0, uiVisible = false;
@@ -207,30 +206,26 @@ export async function start(): Promise<void> {
   });
   ui.addEventListener("focusin", touch);
 
-  // Vista 2D del proyecto.
-  const articles = [...dialog.querySelectorAll<HTMLElement>("[data-project-detail]")];
-  function openDetail(index: number): void {
+  // Abrir un proyecto lleva al caso completo: la cámara se acerca al panel y después navega.
+  let opening = false;
+  function openCase(index: number): void {
+    if (opening) return;
+    opening = true;
     goTo(index);
     lenis.stop();
-    gsap.to(state, { zoom: 1, duration: 0.7, ease: "power3.inOut", onComplete: () => {
-      articles.forEach(a => {
-        a.hidden = a.dataset.projectDetail !== projects[index].id;
-        const video = a.querySelector("video");
-        if (video) { if (a.hidden) video.pause(); else void video.play().catch(() => {}); }
-      });
-      dialog.showModal();
-      dialog.scrollTop = 0;
-    } });
+    gsap.to(state, { zoom: 1, duration: 0.45, ease: "power3.in", onComplete: () => location.assign(projects[index].href) });
   }
-  function closeDetail(): void { if (dialog.open) dialog.close(); }
-  dialog.addEventListener("close", () => {
-    dialog.querySelectorAll("video").forEach(v => v.pause());
-    gsap.to(state, { zoom: 0, duration: 0.8, ease: "power3.out" });
-    lenis.start(); touch(); openButton.focus({ preventScroll: true });
+  openLink.addEventListener("click", event => {
+    // Ctrl/Cmd/Shift o botón del medio: que el navegador abra la pestaña como cualquier link.
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    openCase(front);
   });
-  dialog.querySelector("[data-detail-close]")!.addEventListener("click", closeDetail);
-  dialog.addEventListener("click", event => { if (event.target === dialog) closeDetail(); });
-  openButton.addEventListener("click", () => openDetail(front));
+  // Al volver con el botón Atrás la página sale de la caché tal como quedó: con la cámara adentro del panel.
+  addEventListener("pageshow", event => {
+    if (!event.persisted) return;
+    opening = false; state.zoom = 0; lenis.start(); touch();
+  });
 
   // Arrastre, hover y click sobre los paneles.
   const raycaster = new THREE.Raycaster();
@@ -263,7 +258,7 @@ export async function start(): Promise<void> {
     dragging = false;
     if (dragMoved < 6) {
       const index = pick(event.clientX, event.clientY);
-      if (index >= 0) { if (index === front) openDetail(index); else goTo(index); }
+      if (index >= 0) { if (index === front) openCase(index); else goTo(index); }
     }
   });
 
@@ -317,7 +312,7 @@ export async function start(): Promise<void> {
     const scrollTurn = scrollRotation();
     if (Math.abs(scrollTurn - lastScrollRotation) > 1e-4) touch();
     lastScrollRotation = scrollTurn;
-    const idle = time - lastInteraction > 3.5 && !dragging && !pointerInside && !dialog.open;
+    const idle = time - lastInteraction > 3.5 && !dragging && !pointerInside;
     if (!idle || show < 0.9) lastAdvance = time;
     else if (time - lastAdvance > AUTO_STEP) { lastAdvance = time; rotTarget += carousel.deltaTo((front + 1) % projects.length, rotTarget + scrollRotation()); }
     // Giro con resorte: sigue al objetivo (scroll, flechas, arrastre y automático) y se asienta con un rebote leve.
@@ -328,7 +323,7 @@ export async function start(): Promise<void> {
     const newFront = carousel.frontIndex(rotation);
     if (newFront !== front) {
       front = newFront;
-      nameEl.textContent = projects[front].name; subEl.textContent = projects[front].sub;
+      nameEl.textContent = projects[front].name; subEl.textContent = projects[front].sub; openLink.href = projects[front].href;
       countEl.textContent = (ui.dataset.count ?? "{n} / {total}").replace("{n}", String(front + 1)).replace("{total}", String(projects.length));
     }
     const shouldShowUi = show > 0.85 && exit < 0.5 && inJourney;

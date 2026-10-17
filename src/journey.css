@@ -16,7 +16,7 @@ html.lenis, html.lenis body { height: auto; }
 .journey { position: relative; z-index: 1; }
 .stage { position: relative; min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding: calc(var(--header) + 40px) var(--gutter) 64px; overflow: hidden; }
 .hero { position: relative; z-index: 2; max-width: min(52rem, 58vw); will-change: opacity, transform; }
-.hero-name { font-size: clamp(4.4rem, 12.5vw, 13.5rem); font-weight: 760; font-stretch: 62%; line-height: .84; letter-spacing: -.005em; }
+.hero-name { font-size: clamp(4.4rem, 12.5vw, 13.5rem); font-weight: 760; font-stretch: 75%; line-height: .84; letter-spacing: -.005em; }
 .hero-name > span { display: block; }
 .hero-name .proximity { display: block; }
 .hero-role { margin-top: 30px; font: 600 clamp(1.25rem, 1.9vw, 1.75rem)/1.1 var(--display); font-stretch: 125%; }
@@ -57,18 +57,6 @@ html.lenis, html.lenis body { height: auto; }
 .carousel-hint { grid-column: 1 / -1; font-size: 12px; color: var(--muted); }
 
 /* Detalle 2D del proyecto */
-.detail { width: min(1200px, calc(100vw - 32px)); max-height: calc(100svh - 48px); padding: 0; border: 1px solid var(--fg); background: var(--bg); color: var(--fg); overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--fg) transparent; }
-.detail::backdrop { background: var(--glass); backdrop-filter: blur(10px); }
-.detail[open] { animation: detail-in .5s cubic-bezier(.2,.8,.2,1); }
-@keyframes detail-in { from { opacity: 0; transform: translateY(16px) scale(.97); } }
-.detail-close { position: sticky; top: 0; z-index: 2; display: block; margin-left: auto; min-height: 46px; padding: 0 20px; border-left: 1px solid var(--fg); border-bottom: 1px solid var(--fg); background: var(--bg); font-size: 13px; }
-.detail-close:hover { background: var(--fg); color: var(--bg); }
-.detail-body { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 44px; padding: 8px 40px 40px; }
-.detail-media { margin: 0; padding: 12px 0 32px; position: sticky; top: 62px; align-self: start; }
-.detail-copy h2 { margin-top: 6px; font-size: clamp(2.6rem, 5vw, 4.6rem); font-stretch: 70%; }
-.detail-copy .tagline { margin-top: 12px; font: 600 1.2rem/1.25 var(--display); }
-.detail-copy > p { margin-top: 14px; max-width: 60ch; }
-.detail-copy h3 { margin: 28px 0 12px; font-size: 1.15rem; }
 .stack-line { color: var(--muted); font-size: 12.5px; }
 
 /* IA */
@@ -112,8 +100,6 @@ html.lenis, html.lenis body { height: auto; }
   .hero { max-width: none; }
   .hero-poster { position: relative; right: auto; top: auto; transform: none; width: 78%; margin: 0 auto 24px; order: -1; }
   .fallback-grid { grid-template-columns: 1fr; }
-  .detail-body { grid-template-columns: 1fr; gap: 24px; padding: 8px 20px 28px; }
-  .detail-media { position: static; }
 }
 @media (max-width: 760px) {
   .is-3d .stage { display: block; }

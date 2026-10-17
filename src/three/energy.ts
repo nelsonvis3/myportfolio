@@ -16,7 +16,7 @@ function sampleGlyph(text: string, count: number, rand: () => number): Float32Ar
   const out = new Float32Array(count * 3);
   if (!ctx) return out;
   ctx.fillStyle = "#fff";
-  ctx.font = "700 230px 'Martian Mono Variable', monospace";
+  ctx.font = "700 230px 'Inter Variable', sans-serif";
   ctx.textAlign = "center"; ctx.textBaseline = "middle";
   ctx.fillText(text, 320, 165);
   const data = ctx.getImageData(0, 0, 640, 320).data;

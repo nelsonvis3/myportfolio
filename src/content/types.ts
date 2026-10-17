@@ -45,7 +45,6 @@ export interface Content {
     switchLang: string; switchLangLabel: string; themeToDark: string; themeToLight: string;
     role: string; heroLine: string; viewProjects: string; downloadCv: string; heroMeta: string; scrollCue: string;
     carouselLabel: string; prev: string; next: string; openProject: string; carouselHint: string; countOf: string;
-    detailLabel: string; backToCarousel: string; whatItDoes: string; myPart: string;
     readCase: string; viewCode: string; demoSoon: string; projectsTitle: string; brainAlt: string;
     caseBack: string; caseStack: string; caseRole: string; caseProblem: string; caseSolution: string; caseFeatures: string; caseImageFull: string; caseVideoFull: string; caseUsage: string; backToTop: string; caseBackHome: string;
     caseArchitecture: string; caseChallenges: string; caseDecisions: string; caseStatus: string; caseWorks: string;

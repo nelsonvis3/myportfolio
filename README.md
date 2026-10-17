@@ -23,7 +23,7 @@ Mi portfolio de desarrollador full stack, en español y en inglés, con tema cla
 | Escena 3D | three.js, GSAP ScrollTrigger y Lenis |
 | Efectos de texto | React Bits: VariableProximity, TextType y TextPressure |
 | Clips | Grabaciones de cada proyecto, editadas con FFmpeg (`public/clips/`) |
-| Tipografía | Anybody y Martian Mono, las dos con eje de ancho variable (OFL) |
+| Tipografía | Mona Sans (titulares, con eje de ancho variable) e Inter (texto), las dos OFL |
 | Publicación | Vercel |
 
 Algunas decisiones:
@@ -79,5 +79,5 @@ El código del sitio tiene licencia MIT ([LICENSE](LICENSE)). Los textos, el CV 
 ### Licencias de terceros
 
 - Componentes de React Bits (MIT + Commons Clause) en `src/three/islands/reactbits/`, con su aviso en cada archivo.
-- Fuentes Anybody y Martian Mono (SIL Open Font License) en `public/fonts/`.
+- Fuentes Mona Sans e Inter (SIL Open Font License) en `public/fonts/`.
 - Malla cortical de Nilearn (BSD) en `public/models/`.

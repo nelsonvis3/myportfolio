@@ -1,13 +1,13 @@
 /* Nelson Sivisstum — sistema visual
-   Blanco y negro, sin acentos de color. Dos familias con ejes variables:
-   Anybody (titulares, eje de ancho 50–150) y Martian Mono (texto, eje de ancho 75–112.5). */
+   Blanco y negro, sin acentos de color. Dos familias variables:
+   Mona Sans (titulares, eje de ancho 75–125) e Inter (texto). */
 
-@font-face { font-family: "Anybody Variable"; src: url("/fonts/anybody-latin.woff2") format("woff2-variations"); font-weight: 100 900; font-stretch: 50% 150%; font-display: swap; }
-@font-face { font-family: "Martian Mono Variable"; src: url("/fonts/martian-mono-latin.woff2") format("woff2-variations"); font-weight: 100 800; font-stretch: 75% 112.5%; font-display: swap; }
+@font-face { font-family: "Mona Sans Variable"; src: url("/fonts/mona-sans-latin.woff2") format("woff2-variations"); font-weight: 200 900; font-stretch: 75% 125%; font-display: swap; }
+@font-face { font-family: "Inter Variable"; src: url("/fonts/inter-latin.woff2") format("woff2-variations"); font-weight: 100 900; font-display: swap; }
 
 :root {
-  --display: "Anybody Variable", "Arial Narrow", sans-serif;
-  --text: "Martian Mono Variable", ui-monospace, monospace;
+  --display: "Mona Sans Variable", "Helvetica Neue", Arial, sans-serif;
+  --text: "Inter Variable", system-ui, sans-serif;
   --gutter: clamp(20px, 4vw, 56px);
   --header: 72px;
   color-scheme: dark;
@@ -21,12 +21,11 @@ html, body { overflow-x: clip; }
 /* La página scrollea sin barra visible; la única barra es la del detalle de un proyecto (journey.css). */
 html { scrollbar-width: none; }
 html::-webkit-scrollbar { display: none; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 360 15px/1.72 var(--text); font-stretch: 87.5%; -webkit-font-smoothing: antialiased; transition: background-color .35s ease, color .35s ease; }
-body:has(dialog[open]) { overflow: hidden; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 15px/1.65 var(--text); -webkit-font-smoothing: antialiased; transition: background-color .35s ease, color .35s ease; }
 h1, h2, h3, p, figure, dl, dd, ol, ul { margin: 0; }
 ol, ul { padding: 0; list-style: none; }
 h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: .94; }
-h2 { font-size: clamp(2.6rem, 6vw, 6rem); font-stretch: 112%; letter-spacing: -.02em; }
+h2 { font-size: clamp(2.2rem, 4.6vw, 4.6rem); font-stretch: 112%; letter-spacing: -.02em; }
 h3 { font-size: 1.45rem; font-stretch: 100%; font-weight: 700; line-height: 1.1; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .2em; }
 img, video, svg { display: block; max-width: 100%; }
@@ -48,7 +47,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 /* Botones: rectángulos de borde fino que se invierten al pasar el puntero. */
 .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px; border: 1px solid var(--fg); font: 500 13px/1 var(--text); font-stretch: 87.5%; text-decoration: none; transition: background-color .18s, color .18s; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px; border: 1px solid var(--fg); font: 500 13px/1 var(--text); text-decoration: none; transition: background-color .18s, color .18s; }
 .btn:hover { background: var(--fg); color: var(--bg); }
 .btn-solid { background: var(--fg); color: var(--bg); }
 .btn-solid:hover { background: transparent; color: var(--fg); }
@@ -58,7 +57,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .skip { position: fixed; z-index: 100; top: 10px; left: 10px; padding: 10px 16px; background: var(--fg); color: var(--bg); clip-path: inset(50%); }
 .skip:focus { clip-path: none; }
 .header { position: sticky; top: 0; z-index: 30; height: var(--header); display: flex; align-items: center; gap: 32px; padding: 0 var(--gutter); background: var(--bg); border-bottom: 1px solid var(--line); transition: background-color .35s, border-color .35s; }
-.wordmark { font: 800 15px/1 var(--display); font-stretch: 125%; letter-spacing: .01em; text-decoration: none; white-space: nowrap; }
+/* Monograma NS: con el mouse (o el foco) se despliega el resto del nombre entre la N y la S. */
+.wordmark { font: 800 17px/1 var(--display); font-stretch: 112%; letter-spacing: .01em; text-decoration: none; white-space: nowrap; }
+.wordmark-rest { display: inline-grid; grid-template-columns: 0fr; vertical-align: bottom; transition: grid-template-columns .45s cubic-bezier(.2,.8,.2,1); }
+.wordmark-rest > span { overflow: hidden; }
+.wordmark:hover .wordmark-rest, .wordmark:focus-visible .wordmark-rest { grid-template-columns: 1fr; }
+@media (prefers-reduced-motion: reduce) { .wordmark-rest { transition: none; } }
 .nav { margin-left: auto; }
 .nav ul { display: flex; gap: 28px; }
 .nav a { font-size: 13px; text-decoration: none; padding: 10px 0; }
@@ -93,8 +97,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .stack-rows dd { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 
 /* Contacto: el título es la pieza grande del cierre (React Bits: TextPressure). */
-.contact-title { font-size: clamp(3rem, 10.5vw, 10.5rem); font-stretch: 150%; line-height: .85; letter-spacing: -.03em; margin-bottom: clamp(48px, 6vw, 90px); }
-.contact-title.is-pressure { height: clamp(5rem, 17vw, 17rem); }
+.contact-title { font-size: clamp(3rem, 8vw, 8rem); font-stretch: 125%; line-height: .85; letter-spacing: -.03em; margin-bottom: clamp(48px, 6vw, 90px); }
+.contact-title.is-pressure { height: clamp(4rem, 13.5vw, 13.5rem); }
 .pressure-holder { display: block; height: 100%; }
 .contact-email { display: inline-block; font: 700 clamp(1.4rem, 3vw, 2.6rem)/1.1 var(--display); font-stretch: 100%; text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 6px; word-break: break-all; }
 .contact-email:hover { border-bottom-style: dashed; }
@@ -103,7 +107,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* Caso de estudio */
 .case { padding: 48px 0 clamp(80px, 10vw, 160px); }
 .back { display: inline-block; font-size: 13px; margin-bottom: clamp(48px, 7vw, 96px); }
-.case-header h1 { font-size: clamp(4rem, 13vw, 13rem); font-stretch: 62%; font-weight: 820; line-height: .84; margin-top: 10px; }
+.case-header h1 { font-size: clamp(4rem, 13vw, 13rem); font-stretch: 75%; font-weight: 820; line-height: .84; margin-top: 10px; }
 .case-tagline { margin-top: 24px; max-width: 26ch; font: 500 clamp(1.4rem, 2.6vw, 2.3rem)/1.15 var(--display); font-stretch: 100%; }
 .case-meta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
 .case-meta dt, .parts dt { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
@@ -162,8 +166,7 @@ video[data-fullscreen]:fullscreen { aspect-ratio: auto; object-fit: contain; bac
 .learning { font: 500 clamp(1.25rem, 2vw, 1.75rem)/1.35 var(--display); font-stretch: 95%; max-width: 40ch !important; }
 .next { display: flex; flex-direction: column; gap: 8px; margin-top: clamp(80px, 10vw, 160px); padding-top: 32px; border-top: 1px solid var(--line); text-decoration: none; }
 .next span { font-size: 12.5px; color: var(--muted); }
-.next strong { font: 820 clamp(3rem, 9vw, 9rem)/.9 var(--display); font-stretch: 62%; transition: font-stretch .5s cubic-bezier(.6,0,.2,1); }
-.next:hover strong { font-stretch: 130%; }
+.next strong { font: 820 clamp(3rem, 9vw, 9rem)/.9 var(--display); font-stretch: 75%; }
 .case-end { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
 
 @media (max-width: 900px) {
@@ -181,9 +184,8 @@ video[data-fullscreen]:fullscreen { aspect-ratio: auto; object-fit: contain; bac
   .nav ul.open { display: flex; }
   .nav a { display: block; padding: 14px 0; font-size: 15px; }
   .stack-rows > div, .parts > div { grid-template-columns: 1fr; gap: 8px; }
-  .contact-title { font-size: 16vw; font-stretch: 100%; }
+  .contact-title { font-size: 13vw; font-stretch: 100%; }
   .contact-email { font-size: 6.2vw; font-stretch: 75%; word-break: normal; overflow-wrap: anywhere; }
-  .wordmark { font-size: 13px; font-stretch: 110%; }
   /* El video es una pantalla de escritorio: en el celular se recorta en vertical hacia la derecha, donde aparece
      la versión de celular, y tocarlo lo abre completo (client.ts). */
   /* El clip grabado en el celular se ve como un celular; el de escritorio, a lo ancho y con pantalla completa al tocarlo. */

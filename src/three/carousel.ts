@@ -5,7 +5,7 @@ import * as THREE from "three";
  * desde las partículas al entrar, se inclinan con la velocidad del giro y se reflejan en el piso.
  * El texto se muestra en HTML, no en WebGL. */
 
-export interface ProjectInfo { id: string; name: string; sub: string; img: string; phone: string }
+export interface ProjectInfo { id: string; name: string; sub: string; img: string; phone: string; href: string }
 
 const vertexShader = /* glsl */ `
   uniform float uBend;
