@@ -213,7 +213,7 @@ export const en: Content = {
       usage: [
         { name: "Pick a product", detail: "From the catalog to the product page: choose a flavor and add it to the cart.", clip: "ragnar-1" },
         { name: "Delivery and order", detail: "For home delivery, the cost comes from the distance to the address. Confirming the order reserves the stock.", clip: "ragnar-2" },
-        { name: "Admin panel", detail: "The shop sees what is published and what is out of stock, and can unpublish an item without deleting it.", clip: "ragnar-3" },
+        { name: "Admin panel", detail: "The shop publishes or unpublishes items without deleting them and edits each product: price, stock, photo and flavors, each with its own image.", clip: "ragnar-3" },
       ],
       flow: {
         title: "From cart to order",

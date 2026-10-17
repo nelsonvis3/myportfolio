@@ -215,7 +215,7 @@ export const es: Content = {
       usage: [
         { name: "Elegir el producto", detail: "Del catálogo a la ficha: se elige el sabor y el producto entra al carrito.", clip: "ragnar-1" },
         { name: "Envío y pedido", detail: "Con envío a domicilio, el costo sale de la distancia hasta la dirección. Al confirmar, el pedido reserva el stock.", clip: "ragnar-2" },
-        { name: "Panel administrativo", detail: "El local ve lo publicado y lo que no tiene stock, y puede despublicar un artículo sin borrarlo.", clip: "ragnar-3" },
+        { name: "Panel administrativo", detail: "El local publica o despublica artículos sin borrarlos y edita cada producto: precio, stock, foto y sabores, cada uno con su imagen.", clip: "ragnar-3" },
       ],
       flow: {
         title: "Del carrito al pedido",
