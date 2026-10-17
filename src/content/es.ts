@@ -54,7 +54,7 @@ export const es: Content = {
       { name: "Enero 2023", detail: "Terminé el secundario." },
       { name: "Junio 2026", detail: "Empecé a aprender programación." },
       { name: "Septiembre 2026", detail: "Empecé a desarrollar proyectos web propios." },
-      { name: "Hoy", detail: "Trabajo en Fracxion, Ragnar Suplementos y RoadLedger con React y Django, y busco mi primera oportunidad en un equipo." },
+      { name: "Hoy", detail: "Estudio, comprendo e implemento nuevas tecnologías y herramientas." },
     ],
     educationTitle: "Formación",
     education: [
@@ -64,8 +64,9 @@ export const es: Content = {
     ],
     nowTitle: "Ahora",
     now: [
-      "Aprendo más sobre arquitectura SaaS y aislamiento de datos.",
-      "Mejoro las pruebas de permisos, inventario y operaciones concurrentes.",
+      "Profundizando en arquitectura de software y patrones de diseño.",
+      "Mejorando seguridad, escalabilidad y pruebas de permisos, inventario y operaciones concurrentes.",
+      'Estudiando y aplicando patrones de diseño y principios SOLID',
       "Busco mi primera oportunidad profesional.",
     ],
     cvEs: "CV en español", cvEn: "CV en inglés",

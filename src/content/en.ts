@@ -58,7 +58,7 @@ export const en: Content = {
       { name: "January 2023", detail: "Finished high school." },
       { name: "June 2026", detail: "Started learning to code." },
       { name: "September 2026", detail: "Started building my own web projects." },
-      { name: "Now", detail: "Working on Fracxion, Ragnar Suplementos and RoadLedger with React and Django, and looking for my first role on a team." },
+      { name: "Now", detail: "I study, understand and implement new technologies and tools." },
     ],
     educationTitle: "Learning",
     education: [
@@ -68,8 +68,9 @@ export const en: Content = {
     ],
     nowTitle: "Now",
     now: [
-      "Learning more about SaaS architecture and data isolation.",
-      "Improving tests for permissions, inventory and concurrent operations.",
+      "Deepening into software architecture and design patterns.",
+      "Improving security, scalability and testing of permits, inventory and concurrent operations.",
+      'Studying and applying SOLID design patterns and principles',
       "Looking for my first professional role.",
     ],
     cvEs: "CV in Spanish", cvEn: "CV in English",
