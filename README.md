@@ -13,7 +13,7 @@ Mi portfolio de desarrollador full stack, en español y en inglés.
 - Un hero en tarjeta con mi presentación, y una intro sobre cómo trabajo.
 - Mis tres proyectos en tarjetas que corren de lado al bajar. Un click cambia el caso de estudio de la home al de ese proyecto, sin salir de la página: resumen, funciones, clips de cómo se usa (escritorio y celular), desafíos, arquitectura y estado.
 - Cada proyecto tiene además su página con el caso completo.
-- Sobre mí, el stack (y AI Studio), disponibilidad y contacto.
+- Sobre mí, el stack (y AI Studio), disponibilidad y un formulario de contacto que llega a mi correo.
 - Sin JavaScript o con movimiento reducido, el sitio se ve completo y quieto.
 
 ## Cómo está hecho
@@ -56,11 +56,16 @@ src/
   build.ts       Genera dist/ y empaqueta el JS con esbuild
   styles.css     Sistema visual (carbón y ámbar)
 public/          Imágenes, videos, fuentes y CV
+docs/social/     Plantilla de las imágenes para compartir y del banner de LinkedIn
 ```
 
 Imágenes opcionales: `public/img/hero.webp` (fondo del hero) y `public/img/nelson.webp` (foto de Sobre mí). Si están, el build las usa.
 
 Los clips de "Cómo se usa" están en `public/clips/`: `<proyecto>-<n>-desktop.mp4` y, si existe, `<proyecto>-<n>-mobile.mp4`, cada uno con su póster `.webp`. El build los detecta solos. Los CV que se descargan son `public/cv.pdf` y `public/cv-en.pdf` ([docs/cv/README.md](docs/cv/README.md)).
+
+El formulario de contacto usa [Web3Forms](https://web3forms.com): la clave pública va en `contactForm.accessKey` de `src/content/site.ts`. Sin clave, la sección de contacto muestra solo el botón de correo.
+
+Las imágenes para compartir (`public/img/social-preview*.png`) y el banner de LinkedIn salen de `docs/social/card.html`. Para regenerarlas, con Brave o Chrome instalado: `node docs/social/capture.mjs`.
 
 ## Publicación
 

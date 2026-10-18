@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- Imágenes para compartir el portfolio, con el estilo del sitio. Se capturan con `node docs/social/capture.mjs`:
+     ?kind=og&lang=es|en → public/img/social-preview(-en).png, 1200×630 (Open Graph y portada del README).
+     ?kind=banner       → banner de LinkedIn, 1584×396. A la izquierda queda lugar para la foto de perfil. -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Social card</title>
+<style>
+  @font-face { font-family: "Mona Sans"; src: url("../../public/fonts/mona-sans-latin.woff2") format("woff2"); font-weight: 200 900; font-stretch: 75% 125%; }
+  @font-face { font-family: "Inter"; src: url("../../public/fonts/inter-latin.woff2") format("woff2"); font-weight: 100 900; }
+  :root { --deep: #0e0d0b; --bg: #171513; --surface: #221f1b; --line: #38332c; --fg: #f2ece2; --muted: #a59c8f; --accent: #e4a853; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: var(--deep); overflow: hidden; }
+  body { width: var(--w); height: var(--h); padding: var(--pad); font-family: "Inter", sans-serif; color: var(--fg); }
+  .card { position: relative; width: 100%; height: 100%; overflow: hidden; isolation: isolate; border-radius: var(--radius); background: var(--bg);
+    border: 1px solid rgba(242, 236, 226, .07); }
+  .glow { position: absolute; border-radius: 50%; z-index: -1; }
+  .g1 { background: radial-gradient(circle, rgba(228, 168, 83, .5), rgba(228, 168, 83, 0) 70%); }
+  .g2 { background: radial-gradient(circle, rgba(196, 98, 45, .42), rgba(196, 98, 45, 0) 70%); }
+  .eyebrow { font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: "Mona Sans", sans-serif; font-weight: 600; letter-spacing: -.035em; line-height: 1.02; text-wrap: balance; }
+  .stack { color: var(--muted); }
+  .url { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(34, 31, 27, .8); color: var(--fg); }
+  .url::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(228, 168, 83, .18); }
+  .shots { position: absolute; }
+  .shots img { position: absolute; object-fit: cover; object-position: top left; border-radius: 14px; border: 1px solid var(--line);
+    box-shadow: 0 40px 70px -30px rgba(0, 0, 0, .9); }
+
+  /* Open Graph, 1200×630 */
+  body.og { --w: 1200px; --h: 630px; --pad: 14px; --radius: 30px; }
+  .og .g1 { width: 620px; height: 620px; right: -140px; top: -240px; }
+  .og .g2 { width: 460px; height: 460px; right: 300px; bottom: -300px; }
+  .og .text { position: absolute; left: 64px; top: 62px; width: 600px; height: calc(100% - 124px); display: flex; flex-direction: column; }
+  .og .eyebrow { font-size: 15px; }
+  .og h1 { margin-top: 26px; font-size: 58px; }
+  .og .stack { margin-top: 22px; font-size: 21px; }
+  .og .url { margin-top: auto; align-self: flex-start; padding: 12px 22px; font-size: 18px; }
+  .og .shots { right: -40px; top: 92px; width: 560px; height: 460px; }
+  .og .shots img { width: 470px; aspect-ratio: 16 / 10; }
+
+  /* Banner de LinkedIn, 1584×396 */
+  body.banner { --w: 1584px; --h: 396px; --pad: 0px; --radius: 0px; }
+  .banner .card { border: 0; }
+  .banner .g1 { width: 760px; height: 760px; right: -160px; top: -380px; }
+  .banner .g2 { width: 520px; height: 520px; left: 360px; bottom: -380px; }
+  .banner .text { position: absolute; left: 560px; top: 64px; width: 600px; }
+  .banner .eyebrow { font-size: 14px; }
+  .banner h1 { margin-top: 18px; font-size: 64px; }
+  .banner .role { margin-top: 12px; font-size: 22px; color: var(--fg); }
+  .banner .stack { margin-top: 10px; font-size: 18px; }
+  .banner .url { margin-top: 22px; padding: 10px 20px; font-size: 17px; }
+  .banner .shots { right: 10px; top: 58px; width: 400px; height: 300px; }
+  .banner .shots img { width: 290px; aspect-ratio: 16 / 10; }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="glow g1"></span><span class="glow g2"></span>
+  <div class="text"></div>
+  <div class="shots">
+    <img src="../../public/img/roadledger.webp" alt="" style="right: 0; top: 0; transform: rotate(7deg); opacity: .8">
+    <img src="../../public/img/fracxion-overview.png" alt="" style="right: 60px; top: 50px; transform: rotate(-2deg); opacity: .92">
+    <img src="../../public/img/ragnar.webp" alt="" style="right: 130px; top: 120px; transform: rotate(-9deg)">
+  </div>
+</div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const kind = params.get("kind") === "banner" ? "banner" : "og";
+  const lang = params.get("lang") === "en" ? "en" : "es";
+  document.body.className = kind;
+  document.documentElement.lang = lang;
+  const t = {
+    es: { eyebrow: "Nelson Sivisstum · Desarrollador full stack", title: "Entiendo lo que necesitás y lo construyo de punta a punta." },
+    en: { eyebrow: "Nelson Sivisstum · Full stack developer", title: "I understand what you need and build it end to end." },
+  }[lang];
+  const stack = "React · Next.js · TypeScript · Django · PostgreSQL";
+  const url = "nelsonvis-portfolio.vercel.app";
+  document.querySelector(".text").innerHTML = kind === "og"
+    ? `<p class="eyebrow">${t.eyebrow}</p><h1>${t.title}</h1><p class="stack">${stack}</p><span class="url">${url}</span>`
+    : `<p class="eyebrow">Portfolio · Formosa, Argentina</p><h1>Nelson Sivisstum</h1>
+       <p class="role">Desarrollador full stack · Full stack developer</p><p class="stack">${stack}</p><span class="url">${url}</span>`;
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Portfolio de Nelson Sivisstum
 
-Sitio estático en TypeScript (español e inglés) con una escena three.js en la home. Ver README.md para la estructura general.
+Sitio estático en TypeScript (español e inglés), con scroll suave (Lenis + GSAP) en la home. Ver README.md para la estructura general.
 
 ## Trabajo
 
@@ -17,6 +17,8 @@ Sitio estático en TypeScript (español e inglés) con una escena three.js en la
 - `motion.ts` (se carga con `import()`): Lenis, reveals, texto que se enciende por palabra y la fila de proyectos fija con scroll horizontal (GSAP ScrollTrigger).
 - Mientras se ven los casos, el encabezado se esconde (`html.in-cases`) y quedan arriba las pestañas.
 - Imágenes opcionales: `public/img/hero.(webp|jpg|png)` (fondo del hero) y `public/img/nelson.*` (foto de Sobre mí). El build las detecta solo.
+- Contacto: formulario con Web3Forms; la clave va en `contactForm.accessKey` de `src/content/site.ts` (vacía = solo botón de correo).
+- Imágenes para compartir (Open Graph) y banner de LinkedIn: `docs/social/card.html`, se regeneran con `node docs/social/capture.mjs`.
 - Fluidez: nada de `filter: blur` animado ni `backdrop-filter` en elementos chicos; las animaciones en bucle se pausan fuera de pantalla. Medir fps antes de sumar efectos.
 
 ## Casos de estudio y clips
