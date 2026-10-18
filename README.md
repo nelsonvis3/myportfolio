@@ -1,37 +1,37 @@
 # Portfolio de Nelson Sivisstum
 
-Mi portfolio de desarrollador full stack, en español y en inglés, con tema claro y oscuro.
+Mi portfolio de desarrollador full stack, en español y en inglés.
 
 [Ver el sitio](https://nelsonvis-portfolio.vercel.app/) · [English](https://nelsonvis-portfolio.vercel.app/en/) · [LinkedIn](https://www.linkedin.com/in/nelson-sivisstum-4777a32b4/)
 
 ![Portada del portfolio](public/img/social-preview.png)
 
-> English summary: my developer portfolio. A static site generated with TypeScript, with a three.js scene on the home page (a particle brain you scroll into, then a 3D project carousel), text effects from React Bits and short screen recordings of each project. Spanish and English versions, light and dark themes.
+> English summary: my developer portfolio. A static site generated with TypeScript, in warm charcoal and amber, with smooth scrolling (Lenis + GSAP), a pinned horizontal project row, in-page case studies and short screen recordings of each project. Spanish and English versions.
 
 ## Qué hay en el sitio
 
-- Una portada con mi nombre y un cerebro hecho de partículas. Al bajar, la cámara entra al cerebro, las partículas se abren en un túnel y de ellas se arma un carrusel 3D con mis tres proyectos (la pantalla de escritorio y la del celular de cada uno).
-- Un click en el proyecto del frente abre su detalle. Cada proyecto tiene además un caso de estudio completo, con clips cortos de cómo se usa (grabados en escritorio y en el celular).
-- Una sección sobre cómo uso la IA para programar, sobre mí, el stack y el contacto.
-- Sin WebGL, con movimiento reducido o sin JavaScript, el sitio se ve completo en 2D.
+- Un hero en tarjeta con mi presentación, y una intro sobre cómo trabajo.
+- Mis tres proyectos en tarjetas que corren de lado al bajar. Un click cambia el caso de estudio de la home al de ese proyecto, sin salir de la página: resumen, funciones, clips de cómo se usa (escritorio y celular), desafíos, arquitectura y estado.
+- Cada proyecto tiene además su página con el caso completo.
+- Sobre mí, el stack (y AI Studio), disponibilidad y contacto.
+- Sin JavaScript o con movimiento reducido, el sitio se ve completo y quieto.
 
 ## Cómo está hecho
 
 | Parte | Herramientas |
 | --- | --- |
 | Generador | TypeScript propio: `src/build.ts` arma ocho páginas HTML (cuatro por idioma) |
-| Escena 3D | three.js, GSAP ScrollTrigger y Lenis |
-| Efectos de texto | React Bits: VariableProximity, TextType y TextPressure |
+| Movimiento | Lenis (scroll suave) y GSAP ScrollTrigger, cargados después del primer pintado |
+| Logos del stack | Simple Icons (CC0), en `src/render/logos.ts` |
 | Clips | Grabaciones de cada proyecto, editadas con FFmpeg (`public/clips/`) |
-| Tipografía | Mona Sans (titulares, con eje de ancho variable) e Inter (texto), las dos OFL |
+| Tipografía | Mona Sans (titulares) e Inter (texto), las dos OFL |
 | Publicación | Vercel |
 
 Algunas decisiones:
 
 - **El contenido vive en datos.** Los textos de cada idioma están en `src/content/es.ts` y `src/content/en.ts`, con el mismo tipo. Cambiar un texto no requiere tocar las plantillas.
-- **El 3D es una mejora.** Todo el contenido está en el HTML. La escena se carga después y agrega la clase `is-3d`; si no puede, la página sigue en 2D.
-- **El cerebro sale de una malla real.** Las partículas se generan a partir de la superficie cortical fsaverage5 que distribuye Nilearn (licencia BSD, ver `public/models/`).
-- **Los símbolos de la sección de IA son propios.** Son `>_` y `</>` hechos con partículas, no los logos de las herramientas.
+- **El movimiento es una mejora.** Todo el contenido está en el HTML. Las animaciones solo afectan lo que todavía no está en pantalla, y con movimiento reducido no se cargan.
+- **Fluidez primero.** Solo se animan `transform` y `opacity`; las animaciones en bucle se pausan fuera de pantalla y la estela del puntero no dibuja con el mouse quieto.
 
 ## Ejecutar en local
 
@@ -51,14 +51,14 @@ No hay recarga automática: después de editar, corré `npm run build` y recarg�
 ```text
 src/
   content/       Textos en español e inglés, datos del sitio y rutas
-  render/        Plantillas: layout, home y caso de estudio
-  three/         Escena 3D (cerebro, carrusel, símbolos de IA) y efectos de React Bits
-  client.ts      Menú y cambio de tema en todas las páginas
+  render/        Plantillas (layout, home, caso), íconos y logos
+  web/           JS del navegador: client.ts (todas las páginas) y motion.ts (scroll y animaciones)
   build.ts       Genera dist/ y empaqueta el JS con esbuild
-  styles.css     Sistema visual en blanco y negro
-  journey.css    Estilos de la home y de la escena 3D
-public/          Imágenes, videos, fuentes, modelo del cerebro y CV
+  styles.css     Sistema visual (carbón y ámbar)
+public/          Imágenes, videos, fuentes y CV
 ```
+
+Imágenes opcionales: `public/img/hero.webp` (fondo del hero) y `public/img/nelson.webp` (foto de Sobre mí). Si están, el build las usa.
 
 Los clips de "Cómo se usa" están en `public/clips/`: `<proyecto>-<n>-desktop.mp4` y, si existe, `<proyecto>-<n>-mobile.mp4`, cada uno con su póster `.webp`. El build los detecta solos. Los CV que se descargan son `public/cv.pdf` y `public/cv-en.pdf` ([docs/cv/README.md](docs/cv/README.md)).
 
@@ -78,6 +78,5 @@ El código del sitio tiene licencia MIT ([LICENSE](LICENSE)). Los textos, el CV 
 
 ### Licencias de terceros
 
-- Componentes de React Bits (MIT + Commons Clause) en `src/three/islands/reactbits/`, con su aviso en cada archivo.
+- Logos de Simple Icons (CC0) en `src/render/logos.ts`.
 - Fuentes Mona Sans e Inter (SIL Open Font License) en `public/fonts/`.
-- Malla cortical de Nilearn (BSD) en `public/models/`.

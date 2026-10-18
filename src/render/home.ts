@@ -1,136 +1,170 @@
 import type { Content, Project } from "../content/types.js";
 import { socials, casePath } from "../content/site.js";
-import { esc, ext, json, projectLinks } from "./shared.js";
+import { icon, logo } from "./icons.js";
+import { blockHead, challengeRows, chips, cover, esc, ext, featureCards, pad, partsGrid, projectLinks, statusCards, usageSteps, type Clips } from "./shared.js";
 
-// Home: hero 3D → entrada al cerebro → carrusel → IA → sobre mí → stack → contacto.
-// Todo el contenido está en el HTML; el 3D y los efectos de texto son mejoras progresivas.
+// Home: hero → intro → proyectos → caso de estudio → sobre mí → stack → disponibilidad → contacto.
+// Todo el contenido está en el HTML. client.ts suma el scroll suave, las animaciones y el cambio de caso.
 
-function actions(c: Content, p: Project): string {
-  return `<div class="actions">
-    <a class="btn btn-solid" href="${casePath(c.lang, p.id)}">${esc(c.ui.readCase)}</a>
-    ${p.repo ? `<a class="btn" ${ext(p.repo)}>${esc(c.ui.viewCode)}</a>` : ""}
-    ${projectLinks(c, p)}
-  </div>`;
-}
+// Frases que van en renglones separados en pantallas anchas y corridas en el celular.
+const lines = (items: string[]) => items.map(l => `<span class="line">${esc(l)}</span>`).join(" ");
 
-function journey(c: Content): string {
-  const data = c.projects.map(p => ({ id: p.id, name: p.name, sub: p.tagline, img: p.images[0].src, phone: p.phoneShot, href: casePath(c.lang, p.id) }));
-  const first = c.projects[0];
-  return `<section class="journey" data-journey aria-label="${esc(c.ui.carouselLabel)}">
-  <div class="stage" data-stage>
-    <div class="hero" data-hero>
-      <h1 class="hero-name" data-island="proximity" data-label="Nelson Sivisstum"><span>Nelson</span> <span>Sivisstum</span></h1>
-      <p class="hero-role">${esc(c.ui.role)}</p>
-      <p class="hero-line">${esc(c.ui.heroLine)}</p>
+function hero(c: Content, image?: string): string {
+  return `<section class="hero" data-hero>
+  <div class="hero-card${image ? " has-image" : ""}">
+    <div class="glow" aria-hidden="true"><span></span><span></span></div>
+    ${image ? `<img class="hero-img" src="${image}" alt="" fetchpriority="high" data-hero-img>` : ""}
+    <div class="hero-content">
+      <p class="eyebrow">${esc(c.hero.eyebrow)}</p>
+      <h1>${esc(c.hero.title)}</h1>
+      <p class="hero-lines">${lines(c.hero.lines)}</p>
       <div class="actions">
-        <a class="btn btn-solid" href="#${c.ids.projects}" data-to-carousel>${esc(c.ui.viewProjects)}</a>
-        <a class="btn" href="${socials.cv[c.lang]}" download>${esc(c.ui.downloadCv)}</a>
+        <a class="btn btn-accent" href="#${c.ids.projects}">${esc(c.hero.primary)}</a>
+        <a class="btn btn-glass" href="#${c.ids.contact}">${esc(c.hero.secondary)}</a>
       </div>
-      <p class="hero-meta">${esc(c.ui.heroMeta)}</p>
+      <p class="hero-note">${esc(c.hero.note)}</p>
     </div>
-    <div class="hero-poster" aria-hidden="true"><img class="on-dark" src="/img/brain-dark.webp" alt="" width="900" height="900"><img class="on-light" src="/img/brain-light.webp" alt="" width="900" height="900"></div>
-    <p class="scroll-cue" aria-hidden="true" data-scroll-cue><span></span>${esc(c.ui.scrollCue)}</p>
-    <div class="carousel-ui" data-carousel-ui data-count="${esc(c.ui.countOf)}">
-      <div class="carousel-caption" aria-live="polite">
-        <p class="carousel-count" data-carousel-count>${esc(c.ui.countOf.replace("{n}", "1").replace("{total}", String(c.projects.length)))}</p>
-        <h2 data-carousel-name>${esc(first.name)}</h2>
-        <p data-carousel-sub>${esc(first.tagline)}</p>
-      </div>
-      <div class="carousel-controls" role="group" aria-label="${esc(c.ui.carouselLabel)}">
-        <button type="button" class="square" data-carousel-prev aria-label="${esc(c.ui.prev)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <a class="btn btn-solid" href="${casePath(c.lang, first.id)}" data-carousel-open>${esc(c.ui.openProject)}</a>
-        <button type="button" class="square" data-carousel-next aria-label="${esc(c.ui.next)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-      </div>
-      <p class="carousel-hint">${esc(c.ui.carouselHint)}</p>
-    </div>
-  </div>
-  <span class="journey-anchor" id="${c.ids.projects}" aria-hidden="true"></span>
-  <div class="fallback wrap">
-    <h2>${esc(c.ui.projectsTitle)}</h2>
-    <ul class="fallback-grid">${c.projects.map(p => `<li class="fallback-card">
-      <img src="${esc(p.images[0].src)}" alt="${esc(p.images[0].alt)}" loading="lazy">
-      <p class="kind">${esc(p.kind)}</p>
-      <h3>${esc(p.name)}</h3>
-      <p class="tagline">${esc(p.tagline)}</p>
-      <p>${esc(p.summary)}</p>
-      ${actions(c, p)}
-    </li>`).join("")}</ul>
-  </div>
-  <script type="application/json" id="journey-data">${json(data)}</script>
-</section>`;
-}
-
-const aiPrompts = {
-  es: ["explicame cómo se conecta este módulo con la API", "proponé un cambio chico y mostrame el diff", "¿qué casos límite no están probados?"],
-  en: ["explain how this module talks to the API", "suggest a small change and show me the diff", "which edge cases aren't tested yet?"],
-};
-
-function ai(c: Content): string {
-  return `<section class="ai" id="${c.ids.ai}" data-ai aria-labelledby="ai-title">
-  <div class="ai-track"><div class="ai-stage">
-    <div class="wrap ai-head">
-      <h2 id="ai-title">${esc(c.ai.title)}</h2>
-      <p class="ai-lead">${esc(c.ai.lead)}</p>
-      <p class="ai-prompt" data-island="type" data-prefix=">_ " data-texts="${esc(JSON.stringify(aiPrompts[c.lang]))}"><span>&gt;_ ${esc(aiPrompts[c.lang][0])}</span></p>
-      <div class="ai-glyphs" aria-hidden="true" data-ai-glyphs></div>
-    </div>
-    <div class="wrap ai-cards">${c.ai.cards.map(card => `<article class="ai-card" data-tilt>
-      <h3>${esc(card.name)}</h3>
-      <p>${esc(card.text)}</p>
-      <ul class="chips">${card.uses.map(u => `<li>${esc(u)}</li>`).join("")}</ul>
-    </article>`).join("")}</div>
-  </div></div>
-  <div class="wrap ai-rule">
-    <h3>${esc(c.ai.ruleTitle)}</h3>
-    <p>${esc(c.ai.rule)}</p>
   </div>
 </section>`;
 }
 
-function about(c: Content): string {
+function intro(c: Content): string {
+  return `<section class="section intro tone-deep" aria-labelledby="intro-title"><div class="wrap center">
+  <p class="eyebrow" data-reveal>${esc(c.intro.eyebrow)}</p>
+  <h2 id="intro-title" class="display" data-reveal>${lines(c.intro.title)}</h2>
+  <p class="intro-text" data-words>${esc(c.intro.text)}</p>
+</div></section>`;
+}
+
+function work(c: Content): string {
+  const total = pad(c.projects.length);
+  return `<section class="work tone-deep" id="${c.ids.projects}" aria-labelledby="work-title" data-work>
+  <div class="wrap work-head">
+    <div>${blockHead(c.work.eyebrow, c.work.title, "work-title", "h2")}</div>
+    <p class="muted">${esc(c.work.lead)}</p>
+  </div>
+  <div class="work-viewport"><ol class="work-track" data-work-track>${c.projects.map((p, i) => `<li class="work-card">
+    <a href="#caso-${p.id}" data-case-link="${p.id}" aria-label="${esc(`${c.work.open}: ${p.name}`)}">
+      <img src="${esc(p.images[0].src)}" alt="${esc(p.images[0].alt)}" loading="${i ? "lazy" : "eager"}">
+      <span class="work-count">${pad(i + 1)} / ${total}</span>
+      <span class="work-info"><span class="kind">${esc(p.kind)}</span><strong>${esc(p.name)}</strong><span class="work-sub">${esc(p.tagline)}</span></span>
+      <span class="circle work-arrow">${icon("arrow")}</span>
+    </a>
+  </li>`).join("")}</ol></div>
+</section>`;
+}
+
+/** Un caso por proyecto; sin JS se ven los tres uno debajo del otro. */
+function casePanel(c: Content, p: Project, clips: Clips): string {
+  const u = c.ui;
+  const usage = usageSteps(c, p, clips);
+  const blocks: [string, string][] = [
+    [u.caseFeatures, featureCards(p.cards)],
+    ...(usage ? [[u.caseUsage, usage] as [string, string]] : []),
+    [c.cases.challengesTitle, challengeRows(c, p.challenges)],
+    [u.caseArchitecture, `<p class="lead-text">${esc(p.architecture.text)}</p>${partsGrid(p.architecture.parts)}`],
+    [u.caseStatus, statusCards(c, p)],
+  ];
+  return `<article class="case-panel" id="caso-${p.id}" data-case="${p.id}" aria-labelledby="caso-${p.id}-title">
+  <div class="cs-overview">
+    ${cover(p, "cs-cover", true)}
+    <div class="cs-summary">
+      <p class="eyebrow">${esc(c.cases.eyebrow)} · ${pad(1)} ${esc(p.kind)}</p>
+      <h2 id="caso-${p.id}-title" class="block-title">${esc(p.name)}</h2>
+      <p class="lead-text">${esc(p.summary)}</p>
+      <p class="muted">${esc(p.role)}</p>
+      ${chips(p.stack)}
+      <div class="actions">${projectLinks(c, p)}</div>
+    </div>
+  </div>
+  ${blocks.map(([title, body], i) => `<div class="cs-block">${blockHead(pad(i + 2), title)}${body}</div>`).join("")}
+  <a class="text-link" href="${casePath(c.lang, p.id)}">${esc(c.cases.full)} ${icon("arrow")}</a>
+</article>`;
+}
+
+function cases(c: Content, clips: Clips): string {
+  return `<section class="section cases tone-base" aria-label="${esc(c.cases.eyebrow)}" data-cases>
+  <div class="wrap">
+    <nav class="case-tabs" aria-label="${esc(c.cases.tabsLabel)}">${c.projects.map((p, i) => `<a href="#caso-${p.id}" data-case-link="${p.id}"${i ? "" : ` aria-current="true"`}>${esc(p.name)}</a>`).join("")}</nav>
+    ${c.projects.map(p => casePanel(c, p, clips)).join("")}
+  </div>
+</section>`;
+}
+
+function about(c: Content, photo?: string): string {
   const a = c.about;
-  return `<section class="section about" id="${c.ids.about}" aria-labelledby="about-title"><div class="wrap">
-  <div class="split">
-    <h2 id="about-title">${esc(a.title)}</h2>
-    <div class="prose">${a.paragraphs.map(p => `<p>${esc(p)}</p>`).join("")}
-      <div class="actions"><a class="btn" href="${socials.cv.es}" download>${esc(a.cvEs)}</a><a class="btn" href="${socials.cv.en}" download>${esc(a.cvEn)}</a></div>
+  return `<section class="section about tone-base" id="${c.ids.about}" aria-labelledby="about-title"><div class="wrap">
+  <div class="about-grid${photo ? "" : " no-photo"}">
+    ${photo ? `<figure class="about-photo" data-reveal><img src="${photo}" alt="${esc(a.photoAlt)}" loading="lazy"></figure>` : ""}
+    <div class="about-text">
+      ${blockHead(a.eyebrow, a.title, "about-title", "h2")}
+      ${a.paragraphs.map(p => `<p data-words>${esc(p)}</p>`).join("")}
     </div>
   </div>
-  <div class="about-columns">
-    <div><h3>${esc(a.timelineTitle)}</h3><ol class="timeline">${a.timeline.map(t => `<li><span>${esc(t.name)}</span><p>${esc(t.detail)}</p></li>`).join("")}</ol></div>
-    <div><h3>${esc(a.educationTitle)}</h3><ul class="education">${a.education.map(e => `<li><strong>${esc(e.name)}</strong><p>${esc(e.detail)}</p><span>${esc(e.status)}</span></li>`).join("")}</ul></div>
-    <div><h3>${esc(a.nowTitle)}</h3><ul class="list">${a.now.map(n => `<li>${esc(n)}</li>`).join("")}</ul></div>
+  <div class="about-cards">
+    <div class="card" data-reveal><h3 class="eyebrow">${esc(a.timelineTitle)}</h3><ol class="timeline">${a.timeline.map(t => `<li><span>${esc(t.name)}</span><p>${esc(t.detail)}</p></li>`).join("")}</ol></div>
+    <div class="card" data-reveal style="--i:1"><h3 class="eyebrow">${esc(a.educationTitle)}</h3><ul class="timeline">${a.education.map(e => `<li><span>${esc(e.status)}</span><p><strong>${esc(e.name)}</strong> ${esc(e.detail)}</p></li>`).join("")}</ul></div>
+    <div class="card" data-reveal style="--i:2"><h3 class="eyebrow">${esc(a.nowTitle)}</h3><ul class="now">${a.now.map(n => `<li>${icon("check")}<span>${esc(n)}</span></li>`).join("")}</ul></div>
   </div>
 </div></section>`;
 }
 
 function stack(c: Content): string {
-  return `<section class="section stack" aria-labelledby="stack-title"><div class="wrap">
-  <div class="split">
-    <div><h2 id="stack-title">${esc(c.stack.title)}</h2><p class="muted">${esc(c.stack.lead)}</p></div>
-    <dl class="stack-rows">${c.stack.groups.map(g => `<div><dt>${esc(g.name)}</dt><dd>${g.items.map(i => `<span>${esc(i)}</span>`).join("")}</dd></div>`).join("")}</dl>
+  const s = c.stack;
+  const tiles = (hidden: boolean) => s.tools.map(t => `<li${hidden ? ` aria-hidden="true"` : ""}>${logo(t.logo)}<span>${esc(t.name)}</span></li>`).join("");
+  return `<section class="section stack tone-deep" id="${c.ids.stack}" aria-labelledby="stack-title">
+  <div class="wrap center">
+    <p class="eyebrow" data-reveal>${esc(s.eyebrow)}</p>
+    <h2 id="stack-title" class="display" data-reveal>${esc(s.title)}</h2>
+    <p class="muted stack-lead" data-reveal>${esc(s.lead)}</p>
   </div>
+  <div class="marquee" data-reveal><ul class="marquee-track">${tiles(false)}${tiles(true)}</ul></div>
+  <div class="ai-studio wrap center">
+    <p class="eyebrow">${esc(s.aiEyebrow)}</p>
+    <ul>${s.ai.map(t => `<li data-reveal>${logo(t.logo)}<span>${esc(t.name)}</span></li>`).join("")}</ul>
+  </div>
+</section>`;
+}
+
+function availability(c: Content): string {
+  const v = c.availability;
+  const [cv, other] = c.lang === "es" ? [socials.cv.es, socials.cv.en] : [socials.cv.en, socials.cv.es];
+  return `<section class="availability tone-deep" aria-labelledby="avail-title"><div class="wrap avail-grid">
+  <div class="avail-text">
+    <p class="eyebrow pulse" data-reveal>${esc(v.eyebrow)}</p>
+    <h2 id="avail-title" class="display" data-reveal>${esc(v.title)}</h2>
+    <p class="muted" data-reveal>${esc(v.text)}</p>
+    <div class="actions" data-reveal>
+      <a class="btn btn-light" href="${cv}" download>${icon("download")}${esc(v.cv)}</a>
+      <a class="btn" href="${other}" download>${esc(v.cvOther)}</a>
+    </div>
+  </div>
+  <div class="avail-visual" aria-hidden="true">
+    <div class="orb"><span></span></div>
+  </div>
+  <p class="avail-note card" data-reveal><span class="card-icon">${icon("check")}</span>${esc(v.note)}</p>
 </div></section>`;
 }
 
 function contact(c: Content): string {
-  return `<section class="section contact" id="${c.ids.contact}" aria-labelledby="contact-title"><div class="wrap">
-  <h2 id="contact-title" class="contact-title" data-island="pressure" data-label="${esc(c.contact.title)}">${esc(c.contact.title)}</h2>
-  <div class="split">
-    <p class="muted">${esc(c.contact.text)}</p>
-    <div>
-      <a class="contact-email" href="mailto:${socials.email}" aria-label="${esc(c.contact.emailLabel)}: ${socials.email}">${socials.email}</a>
-      <ul class="contact-links">
-        <li><a ${ext(socials.github)}>GitHub</a></li>
-        <li><a ${ext(socials.linkedin)}>LinkedIn</a></li>
-        <li><a href="${socials.cv.es}" download>${esc(c.about.cvEs)}</a></li>
-        <li><a href="${socials.cv.en}" download>${esc(c.about.cvEn)}</a></li>
-      </ul>
-    </div>
-  </div>
+  const k = c.contact;
+  return `<section class="section contact tone-cream" id="${c.ids.contact}" aria-labelledby="contact-title"><div class="wrap center">
+  <h2 id="contact-title" class="display" data-reveal>${esc(k.title)}</h2>
+  <p class="contact-text" data-reveal>${esc(k.text)}</p>
+  <a class="btn btn-ink" href="mailto:${socials.email}" data-reveal>${esc(k.button)}</a>
+  <ul class="contact-list" data-reveal>
+    <li><a href="mailto:${socials.email}">${icon("mail")}${socials.email}</a></li>
+    <li><a ${ext(socials.linkedin)}>${icon("linkedin")}LinkedIn</a></li>
+    <li><a ${ext(socials.github)}>${logo("github")}GitHub</a></li>
+    <li>${icon("pin")}${esc(k.location)}</li>
+  </ul>
 </div></section>`;
 }
 
-export function home(c: Content): string {
-  return `${journey(c)}${ai(c)}${about(c)}${stack(c)}${contact(c)}`;
+/** Imágenes opcionales de public/img: foto de "Sobre mí" y la imagen del hero. */
+export interface HomeImages { photo?: string; hero?: string }
+
+export function home(c: Content, clips: Clips, images: HomeImages = {}): string {
+  const { photo } = images;
+  return `${hero(c, images.hero)}${intro(c)}${work(c)}${cases(c, clips)}${about(c, photo)}${stack(c)}${availability(c)}${contact(c)}`;
 }

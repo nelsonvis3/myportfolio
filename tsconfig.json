@@ -20,6 +20,6 @@
     "src"
   ],
   "exclude": [
-    "src/three"
+    "src/web"
   ]
 }

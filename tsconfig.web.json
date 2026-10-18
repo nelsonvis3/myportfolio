@@ -11,10 +11,9 @@
     "types": [],
     "strict": true,
     "noEmit": true,
-    "skipLibCheck": true,
-    "jsx": "react-jsx"
+    "skipLibCheck": true
   },
   "include": [
-    "src/three"
+    "src/web"
   ]
 }

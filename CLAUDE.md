@@ -10,12 +10,14 @@ Sitio estático en TypeScript (español e inglés) con una escena three.js en la
 - Si el build falla con "Cannot find module 'lenis'", falta `npm install`.
 - Verificar en el navegador antes de dar algo por terminado, en escritorio (1280–1440) y en celular (390×844, también 375×667). Brave está en `/usr/bin/brave`; para WebGL headless usar `--use-angle=swiftshader --enable-unsafe-swiftshader`.
 
-## Home 3D (`src/three/`)
+## Home (`src/render/home.ts`, `src/web/`)
 
-- `scene.ts`: escena, scroll (GSAP ScrollTrigger + Lenis) y layout. El canvas mide 100lvh: medir con `canvas.clientHeight`, no `innerHeight`.
-- `carousel.ts`: cada proyecto es la captura de escritorio (`images[0]`) más la de celular (`phoneShot`); no usa video. El giro es un resorte sobre `rotTarget + scrollRotation()`.
-- El encabezado se esconde durante el recorrido (`body.nav-auto`) y `client.ts` lo muestra con `.nav-peek`.
-- Abrir un proyecto del carrusel (botón o click en el panel del frente) hace un zoom corto y navega al caso completo.
+- Paleta carbón cálido y ámbar, sin tema claro. Tokens en `:root` de `src/styles.css`.
+- `client.ts`: menú, caso de estudio de la home (las tarjetas de proyectos y las pestañas cambian el caso en el lugar, con `#caso-<id>`), clips, puntero (destello + estela en canvas 2D) y brillo de tarjetas.
+- `motion.ts` (se carga con `import()`): Lenis, reveals, texto que se enciende por palabra y la fila de proyectos fija con scroll horizontal (GSAP ScrollTrigger).
+- Mientras se ven los casos, el encabezado se esconde (`html.in-cases`) y quedan arriba las pestañas.
+- Imágenes opcionales: `public/img/hero.(webp|jpg|png)` (fondo del hero) y `public/img/nelson.*` (foto de Sobre mí). El build las detecta solo.
+- Fluidez: nada de `filter: blur` animado ni `backdrop-filter` en elementos chicos; las animaciones en bucle se pausan fuera de pantalla. Medir fps antes de sumar efectos.
 
 ## Casos de estudio y clips
 

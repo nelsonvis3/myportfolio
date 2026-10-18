@@ -14,13 +14,17 @@ const write = (path: string, text: string) => { mkdirSync(dirname(path), { recur
 
 rmSync(dist, { recursive: true, force: true });
 cpSync(join(root, "public"), dist, { recursive: true });
-write(join(dist, "styles.css"), ["styles.css", "journey.css"].map(file => readFileSync(join(root, "src", file), "utf8")).join("\n"));
+cpSync(join(root, "src", "styles.css"), join(dist, "styles.css"));
 
-// JS del navegador: client (todas las páginas) y home (3D + efectos de texto de React Bits).
-const common = { bundle: true, format: "esm" as const, target: "es2020", minify: true, legalComments: "eof" as const, logLevel: "warning" as const };
-await bundle({ ...common, entryPoints: [join(root, "src", "client.ts")], outfile: join(dist, "client.js") });
-// La home se divide en chunks: home.js es chico y la escena y las islas llegan con import() (ver three/main.ts).
-await bundle({ ...common, entryPoints: { home: join(root, "src", "three", "main.ts") }, outdir: dist, splitting: true, chunkNames: "chunks/[name]-[hash]", jsx: "automatic", loader: { ".css": "empty" } });
+// JS del navegador: client.ts en todas las páginas. El scroll suave y las animaciones (motion.ts, con Lenis y GSAP)
+// llegan con import() después del primer pintado.
+await bundle({ bundle: true, format: "esm", target: "es2020", minify: true, legalComments: "eof", logLevel: "warning",
+  entryPoints: [join(root, "src", "web", "client.ts")], outdir: dist, splitting: true, chunkNames: "chunks/[name]-[hash]" });
+
+// Imágenes opcionales: public/img/nelson.* (foto de "Sobre mí") y public/img/hero.* (fondo del hero).
+// Si no están, esas partes se arman sin imagen.
+const image = (name: string) => ["webp", "jpg", "png"].map(e => `/img/${name}.${e}`).find(file => existsSync(join(root, "public", file)));
+const images = { photo: image("nelson"), hero: image("hero") };
 
 // Clips de "Cómo se usa": public/clips/<clip>-desktop.mp4 y, opcional, <clip>-mobile.mp4, cada uno con su póster .webp.
 // El tamaño sale del póster (mismo cuadro que el video) para reservar el lugar antes de que cargue.
@@ -45,7 +49,7 @@ for (const lang of langs) {
   const c = content[lang], alt = other(lang);
   write(join(dist, homePath(lang), "index.html"), layout({
     c, home: true, title: c.meta.title, description: c.meta.description,
-    path: homePath(lang), altPath: homePath(alt), body: home(c), scripts: ["/home.js"],
+    path: homePath(lang), altPath: homePath(alt), body: home(c, clips, images),
   }));
   urls.push(homePath(lang));
   for (const p of c.projects) {
