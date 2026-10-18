@@ -3,6 +3,14 @@
 // la página se ve completa y quieta.
 const root = document.documentElement;
 root.classList.add("js");
+
+// Al recargar, la página vuelve al inicio: sin recordar el scroll ni el caso abierto (#caso-<id>).
+// Llegar con un link a #caso-<id> (por ejemplo, "← Proyectos" en un caso) sigue llevando a ese caso.
+history.scrollRestoration = "manual";
+if ((performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined)?.type === "reload") {
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  window.scrollTo(0, 0);
+}
 const small = matchMedia("(max-width: 760px)").matches;
 const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const fine = matchMedia("(pointer: fine)").matches;

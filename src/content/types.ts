@@ -55,7 +55,7 @@ export interface Content {
     caseArchitecture: string; caseChallenges: string; caseDecisions: string; caseStatus: string; caseWorks: string;
     caseMissing: string; caseLearning: string; caseNext: string; caseProblemLabel: string; caseSolutionLabel: string; caseCode: string;
   };
-  hero: { eyebrow: string; title: string; lines: string[]; note: string; primary: string; secondary: string };
+  hero: { eyebrow: string; title: string[]; lines: string[]; note: string; primary: string; secondary: string };
   intro: { eyebrow: string; title: string[]; text: string };
   work: { eyebrow: string; title: string; lead: string; open: string };
   // Caso de estudio de la home: muestra un proyecto por vez; las tarjetas de proyectos y las pestañas lo cambian.

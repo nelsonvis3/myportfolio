@@ -16,7 +16,7 @@ function hero(c: Content, image?: string): string {
     ${image ? `<img class="hero-img" src="${image}" alt="" fetchpriority="high" data-hero-img>` : ""}
     <div class="hero-content">
       <p class="eyebrow">${esc(c.hero.eyebrow)}</p>
-      <h1>${esc(c.hero.title)}</h1>
+      <h1>${lines(c.hero.title)}</h1>
       <p class="hero-lines">${lines(c.hero.lines)}</p>
       <div class="actions">
         <a class="btn btn-accent" href="#${c.ids.projects}">${esc(c.hero.primary)}</a>

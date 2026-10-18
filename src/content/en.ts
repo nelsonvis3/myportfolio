@@ -27,9 +27,9 @@ export const en: Content = {
     caseNext: "Next project", caseProblemLabel: "Problem", caseSolutionLabel: "Solution", caseCode: "In the code",
   },
   hero: {
-    eyebrow: "Full stack developer · Formosa, Argentina",
-    title: "Hi, I'm Nelson.",
-    lines: ["I build online stores and business tools that solve real problems,", "and I use AI to ship them faster."],
+    eyebrow: "Nelson Sivisstum · Full stack developer",
+    title: ["Welcome to", "my portfolio"],
+    lines: ["I build web applications end to end,", "and I use AI to ship them faster."],
     note: "I work with React, Next.js and Django. I use Claude Code and Codex every day, and I review every change before it goes in.",
     primary: "See my work", secondary: "Get in touch",
   },
