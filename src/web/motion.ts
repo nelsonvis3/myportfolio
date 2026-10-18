@@ -8,13 +8,17 @@ import type { ScrollTo } from "./client";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HEADER_OFFSET = -88;
+// Saltos por links: arrancan y frenan suave, y duran más cuanto más lejos van (entre 0,9 y 1,8 s).
+const easeInOutQuart = (t: number) => (t < 0.5 ? 8 * t ** 4 : 1 - (-2 * t + 2) ** 4 / 2);
+const jumpDuration = (distance: number) => Math.min(1.8, Math.max(0.9, 0.7 + Math.abs(distance) / 3500));
 
-export function start(): ScrollTo {
+/** casesTop: posición de scroll que deja las pestañas de los casos arriba de todo (la calcula client.ts). */
+export function start(casesTop: () => number): ScrollTo {
   const root = document.documentElement;
   root.classList.add("motion");
 
-  const lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 0.95 });
+  // lerp más bajo = la rueda se desliza con más inercia. En táctil queda el scroll nativo.
+  const lenis = new Lenis({ lerp: 0.08, wheelMultiplier: 0.9 });
   lenis.on("scroll", ScrollTrigger.update);
   gsap.ticker.add(time => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
@@ -32,10 +36,14 @@ export function start(): ScrollTo {
   const cases = document.querySelector<HTMLElement>("[data-cases]");
   if (cases && location.hash.startsWith("#caso-")) {
     ScrollTrigger.refresh();
-    lenis.scrollTo(cases, { offset: HEADER_OFFSET, immediate: true, force: true });
+    lenis.scrollTo(casesTop(), { immediate: true, force: true });
   }
 
-  return target => lenis.scrollTo(target, { offset: typeof target === "number" ? 0 : HEADER_OFFSET, duration: 1.2 });
+  // Con un elemento, Lenis ya descuenta el scroll-padding-top de html (styles.css): no se suma otro margen.
+  return target => {
+    const distance = (typeof target === "number" ? target : target.getBoundingClientRect().top + scrollY) - scrollY;
+    lenis.scrollTo(target, { duration: jumpDuration(distance), easing: easeInOutQuart });
+  };
 }
 
 /** [data-reveal]: sube y se enfoca al entrar en pantalla. --i escalona los de una misma fila. */
@@ -96,7 +104,7 @@ function work(): void {
     const distance = () => Math.max(0, track.scrollWidth - document.documentElement.clientWidth);
     gsap.to(track, {
       x: () => -distance(), ease: "none",
-      scrollTrigger: { trigger: section, start: "top top", end: () => `+=${distance()}`, pin: true, scrub: 0.8, invalidateOnRefresh: true, anticipatePin: 1 },
+      scrollTrigger: { trigger: section, start: "top top", end: () => `+=${distance()}`, pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1 },
     });
     return () => section.classList.remove("is-pinned");
   });

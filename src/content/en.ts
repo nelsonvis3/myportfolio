@@ -35,8 +35,8 @@ export const en: Content = {
   },
   intro: {
     eyebrow: "How I work",
-    title: ["I care about what happens", "behind the form"],
-    text: "An order sent twice, two invoices asking for the same number, a payment that arrives late. My projects start from those cases: I solve them in the backend, test them, and then build a clear interface on top.",
+    title: ["I build from", "the inside out"],
+    text: "I start by understanding what the client needs: the problem to solve, who will use the app and what it should convey. Then I build the foundation (data, API and business rules) with tests for the hard cases, like an order sent twice. On top of that I build a clear interface that communicates it, test it on desktop and mobile, and keep refining it with what I learn from real use.",
   },
   work: {
     eyebrow: "Work",
@@ -98,6 +98,10 @@ export const en: Content = {
     text: "Tell me what process you need to solve, who uses it and what result you expect. I answer by email or on LinkedIn.",
     button: "Say hello",
     location: "Formosa, Argentina",
+    form: {
+      subject: "New message from the portfolio", name: "Name", email: "Email", message: "Message", send: "Send message",
+      sending: "Sending…", sent: "Thanks! I'll get back to you soon.", error: "It couldn't be sent. Write to me directly at",
+    },
   },
   footer: { line: "Static site, hand-built with TypeScript." },
   projects: [

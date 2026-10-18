@@ -27,6 +27,9 @@ const header = document.querySelector<HTMLElement>(".header");
 const casesArea = document.querySelector<HTMLElement>("[data-cases]");
 let casesPad = casesArea ? parseFloat(getComputedStyle(casesArea).paddingTop) : 0;
 addEventListener("resize", () => { if (casesArea) casesPad = parseFloat(getComputedStyle(casesArea).paddingTop); });
+// Donde quedan las pestañas de los casos al abrir uno: pegadas arriba (top: 16px con html.in-cases, ver styles.css).
+const TABS_TOP = 16;
+const casesTop = () => casesArea ? casesArea.getBoundingClientRect().top + scrollY + casesPad - TABS_TOP : 0;
 const onScroll = () => {
   header?.classList.toggle("is-scrolled", scrollY > 24);
   // En los casos de la home quedan arriba solo las pestañas de proyectos; al salir vuelve el encabezado.
@@ -82,12 +85,12 @@ function showCase(id: string, scroll: boolean): void {
   if (changed && !still) { next.classList.remove("is-entering"); void next.offsetWidth; next.classList.add("is-entering"); }
   history.replaceState(null, "", `#caso-${id}`);
   document.dispatchEvent(new CustomEvent("case-change"));
-  if (scroll) scrollTo(casesSection);
+  if (scroll) scrollTo(casesTop());
 }
 if (panels.length) {
   const fromHash = panels.find(p => location.hash === `#caso-${p.dataset.case}`);
   select(fromHash ?? panels[0]);
-  if (fromHash) requestAnimationFrame(() => casesSection?.scrollIntoView());
+  if (fromHash) requestAnimationFrame(() => window.scrollTo(0, casesTop()));
   document.addEventListener("click", event => {
     const link = (event.target as Element).closest<HTMLAnchorElement>("[data-case-link]");
     if (!link?.dataset.caseLink) return;
@@ -230,6 +233,32 @@ if (fine && !still) {
   }, { passive: true });
 }
 
+// Formulario de contacto: se envía a Web3Forms sin recargar la página y muestra el resultado debajo del botón.
+const contactForm = document.querySelector<HTMLFormElement>("[data-contact-form]");
+contactForm?.addEventListener("submit", async event => {
+  event.preventDefault();
+  const button = contactForm.querySelector<HTMLButtonElement>("button[type=submit]");
+  const status = contactForm.querySelector<HTMLElement>(".form-status");
+  const say = (state: "sending" | "sent" | "error") => {
+    if (!status) return;
+    status.textContent = contactForm.dataset[state] ?? "";
+    status.dataset.state = state;
+  };
+  if (button) button.disabled = true;
+  say("sending");
+  try {
+    const res = await fetch(contactForm.action, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(contactForm) });
+    const data = await res.json().catch(() => ({})) as { success?: boolean };
+    if (!res.ok || !data.success) throw new Error(String(res.status));
+    contactForm.reset();
+    say("sent");
+  } catch {
+    say("error");
+  } finally {
+    if (button) button.disabled = false;
+  }
+});
+
 // Animaciones en bucle (brillos, orbe, cinta del stack): se pausan mientras no están en pantalla.
 const loops = document.querySelectorAll<HTMLElement>(".glow, .orb, .marquee");
 if (loops.length) {
@@ -241,7 +270,7 @@ if (loops.length) {
 
 // Scroll suave y animaciones, después del primer pintado.
 if (!still) {
-  const boot = () => void import("./motion").then(m => { scrollTo = m.start() ?? scrollTo; }).catch(() => root.classList.remove("motion"));
+  const boot = () => void import("./motion").then(m => { scrollTo = m.start(casesTop) ?? scrollTo; }).catch(() => root.classList.remove("motion"));
   const idle = () => ("requestIdleCallback" in window ? requestIdleCallback(boot, { timeout: 800 }) : setTimeout(boot, 60));
   if (document.readyState === "complete") idle(); else addEventListener("load", idle, { once: true });
 }

@@ -31,8 +31,8 @@ export const es: Content = {
   },
   intro: {
     eyebrow: "Cómo trabajo",
-    title: ["Me importa lo que pasa", "detrás del formulario"],
-    text: "Una compra que se manda dos veces, dos facturas que piden el mismo número, un pago que llega tarde. Mis proyectos empiezan por esos casos: los resuelvo en el backend, los pruebo y después armo una interfaz clara encima.",
+    title: ["Construyo de adentro", "hacia afuera"],
+    text: "Empiezo por entender qué necesita el cliente: qué problema quiere resolver, quién va a usar la aplicación y qué tiene que transmitir. Después armo la base (datos, API y reglas del negocio) con pruebas para los casos difíciles, como un pedido que se manda dos veces. Encima construyo una interfaz clara que lo comunique, la pruebo en escritorio y en celular, y la sigo puliendo con lo que aprendo del uso real.",
   },
   work: {
     eyebrow: "Proyectos",
@@ -101,6 +101,10 @@ export const es: Content = {
     text: "Contame qué proceso necesitás resolver, quién lo usa y qué resultado esperás. Respondo por correo o por LinkedIn.",
     button: "Escribime",
     location: "Formosa, Argentina",
+    form: {
+      subject: "Nuevo mensaje desde el portfolio", name: "Nombre", email: "Correo", message: "Mensaje", send: "Enviar mensaje",
+      sending: "Enviando…", sent: "¡Gracias! Te respondo a la brevedad.", error: "No se pudo enviar. Escribime directo a",
+    },
   },
   footer: { line: "Sitio estático hecho a mano con TypeScript." },
   projects: [

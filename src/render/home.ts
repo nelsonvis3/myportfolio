@@ -1,5 +1,5 @@
 import type { Content, Project } from "../content/types.js";
-import { socials, casePath } from "../content/site.js";
+import { socials, casePath, contactForm } from "../content/site.js";
 import { icon, logo } from "./icons.js";
 import { blockHead, challengeRows, chips, cover, esc, ext, featureCards, pad, partsGrid, projectLinks, statusCards, usageSteps, type Clips } from "./shared.js";
 
@@ -69,7 +69,7 @@ function casePanel(c: Content, p: Project, clips: Clips): string {
   <div class="cs-overview">
     ${cover(p, "cs-cover", true)}
     <div class="cs-summary">
-      <p class="eyebrow">${esc(c.cases.eyebrow)} · ${pad(1)} ${esc(p.kind)}</p>
+      <p class="eyebrow">${esc(c.cases.eyebrow)} · ${esc(p.kind)}</p>
       <h2 id="caso-${p.id}-title" class="block-title">${esc(p.name)}</h2>
       <p class="lead-text">${esc(p.summary)}</p>
       <p class="muted">${esc(p.role)}</p>
@@ -77,7 +77,7 @@ function casePanel(c: Content, p: Project, clips: Clips): string {
       <div class="actions">${projectLinks(c, p)}</div>
     </div>
   </div>
-  ${blocks.map(([title, body], i) => `<div class="cs-block">${blockHead(pad(i + 2), title)}${body}</div>`).join("")}
+  ${blocks.map(([title, body], i) => `<div class="cs-block">${blockHead(pad(i + 1), title)}${body}</div>`).join("")}
   <a class="text-link" href="${casePath(c.lang, p.id)}">${esc(c.cases.full)} ${icon("arrow")}</a>
 </article>`;
 }
@@ -146,12 +146,30 @@ function availability(c: Content): string {
 </div></section>`;
 }
 
+/** Formulario de contacto (Web3Forms). Sin JS se envía igual, con la página de confirmación de Web3Forms. */
+function contactFormHtml(c: Content): string {
+  const f = c.contact.form;
+  return `<form class="contact-form" action="${contactForm.endpoint}" method="POST" data-contact-form data-reveal
+    data-sending="${esc(f.sending)}" data-sent="${esc(f.sent)}" data-error="${esc(`${f.error} ${socials.email}`)}">
+    <input type="hidden" name="access_key" value="${esc(contactForm.accessKey)}">
+    <input type="hidden" name="subject" value="${esc(f.subject)}">
+    <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="form-row">
+      <label class="field"><span>${esc(f.name)}</span><input name="name" autocomplete="name" maxlength="100" required></label>
+      <label class="field"><span>${esc(f.email)}</span><input type="email" name="email" autocomplete="email" maxlength="160" required></label>
+    </div>
+    <label class="field"><span>${esc(f.message)}</span><textarea name="message" rows="5" maxlength="4000" required></textarea></label>
+    <button class="btn btn-ink" type="submit">${esc(f.send)}</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </form>`;
+}
+
 function contact(c: Content): string {
   const k = c.contact;
   return `<section class="section contact tone-cream" id="${c.ids.contact}" aria-labelledby="contact-title"><div class="wrap center">
   <h2 id="contact-title" class="display" data-reveal>${esc(k.title)}</h2>
   <p class="contact-text" data-reveal>${esc(k.text)}</p>
-  <a class="btn btn-ink" href="mailto:${socials.email}" data-reveal>${esc(k.button)}</a>
+  ${contactForm.accessKey ? contactFormHtml(c) : `<a class="btn btn-ink" href="mailto:${socials.email}" data-reveal>${esc(k.button)}</a>`}
   <ul class="contact-list" data-reveal>
     <li><a href="mailto:${socials.email}">${icon("mail")}${socials.email}</a></li>
     <li><a ${ext(socials.linkedin)}>${icon("linkedin")}LinkedIn</a></li>

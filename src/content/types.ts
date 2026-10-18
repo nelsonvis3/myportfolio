@@ -63,7 +63,10 @@ export interface Content {
   about: { eyebrow: string; title: string; paragraphs: string[]; photoAlt: string; timelineTitle: string; timeline: Part[]; educationTitle: string; education: { name: string; detail: string; status: string }[]; nowTitle: string; now: string[] };
   stack: { eyebrow: string; title: string; lead: string; tools: { name: string; logo: Logo }[]; aiEyebrow: string; ai: { name: string; logo: Logo }[] };
   availability: { eyebrow: string; title: string; text: string; note: string; cv: string; cvOther: string };
-  contact: { title: string; text: string; button: string; location: string };
+  contact: {
+    title: string; text: string; button: string; location: string;
+    form: { subject: string; name: string; email: string; message: string; send: string; sending: string; sent: string; error: string };
+  };
   footer: { line: string };
   projects: Project[];
 }
