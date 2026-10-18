@@ -183,7 +183,7 @@ export const en: Content = {
       ],
       status: {
         works: "It works locally and passes CI. It has 367 backend tests with 92% coverage and 53 Playwright browser scenarios (measured on October 16, 2026).",
-        missing: "It isn't deployed: the Oracle Cloud setup is ready, but the domain, email and backups still need checking. It has no fiscal invoicing with ARCA, no credit or debit notes and no load testing.",
+        missing: "It isn't deployed: the Oracle Cloud setup is ready, every time I try it rejects my card xd. Everything is tested, the tests pass well, try it locally.",
       },
       learning: "Operations that move money force you to think about what happens when two requests arrive at once. Locking the right row and testing that case against real PostgreSQL connections taught me more than any form.",
     },

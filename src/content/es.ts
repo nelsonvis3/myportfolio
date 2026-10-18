@@ -83,7 +83,8 @@ export const es: Content = {
       { name: "JavaScript", logo: "javascript" }, { name: "Tailwind CSS", logo: "tailwind" }, { name: "Redux Toolkit", logo: "redux" },
       { name: "Supabase", logo: "supabase" }, { name: "Python", logo: "python" }, { name: "Django", logo: "django" },
       { name: "PostgreSQL", logo: "postgresql" }, { name: "PHP", logo: "php" }, { name: "WordPress", logo: "wordpress" },
-      { name: "Shopify", logo: "shopify" }, { name: "Docker", logo: "docker" }, { name: "GitHub", logo: "github" }, { name: "Vercel", logo: "vercel" },
+      { name: "Shopify", logo: "shopify" }, { name: "Docker", logo: "docker" }, { name: "Linux", logo: "linux" },
+      { name: "GitHub", logo: "github" }, { name: "Vercel", logo: "vercel" },
     ],
     aiEyebrow: "AI Studio",
     ai: [{ name: "OpenAI", logo: "openai" }, { name: "Claude", logo: "claude" }],
@@ -188,7 +189,7 @@ export const es: Content = {
       ],
       status: {
         works: "Funciona en local y pasa en CI. Tiene 367 tests de backend con 92 % de cobertura y 53 escenarios de navegador con Playwright (medidos el 16 de octubre de 2026).",
-        missing: "No está publicado: el despliegue en Oracle Cloud está preparado, pero falta validar dominio, correo y backups. Tampoco tiene facturación fiscal con ARCA, notas de crédito y débito ni pruebas de carga.",
+        missing: "No está publicado: el despliegue en Oracle Cloud está preparado, cada que intento me rechaza la tarjeta xd. esta todo probado las pruebas pasan bien, probalo en local.",
       },
       learning: "Las operaciones que tocan dinero necesitan pensar en qué pasa si llegan dos pedidos a la vez. Bloquear la fila correcta y probar ese caso con conexiones reales a PostgreSQL me enseñó más que cualquier formulario.",
     },
