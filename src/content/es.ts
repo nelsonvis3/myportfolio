@@ -83,7 +83,7 @@ export const es: Content = {
       { name: "JavaScript", logo: "javascript" }, { name: "Tailwind CSS", logo: "tailwind" }, { name: "Redux Toolkit", logo: "redux" },
       { name: "Supabase", logo: "supabase" }, { name: "Python", logo: "python" }, { name: "Django", logo: "django" },
       { name: "PostgreSQL", logo: "postgresql" }, { name: "PHP", logo: "php" }, { name: "WordPress", logo: "wordpress" },
-      { name: "Shopify", logo: "shopify" }, { name: "Docker", logo: "docker" }, { name: "Linux", logo: "linux" },
+      { name: "Docker", logo: "docker" }, { name: "Linux", logo: "linux" },
       { name: "GitHub", logo: "github" }, { name: "Vercel", logo: "vercel" },
     ],
     aiEyebrow: "AI Studio",
