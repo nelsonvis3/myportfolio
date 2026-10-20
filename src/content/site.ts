@@ -6,7 +6,7 @@ export const content: Record<Lang, Content> = { es, en };
 export const langs: Lang[] = ["es", "en"];
 
 export const socials = {
-  website: "https://nelsonvis-portfolio.vercel.app",
+  website: "https://nelsonsivisstum.vercel.app",
   github: "https://github.com/nelsonvis3",
   linkedin: "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
   email: "nelsonsivisstum3@gmail.com",
