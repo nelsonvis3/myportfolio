@@ -1,7 +1,7 @@
 import type { Content, Project } from "../content/types.js";
 import { socials, casePath, contactForm } from "../content/site.js";
 import { icon, logo } from "./icons.js";
-import { blockHead, challengeRows, chips, cover, esc, ext, featureCards, pad, partsGrid, projectLinks } from "./shared.js";
+import { blockHead, chips, cover, esc, ext, featureCards, pad, partsGrid, projectLinks } from "./shared.js";
 
 // Home: hero → intro → proyectos → caso de estudio → sobre mí → stack → disponibilidad → contacto.
 // Todo el contenido está en el HTML. client.ts suma el scroll suave, las animaciones y el cambio de caso.
@@ -54,12 +54,30 @@ function work(c: Content): string {
 </section>`;
 }
 
+function challengePreview(c: Content, p: Project): string {
+  const challenge = p.challenges[0];
+  if (!challenge) return "";
+  return `<div class="cs-challenge-preview">
+    <h4>${esc(challenge.title)}</h4>
+    <div class="cs-challenge-detail">
+      <div>
+        <p class="eyebrow">${esc(c.ui.caseProblemLabel)}</p>
+        <p>${esc(challenge.problem)}</p>
+      </div>
+      <div>
+        <p class="eyebrow">${esc(c.ui.caseSolutionLabel)}</p>
+        <p>${esc(challenge.solution)}</p>
+      </div>
+    </div>
+  </div>`;
+}
+
 /** Un caso por proyecto; sin JS se ven los tres uno debajo del otro. */
 function casePanel(c: Content, p: Project): string {
   const u = c.ui;
   const blocks: [string, string][] = [
     [u.caseFeatures, featureCards(p.cards.filter((_, i) => p.featuredCards.includes(i)))],
-    [c.cases.challengesTitle, challengeRows(c, p.challenges.slice(0, 1))],
+    [c.cases.challengesTitle, challengePreview(c, p)],
   ];
   return `<article class="case-panel" id="caso-${p.id}" data-case="${p.id}" aria-labelledby="caso-${p.id}-title">
   <div class="cs-overview">

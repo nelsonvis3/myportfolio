@@ -24,7 +24,7 @@ export const en: Content = {
     caseImageFull: "Tap the image to see it full size", caseBackHome: "Go to home",
     caseArchitecture: "Architecture", caseChallenges: "Technical challenges", caseDecisions: "Decisions",
     caseVerification: "Testing and verification",
-    caseNext: "Next project", caseProblemLabel: "Problem", caseSolutionLabel: "Solution", caseCode: "In the code",
+    caseNext: "Next project", caseProblemLabel: "The challenge", caseSolutionLabel: "How I solved it", caseCode: "In the code",
   },
   hero: {
     eyebrow: "Nelson Sivisstum · Full stack developer",
@@ -47,7 +47,7 @@ export const en: Content = {
   cases: {
     eyebrow: "Case study",
     tabsLabel: "Pick a project",
-    challengesTitle: "A technical challenge",
+    challengesTitle: "Challenge and solution",
     full: "Explore architecture, decisions and tests",
   },
   about: {
@@ -193,7 +193,7 @@ export const en: Content = {
         { src: "/img/ragnar-mobile.webp", alt: "Ragnar Suplementos catalog on a phone", phone: true },
       ],
       phoneShot: "/img/ragnar-mobile.webp",
-      videoLabel: "Watch the presentation",
+      videoLabel: "",
       role: "I built the store and the API, built the catalog admin panel and worked on orders, inventory reservations and the payment and shipping integrations.",
       highlights: [
         "Products and bundles with flavors, a persistent cart and guest checkout.",
@@ -201,12 +201,10 @@ export const en: Content = {
         "A web panel for the catalog and the Django admin for orders and manual payments.",
       ],
       problem: [
-        "A supplement brand needs to sell products and bundles without losing control of its inventory. A purchase can be retried, a payment can arrive late and several items can draw from the same stock.",
+        "The client needed an online store where they could sell their products and combos, but also manage their catalog independently, without depending on a developer to update prices, images, flavors or stock. Additionally, the system had to maintain inventory integrity during purchases.",
       ],
       solution: [
-        "A Next.js store connected to a Django API that holds the catalog, prices, orders and administration. People can buy as guests or with an account, choose pickup or delivery and pay with whatever methods are enabled.",
-        "Django is the source of truth: the browser sends IDs and quantities, and the API checks prices and stock again before creating the order.",
-        "Payments, webhooks, expiration and emails still need server testing; the Mercado Pago flow has no automated tests.",
+        "I developed a Full Stack e-commerce platform with Next.js and Django REST Framework. I incorporated a protected administrative panel that allows you to manage products, combos, prices, images, stock and their publication directly from the web. The API centralizes business rules and validates pricing and availability during the purchasing process.",
       ],
       features: [
         "Browse products by category, pick flavors and buy bundles with their own price.",

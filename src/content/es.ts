@@ -20,7 +20,7 @@ export const es: Content = {
     caseImageFull: "Tocá la imagen para verla completa", caseBackHome: "Ir al inicio",
     caseArchitecture: "Arquitectura", caseChallenges: "Desafíos técnicos", caseDecisions: "Decisiones",
     caseVerification: "Pruebas y verificación",
-    caseNext: "Siguiente proyecto", caseProblemLabel: "Problema", caseSolutionLabel: "Solución", caseCode: "En el código",
+    caseNext: "Siguiente proyecto", caseProblemLabel: "El desafío", caseSolutionLabel: "Cómo lo resolví", caseCode: "En el código",
   },
   hero: {
     eyebrow: "Nelson Sivisstum · Desarrollador full stack",
@@ -43,7 +43,7 @@ export const es: Content = {
   cases: {
     eyebrow: "Caso de estudio",
     tabsLabel: "Elegí un proyecto",
-    challengesTitle: "Un desafío técnico",
+    challengesTitle: "Desafío y solución",
     full: "Explorar arquitectura, decisiones y pruebas",
   },
   about: {
@@ -201,7 +201,7 @@ export const es: Content = {
       ],
       phoneShot: "/img/ragnar-mobile.webp",
       repo: "https://github.com/nelsonvis3/ragnarsuplementosfsa", demo: "", demoLabel: "",
-      video: "https://www.linkedin.com/posts/nelson-sivisstum-4777a32b4_hola-este-es-un-proyecto-con-el-que-vengo-ugcPost-7512357993775136768-y74V/", videoLabel: "Ver presentación",
+      video: "", videoLabel: "",
       stack: ["Next.js", "React", "TypeScript", "Django", "PostgreSQL", "Zustand"],
       role: "Desarrollé la tienda y la API, armé el panel de administración del catálogo y trabajé en los pedidos, las reservas de inventario y las integraciones de pagos y envíos.",
       highlights: [
@@ -210,12 +210,10 @@ export const es: Content = {
         "Panel web para el catálogo y Django Admin para pedidos y pagos manuales.",
       ],
       problem: [
-        "Una marca de suplementos necesita vender productos y combos sin perder el control del inventario. Una compra puede repetirse, un pago puede llegar tarde y varios artículos pueden consumir el mismo stock.",
+        "El cliente necesitaba una tienda online donde pudiera vender sus productos y combos, pero también administrar su catálogo de forma independiente, sin depender de un desarrollador para actualizar precios, imágenes, sabores o stock. Además, el sistema debía mantener la integridad del inventario durante las compras.",
       ],
       solution: [
-        "Una tienda en Next.js conectada a una API en Django que concentra catálogo, precios, pedidos y administración. Se puede comprar como invitado o con una cuenta, elegir retiro o envío y pagar con los medios habilitados.",
-        "Django es la fuente de verdad: el navegador manda identificadores y cantidades, y la API vuelve a consultar precios y stock antes de crear el pedido.",
-        "Los pagos, webhooks, vencimientos y correos requieren todavía pruebas en un servidor; el flujo de Mercado Pago no tiene pruebas automatizadas.",
+        "Desarrollé una plataforma e-commerce Full Stack con Next.js y Django REST Framework. Incorporé un panel administrativo protegido que permite gestionar productos, combos, precios, imágenes, stock y su publicación directamente desde la web. La API centraliza las reglas comerciales y valida precios y disponibilidad durante el proceso de compra.",
       ],
       features: [
         "Explorar productos por categoría, elegir sabores y comprar combos con precio propio.",
