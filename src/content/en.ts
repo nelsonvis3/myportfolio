@@ -217,7 +217,7 @@ export const en: Content = {
       ],
       cards: [
         { icon: "cart", title: "Cart and bundles", text: "Products by category, flavors and bundles with their own price. The cart is kept between visits." },
-        { icon: "users", title: "With or without an account", text: "Buy as a guest or with an account that confirms the email and can reset its password." },
+        { icon: "users", title: "With or without an account", text: "Buy as a guest or with an account that confirms the email and can reset the password." },
         { icon: "truck", title: "Pickup or delivery", text: "Delivery is quoted by street distance from Formosa, with a quote that expires after 15 minutes." },
         { icon: "card", title: "Payment methods", text: "Mercado Pago, bank transfer or pay at pickup, depending on what the store has enabled." },
         { icon: "box", title: "Reserved stock", text: "An order reserves stock and gives it back if it's cancelled or expires, even when the product is inside a bundle." },
@@ -244,6 +244,7 @@ export const en: Content = {
         ],
       },
       challenges: [
+        { title: "Self-managed product catalog", problem: "The client needed to update products, bundles, prices, stock and images directly on the website without relying on a developer for everyday catalog changes.", solution: "I built an access-controlled catalog dashboard connected to the Django API, so the client can manage and publish products and bundles from the web. Orders and manual payments are handled in Django Admin.", source: "components/admin/AdministracionCatalogo.tsx, backend/store/catalog_admin.py", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx" },
         { title: "Retrying without duplicating", problem: "A double click or a slow connection can repeat the same purchase.", solution: "A unique key per attempt plus a hash of the data tell a retry apart from a different purchase.", source: "crear_preferencia, respuesta_checkout_existente", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py" },
         { title: "Stock shared with bundles", problem: "One product can be sold on its own and inside several bundles in the same purchase.", solution: "The API adds up quantities per product and always locks rows in the same order. Each item stores the bundle's components so the right units go back.", source: "backend/store/views.py, ItemPedido.componentes_combo", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py" },
         { title: "Payments that arrive late", problem: "A notification can repeat, report a different amount or arrive after the reservation expired.", solution: "The webhook checks the signature and asks the provider. If anything doesn't match, the order goes to review for a person to resolve.", source: "procesar_notificacion_pago, backend/store/orders.py", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py" },
@@ -297,7 +298,7 @@ export const en: Content = {
       ],
       featuredCards: [1, 3, 4],
       architecture: {
-        text: "Django serves the page. React builds the form, the summary and the logs, and MapLibre draws the map. A single POST /api/plan/ request connects the input to the result.",
+        text: "Django serves the page. React builds the form, the summary and the logs, and MapLibre draws the map. A single POST /api/plan/ request connects the input with the result.",
         parts: [
           { name: "React + MapLibre", detail: "Form, map, timeline and daily logs." },
           { name: "Django + DRF", detail: "Validation, external providers, planning and splitting by day." },
@@ -309,7 +310,7 @@ export const en: Content = {
         title: "From three locations to a plan",
         steps: [
           { name: "Validate", detail: "The API checks the locations, the cycle used (0 to 70), the departure and the time zone before calling third parties." },
-          { name: "Geocode", detail: "Photon turns each location into coordinates, with caching and pauses between requests." },
+          { name: "Geocode", detail: "Photon turns each location into coordinates, with caching and pauses between queries." },
           { name: "Route", detail: "OSRM returns the geometry, miles and directions. If it fails, a backup provider is tried." },
           { name: "Plan", detail: "The model estimates driving at 55 mph and adds pickup, drop-off, fuel and breaks." },
           { name: "Show", detail: "Events are split at midnight and shown on the map, the timeline and the daily logs." },
