@@ -1,4 +1,4 @@
-// Todas las páginas: menú, caso de estudio de la home, clips, portadas y brillo de las tarjetas. El scroll suave y las
+// Todas las páginas: menú, caso de estudio de la home, portadas y brillo de las tarjetas. El scroll suave y las
 // animaciones (motion.ts) llegan con import() cuando la página ya cargó; sin JS o con movimiento reducido
 // la página se ve completa y quieta.
 const root = document.documentElement;
@@ -11,7 +11,6 @@ if ((performance.getEntriesByType("navigation")[0] as PerformanceNavigationTimin
   if (location.hash) history.replaceState(null, "", location.pathname + location.search);
   window.scrollTo(0, 0);
 }
-const small = matchMedia("(max-width: 760px)").matches;
 const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const fine = matchMedia("(pointer: fine)").matches;
 
@@ -97,33 +96,6 @@ if (panels.length) {
     event.preventDefault();
     showCase(link.dataset.caseLink, true);
   });
-}
-
-// Clips de escritorio en el celular: se ven chicos; tocarlos los abre en pantalla completa. iPhone no tiene
-// requestFullscreen en elementos, solo webkitEnterFullscreen en el video.
-for (const video of document.querySelectorAll<HTMLVideoElement & { webkitEnterFullscreen?: () => void }>("[data-fullscreen]")) {
-  video.addEventListener("click", () => {
-    if (!matchMedia("(max-width: 760px)").matches) return;
-    if (video.requestFullscreen) void video.requestFullscreen().catch(() => video.webkitEnterFullscreen?.());
-    else video.webkitEnterFullscreen?.();
-  });
-}
-
-// Clips de "Cómo se usa": cada uno se reproduce solo mientras está en pantalla. Con movimiento reducido
-// quedan quietos, con controles para reproducirlos a mano.
-const clips = [...document.querySelectorAll<HTMLVideoElement>("[data-clip]")];
-for (const video of clips) {
-  if (small && video.dataset.posterMobile) video.poster = video.dataset.posterMobile;
-  if (still) video.controls = true;
-}
-if (!still && clips.length) {
-  const watcher = new IntersectionObserver(entries => {
-    for (const { target, isIntersecting } of entries) {
-      const video = target as HTMLVideoElement;
-      if (isIntersecting) void video.play().catch(() => {}); else video.pause();
-    }
-  }, { threshold: 0.45 });
-  clips.forEach(video => watcher.observe(video));
 }
 
 // Portadas: con mouse se inclinan hacia el puntero.

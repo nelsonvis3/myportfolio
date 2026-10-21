@@ -17,9 +17,9 @@ export const es: Content = {
     readCase: "Leer el caso completo", viewCode: "Ver código", demoSoon: "Demo en preparación", backToTop: "Volver arriba",
     caseEyebrow: "Caso de estudio", caseBack: "Proyectos", caseStack: "Stack", caseRole: "Mi parte",
     caseProblem: "El problema", caseSolution: "La solución", caseFeatures: "Qué permite hacer",
-    caseImageFull: "Tocá la imagen para verla completa", caseVideoFull: "Tocá el video para verlo completo", caseUsage: "Cómo se usa", caseBackHome: "Ir al inicio",
-    caseArchitecture: "Arquitectura", caseChallenges: "Desafíos", caseDecisions: "Decisiones",
-    caseStatus: "Estado", caseWorks: "Qué funciona", caseMissing: "Qué falta", caseLearning: "Qué aprendí",
+    caseImageFull: "Tocá la imagen para verla completa", caseBackHome: "Ir al inicio",
+    caseArchitecture: "Arquitectura", caseChallenges: "Desafíos técnicos", caseDecisions: "Decisiones",
+    caseVerification: "Pruebas y verificación",
     caseNext: "Siguiente proyecto", caseProblemLabel: "Problema", caseSolutionLabel: "Solución", caseCode: "En el código",
   },
   hero: {
@@ -37,14 +37,14 @@ export const es: Content = {
   work: {
     eyebrow: "Proyectos",
     title: "Tres proyectos, de punta a punta",
-    lead: "Cada uno tiene su caso de estudio: el problema, las decisiones y clips cortos de cómo se usa.",
+    lead: "Tres aplicaciones completas. Explorá sus funciones y las decisiones técnicas detrás de cada una.",
     open: "Ver el caso",
   },
   cases: {
     eyebrow: "Caso de estudio",
     tabsLabel: "Elegí un proyecto",
-    challengesTitle: "Problemas que tuve que resolver",
-    full: "Ver el caso completo, con el flujo y las decisiones",
+    challengesTitle: "Un desafío técnico",
+    full: "Explorar arquitectura, decisiones y pruebas",
   },
   about: {
     eyebrow: "Sobre mí",
@@ -153,6 +153,7 @@ export const es: Content = {
         { icon: "box", title: "Compras e inventario", text: "Compras a proveedores, mercadería recibida que suma stock y gastos registrados con sus pagos." },
         { icon: "chart", title: "Informes y auditoría", text: "Lo facturado, cobrado y vencido por período, informes en CSV, Excel o PDF y el historial de quién cambió qué." },
       ],
+      featuredCards: [0, 2, 3],
       architecture: {
         text: "Next.js y React arman la interfaz, Django REST Framework expone la API y PostgreSQL guarda usuarios, sesiones y datos comerciales. El entorno con Docker Compose usa Caddy como proxy, Gunicorn para Django y Redis para compartir los límites de intentos de inicio de sesión. Un worker aparte procesa los informes y las alertas desde una cola guardada en PostgreSQL.",
         parts: [
@@ -163,11 +164,6 @@ export const es: Content = {
           { name: "Worker run_jobs", detail: "Informes y alertas programadas, con reintentos." },
         ],
       },
-      usage: [
-        { name: "Entrar a la empresa", detail: "Después de iniciar sesión, cada persona elige con qué empresa trabajar y entra a su tablero.", clip: "fracxion-1" },
-        { name: "Cargar un producto", detail: "Cada producto o servicio tiene tipo, unidad, moneda, precio e impuesto.", clip: "fracxion-2" },
-        { name: "Auditoría y equipo", detail: "Cada cambio queda en el historial, y el equipo se invita con un rol para esa empresa.", clip: "fracxion-3" },
-      ],
       flow: {
         title: "Un recorrido comercial",
         steps: [
@@ -181,9 +177,9 @@ export const es: Content = {
         ],
       },
       challenges: [
-        { title: "Una numeración que no se repite", problem: "Dos emisiones al mismo tiempo podían intentar usar el mismo número.", solution: "La emisión bloquea la fila de la empresa con select_for_update dentro de una transacción, y una restricción única en PostgreSQL refuerza la regla.", source: "billing/services.py, issue_invoice" },
-        { title: "El historial no cambia", problem: "Editar un cliente o un precio no debería modificar un comprobante anterior.", solution: "Al crear el borrador se guardan copias del cliente y del catálogo. La API no permite editar ni borrar documentos emitidos.", source: "billing/services.py, create_invoice_draft" },
-        { title: "Revertir sin borrar", problem: "Un cobro incorrecto tiene que corregirse sin perder su rastro.", solution: "Una reversión es un registro aparte que conserva el pago original y el motivo. El saldo y la auditoría se actualizan en la misma transacción.", source: "billing/services.py, reverse_payment" },
+        { title: "Una numeración que no se repite", problem: "Dos emisiones al mismo tiempo podían intentar usar el mismo número.", solution: "La emisión bloquea la fila de la empresa con select_for_update dentro de una transacción, y una restricción única en PostgreSQL refuerza la regla.", source: "billing/services.py, issue_invoice", sourceUrl: "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py" },
+        { title: "El historial no cambia", problem: "Editar un cliente o un precio no debería modificar un comprobante anterior.", solution: "Al crear el borrador se guardan copias del cliente y del catálogo. La API no permite editar ni borrar documentos emitidos.", source: "billing/services.py, create_invoice_draft", sourceUrl: "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py" },
+        { title: "Revertir sin borrar", problem: "Un cobro incorrecto tiene que corregirse sin perder su rastro.", solution: "Una reversión es un registro aparte que conserva el pago original y el motivo. El saldo y la auditoría se actualizan en la misma transacción.", source: "billing/services.py, reverse_payment", sourceUrl: "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py" },
       ],
       decisions: [
         { name: "Base y esquema compartidos", detail: "El aislamiento entre empresas se hace en la capa de aplicación, con el tenant de la ruta y los permisos." },
@@ -191,11 +187,7 @@ export const es: Content = {
         { name: "Importes con Decimal", detail: "El redondeo es explícito y se calcula en el backend." },
         { name: "Auditoría en la misma transacción", detail: "Si falla el registro de auditoría, la operación también se revierte." },
       ],
-      status: {
-        works: "Funciona en local y pasa en CI. Tiene 367 tests de backend con 92 % de cobertura y 53 escenarios de navegador con Playwright (medidos el 16 de octubre de 2026).",
-        missing: "No está publicado: el despliegue en Oracle Cloud está preparado, cada que intento me rechaza la tarjeta xd. esta todo probado las pruebas pasan bien, probalo en local.",
-      },
-      learning: "Las operaciones que tocan dinero necesitan pensar en qué pasa si llegan dos pedidos a la vez. Bloquear la fila correcta y probar ese caso con conexiones reales a PostgreSQL me enseñó más que cualquier formulario.",
+      verification: "367 pruebas de backend, 92 % de cobertura y 53 escenarios de Playwright (medidos el 16 de octubre de 2026).",
     },
     {
       id: "ragnar-suplementos",
@@ -223,6 +215,7 @@ export const es: Content = {
       solution: [
         "Una tienda en Next.js conectada a una API en Django que concentra catálogo, precios, pedidos y administración. Se puede comprar como invitado o con una cuenta, elegir retiro o envío y pagar con los medios habilitados.",
         "Django es la fuente de verdad: el navegador manda identificadores y cantidades, y la API vuelve a consultar precios y stock antes de crear el pedido.",
+        "Los pagos, webhooks, vencimientos y correos requieren todavía pruebas en un servidor; el flujo de Mercado Pago no tiene pruebas automatizadas.",
       ],
       features: [
         "Explorar productos por categoría, elegir sabores y comprar combos con precio propio.",
@@ -241,6 +234,7 @@ export const es: Content = {
         { icon: "box", title: "Stock reservado", text: "El pedido reserva el stock y lo devuelve si se cancela o vence, también cuando el producto va dentro de un combo." },
         { icon: "layers", title: "Panel del local", text: "Productos, combos, precios, stock y una foto por sabor desde el panel web; pedidos y pagos desde Django Admin." },
       ],
+      featuredCards: [0, 4, 5],
       architecture: {
         text: "Next.js, React y TypeScript arman la tienda. Zustand guarda el carrito en el navegador. Django REST Framework expone catálogo, pedidos e inventario, y PostgreSQL los guarda en producción.",
         parts: [
@@ -250,11 +244,6 @@ export const es: Content = {
           { name: "Mercado Pago, Nominatim, OSRM", detail: "Pagos y cálculo de envíos." },
         ],
       },
-      usage: [
-        { name: "Elegir el producto", detail: "Del catálogo a la ficha: se elige el sabor y el producto entra al carrito.", clip: "ragnar-1" },
-        { name: "Envío y pedido", detail: "Con envío a domicilio, el costo sale de la distancia hasta la dirección. Al confirmar, el pedido reserva el stock.", clip: "ragnar-2" },
-        { name: "Panel administrativo", detail: "El local publica o despublica artículos sin borrarlos y edita cada producto: precio, stock, foto y sabores, cada uno con su imagen.", clip: "ragnar-3" },
-      ],
       flow: {
         title: "Del carrito al pedido",
         steps: [
@@ -266,9 +255,9 @@ export const es: Content = {
         ],
       },
       challenges: [
-        { title: "Reintentar sin duplicar", problem: "Un doble clic o una red lenta pueden repetir la misma compra.", solution: "Una clave única por intento y el hash de los datos distinguen un reintento de una compra distinta.", source: "crear_preferencia, respuesta_checkout_existente" },
-        { title: "Stock compartido con combos", problem: "Un producto puede venderse solo y como parte de varios combos en la misma compra.", solution: "La API suma las cantidades por producto y bloquea las filas siempre en el mismo orden. Cada ítem guarda los componentes del combo para devolver las unidades correctas.", source: "backend/store/views.py, ItemPedido.componentes_combo" },
-        { title: "Pagos que llegan tarde", problem: "Una notificación puede repetirse, informar otro importe o llegar con la reserva ya vencida.", solution: "El webhook valida la firma y consulta al proveedor. Si algo no coincide, el pedido queda en revisión para que lo resuelva una persona.", source: "procesar_notificacion_pago, backend/store/orders.py" },
+        { title: "Reintentar sin duplicar", problem: "Un doble clic o una red lenta pueden repetir la misma compra.", solution: "Una clave única por intento y el hash de los datos distinguen un reintento de una compra distinta.", source: "crear_preferencia, respuesta_checkout_existente", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py" },
+        { title: "Stock compartido con combos", problem: "Un producto puede venderse solo y como parte de varios combos en la misma compra.", solution: "La API suma las cantidades por producto y bloquea las filas siempre en el mismo orden. Cada ítem guarda los componentes del combo para devolver las unidades correctas.", source: "backend/store/views.py, ItemPedido.componentes_combo", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py" },
+        { title: "Pagos que llegan tarde", problem: "Una notificación puede repetirse, informar otro importe o llegar con la reserva ya vencida.", solution: "El webhook valida la firma y consulta al proveedor. Si algo no coincide, el pedido queda en revisión para que lo resuelva una persona.", source: "procesar_notificacion_pago, backend/store/orders.py", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py" },
       ],
       decisions: [
         { name: "El backend decide", detail: "Precios, variantes y disponibilidad se vuelven a validar al confirmar." },
@@ -276,11 +265,7 @@ export const es: Content = {
         { name: "Cuenta opcional", detail: "Se puede comprar como invitado. Si hay sesión, el pedido queda asociado al usuario." },
         { name: "Cada ítem guarda lo que se compró", detail: "Nombre, sabor, precio y componentes quedan en el pedido aunque el catálogo cambie después." },
       ],
-      status: {
-        works: "Funciona en local: catálogo administrable, carrito, retiro o envío, pedido, reserva de stock y pago o revisión, con cuenta opcional. Tiene 54 tests de backend.",
-        missing: "Todavía no hay demo pública ni ventas reales. Falta probar en un servidor los medios de pago, los webhooks, el vencimiento de reservas y el envío de correos, y el flujo de Mercado Pago no tiene tests.",
-      },
-      learning: "El checkout no termina cuando el cliente se va a pagar. Pensar reintentos, vencimientos y revisiones fue tan importante como el formulario, y los combos me obligaron a pensar el inventario como algo compartido.",
+      verification: "54 pruebas de backend ejecutadas en entorno local.",
     },
     {
       id: "roadledger",
@@ -306,7 +291,7 @@ export const es: Content = {
       ],
       solution: [
         "RoadLedger recibe tres ubicaciones, las horas de ciclo usadas, la salida y la zona horaria. El backend combina geocodificación, ruteo y un modelo de planificación, y la interfaz muestra la ruta, los eventos y las hojas diarias.",
-        "Es un prototipo educativo que hice para una evaluación técnica. No es un registro ELD certificado.",
+        "Es un prototipo educativo que hice para una evaluación técnica. No es un registro ELD certificado: utiliza rutas de automóvil sin restricciones para camiones, tráfico, estacionamiento ni un historial completo de ocho días.",
       ],
       features: [
         "Tres ubicaciones y horas de ciclo como entrada.",
@@ -323,6 +308,7 @@ export const es: Content = {
         { icon: "printer", title: "Hojas diarias", text: "Un registro por día con segmentos, totales y gráfico de estados, listo para imprimir." },
         { icon: "refresh", title: "Si algo falla", text: "Timeouts, respuestas validadas y un ruteador de respaldo. Si el mapa no carga, el resumen se sigue viendo." },
       ],
+      featuredCards: [1, 3, 4],
       architecture: {
         text: "Django sirve la página. React arma el formulario, el resumen y los registros, y MapLibre dibuja el mapa. Una sola solicitud a POST /api/plan/ conecta la entrada con el resultado.",
         parts: [
@@ -343,9 +329,9 @@ export const es: Content = {
         ],
       },
       challenges: [
-        { title: "Distancia y duración son cosas distintas", problem: "El tiempo que devuelve un ruteador para autos no coincide con la hipótesis de manejo del plan.", solution: "La ruta aporta millas y geometría. El plan calcula sus tiempos con una velocidad media fija de 55 mph.", source: "trips/views.py, _route_trip, _make_plan" },
-        { title: "Dividir el viaje por días", problem: "Un evento puede empezar un día y terminar al siguiente, y cada hoja tiene que cubrir un día completo.", solution: "Los eventos se cortan a medianoche. Las pruebas comprueban que cada día sume 1.440 minutos.", source: "trips/views.py, _calendar_logs, trips/tests.py" },
-        { title: "Seguir mostrando algo si falla el mapa", problem: "La geocodificación, el ruteo y el dibujo dependen de servicios externos.", solution: "Hay timeouts, validación de respuestas y un ruteador de respaldo. Si el mapa no se dibuja, el resumen y los registros se siguen viendo.", source: "_get_json, _route_trip, App.submit" },
+        { title: "Distancia y duración son cosas distintas", problem: "El tiempo que devuelve un ruteador para autos no coincide con la hipótesis de manejo del plan.", solution: "La ruta aporta millas y geometría. El plan calcula sus tiempos con una velocidad media fija de 55 mph.", source: "trips/views.py, _route_trip, _make_plan", sourceUrl: "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py" },
+        { title: "Dividir el viaje por días", problem: "Un evento puede empezar un día y terminar al siguiente, y cada hoja tiene que cubrir un día completo.", solution: "Los eventos se cortan a medianoche. Las pruebas comprueban que cada día sume 1.440 minutos.", source: "trips/views.py, _calendar_logs, trips/tests.py", sourceUrl: "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py" },
+        { title: "Seguir mostrando algo si falla el mapa", problem: "La geocodificación, el ruteo y el dibujo dependen de servicios externos.", solution: "Hay timeouts, validación de respuestas y un ruteador de respaldo. Si el mapa no se dibuja, el resumen y los registros se siguen viendo.", source: "_get_json, _route_trip, App.submit", sourceUrl: "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py" },
       ],
       decisions: [
         { name: "Un resultado para todas las vistas", detail: "Mapa, cronología y hojas diarias leen el mismo JSON." },
@@ -353,11 +339,7 @@ export const es: Content = {
         { name: "Sin persistencia", detail: "La solicitud devuelve el resultado directamente. No hay cuentas ni historial de viajes." },
         { name: "Supuestos a la vista", detail: "Velocidad media, horas de ciclo y zona horaria forman parte del modelo y se muestran." },
       ],
-      status: {
-        works: "El prototipo está publicado en Render y calcula ruta, eventos y hojas diarias. En el plan gratuito, la primera carga tarda unos 30 segundos. Tiene 12 pruebas sobre validación, contrato de la API y límites de tiempo.",
-        missing: "Rutea con perfil de auto, sin restricciones de camión, tráfico ni estacionamiento, y no reconstruye un historial completo de ocho días.",
-      },
-      learning: "Separar el cálculo de los servicios externos me permitió probar las reglas con entradas controladas. Los cortes de medianoche necesitaron pruebas propias.",
+      verification: "12 pruebas sobre validación, contrato de la API y límites de tiempo.",
     },
   ],
 };

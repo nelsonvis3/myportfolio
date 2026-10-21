@@ -208,22 +208,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .cs-overview { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 72px); align-items: center; }
 .cs-summary .lead-text { margin-top: 20px; }
 .cs-summary .muted { margin-top: 14px; font-size: 15px; max-width: 60ch; }
-.cs-block { margin-top: clamp(88px, 10vw, 140px); }
+.cs-block { margin-top: clamp(44px, 6vw, 80px); }
 .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
 .feature-grid .card:hover, .parts-grid .card:hover { border-color: rgba(242, 236, 226, .2); transform: translateY(-4px); background: #26231e; }
 .feature-grid h4 { font-size: 1.18rem; margin: 22px 0 8px; }
 .feature-grid p { color: var(--muted); font-size: 14.5px; }
 
-/* Cómo se usa */
-.usage { margin-top: 36px; }
-.usage-step { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); gap: 24px clamp(28px, 4vw, 56px); padding: 32px 0; border-top: 1px solid var(--line); align-items: start; transition: var(--reveal-t); }
-.usage-text { display: grid; grid-template-columns: 2.6em 1fr; align-items: baseline; }
-.usage-n { font-size: 13px; color: var(--accent); grid-row: span 2; font-variant-numeric: tabular-nums; }
-.usage-text h4 { font-size: 1.25rem; }
-.usage-text p { margin-top: 8px; color: var(--muted); font-size: 15px; }
-.usage-clip { border-radius: 18px; overflow: hidden; border: 1px solid var(--line-soft); background: var(--surface); }
-.usage-clip video { width: 100%; height: auto; background: var(--surface); }
-video[data-fullscreen]:fullscreen { aspect-ratio: auto; object-fit: contain; background: #000; }
 .case-media-hint { display: none; }
 
 /* Desafíos */
@@ -236,6 +226,9 @@ video[data-fullscreen]:fullscreen { aspect-ratio: auto; object-fit: contain; bac
 .challenge-body .muted { font-size: 15px; }
 .source { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12.5px; color: var(--muted); }
 .source code { font: 12.5px/1.5 var(--mono); color: var(--fg-soft); }
+.source a { display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; text-underline-offset: 3px; }
+.source a:hover code { color: var(--accent); }
+.source a svg { width: 14px; height: 14px; }
 
 /* Arquitectura y decisiones */
 .parts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-top: 32px; }
@@ -243,14 +236,9 @@ video[data-fullscreen]:fullscreen { aspect-ratio: auto; object-fit: contain; bac
 .parts-grid dd { margin-top: 8px; color: var(--muted); font-size: 14.5px; }
 .cs-block .lead-text { margin-top: 24px; }
 
-/* Estado */
-.status-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 32px; }
-.status-card h4 { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; margin-bottom: 12px; }
-.status-card h4 svg { width: 20px; height: 20px; color: var(--muted); }
-.status-card.is-ok h4 svg { color: var(--accent); }
-.status-card p { color: var(--fg-soft); font-size: 15px; }
-.learning { margin-top: 28px; padding: 8px 0 8px 28px; border-left: 2px solid var(--accent); transition: var(--reveal-t); }
-.learning p:last-child { margin-top: 12px; font: 500 clamp(1.2rem, 2vw, 1.6rem)/1.4 var(--display); letter-spacing: -.015em; max-width: 46ch; }
+/* Evidencia técnica breve al final del caso */
+.case-verification { margin-top: clamp(60px, 7vw, 100px); padding-top: 24px; border-top: 1px solid var(--line); }
+.case-verification p { margin-top: 12px; max-width: 68ch; font-size: 15px; color: var(--fg-soft); }
 
 /* Portada: captura de escritorio en perspectiva con la de celular delante. client.ts mueve --rx y --ry. */
 .cover3d { padding: clamp(8px, 2vw, 24px) 0 clamp(28px, 4vw, 52px); perspective: 1800px; }
@@ -344,15 +332,15 @@ video[data-fullscreen]:fullscreen { aspect-ratio: auto; object-fit: contain; bac
 .cp-cover .cover3d-scene { width: min(100%, 1080px); margin-inline: auto; }
 .cp-role { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: 12px 32px; margin-top: 32px; }
 .cp-role dd { color: var(--fg-soft); }
-.cp-section { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 24px clamp(40px, 6vw, 96px); padding-top: clamp(80px, 9vw, 130px); }
+.cp-section { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 24px clamp(40px, 6vw, 96px); padding-top: clamp(64px, 7vw, 100px); }
 .cp-label { align-self: start; position: sticky; top: 104px; }
 .cp-content > * + * { margin-top: 28px; }
-.cp-content > .usage, .cp-content > .challenge-rows, .cp-content > .parts-grid, .cp-content > .status-grid { margin-top: 0; }
+.cp-content > .challenge-rows, .cp-content > .parts-grid { margin-top: 0; }
 .cp-content > .prose + .parts-grid { margin-top: 28px; }
 .prose p { color: var(--fg-soft); max-width: 64ch; font-size: 1.05rem; }
 .prose p + p { margin-top: 1em; }
 .prose .sub { margin: 36px 0 18px; font-size: 1.2rem; }
-.cp-section .usage-step { grid-template-columns: minmax(0, 1fr); }
+
 .case-media { border-radius: 18px; overflow: hidden; border: 1px solid var(--line-soft); }
 .case-media img { width: 100%; height: auto; }
 .case-media a { display: block; }
@@ -422,7 +410,7 @@ html.has-star, html.has-star * { cursor: none !important; }
   .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about-cards { grid-template-columns: minmax(0, 1fr); }
   .about-photo { max-width: 420px; }
-  .usage-step { grid-template-columns: minmax(0, 1fr); }
+
   .challenge-row { grid-template-columns: 48px minmax(0, 1fr); }
   .challenge-body { grid-column: 1 / -1; }
   .challenge-n { font-size: 1.6rem; }
@@ -440,7 +428,7 @@ html.has-star, html.has-star * { cursor: none !important; }
   .hero-content { padding: 0 20px 22px; }
   .hero-note { margin-top: 28px; font-size: 13.5px; }
   .hero-content .actions .btn { flex: 1 1 auto; }
-  .feature-grid, .status-grid { grid-template-columns: minmax(0, 1fr); }
+  .feature-grid { grid-template-columns: minmax(0, 1fr); }
   .case-tabs { width: 100%; justify-content: space-between; }
   .in-cases .case-tabs { top: 16px; }
 .case-tabs a { padding: 9px 14px; font-size: 13px; }
@@ -452,8 +440,8 @@ html.has-star, html.has-star * { cursor: none !important; }
   .footer-nav { justify-content: center; }
   .next-card { flex-direction: column; align-items: flex-start; }
   /* El clip grabado en el celular se ve como un celular; el de escritorio, a lo ancho y con pantalla completa al tocarlo. */
-  .usage-clip.has-mobile { width: min(300px, 80%); margin-inline: auto; border-radius: 30px; border: 5px solid #0b0a09; }
-  .usage-clip.has-mobile video { aspect-ratio: 390 / 844; }
+
+
   .case-media-hint { display: block; padding: 10px 14px; border-top: 1px solid var(--line-soft); font-size: 12px; color: var(--muted); }
   .cover3d-phone { border-width: 3px; border-radius: 14px; }
 }

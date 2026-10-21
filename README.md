@@ -2,16 +2,16 @@
 
 Mi portfolio de desarrollador full stack, en español y en inglés.
 
-[Ver el sitio](https://nelsonvis-portfolio.vercel.app/) · [English](https://nelsonvis-portfolio.vercel.app/en/) · [LinkedIn](https://www.linkedin.com/in/nelson-sivisstum-4777a32b4/)
+[Ver el sitio](https://nelsonsivisstum.vercel.app/) · [English](https://nelsonsivisstum.vercel.app/en/) · [LinkedIn](https://www.linkedin.com/in/nelson-sivisstum-4777a32b4/)
 
 ![Portada del portfolio](public/img/social-preview.png)
 
-> English summary: my developer portfolio. A static site generated with TypeScript, in warm charcoal and amber, with smooth scrolling (Lenis + GSAP), a pinned horizontal project row, in-page case studies and short screen recordings of each project. Spanish and English versions.
+> English summary: my developer portfolio. A static site generated with TypeScript, in warm charcoal and amber, with smooth scrolling (Lenis + GSAP), a pinned horizontal project row, in-page project summaries and full technical case studies. Spanish and English versions.
 
 ## Qué hay en el sitio
 
 - Un hero en tarjeta con mi presentación, y una intro sobre cómo trabajo.
-- Mis tres proyectos en tarjetas que corren de lado al bajar. Un click cambia el caso de estudio de la home al de ese proyecto, sin salir de la página: resumen, funciones, clips de cómo se usa (escritorio y celular), desafíos, arquitectura y estado.
+- Mis tres proyectos en tarjetas que corren de lado al bajar. Un clic cambia el caso de estudio de la home sin salir de la página: resumen, tres funciones destacadas y un desafío técnico. La arquitectura, el recorrido y las pruebas quedan en la página individual.
 - Cada proyecto tiene además su página con el caso completo.
 - Sobre mí, el stack (y AI Studio), disponibilidad y un formulario de contacto que llega a mi correo.
 - Sin JavaScript o con movimiento reducido, el sitio se ve completo y quieto.
@@ -61,7 +61,7 @@ docs/social/     Plantilla de las imágenes para compartir y del banner de Linke
 
 Imágenes opcionales: `public/img/hero.webp` (fondo del hero) y `public/img/nelson.webp` (foto de Sobre mí). Si están, el build las usa.
 
-Los clips de "Cómo se usa" están en `public/clips/`: `<proyecto>-<n>-desktop.mp4` y, si existe, `<proyecto>-<n>-mobile.mp4`, cada uno con su póster `.webp`. El build los detecta solos. Los CV que se descargan son `public/cv.pdf` y `public/cv-en.pdf` ([docs/cv/README.md](docs/cv/README.md)).
+Los videos originales quedan archivados en `public/clips/` y ya no se incluyen en el despliegue. Los CV descargables son `public/cv.pdf` y `public/cv-en.pdf` ([docs/cv/README.md](docs/cv/README.md)).
 
 El formulario de contacto usa [Web3Forms](https://web3forms.com): la clave pública va en `contactForm.accessKey` de `src/content/site.ts`. Sin clave, la sección de contacto muestra solo el botón de correo.
 

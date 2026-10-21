@@ -2,10 +2,8 @@ import type { Logo } from "../render/logos.js";
 
 export type Lang = "es" | "en";
 
-export interface Challenge { title: string; problem: string; solution: string; source: string }
+export interface Challenge { title: string; problem: string; solution: string; source: string; sourceUrl?: string }
 export interface Part { name: string; detail: string }
-// clip: nombre de public/clips/<clip>-desktop.mp4 y, si existe, <clip>-mobile.mp4 (grabado en el celular).
-export interface UsageStep extends Part { clip: string }
 // Íconos de línea propios (render/icons.ts) para las tarjetas de funciones.
 export type Icon = "shield" | "users" | "file" | "coins" | "box" | "chart" | "cart" | "truck" | "card" | "layers" | "map" | "route" | "clock" | "printer" | "refresh";
 export interface Card { icon: Icon; title: string; text: string }
@@ -32,13 +30,12 @@ export interface Project {
   solution: string[];
   features: string[];
   cards: Card[];         // funciones en tarjetas para el caso de la home
+  featuredCards: number[]; // 3 tarjetas destacadas en la home
   architecture: { text: string; parts: Part[] };
-  usage?: UsageStep[];  // "Cómo se usa": pasos con un clip cada uno
   flow: { title: string; steps: Part[] };
   challenges: Challenge[];
   decisions: Part[];
-  status: { works: string; missing: string };
-  learning: string;
+  verification: string;
 }
 
 export interface Content {
@@ -51,9 +48,9 @@ export interface Content {
     switchLang: string; switchLangLabel: string; email: string;
     role: string; readCase: string; viewCode: string; demoSoon: string; backToTop: string;
     caseEyebrow: string; caseBack: string; caseStack: string; caseRole: string; caseProblem: string; caseSolution: string; caseFeatures: string;
-    caseImageFull: string; caseVideoFull: string; caseUsage: string; caseBackHome: string;
-    caseArchitecture: string; caseChallenges: string; caseDecisions: string; caseStatus: string; caseWorks: string;
-    caseMissing: string; caseLearning: string; caseNext: string; caseProblemLabel: string; caseSolutionLabel: string; caseCode: string;
+    caseImageFull: string; caseBackHome: string;
+    caseArchitecture: string; caseChallenges: string; caseDecisions: string; caseVerification: string;
+    caseNext: string; caseProblemLabel: string; caseSolutionLabel: string; caseCode: string;
   };
   hero: { eyebrow: string; title: string[]; lines: string[]; note: string; primary: string; secondary: string };
   intro: { eyebrow: string; title: string[]; text: string };

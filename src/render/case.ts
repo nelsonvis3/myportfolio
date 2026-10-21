@@ -1,9 +1,7 @@
 import type { Content, Project } from "../content/types.js";
 import { casePath, homePath } from "../content/site.js";
 import { icon } from "./icons.js";
-import { blockHead, challengeRows, chips, cover, esc, pad, partsGrid, projectLinks, statusCards, usageSteps, type Clips } from "./shared.js";
-
-export type { Clips };
+import { blockHead, challengeRows, chips, cover, esc, pad, partsGrid, projectLinks } from "./shared.js";
 
 const paragraphs = (items: string[]) => items.map(p => `<p>${esc(p)}</p>`).join("");
 
@@ -24,20 +22,17 @@ function solution(c: Content, p: Project): string {
   return `<div class="prose">${body}</div>${figure}`;
 }
 
-export function casePage(c: Content, p: Project, clips: Clips): string {
+export function casePage(c: Content, p: Project): string {
   const u = c.ui;
   const index = c.projects.findIndex(x => x.id === p.id);
   const next = c.projects[(index + 1) % c.projects.length];
-  const usage = usageSteps(c, p, clips);
   const blocks: [string, string, string][] = [
     ["problem", u.caseProblem, `<div class="prose">${paragraphs(p.problem)}</div>`],
     ["solution", u.caseSolution, solution(c, p)],
-    ...(usage ? [["usage", u.caseUsage, usage] as [string, string, string]] : []),
     ["architecture", u.caseArchitecture, `<div class="prose"><p>${esc(p.architecture.text)}</p></div>${partsGrid(p.architecture.parts)}`],
     ["flow", p.flow.title, `<ol class="steps">${p.flow.steps.map(s => `<li data-reveal><strong>${esc(s.name)}</strong><p>${esc(s.detail)}</p></li>`).join("")}</ol>`],
     ["challenges", u.caseChallenges, challengeRows(c, p.challenges)],
     ["decisions", u.caseDecisions, partsGrid(p.decisions)],
-    ["status", u.caseStatus, statusCards(c, p)],
   ];
   return `<article class="case-page">
   <div class="wrap">
@@ -55,6 +50,10 @@ export function casePage(c: Content, p: Project, clips: Clips): string {
       <div class="cp-label">${blockHead(pad(i + 1), title, id, "h2")}</div>
       <div class="cp-content">${body}</div>
     </section>`).join("")}
+    <aside class="case-verification" aria-label="${esc(u.caseVerification)}">
+      <span class="eyebrow">${esc(u.caseVerification)}</span>
+      <p>${esc(p.verification)}</p>
+    </aside>
   </div>
   <a class="next-card wrap" href="${casePath(c.lang, next.id)}">
     <img src="${esc(next.images[0].src)}" alt="" loading="lazy">

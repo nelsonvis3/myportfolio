@@ -1,7 +1,7 @@
 import type { Content, Project } from "../content/types.js";
 import { socials, casePath, contactForm } from "../content/site.js";
 import { icon, logo } from "./icons.js";
-import { blockHead, challengeRows, chips, cover, esc, ext, featureCards, pad, partsGrid, projectLinks, statusCards, usageSteps, type Clips } from "./shared.js";
+import { blockHead, challengeRows, chips, cover, esc, ext, featureCards, pad, partsGrid, projectLinks } from "./shared.js";
 
 // Home: hero → intro → proyectos → caso de estudio → sobre mí → stack → disponibilidad → contacto.
 // Todo el contenido está en el HTML. client.ts suma el scroll suave, las animaciones y el cambio de caso.
@@ -55,15 +55,11 @@ function work(c: Content): string {
 }
 
 /** Un caso por proyecto; sin JS se ven los tres uno debajo del otro. */
-function casePanel(c: Content, p: Project, clips: Clips): string {
+function casePanel(c: Content, p: Project): string {
   const u = c.ui;
-  const usage = usageSteps(c, p, clips);
   const blocks: [string, string][] = [
-    [u.caseFeatures, featureCards(p.cards)],
-    ...(usage ? [[u.caseUsage, usage] as [string, string]] : []),
-    [c.cases.challengesTitle, challengeRows(c, p.challenges)],
-    [u.caseArchitecture, `<p class="lead-text">${esc(p.architecture.text)}</p>${partsGrid(p.architecture.parts)}`],
-    [u.caseStatus, statusCards(c, p)],
+    [u.caseFeatures, featureCards(p.cards.filter((_, i) => p.featuredCards.includes(i)))],
+    [c.cases.challengesTitle, challengeRows(c, p.challenges.slice(0, 1))],
   ];
   return `<article class="case-panel" id="caso-${p.id}" data-case="${p.id}" aria-labelledby="caso-${p.id}-title">
   <div class="cs-overview">
@@ -82,11 +78,11 @@ function casePanel(c: Content, p: Project, clips: Clips): string {
 </article>`;
 }
 
-function cases(c: Content, clips: Clips): string {
+function cases(c: Content): string {
   return `<section class="section cases tone-base" aria-label="${esc(c.cases.eyebrow)}" data-cases>
   <div class="wrap">
     <nav class="case-tabs" aria-label="${esc(c.cases.tabsLabel)}">${c.projects.map((p, i) => `<a href="#caso-${p.id}" data-case-link="${p.id}"${i ? "" : ` aria-current="true"`}>${esc(p.name)}</a>`).join("")}</nav>
-    ${c.projects.map(p => casePanel(c, p, clips)).join("")}
+    ${c.projects.map(p => casePanel(c, p)).join("")}
   </div>
 </section>`;
 }
@@ -182,7 +178,7 @@ function contact(c: Content): string {
 /** Imágenes opcionales de public/img: foto de "Sobre mí" y la imagen del hero. */
 export interface HomeImages { photo?: string; hero?: string }
 
-export function home(c: Content, clips: Clips, images: HomeImages = {}): string {
+export function home(c: Content, images: HomeImages = {}): string {
   const { photo } = images;
-  return `${hero(c, images.hero)}${intro(c)}${work(c)}${cases(c, clips)}${about(c, photo)}${stack(c)}${availability(c)}${contact(c)}`;
+  return `${hero(c, images.hero)}${intro(c)}${work(c)}${cases(c)}${about(c, photo)}${stack(c)}${availability(c)}${contact(c)}`;
 }

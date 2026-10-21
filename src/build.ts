@@ -1,11 +1,11 @@
-import { mkdirSync, writeFileSync, rmSync, existsSync, cpSync, readFileSync, readdirSync } from "node:fs";
+import { mkdirSync, writeFileSync, rmSync, existsSync, cpSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { build as bundle } from "esbuild";
 import { content, langs, siteUrl, homePath, casePath, other } from "./content/site.js";
 import { layout } from "./render/layout.js";
 import { home } from "./render/home.js";
-import { casePage, type Clips } from "./render/case.js";
+import { casePage } from "./render/case.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
@@ -26,36 +26,21 @@ await bundle({ bundle: true, format: "esm", target: "es2020", minify: true, lega
 const image = (name: string) => ["webp", "jpg", "png"].map(e => `/img/${name}.${e}`).find(file => existsSync(join(root, "public", file)));
 const images = { photo: image("nelson"), hero: image("hero") };
 
-// Clips de "Cómo se usa": public/clips/<clip>-desktop.mp4 y, opcional, <clip>-mobile.mp4, cada uno con su póster .webp.
-// El tamaño sale del póster (mismo cuadro que el video) para reservar el lugar antes de que cargue.
-function webpSize(file: string): [number, number] {
-  const b = readFileSync(file), kind = b.toString("ascii", 12, 16);
-  if (kind === "VP8X") return [1 + b.readUIntLE(24, 3), 1 + b.readUIntLE(27, 3)];
-  if (kind === "VP8L") { const bits = b.readUInt32LE(21); return [(bits & 0x3fff) + 1, ((bits >> 14) & 0x3fff) + 1]; }
-  return [b.readUInt16LE(26) & 0x3fff, b.readUInt16LE(28) & 0x3fff];
-}
-const clipDir = join(root, "public", "clips");
-const clips: Clips = {};
-for (const file of existsSync(clipDir) ? readdirSync(clipDir) : []) {
-  const match = /^(.+)-desktop\.mp4$/.exec(file);
-  if (!match) continue;
-  const name = match[1], mobile = existsSync(join(clipDir, `${name}-mobile.mp4`));
-  clips[name] = { desktop: `/clips/${file}`, poster: `/clips/${name}-desktop.webp`, size: webpSize(join(clipDir, `${name}-desktop.webp`)),
-    ...(mobile ? { mobile: `/clips/${name}-mobile.mp4`, mobilePoster: `/clips/${name}-mobile.webp` } : {}) };
-}
+// Los clips originales siguen en public/clips, pero no se despliegan.
+rmSync(join(dist, "clips"), { recursive: true, force: true });
 
 const urls: string[] = [];
 for (const lang of langs) {
   const c = content[lang], alt = other(lang);
   write(join(dist, homePath(lang), "index.html"), layout({
     c, home: true, title: c.meta.title, description: c.meta.description,
-    path: homePath(lang), altPath: homePath(alt), body: home(c, clips, images),
+    path: homePath(lang), altPath: homePath(alt), body: home(c, images),
   }));
   urls.push(homePath(lang));
   for (const p of c.projects) {
     write(join(dist, casePath(lang, p.id), "index.html"), layout({
       c, title: `${p.name}: ${p.tagline} | Nelson Sivisstum`, description: p.summary,
-      path: casePath(lang, p.id), altPath: casePath(alt, p.id), body: casePage(c, p, clips),
+      path: casePath(lang, p.id), altPath: casePath(alt, p.id), body: casePage(c, p),
     }));
     urls.push(casePath(lang, p.id));
   }
