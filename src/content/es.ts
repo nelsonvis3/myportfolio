@@ -200,10 +200,10 @@ export const es: Content = {
         { src: "/img/ragnar-mobile.webp", alt: "Catálogo de Ragnar Suplementos en el celular", phone: true },
       ],
       phoneShot: "/img/ragnar-mobile.webp",
-      repo: "https://github.com/nelsonvis3/ragnarsuplementosfsa", demo: "", demoLabel: "",
+      repo: "https://github.com/nelsonvis3/ragnarsuplementosfsa", demo: "https://ragnarsuplementos.tail7dbbb0.ts.net/", demoLabel: "Ver demo en vivo",
       video: "", videoLabel: "",
-      stack: ["Next.js", "React", "TypeScript", "Django", "PostgreSQL", "Zustand"],
-      role: "Desarrollé la tienda y la API, armé el panel de administración del catálogo y trabajé en los pedidos, las reservas de inventario y las integraciones de pagos y envíos.",
+      stack: ["Next.js", "React", "TypeScript", "Django", "PostgreSQL", "Zustand", "Docker", "Nginx"],
+      role: "Desarrollé la tienda y la API, armé el panel de administración del catálogo y trabajé en los pedidos, el inventario y las integraciones. También monté una demostración del sistema en Ubuntu Server con Docker Compose y Nginx.",
       highlights: [
         "Productos y combos con sabores, carrito persistente y compra como invitado.",
         "Retiro o envío local, con medios de pago configurables.",
@@ -234,11 +234,13 @@ export const es: Content = {
       ],
       featuredCards: [0, 4, 5],
       architecture: {
-        text: "Next.js, React y TypeScript arman la tienda. Zustand guarda el carrito en el navegador. Django REST Framework expone catálogo, pedidos e inventario, y PostgreSQL los guarda en producción.",
+        text: "Next.js y React presentan la tienda; Django REST Framework gestiona el catálogo, los pedidos y el inventario, con PostgreSQL y Redis. Desplegué esta arquitectura en una VM Ubuntu Server mediante Docker Compose: Nginx centraliza las rutas hacia el frontend y la API, y Tailscale Funnel habilita acceso HTTPS público para una demostración. Como el servidor está en mi PC, la demo solo está disponible mientras el equipo permanezca encendido.",
         parts: [
           { name: "Next.js + React", detail: "Tienda, carrito y checkout." },
           { name: "Django + DRF", detail: "Catálogo, pedidos, inventario, pagos y administración." },
           { name: "PostgreSQL", detail: "Catálogo, pedidos y reservas." },
+          { name: "Docker Compose + Nginx", detail: "Contenedores para web, API, base de datos, caché y worker; un proxy inverso para / y /api/." },
+          { name: "Ubuntu Server + Tailscale Funnel", detail: "VM local con acceso HTTPS público bajo demanda; no es un hosting permanente." },
           { name: "Mercado Pago, Nominatim, OSRM", detail: "Pagos y cálculo de envíos." },
         ],
       },
@@ -253,6 +255,7 @@ export const es: Content = {
         ],
       },
       challenges: [
+        { title: "Desplegar frontend y backend juntos", problem: "Quería probar la aplicación completa en un servidor Linux sin contratar todavía un VPS, manteniendo separados el frontend, la API y los datos.", solution: "Configuré Docker Compose en Ubuntu Server para orquestar Next.js, Django, PostgreSQL, Redis y un worker. Nginx concentra el acceso a la web y /api/; Tailscale Funnel publica una demo HTTPS desde mi VM local, disponible solo cuando mi PC está encendida.", source: "compose.yaml, deploy/Dockerfile.frontend, deploy/nginx/https.conf.template", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml" },
         { title: "Gestión autónoma del catálogo", problem: "El cliente necesitaba actualizar productos, combos, precios, stock e imágenes desde la propia tienda, sin depender de un desarrollador para cada cambio.", solution: "Desarrollé un panel administrativo con acceso protegido, conectado a la API de Django, para gestionar y publicar el catálogo desde la web. Los pedidos y pagos manuales se administran mediante Django Admin.", source: "components/admin/AdministracionCatalogo.tsx, backend/store/catalog_admin.py", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx" },
         { title: "Reintentar sin duplicar", problem: "Un doble clic o una red lenta pueden repetir la misma compra.", solution: "Una clave única por intento y el hash de los datos distinguen un reintento de una compra distinta.", source: "crear_preferencia, respuesta_checkout_existente", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py" },
         { title: "Stock compartido con combos", problem: "Un producto puede venderse solo y como parte de varios combos en la misma compra.", solution: "La API suma las cantidades por producto y bloquea las filas siempre en el mismo orden. Cada ítem guarda los componentes del combo para devolver las unidades correctas.", source: "backend/store/views.py, ItemPedido.componentes_combo", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py" },
@@ -264,7 +267,7 @@ export const es: Content = {
         { name: "Cuenta opcional", detail: "Se puede comprar como invitado. Si hay sesión, el pedido queda asociado al usuario." },
         { name: "Cada ítem guarda lo que se compró", detail: "Nombre, sabor, precio y componentes quedan en el pedido aunque el catálogo cambie después." },
       ],
-      verification: "54 pruebas de backend ejecutadas en entorno local.",
+      verification: "54 pruebas de backend ejecutadas en entorno local. También verifiqué el despliegue de demostración con Next.js, Nginx y el endpoint /api/health/.",
     },
     {
       id: "roadledger",

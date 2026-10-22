@@ -193,8 +193,9 @@ export const en: Content = {
         { src: "/img/ragnar-mobile.webp", alt: "Ragnar Suplementos catalog on a phone", phone: true },
       ],
       phoneShot: "/img/ragnar-mobile.webp",
+      demoLabel: "View live demo",
       videoLabel: "",
-      role: "I built the store and the API, built the catalog admin panel and worked on orders, inventory reservations and the payment and shipping integrations.",
+      role: "I built the storefront, API and catalog admin panel, and worked on orders, inventory and integrations. I also deployed a working demonstration on Ubuntu Server using Docker Compose and Nginx.",
       highlights: [
         "Products and bundles with flavors, a persistent cart and guest checkout.",
         "Local pickup or delivery, with configurable payment methods.",
@@ -225,11 +226,13 @@ export const en: Content = {
       ],
       featuredCards: [0, 4, 5],
       architecture: {
-        text: "Next.js, React and TypeScript build the store. Zustand keeps the cart in the browser. Django REST Framework exposes the catalog, orders and inventory, and PostgreSQL stores them in production.",
+        text: "Next.js and React power the storefront; Django REST Framework handles catalog, orders and inventory, backed by PostgreSQL and Redis. I deployed the stack on an Ubuntu Server VM with Docker Compose. Nginx routes traffic to the frontend and API, while Tailscale Funnel provides HTTPS access for a public demo. Because it runs on my PC, the demo is available only while the host is powered on.",
         parts: [
           { name: "Next.js + React", detail: "Store, cart and checkout." },
           { name: "Django + DRF", detail: "Catalog, orders, inventory, payments and administration." },
           { name: "PostgreSQL", detail: "Catalog, orders and reservations." },
+          { name: "Docker Compose + Nginx", detail: "Separate web, API, database, cache and worker containers behind one reverse proxy for / and /api/." },
+          { name: "Ubuntu Server + Tailscale Funnel", detail: "A local VM with on-demand public HTTPS access, not permanent cloud hosting." },
           { name: "Mercado Pago, Nominatim, OSRM", detail: "Payments and shipping quotes." },
         ],
       },
@@ -244,6 +247,7 @@ export const en: Content = {
         ],
       },
       challenges: [
+        { title: "Deploying frontend and backend together", problem: "I wanted to test the complete application on a Linux server without renting a VPS yet, while keeping the frontend, API and data services separate.", solution: "I used Docker Compose on Ubuntu Server to run Next.js, Django, PostgreSQL, Redis and a worker. Nginx provides a single entry point for the site and /api/, and Tailscale Funnel exposes an HTTPS demo from my local VM while my PC is on.", source: "compose.yaml, deploy/Dockerfile.frontend, deploy/nginx/https.conf.template", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml" },
         { title: "Self-managed product catalog", problem: "The client needed to update products, bundles, prices, stock and images directly on the website without relying on a developer for everyday catalog changes.", solution: "I built an access-controlled catalog dashboard connected to the Django API, so the client can manage and publish products and bundles from the web. Orders and manual payments are handled in Django Admin.", source: "components/admin/AdministracionCatalogo.tsx, backend/store/catalog_admin.py", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx" },
         { title: "Retrying without duplicating", problem: "A double click or a slow connection can repeat the same purchase.", solution: "A unique key per attempt plus a hash of the data tell a retry apart from a different purchase.", source: "crear_preferencia, respuesta_checkout_existente", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py" },
         { title: "Stock shared with bundles", problem: "One product can be sold on its own and inside several bundles in the same purchase.", solution: "The API adds up quantities per product and always locks rows in the same order. Each item stores the bundle's components so the right units go back.", source: "backend/store/views.py, ItemPedido.componentes_combo", sourceUrl: "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py" },
@@ -255,7 +259,7 @@ export const en: Content = {
         { name: "Optional account", detail: "Guests can buy. With a session, the order is linked to the user." },
         { name: "Each item keeps what was bought", detail: "Name, flavor, price and components stay on the order even if the catalog changes later." },
       ],
-      verification: "54 backend tests run locally.",
+      verification: "54 backend tests run locally. I also verified the demo deployment with Next.js, Nginx and the /api/health/ endpoint.",
     },
     {
       ...base["roadledger"],
