@@ -4,15 +4,7 @@
   "outputDirectory": "dist",
   "trailingSlash": true,
   "redirects": [
-    {
-      "source": "/proyectos/ledgercore",
-      "destination": "/proyectos/fracxion/",
-      "permanent": true
-    },
-    {
-      "source": "/proyectos/ledgercore/",
-      "destination": "/proyectos/fracxion/",
-      "permanent": true
-    }
+    { "source": "/proyectos/ledgercore", "destination": "/proyectos/fracxion/", "permanent": true },
+    { "source": "/proyectos/ledgercore/", "destination": "/proyectos/fracxion/", "permanent": true }
   ]
 }

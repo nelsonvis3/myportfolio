@@ -1,0 +1,216 @@
+/* Midnight Violet — original two-column engineering portfolio, inspired by content-first layouts.
+   The type, content and project screenshots carry the design; no decorative arrows or numbers. */
+@font-face {font-family:"Mona Sans";src:url("/fonts/mona-sans-latin.woff2") format("woff2");font-weight:200 900;font-display:swap}
+@font-face {font-family:"Inter";src:url("/fonts/inter-latin.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root {
+  color-scheme:dark;
+  --bg:#0B1224;
+  --sidebar:#0B1224;
+  --surface:#15233B;
+  --surface-hover:#192946;
+  --line:#273954;
+  --line-soft:rgba(193,207,237,.13);
+  --text:#F2F5FF;
+  --soft:#B9C8DD;
+  --muted:#96AAC7;
+  --accent:#AA9BFF;
+  --accent-soft:rgba(170,155,255,.13);
+  --rose:#EF839A;
+  --sans:"Inter",system-ui,sans-serif;
+  --display:"Mona Sans",var(--sans);
+  --ease:cubic-bezier(.21,.7,.24,1);
+}
+*,*::before,*::after {box-sizing:border-box}
+html {-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body {margin:0;background:var(--bg);color:var(--text);font:400 14px/1.75 var(--sans);-webkit-font-smoothing:antialiased}
+a {color:inherit;text-decoration:none}button {font:inherit}
+a,button {-webkit-tap-highlight-color:transparent}
+h1,h2,h3,p,ol,ul,figure {margin:0}ol,ul {padding:0;list-style:none}
+h1,h2,h3 {font-family:var(--display);font-weight:590;letter-spacing:-.033em;line-height:1.18}
+img,svg {display:block;max-width:100%}img {width:100%}
+::selection {background:var(--accent);color:var(--bg)}
+:focus-visible {outline:2px solid var(--accent);outline-offset:4px}
+.skip-link {position:fixed;left:12px;top:-100px;background:var(--accent);color:var(--bg);padding:9px 14px;z-index:30}
+.skip-link:focus {top:12px}
+/* One uninterrupted navy canvas; columns are defined by whitespace, not a border. */
+.shell {position:relative;isolation:isolate;width:100%;min-height:100dvh;display:grid;grid-template-columns:clamp(280px,27vw,385px) minmax(0,1fr);margin:0 auto}
+.cursor-glow {position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;background:radial-gradient(620px circle at var(--spot-x,50%) var(--spot-y,35%),rgba(158,120,255,.12) 0%,rgba(145,107,255,.055) 34%,transparent 63%);transition:opacity .24s ease}
+.cursor-glow.is-visible {opacity:1}
+.sidebar {position:sticky;top:0;height:100dvh;background:transparent;border:0;padding:51px clamp(25px,3.2vw,54px) 30px;display:flex;flex-direction:column;justify-content:space-between;gap:25px;z-index:5}
+.sidebar-top {display:flex;flex-direction:column;min-width:0}
+.identity {display:grid;gap:10px;max-width:100%;width:max-content}
+.identity-name {display:grid;font:680 clamp(26px,2.3vw,34px)/1.08 var(--display);letter-spacing:-.048em}
+.identity-name>span {display:block;white-space:nowrap}
+.identity-dot {color:var(--rose)}
+.identity-role {font-size:13px;font-weight:500;letter-spacing:-.008em;color:var(--soft)}
+.identity-summary {max-width:240px;color:var(--muted);font-size:12.5px;line-height:1.65;margin-top:17px}
+.site-nav {display:grid;align-content:start;gap:2px;margin-top:clamp(37px,6vh,58px)}
+.nav-link {position:relative;display:flex;align-items:center;gap:16px;min-height:38px;padding:5px 0;color:var(--muted);transition:color .2s var(--ease)}
+.nav-link::before {content:"";height:1px;width:19px;flex:none;background:var(--muted);opacity:.65;transition:width .23s var(--ease),background-color .2s}
+.nav-link:hover,.nav-link.is-current {color:var(--text)}
+.nav-link:hover::before,.nav-link.is-current::before {width:33px;background:var(--accent);opacity:1}
+.nav-link.is-current .nav-name {font-weight:660}
+.nav-name {font:530 13px/1.35 var(--sans);letter-spacing:.015em}
+.mobile-language {display:none}
+.sidebar-bottom {display:grid;gap:13px}
+.sidebar-tools {display:flex;align-items:flex-start;flex-direction:column;gap:17px}
+.language-link {display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;white-space:nowrap;transition:color .2s}
+.language-link:hover,.social-link:hover {color:var(--accent)}
+.muted {color:var(--muted)}
+.social-links {display:flex;gap:23px;align-items:center}
+.social-link {display:inline-flex;align-items:center;justify-content:center;min-width:24px;min-height:28px;color:var(--soft);transition:color .2s var(--ease),transform .2s var(--ease)}
+.social-link:hover {transform:translateY(-2px)}
+.social-link .brand-icon {width:22px;height:22px}
+.sidebar-location {font-size:11px;color:var(--muted)}
+.main-panel {position:relative;z-index:2;min-width:0;height:100dvh;overflow:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent;display:flex;flex-direction:column;background:transparent}
+.content-stage {flex:1;max-width:1420px;width:100%;margin:0 auto;padding:52px clamp(27px,4.2vw,70px) 74px;min-height:100%}
+.view-body {width:100%;max-width:820px}
+.eyebrow {display:block;color:var(--accent);font-size:10px;font-weight:650;letter-spacing:.12em;line-height:1.5;text-transform:uppercase}
+.page-head {margin-bottom:29px}
+.page-head h1,.project-detail-head h1 {font-size:clamp(25px,2.6vw,36px);margin-top:8px;letter-spacing:-.038em;font-weight:660}
+.section-intro {max-width:530px;margin-top:12px;font-size:14px;line-height:1.75;color:var(--soft)}
+/* About: a personal introduction, not a giant marketing hero. */
+.about-view {display:block;min-height:0}
+.about-view h1 {font-size:clamp(24px,2.25vw,30px);line-height:1.24;margin-top:16px;font-weight:640;letter-spacing:-.034em;max-width:650px}
+.about-copy {display:grid;gap:18px;max-width:615px;margin-top:24px;color:var(--soft);font-size:14px;line-height:1.85}
+.about-copy p:first-child {color:var(--text)}
+.about-actions {display:flex;align-items:center;flex-wrap:wrap;gap:22px;margin-top:29px}
+.action-primary,.action-secondary {display:inline-flex;align-items:center;min-height:35px;padding:6px 0;border-bottom:1px solid var(--line);font:600 12px/1.4 var(--sans);transition:color .18s,border-color .18s}
+.action-primary {color:var(--accent);border-color:var(--accent)}
+.action-secondary {color:var(--text)}
+.action-primary:hover,.action-secondary:hover {color:var(--rose);border-color:var(--rose)}
+/* Full-width project index. The screenshot lives *inside the hovered project*.
+   The preview column collapses completely when inactive: no unused space to its right. */
+.projects-view {max-width:none}
+.projects-view .page-head {margin-bottom:27px}
+.projects-list {width:100%;border-top:1px solid var(--line)}
+.project-row {position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0fr);column-gap:0;align-items:center;min-width:0;min-height:164px;padding:22px 16px 22px 0;border-bottom:1px solid var(--line);transition:grid-template-columns .31s var(--ease),column-gap .31s var(--ease),padding .23s var(--ease),background-color .23s var(--ease)}
+.project-row:hover,.project-row:focus-visible {grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);column-gap:clamp(20px,3.4vw,56px);padding-left:18px;padding-right:18px;background:rgba(170,155,255,.055)}
+.project-meta {min-width:0;display:grid;align-content:center;justify-items:start;gap:6px}
+.project-category {font-size:10px;line-height:1.5;color:var(--accent)}
+.project-meta h2 {font-size:clamp(18px,1.65vw,22px);font-weight:640;letter-spacing:-.02em;color:var(--text);transition:color .2s}
+.project-row:hover h2,.project-row:focus-visible h2 {color:var(--accent)}
+.project-development {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;color:var(--muted);font-size:12px;line-height:1.62;max-width:75ch}
+.project-open {display:inline-block;font-size:11px;line-height:1.4;color:var(--soft);margin-top:3px;border-bottom:1px solid transparent}
+.project-row:hover .project-open,.project-row:focus-visible .project-open {color:var(--accent);border-color:var(--accent)}
+.project-inline-preview {min-width:0;width:100%;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .24s var(--ease),transform .24s var(--ease),visibility .24s,max-height .31s var(--ease);display:flex;align-items:center;justify-content:flex-end}
+.project-inline-preview img {display:block;width:auto;max-width:100%;height:auto;max-height:210px;object-fit:contain;object-position:center;border:1px solid rgba(185,200,221,.18);border-radius:5px;box-shadow:0 8px 28px rgba(0,0,0,.15)}
+.project-row:hover .project-inline-preview,.project-row:focus-visible .project-inline-preview {max-height:230px;opacity:1;visibility:visible;transform:translateY(0)}
+/* Touch devices cannot hover: the complete screenshot is always available inside its row. */
+@media (hover:none),(pointer:coarse) {
+  .project-row {grid-template-columns:minmax(0,1fr) minmax(0,.75fr);column-gap:18px}
+  .project-inline-preview {max-height:none;opacity:1;visibility:visible;transform:none}
+}
+/* Project detail: three concise technical notes, tags and GitHub, no extra CTAs. */
+.back-link {display:inline-block;font-size:12px;line-height:1.5;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:4px;transition:border-color .2s}
+.back-link:hover {border-color:var(--accent)}
+.project-detail-head {margin:25px 0 21px}
+.project-detail-head h1 {font-size:clamp(26px,3.3vw,40px);margin-top:6px}
+.detail-media {background:var(--surface);overflow:hidden;border:1px solid var(--line);border-radius:7px;aspect-ratio:16/8.8}
+.detail-media img {height:100%;object-fit:cover;object-position:left top}
+.project-story {margin-top:21px;border-top:1px solid var(--line)}
+.story-line {display:grid;grid-template-columns:minmax(100px,.25fr) minmax(0,.75fr);gap:20px;border-bottom:1px solid var(--line);padding:15px 0}
+.story-line h2,.project-tech h2 {font:640 12px/1.6 var(--sans);color:var(--accent);letter-spacing:0}
+.story-line p {font-size:13px;line-height:1.75;color:var(--soft);max-width:620px}
+.project-tech {display:grid;grid-template-columns:minmax(100px,.25fr) minmax(0,.75fr);gap:20px;padding-top:20px}
+.tech-list {display:flex;align-items:flex-start;flex-wrap:wrap;gap:7px}
+.tech-tag {display:inline-flex;align-items:center;gap:7px;padding:5px 9px;border:1px solid #34476B;background:rgba(170,155,255,.065);border-radius:5px;font-size:11px;font-weight:520;line-height:1.35;color:var(--text);white-space:nowrap;transition:border-color .2s,background-color .2s}
+.tech-tag:hover {border-color:#7C75BD;background:var(--accent-soft)}
+.brand-icon {flex:none;width:14px;height:14px;color:var(--soft);object-fit:contain}
+.tech-tag .brand-icon {width:15px;height:15px;color:var(--accent)}
+.github-cta {display:inline-flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--accent);margin-top:23px;color:var(--text);font-size:12px;font-weight:640;transition:color .2s,border-color .2s}
+.github-cta:hover {color:var(--accent)}
+/* Journey: compressed timeline, studies and visibly outlined skill tags. */
+.journey-block {margin-top:27px}
+.mini-heading {font:650 12px/1.5 var(--sans);letter-spacing:.01em;color:var(--text);margin-bottom:10px}
+.timeline,.studies-list {border-top:1px solid var(--line)}
+.timeline li {display:grid;grid-template-columns:minmax(105px,.22fr) 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.timeline-time {font-size:11px;color:var(--accent);line-height:1.55}
+.timeline h3 {font:620 14px/1.4 var(--display);letter-spacing:-.008em;margin-bottom:3px}
+.timeline p,.study-row p {font-size:12px;line-height:1.65;color:var(--soft)}
+.study-row {padding:12px 0;border-bottom:1px solid var(--line)}
+.study-row strong {font-size:13px;font-weight:610}
+.study-row p {margin-top:3px}
+.journey-view .tech-list {gap:7px}
+/* Contact keeps the same rhythm as the other sections. */
+.contact-view {padding:0}
+.contact-view h1 {font-size:clamp(28px,3.6vw,44px);letter-spacing:-.045em;margin:16px 0 13px}
+.contact-lead {font-size:14px;line-height:1.75;color:var(--soft);max-width:540px}
+.contact-main {display:block;margin-top:29px;padding:19px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font:600 clamp(16px,2.2vw,24px)/1.4 var(--display);letter-spacing:-.025em;transition:color .2s,padding .2s}
+.contact-main span {overflow-wrap:anywhere}.contact-main:hover {color:var(--accent);padding-left:5px}
+.contact-extra {display:flex;flex-wrap:wrap;gap:17px;margin-top:20px}
+.contact-extra a {display:inline-flex;gap:8px;align-items:center;font-size:12px;border-bottom:1px solid var(--line);padding-bottom:4px;transition:color .2s,border-color .2s}
+.contact-extra a:hover {color:var(--accent);border-color:var(--accent)}
+@media (max-width:1080px) {
+  .shell {grid-template-columns:280px minmax(0,1fr)}
+  .sidebar {padding:41px 26px 26px}
+  .identity-name {font-size:29px}
+  .content-stage {padding:44px 32px 70px}
+  .project-row {min-height:162px}
+  .project-row:hover,.project-row:focus-visible {column-gap:20px}
+}
+@media (max-width:850px) {
+  .shell {display:block}
+  .sidebar {height:auto;position:sticky;top:0;padding:13px 22px 10px;background:rgba(11,18,36,.97);backdrop-filter:blur(12px);gap:0}
+  .sidebar-top {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px 14px;align-items:center}
+  .identity {display:grid;gap:2px}
+  .identity-name {display:flex;gap:5px;font-size:17px;line-height:1.3;letter-spacing:-.035em}
+  .identity-name>span {white-space:nowrap}
+  .identity-role {font-size:10px;color:var(--muted)}
+  .identity-summary {display:none}
+  .site-nav {grid-column:1/-1;margin:0;display:flex;gap:24px;overflow-x:auto;scrollbar-width:none}
+  .site-nav::-webkit-scrollbar {display:none}
+  .nav-link {min-height:32px;padding:4px 0;white-space:nowrap}
+  .nav-link::before {display:none}
+  .nav-link.is-current .nav-name {color:var(--accent)}
+  .nav-name {font-size:12px;letter-spacing:0}
+  .mobile-language {display:inline-flex;color:var(--accent);font-size:11px;font-weight:650}
+  .sidebar-bottom {display:none}
+  .main-panel {height:auto;min-height:calc(100dvh - 95px);overflow:visible}
+  .content-stage {padding:35px clamp(22px,6vw,45px) 58px;min-height:auto}
+  .about-view h1 {font-size:clamp(24px,4vw,29px)}
+}
+@media (max-width:580px) {
+  .sidebar {padding:11px 16px 8px}
+  .sidebar-top {gap:9px}
+  .identity-name {font-size:16px}
+  .site-nav {gap:19px}
+  .nav-name {font-size:11px}
+  .content-stage {padding:27px 20px 55px}
+  .about-view h1 {font-size:clamp(23px,5vw,27px)}
+  .about-copy {font-size:13px;margin-top:19px;gap:15px}
+  .page-head {margin-bottom:22px}
+  .page-head h1 {font-size:27px}
+  .section-intro {font-size:13px;margin-top:9px}
+  .projects-view .page-head {margin-bottom:20px}
+  .project-row,.project-row:hover,.project-row:focus-visible {grid-template-columns:minmax(0,1fr);row-gap:13px;min-height:0;padding:19px 0;column-gap:0;background:transparent}
+  .project-meta {gap:4px}
+  .project-meta h2 {font-size:18px}
+  .project-development {font-size:12px;-webkit-line-clamp:3}
+  .project-open {margin-top:4px}
+  .project-inline-preview {max-height:none;opacity:1;visibility:visible;transform:none;justify-content:flex-start}
+  .project-inline-preview img {max-width:100%;width:auto;max-height:220px;object-fit:contain}
+  .project-detail-head {margin:18px 0}
+  .project-detail-head h1 {font-size:29px}
+  .story-line,.project-tech {grid-template-columns:1fr;gap:6px}
+  .story-line {padding:15px 0}
+  .project-tech {padding-top:16px}
+  .timeline li {grid-template-columns:91px minmax(0,1fr);gap:11px}
+  .timeline h3 {font-size:13px}
+  .contact-view h1 {font-size:34px}
+  .contact-main {font-size:17px}
+}
+@media (max-width:390px) {
+  .sidebar {padding-inline:12px}
+  .identity-name {font-size:14px}
+  .site-nav {gap:16px}
+  .nav-name {font-size:10.5px}
+  .content-stage {padding-inline:15px}
+  .project-meta h2 {font-size:17px}
+  .project-inline-preview img {max-height:180px}
+  .contact-main {font-size:15px}
+}
+@media (prefers-reduced-motion:reduce) {*,*::before,*::after {animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* The spotlight is desktop-only and follows the OS reduced-motion preference. */
+@media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce) { .cursor-glow {display:none!important} }
