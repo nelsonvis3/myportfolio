@@ -128,9 +128,11 @@ img,svg {display:block;max-width:100%}img {width:100%}
 .timeline-time {font-size:11px;color:var(--accent);line-height:1.55}
 .timeline h3 {font:620 14px/1.4 var(--display);letter-spacing:-.008em;margin-bottom:3px}
 .timeline p,.study-row p {font-size:12px;line-height:1.65;color:var(--soft)}
-.study-row {padding:12px 0;border-bottom:1px solid var(--line)}
-.study-row strong {font-size:13px;font-weight:610}
-.study-row p {margin-top:3px}
+.study-row {display:grid;grid-template-columns:minmax(105px,.22fr) minmax(0,1fr);align-items:start;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.study-date {font-size:11px;line-height:1.55;color:var(--accent)}
+.study-info {min-width:0}
+.study-info h3 {font:620 14px/1.4 var(--display);letter-spacing:-.008em}
+.study-info p {margin-top:3px}
 .journey-view .tech-list {gap:7px}
 /* Contact keeps the same rhythm as the other sections. */
 .contact-view {padding:0}
@@ -195,8 +197,8 @@ img,svg {display:block;max-width:100%}img {width:100%}
   .story-line,.project-tech {grid-template-columns:1fr;gap:6px}
   .story-line {padding:15px 0}
   .project-tech {padding-top:16px}
-  .timeline li {grid-template-columns:91px minmax(0,1fr);gap:11px}
-  .timeline h3 {font-size:13px}
+  .timeline li,.study-row {grid-template-columns:91px minmax(0,1fr);gap:11px}
+  .timeline h3,.study-info h3 {font-size:13px}
   .contact-view h1 {font-size:34px}
   .contact-main {font-size:17px}
 }
@@ -214,3 +216,46 @@ img,svg {display:block;max-width:100%}img {width:100%}
 
 /* The spotlight is desktop-only and follows the OS reduced-motion preference. */
 @media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce) { .cursor-glow {display:none!important} }
+
+/* About / Technical Stack — compact categorized grid, no decorative cards.
+   This is the only nested, custom-scrolling region in the portfolio. */
+.about-stack {margin-top:clamp(29px,4.5vh,41px);border-top:1px solid var(--line);padding-top:17px;max-width:740px}
+.about-stack>.mini-heading {font-size:13px;letter-spacing:-.005em;margin-bottom:12px}
+.about-stack-scroll {
+  max-height:240px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior-y:contain;
+  padding:3px 13px 7px 0;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(170,155,255,.55) transparent;
+}
+.about-stack-scroll::-webkit-scrollbar {width:5px}
+.about-stack-scroll::-webkit-scrollbar-track {background:transparent}
+.about-stack-scroll::-webkit-scrollbar-thumb {background:rgba(170,155,255,.55);border-radius:99px}
+.about-stack-scroll::-webkit-scrollbar-thumb:hover {background:rgba(170,155,255,.8)}
+.skill-groups {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;row-gap:19px;align-items:start}
+.skill-group {min-width:0}
+.skill-group-name {font:650 10px/1.5 var(--sans);letter-spacing:.075em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+.skill-items {display:flex;align-items:flex-start;flex-wrap:wrap;gap:7px}
+.skill-tag {
+  display:inline-flex;align-items:center;gap:9px;
+  padding:7px 11px;border:1px solid #405379;
+  background:rgba(170,155,255,.055);border-radius:6px;
+  font-size:12.5px;font-weight:550;line-height:1.4;
+  color:var(--text);white-space:nowrap;cursor:default;
+  user-select:none;-webkit-user-select:none;
+  transition:border-color .2s,background-color .2s;
+}
+.skill-tag:hover {border-color:#726DAB;background:rgba(170,155,255,.09)}
+.skill-tag * {cursor:default;user-select:none;-webkit-user-select:none}
+.skill-tag .brand-icon,.skill-tag .skill-symbol {width:19px;height:19px;flex:none;color:var(--accent)}
+@media (max-width:1100px) { .skill-groups {column-gap:15px} }
+@media (max-width:690px) {
+  .skill-groups {grid-template-columns:1fr;row-gap:16px}
+  .about-stack-scroll {max-height:260px}
+}
+@media (max-width:580px) {
+  .skill-tag {padding:7px 10px;font-size:12px}
+  .about-stack {margin-top:27px}
+}

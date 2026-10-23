@@ -5,7 +5,55 @@ import { caseUrl, copy, getProjects, links, readBrowserRoute, sectionUrl, type L
 
 type Navigate = (route: Route) => void;
 const sections: Section[] = ["about", "projects", "journey", "contact"];
-const primarySkills = ["react", "nextjs", "typescript", "javascript", "python", "django", "postgresql", "docker", "vite"];
+// Each brand uses the original Simple Icons paths; Node.js is added to BrandIcon.
+// Playwright has no current Simple Icons entry, so it uses a non-brand test symbol.
+const skillGroups = [
+  { id: "frontend", titles: { es: "Frontend", en: "Frontend" }, skills: [
+    { key: "react", label: "React" },
+    { key: "nextjs", label: "Next.js" },
+    { key: "typescript", label: "TypeScript" },
+    { key: "javascript", label: "JavaScript" },
+    { key: "tailwind", label: "Tailwind CSS" },
+    { key: "vite", label: "Vite" },
+  ] },
+  { id: "backend", titles: { es: "Backend", en: "Backend" }, skills: [
+    { key: "python", label: "Python" },
+    { key: "django", label: "Django" },
+    { key: "nodejs", label: "Node.js" },
+  ] },
+  { id: "data", titles: { es: "Datos e infraestructura", en: "Data & infrastructure" }, skills: [
+    { key: "postgresql", label: "PostgreSQL" },
+    { key: "mysql", label: "MySQL" },
+    { key: "docker", label: "Docker" },
+    { key: "linux", label: "Linux" },
+  ] },
+  { id: "quality", titles: { es: "Testing y diseño", en: "Testing & design" }, skills: [
+    { key: "playwright", label: "Playwright" },
+    { key: "figma", label: "Figma" },
+  ] },
+] as const;
+
+function Skills({ lang }: { lang: Lang }) {
+  const heading = copy[lang].skillsTitle;
+  return <section className="about-stack" aria-labelledby="about-stack-title">
+    <h2 className="mini-heading" id="about-stack-title">{heading}</h2>
+    <div className="about-stack-scroll" role="region" tabIndex={0} aria-label={heading}>
+      <div className="skill-groups">
+        {skillGroups.map(group => <div className="skill-group" key={group.id}>
+          <h3 className="skill-group-name">{group.titles[lang]}</h3>
+          <div className="skill-items">
+            {group.skills.map(tech => <span className="skill-tag" key={tech.key}>
+              {tech.key === "playwright"
+                ? <svg className="skill-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.5"/><path d="M20 13.5V19H4V5h10"/></svg>
+                : <BrandIcon name={tech.key} size={19}/>}
+              <span>{tech.label}</span>
+            </span>)}
+          </div>
+        </div>)}
+      </div>
+    </div>
+  </section>;
+}
 
 function socialLink(url: string, text: string, icon: "github" | "linkedin") {
   return <a className="social-link" href={url} target="_blank" rel="noopener noreferrer" aria-label={text} title={text} key={text}>
@@ -62,6 +110,7 @@ function About({ lang, navigate }: { lang: Lang; navigate: Navigate }) {
     <h1>{c.heading}</h1>
     <div className="about-copy"><p>{c.intro}</p><p>{c.intro2}</p><p>{c.intro3}</p></div>
     <div className="about-actions"><a className="action-primary" href={sectionUrl(lang,"projects")} onClick={e=>{if(e.button !== 0 || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey)return;e.preventDefault();navigate({lang,section:"projects"});}}>{c.explore}</a><a className="action-secondary" href={links.cv[lang]} download>{c.download}</a></div>
+    <Skills lang={lang}/>
   </section>;
 }
 
@@ -116,8 +165,7 @@ function Journey({ lang }: { lang: Lang }) {
     <div className="journey-block"><h2 className="mini-heading">{lang === "es" ? "Recorrido" : "Journey"}</h2>
       <ol className="timeline">{c.timeline.map(item=><li key={item.date}><span className="timeline-time">{item.date}</span><div><h3>{item.title}</h3><p>{item.detail}</p></div></li>)}</ol>
     </div>
-    <div className="journey-block"><h2 className="mini-heading">{c.studiesTitle}</h2><div className="studies-list">{c.studies.map(item=><div className="study-row" key={item.name}><strong>{item.name}</strong><p>{item.info}</p></div>)}</div></div>
-    <div className="journey-block"><h2 className="mini-heading">{c.skillsTitle}</h2><div className="tech-list">{primarySkills.map(key=><span className="tech-tag" key={key}><BrandIcon name={key} size={16}/>{key === "nextjs" ? "Next.js" : key === "postgresql" ? "PostgreSQL" : key === "typescript" ? "TypeScript" : key === "javascript" ? "JavaScript" : key.charAt(0).toUpperCase()+key.slice(1)}</span>)}</div></div>
+    <div className="journey-block"><h2 className="mini-heading">{c.studiesTitle}</h2><div className="studies-list">{c.studies.map(item=><div className="study-row" key={item.name}><time className="study-date" dateTime={item.iso}>{item.date}</time><div className="study-info"><h3>{item.name}</h3><p>{item.info}</p></div></div>)}</div></div>
   </section>;
 }
 

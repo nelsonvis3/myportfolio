@@ -125,9 +125,9 @@ export const copy = {
       {date:"Actualidad",title:"Profundización técnica",detail:"Continúo practicando pruebas, seguridad, despliegue y arquitectura de aplicaciones."}
     ],
     studies:[
-      {name:"Harvard CS50 Web Programming",info:"Python, JavaScript y desarrollo de aplicaciones web · En curso"},
-      {name:"The Odin Project",info:"Full Stack JavaScript · En curso"},
-      {name:"freeCodeCamp",info:"Front End Development Libraries · Certificación obtenida en 2026"}
+      {date:"Sep 2026 — actualidad",iso:"2026-09",name:"Harvard CS50 Web Programming",info:"Python, JavaScript y desarrollo de aplicaciones web · En curso"},
+      {date:"Sep 2026 — actualidad",iso:"2026-09",name:"The Odin Project",info:"Full Stack JavaScript · En curso"},
+      {date:"Ago 2026",iso:"2026-08",name:"freeCodeCamp",info:"Front End Development Libraries · Certificación obtenida"}
     ],
     studiesTitle:"Estudios", skillsTitle:"Stack técnico",
     contactEyebrow:"CONTACTO", contactTitle:"Trabajemos juntos.", contactIntro:"Estoy disponible para mi primera oportunidad como desarrollador Full Stack Junior y para proyectos freelance.", contactEmail:"Escribirme por correo", contactCv:"Descargar CV", contactGithub:"GitHub", contactLinkedin:"LinkedIn"
@@ -148,9 +148,9 @@ export const copy = {
       {date:"Now",title:"Technical development",detail:"Continuing to practice testing, security, deployment, and application architecture."}
     ],
     studies:[
-      {name:"Harvard CS50 Web Programming",info:"Python, JavaScript, and web applications · In progress"},
-      {name:"The Odin Project",info:"Full Stack JavaScript · In progress"},
-      {name:"freeCodeCamp",info:"Front End Development Libraries · Certified in 2026"}
+      {date:"Sep 2026 — present",iso:"2026-09",name:"Harvard CS50 Web Programming",info:"Python, JavaScript, and web applications · In progress"},
+      {date:"Sep 2026 — present",iso:"2026-09",name:"The Odin Project",info:"Full Stack JavaScript · In progress"},
+      {date:"Aug 2026",iso:"2026-08",name:"freeCodeCamp",info:"Front End Development Libraries · Certified"}
     ],
     studiesTitle:"Studies",skillsTitle:"Technical stack",
     contactEyebrow:"CONTACT",contactTitle:"Let's work together.",contactIntro:"I'm open to my first Junior Full Stack Developer role and to freelance projects.",contactEmail:"Send an email",contactCv:"Download CV",contactGithub:"GitHub",contactLinkedin:"LinkedIn"
