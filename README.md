@@ -1,87 +1,136 @@
-# Portfolio de Nelson Sivisstum
+# Nelson Sivisstum — Full Stack Developer
 
-Mi portfolio de desarrollador full stack, en español y en inglés.
+A bilingual portfolio featuring full-stack projects, technical problem-solving, and my path as a self-taught developer based in Formosa, Argentina.
 
-[Ver el sitio](https://nelsonsivisstum.vercel.app/) · [English](https://nelsonsivisstum.vercel.app/en/) · [LinkedIn](https://www.linkedin.com/in/nelson-sivisstum-4777a32b4/)
+**[Portfolio](https://nelsonsivisstum.vercel.app/)** · **[English](https://nelsonsivisstum.vercel.app/en/)** · **[GitHub](https://github.com/nelsonvis3)** · **[LinkedIn](https://www.linkedin.com/in/nelson-sivisstum-4777a32b4/)**
 
-![Portada del portfolio](public/img/social-preview.png)
+## About the portfolio
 
-> English summary: my developer portfolio. A static site generated with TypeScript, in warm charcoal and amber, with smooth scrolling (Lenis + GSAP), a pinned horizontal project row, in-page project summaries and full technical case studies. Spanish and English versions.
+Built with **Vite, React, and TypeScript**, this portfolio puts projects and their technical decisions first. Its editorial, dark-navy design uses a persistent desktop navigation, restrained animation, and a responsive layout instead of a traditional long-scrolling landing page.
 
-## Qué hay en el sitio
+The site is available in **English and Spanish** and includes:
 
-- Un hero en tarjeta con mi presentación, y una intro sobre cómo trabajo.
-- Mis tres proyectos en tarjetas que corren de lado al bajar. Un clic cambia el caso de estudio de la home sin salir de la página: resumen, tres funciones destacadas y un desafío técnico. La arquitectura, el recorrido y las pruebas quedan en la página individual.
-- Cada proyecto tiene además su página con el caso completo.
-- Sobre mí, el stack (y AI Studio), disponibilidad y un formulario de contacto que llega a mi correo.
-- Sin JavaScript o con movimiento reducido, el sitio se ve completo y quieto.
+- **About:** a personal introduction, technical focus, and CV downloads.
+- **Projects:** Fracxion, Ragnar Suplementos, and RoadLedger, each with an image revealed on hover/focus on desktop (visible directly on touch devices).
+- **Project details:** concise *Development → Problem → Solution → Technologies → GitHub* descriptions.
+- **Journey & studies:** development experience, ongoing education, and a technology stack using **Simple Icons**.
+- **Contact:** links to email, GitHub, and LinkedIn.
 
-## Cómo está hecho
+Project pages have their own URLs so they can be shared directly, while navigation between sections happens within the React interface.
 
-| Parte | Herramientas |
+## Featured projects
+
+| Project | Description | Source |
+| --- | --- | --- |
+| **Fracxion** | Multi-company business management: customers, internal invoices, payments, inventory, and access control. | [GitHub](https://github.com/nelsonvis3/fracxion-facturador) |
+| **Ragnar Suplementos** | E-commerce experience with catalog management, checkout, orders, and inventory for a real client. | [GitHub](https://github.com/nelsonvis3/ragnarsuplementosfsa) |
+| **RoadLedger** | An educational truck-trip planning prototype combining routes, timelines, and printable daily logs. | [GitHub](https://github.com/nelsonvis3/ELD-trip-planner) |
+
+## Technology
+
+| Area | Tools |
 | --- | --- |
-| Generador | TypeScript propio: `src/build.ts` arma ocho páginas HTML (cuatro por idioma) |
-| Movimiento | Lenis (scroll suave) y GSAP ScrollTrigger, cargados después del primer pintado |
-| Logos del stack | Simple Icons (CC0), en `src/render/logos.ts` |
-| Clips | Grabaciones de cada proyecto, editadas con FFmpeg (`public/clips/`) |
-| Tipografía | Mona Sans (titulares) e Inter (texto), las dos OFL |
-| Publicación | Vercel |
+| UI | React 19, TypeScript, CSS |
+| Development & build | Vite |
+| Animation | GSAP, CSS transitions |
+| Brand and technology logos | [Simple Icons](https://simpleicons.org/) SVG paths |
+| Hosting | Vercel (static output in `dist/`) |
 
-Algunas decisiones:
+The color palette is **Midnight Violet**: navy `#0B1224`, near-white `#F2F5FF`, violet `#AA9BFF`, and restrained rose `#EF839A`. The favicon follows the same palette.
 
-- **El contenido vive en datos.** Los textos de cada idioma están en `src/content/es.ts` y `src/content/en.ts`, con el mismo tipo. Cambiar un texto no requiere tocar las plantillas.
-- **El movimiento es una mejora.** Todo el contenido está en el HTML. Las animaciones solo afectan lo que todavía no está en pantalla, y con movimiento reducido no se cargan.
-- **Fluidez primero.** Solo se animan `transform` y `opacity`; las animaciones en bucle se pausan fuera de pantalla y la estela del puntero no dibuja con el mouse quieto.
+The UI respects `prefers-reduced-motion`. The subtle purple cursor spotlight is limited to devices with a fine pointer and hover support.
 
-## Ejecutar en local
+## Run locally
 
-Requisitos: Node.js 20 o superior.
+**Requirements:** Node.js **20.19+** and npm.
 
 ```bash
 git clone https://github.com/nelsonvis3/myportfolio.git
 cd myportfolio
-npm ci
-npm run dev        # compila y sirve en http://127.0.0.1:3000
+npm install
+npm run dev
 ```
 
-No hay recarga automática: después de editar, corré `npm run build` y recargá el navegador.
+Open **http://127.0.0.1:5173**. Vite provides hot module replacement during development.
 
-## Estructura
-
-```text
-src/
-  content/       Textos en español e inglés, datos del sitio y rutas
-  render/        Plantillas (layout, home, caso), íconos y logos
-  web/           JS del navegador: client.ts (todas las páginas) y motion.ts (scroll y animaciones)
-  build.ts       Genera dist/ y empaqueta el JS con esbuild
-  styles.css     Sistema visual (carbón y ámbar)
-public/          Imágenes, videos, fuentes y CV
-docs/social/     Plantilla de las imágenes para compartir y del banner de LinkedIn
-```
-
-Imágenes opcionales: `public/img/hero.webp` (fondo del hero) y `public/img/nelson.webp` (foto de Sobre mí). Si están, el build las usa.
-
-Los videos originales quedan archivados en `public/clips/` y ya no se incluyen en el despliegue. Los CV descargables son `public/cv.pdf` y `public/cv-en.pdf` ([docs/cv/README.md](docs/cv/README.md)).
-
-El formulario de contacto usa [Web3Forms](https://web3forms.com): la clave pública va en `contactForm.accessKey` de `src/content/site.ts`. Sin clave, la sección de contacto muestra solo el botón de correo.
-
-Las imágenes para compartir (`public/img/social-preview*.png`) y el banner de LinkedIn salen de `docs/social/card.html`. Para regenerarlas, con Brave o Chrome instalado: `node docs/social/capture.mjs`.
-
-## Publicación
-
-Vercel corre `npm run build` y publica `dist/`. `dist/` no está en el repositorio.
-
-Para compilar con otro dominio:
+For type checking and a production preview:
 
 ```bash
-SITE_URL=https://mi-dominio.com npm run build
+npm run typecheck
+npm run build
+npm run preview
 ```
 
-## Licencia
+Open **http://127.0.0.1:4173** for the local production preview.
 
-El código del sitio tiene licencia MIT ([LICENSE](LICENSE)). Los textos, el CV y las capturas de mis proyectos no forman parte de esa licencia.
+> Note: These commands apply to the **Vite + React migration**, not the previous custom TypeScript site generator. If `main` has not been updated yet, checkout the migration branch first.
 
-### Licencias de terceros
+## Pages and navigation
 
-- Logos de Simple Icons (CC0) en `src/render/logos.ts`.
-- Fuentes Mona Sans e Inter (SIL Open Font License) en `public/fonts/`.
+The production build pre-renders **8 HTML entry points** to support link sharing and search engines:
+
+- `/` and `/en/` — Spanish and English homepages.
+- `/proyectos/fracxion/`, `/proyectos/ragnar-suplementos/`, `/proyectos/roadledger/`.
+- `/en/projects/fracxion/`, `/en/projects/ragnar-suplementos/`, `/en/projects/roadledger/`.
+
+On the homepage, the About, Projects, Journey, and Contact sections use URL hashes and browser history. The pre-rendering script also outputs `sitemap.xml` and `robots.txt` and adds canonical, `hreflang`, and social metadata to generated pages.
+
+## Project structure
+
+```text
+public/
+  favicon.svg          Navy/violet N favicon
+  favicon.ico          Fallback for browsers
+  apple-touch-icon.png Home-screen icon
+  img/                 Project screenshots and social previews
+  fonts/               Mona Sans and Inter
+  cv.pdf               Spanish CV
+  cv-en.pdf            English CV
+src/
+  App.tsx              Navigation and page components
+  main.tsx             React entry point
+  data.ts              Bilingual copy, project data, and routes
+  components/
+    BrandIcon.tsx      Simple Icons and UI icons
+  render/
+    logos.ts           Original Simple Icons SVG paths
+  styles/
+    globals.css        Midnight Violet design system
+scripts/
+  prerender.mjs        Static ES/EN page generation
+index.html
+vite.config.ts
+vercel.json
+```
+
+**Important:** `src/render/logos.ts` comes from the original repository. The new frontend reuses its paths; do not delete this file when migrating. Images, fonts, and CV files are reused from the existing `public/` directory.
+
+## Deploy to Vercel
+
+The existing Vercel project and domain can be kept. The production configuration uses:
+
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
+- **Production branch:** `main` (once the migration is tested and merged)
+
+Build a preview deployment from the migration branch and verify the project images, bilingual routes, favicon, downloads, and mobile layout before merging.
+
+To override the canonical site origin during build:
+
+```bash
+SITE_URL=https://your-domain.example npm run build
+```
+
+## License and credits
+
+The repository's source code is released under the [MIT License](LICENSE). Portfolio copy, CVs, and project screenshots are not covered by that license.
+
+Technology brand marks are sourced from [Simple Icons](https://simpleicons.org/) (CC0). **Mona Sans** and **Inter** are included under the SIL Open Font License; the corresponding license files live in `public/fonts/`.
+
+---
+
+### En español
+
+Portfolio bilingüe de **Nelson Sivisstum**, desarrollador full stack junior de Formosa, Argentina. Presenta proyectos propios y para clientes, con explicaciones breves del desarrollo, el problema y la solución técnica. Está construido con **Vite, React y TypeScript**, utiliza **Simple Icons**, animaciones discretas y un diseño adaptable a escritorio y móvil.
+
+**[Ver portfolio](https://nelsonsivisstum.vercel.app/)** · **[Ver proyectos](https://nelsonsivisstum.vercel.app/#projects)**
