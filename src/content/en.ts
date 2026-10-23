@@ -8,16 +8,16 @@ export const en: Content = {
   lang: "en",
   locale: "en_US",
   meta: {
-    title: "Nelson Sivisstum, full stack developer",
-    description: "Full stack developer in Formosa, Argentina. Projects built with React, Next.js, TypeScript and Django: Fracxion, Ragnar Suplementos and RoadLedger.",
-    ogAlt: "Nelson Sivisstum, full stack developer",
+    title: "Nelson Sivisstum | Junior Full Stack Developer",
+    description: "Nelson Sivisstum, Junior Full Stack Developer based in Argentina. Explore my web applications, technical projects, development skills and CV.",
+    ogAlt: "Nelson Sivisstum, Junior Full Stack Developer",
   },
   ids: { projects: "projects", about: "about", stack: "stack", contact: "contact" },
   ui: {
     skip: "Skip to content", menu: "Open menu", close: "Close menu",
     nav: { projects: "Work", about: "About", stack: "Stack", contact: "Contact" },
     switchLang: "ES", switchLangLabel: "Ver en español", email: "Send me an email",
-    role: "Full stack developer",
+    role: "Junior Full Stack Developer",
     readCase: "Read the full case study", viewCode: "View code", demoSoon: "Demo coming soon", backToTop: "Back to top",
     caseEyebrow: "Case study", caseBack: "Work", caseStack: "Stack", caseRole: "My part",
     caseProblem: "The problem", caseSolution: "The solution", caseFeatures: "What it lets you do",
@@ -27,11 +27,14 @@ export const en: Content = {
     caseNext: "Next project", caseProblemLabel: "The challenge", caseSolutionLabel: "How I solved it", caseCode: "In the code",
   },
   hero: {
-    eyebrow: "Nelson Sivisstum · Full stack developer",
-    title: ["Welcome to", "my portfolio"],
-    lines: ["I build web applications end to end,", "and I use AI to ship them faster."],
-    note: "I work with React, Next.js and Django. I use Claude Code and Codex every day, and I review every change before it goes in.",
-    primary: "See my work", secondary: "Get in touch",
+    eyebrow: "Nelson Sivisstum",
+    title: ["Junior Full Stack", "Developer"],
+    lines: [
+      "I build web applications end to end, from user interfaces and APIs to business logic and databases.",
+      "I implement authentication, access controls, and tests to verify their functionality.",
+    ],
+    note: "Based in Formosa, Argentina · Open to remote work. Seeking my first role on a development team.",
+    primary: "View projects", secondary: "Get in touch",
   },
   intro: {
     eyebrow: "How I work",
@@ -39,9 +42,9 @@ export const en: Content = {
     text: "I start by understanding what the client needs: the problem to solve, who will use the app and what it should convey. Then I build the foundation (data, API and business rules) with tests for the hard cases, like an order sent twice. On top of that I build a clear interface that communicates it, test it on desktop and mobile, and keep refining it with what I learn from real use.",
   },
   work: {
-    eyebrow: "Work",
-    title: "Three projects, end to end",
-    lead: "Three full-stack applications. Explore their features and the technical decisions behind each one.",
+    eyebrow: "My work",
+    title: "Selected Projects",
+    lead: "Each case study shows what I built, the technical decisions I made, and how I tested it.",
     open: "View case study",
   },
   cases: {

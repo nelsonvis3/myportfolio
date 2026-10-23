@@ -1,0 +1,130 @@
+[
+  {
+    "url": "https://github.com/nelsonvis3/fracxion-facturador",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3/fracxion-facturador"
+  },
+  {
+    "url": "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3/ragnarsuplementosfsa"
+  },
+  {
+    "url": "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+    "status": 200,
+    "final": "https://ragnarsuplementos.tail7dbbb0.ts.net/"
+  },
+  {
+    "url": "https://github.com/nelsonvis3/ELD-trip-planner",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3/ELD-trip-planner"
+  },
+  {
+    "url": "https://eld-trip-planner-5as7.onrender.com/",
+    "error": "The operation was aborted due to timeout"
+  },
+  {
+    "url": "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+    "status": 999,
+    "final": "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+  },
+  {
+    "url": "https://github.com/nelsonvis3",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3"
+  },
+  {
+    "url": "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py"
+  },
+  {
+    "url": "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml"
+  },
+  {
+    "url": "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx"
+  },
+  {
+    "url": "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py"
+  },
+  {
+    "url": "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py"
+  },
+  {
+    "url": "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py",
+    "status": 200,
+    "final": "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py"
+  },
+  {
+    "cv": "ES",
+    "status": 200,
+    "served": "d4deaae611ee280615244e0f420fb00298422411c12038bcafcdc8eba83dbcbe",
+    "hashes": [
+      {
+        "path": "/home/nelson/Documentos/Portfolio/portfolio-nelson/public/cv.pdf",
+        "sha256": "d4deaae611ee280615244e0f420fb00298422411c12038bcafcdc8eba83dbcbe"
+      },
+      {
+        "path": "/home/nelson/Documentos/Portfolio/portfolio-nelson/dist/cv.pdf",
+        "sha256": "d4deaae611ee280615244e0f420fb00298422411c12038bcafcdc8eba83dbcbe"
+      },
+      {
+        "path": "/home/nelson/Imágenes/Curriculum/CV_Nelson_Sivisstum_ES.pdf",
+        "sha256": "d4deaae611ee280615244e0f420fb00298422411c12038bcafcdc8eba83dbcbe"
+      }
+    ],
+    "identical": true
+  },
+  {
+    "cv": "EN",
+    "status": 200,
+    "served": "b8f2a6d199d2d788b4ff354c74aa48f3a5c34f3a751e19e2e73ccafb4492edf0",
+    "hashes": [
+      {
+        "path": "/home/nelson/Documentos/Portfolio/portfolio-nelson/public/cv-en.pdf",
+        "sha256": "b8f2a6d199d2d788b4ff354c74aa48f3a5c34f3a751e19e2e73ccafb4492edf0"
+      },
+      {
+        "path": "/home/nelson/Documentos/Portfolio/portfolio-nelson/dist/cv-en.pdf",
+        "sha256": "b8f2a6d199d2d788b4ff354c74aa48f3a5c34f3a751e19e2e73ccafb4492edf0"
+      },
+      {
+        "path": "/home/nelson/Imágenes/Curriculum/CV_Nelson_Sivisstum_EN.pdf",
+        "sha256": "b8f2a6d199d2d788b4ff354c74aa48f3a5c34f3a751e19e2e73ccafb4492edf0"
+      }
+    ],
+    "identical": true
+  },
+  {
+    "route": "/",
+    "obsoleteGuestClaim": false,
+    "verifiedAccount": false,
+    "signInStep": false
+  },
+  {
+    "route": "/en/",
+    "obsoleteGuestClaim": false,
+    "verifiedAccount": false,
+    "signInStep": false
+  },
+  {
+    "route": "/proyectos/ragnar-suplementos/",
+    "obsoleteGuestClaim": false,
+    "verifiedAccount": false,
+    "signInStep": true
+  },
+  {
+    "route": "/en/projects/ragnar-suplementos/",
+    "obsoleteGuestClaim": false,
+    "verifiedAccount": true,
+    "signInStep": true
+  }
+]

@@ -1,0 +1,30 @@
+Nelson Sivisstum
+Desarrollador Full Stack Junior
+Formosa, Argentina · Disponible para trabajo remoto · +54 11 7062-5896
+nelsonsivisstum3@gmail.com
+GitHub: github.com/nelsonvis3 · LinkedIn · Portfolio: nelsonsivisstum.vercel.app
+
+
+
+Hola, equipo de selección:
+
+Busco incorporarme a un equipo como desarrollador full stack o web developer junior. Trabajo con React,
+Next.js, TypeScript y Django, y mis proyectos me dieron experiencia práctica conectando interfaces, APIs
+y datos.
+
+En Fracxion desarrollé permisos por empresa y operaciones de facturación interna y cobros con
+PostgreSQL. Implementé transacciones y bloqueo de filas, y trabajé en pruebas para permisos y
+operaciones concurrentes. En Ragnar Suplementos, un encargo para un comercio local que está en
+demostración, desarrollé la tienda, el panel de catálogo y la lógica de inventario.
+
+Me interesa aportar en tareas de desarrollo web, aprender del equipo y mejorar a partir de la revisión de
+código. Uso Claude Code y Codex como apoyo, y me hago responsable de revisar, depurar y validar los
+cambios.
+
+Mi portfolio y GitHub incluyen código y decisiones técnicas. Quedo disponible para conversar sobre una
+oportunidad y explicar mi trabajo.
+
+Saludos,
+
+Nelson Sivisstum
+

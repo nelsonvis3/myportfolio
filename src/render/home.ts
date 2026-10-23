@@ -20,6 +20,7 @@ function hero(c: Content, image?: string): string {
       <p class="hero-lines">${lines(c.hero.lines)}</p>
       <div class="actions">
         <a class="btn btn-accent" href="#${c.ids.projects}">${esc(c.hero.primary)}</a>
+        <a class="btn btn-glass" href="${socials.cv[c.lang]}" download>${esc(c.availability.cv)}</a>
         <a class="btn btn-glass" href="#${c.ids.contact}">${esc(c.hero.secondary)}</a>
       </div>
       <p class="hero-note">${esc(c.hero.note)}</p>

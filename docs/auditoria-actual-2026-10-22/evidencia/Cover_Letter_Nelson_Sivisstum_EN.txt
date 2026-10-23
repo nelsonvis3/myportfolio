@@ -1,0 +1,30 @@
+Nelson Sivisstum
+Junior Full Stack Developer
+Formosa, Argentina · Open to remote work · +54 11 7062-5896
+nelsonsivisstum3@gmail.com
+GitHub: github.com/nelsonvis3 · LinkedIn · Portfolio: nelsonsivisstum.vercel.app
+
+
+
+Dear Hiring Team,
+
+I'm looking to join a development team as a junior full stack or web developer. I work with React, Next.js,
+TypeScript and Django, and my projects have given me practical experience connecting interfaces, APIs
+and data.
+
+In Fracxion, I built company-level permissions and internal invoicing and payment workflows backed by
+PostgreSQL. I implemented transactions and row-level locking, and worked on tests for permissions and
+concurrent operations. For Ragnar Suplementos, a commissioned store currently at the demonstration
+stage, I built the storefront, catalog admin panel and inventory logic.
+
+I'd like to contribute to web development tasks, learn from the team and improve through code review. I
+use Claude Code and Codex as development tools, taking responsibility for reviewing, debugging and
+validating changes.
+
+My portfolio and GitHub include code and technical decisions. I'd welcome the opportunity to discuss a
+role and walk through my work.
+
+Kind regards,
+
+Nelson Sivisstum
+

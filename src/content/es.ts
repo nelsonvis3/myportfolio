@@ -4,16 +4,16 @@ export const es: Content = {
   lang: "es",
   locale: "es_AR",
   meta: {
-    title: "Nelson Sivisstum, desarrollador full stack",
-    description: "Desarrollador full stack en Formosa, Argentina. Proyectos con React, Next.js, TypeScript y Django: Fracxion, Ragnar Suplementos y RoadLedger.",
-    ogAlt: "Nelson Sivisstum, desarrollador full stack",
+    title: "Nelson Sivisstum | Desarrollador Full Stack Junior",
+    description: "Nelson Sivisstum, desarrollador Full Stack Junior en Argentina. Aplicaciones web con frontend, backend, APIs, bases de datos y pruebas.",
+    ogAlt: "Nelson Sivisstum, desarrollador Full Stack Junior",
   },
   ids: { projects: "proyectos", about: "sobre-mi", stack: "stack", contact: "contacto" },
   ui: {
     skip: "Saltar al contenido", menu: "Abrir menú", close: "Cerrar menú",
     nav: { projects: "Proyectos", about: "Sobre mí", stack: "Stack", contact: "Contacto" },
     switchLang: "EN", switchLangLabel: "Ver en inglés", email: "Escribime un correo",
-    role: "Desarrollador full stack",
+    role: "Desarrollador Full Stack Junior",
     readCase: "Leer el caso completo", viewCode: "Ver código", demoSoon: "Demo en preparación", backToTop: "Volver arriba",
     caseEyebrow: "Caso de estudio", caseBack: "Proyectos", caseStack: "Stack", caseRole: "Mi parte",
     caseProblem: "El problema", caseSolution: "La solución", caseFeatures: "Qué permite hacer",
@@ -23,10 +23,13 @@ export const es: Content = {
     caseNext: "Siguiente proyecto", caseProblemLabel: "El desafío", caseSolutionLabel: "Cómo lo resolví", caseCode: "En el código",
   },
   hero: {
-    eyebrow: "Nelson Sivisstum · Desarrollador full stack",
-    title: ["Bienvenido a", "mi portfolio"],
-    lines: ["Desarrollo aplicaciones web de punta a punta,", "y uso IA para entregarlas más rápido."],
-    note: "Trabajo con React, Next.js y Django. Uso Claude Code y Codex todos los días, y reviso cada cambio antes de que entre.",
+    eyebrow: "Nelson Sivisstum",
+    title: ["Desarrollador", "Full Stack Junior"],
+    lines: [
+      "Desarrollo aplicaciones web de principio a fin: interfaces, APIs, lógica de negocio y bases de datos.",
+      "Implemento autenticación, permisos y pruebas para verificar su funcionamiento.",
+    ],
+    note: "Formosa, Argentina · Disponible para trabajo remoto. Busco incorporarme a un equipo de desarrollo.",
     primary: "Ver proyectos", secondary: "Escribime",
   },
   intro: {
@@ -35,9 +38,9 @@ export const es: Content = {
     text: "Empiezo por entender qué necesita el cliente: qué problema quiere resolver, quién va a usar la aplicación y qué tiene que transmitir. Después armo la base (datos, API y reglas del negocio) con pruebas para los casos difíciles, como un pedido que se manda dos veces. Encima construyo una interfaz clara que lo comunique, la pruebo en escritorio y en celular, y la sigo puliendo con lo que aprendo del uso real.",
   },
   work: {
-    eyebrow: "Proyectos",
-    title: "Tres proyectos, de punta a punta",
-    lead: "Tres aplicaciones completas. Explorá sus funciones y las decisiones técnicas detrás de cada una.",
+    eyebrow: "Mi trabajo",
+    title: "Proyectos destacados",
+    lead: "En cada caso muestro lo que desarrollé, las decisiones técnicas que tomé y cómo lo probé.",
     open: "Ver el caso",
   },
   cases: {
@@ -77,7 +80,7 @@ export const es: Content = {
   stack: {
     eyebrow: "Con qué trabajo",
     title: "Un stack para entregar sitios y aplicaciones completas",
-    lead: "Las herramientas que uso en mis proyectos y en los trabajos para clientes, de la interfaz al despliegue.",
+    lead: "Las herramientas que uso en mis proyectos y en los trabajos dia a diaw.",
     tools: [
       { name: "React", logo: "react" }, { name: "Next.js", logo: "nextjs" }, { name: "TypeScript", logo: "typescript" },
       { name: "JavaScript", logo: "javascript" }, { name: "Tailwind CSS", logo: "tailwind" }, { name: "Redux Toolkit", logo: "redux" },

@@ -1,0 +1,3210 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Nelson Sivisstum · Desarrollador Full Stack Junior",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Desarrollador Full Stack Junior"
+      },
+      {
+        "level": "H2",
+        "text": "Construyo de adentro hacia afuera"
+      },
+      {
+        "level": "H2",
+        "text": "Proyectos"
+      },
+      {
+        "level": "H2",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H4",
+        "text": "Cuentas protegidas"
+      },
+      {
+        "level": "H4",
+        "text": "Facturas internas"
+      },
+      {
+        "level": "H4",
+        "text": "Cobros y saldos"
+      },
+      {
+        "level": "H3",
+        "text": "Desafío y solución"
+      },
+      {
+        "level": "H4",
+        "text": "Una numeración que no se repite"
+      },
+      {
+        "level": "H2",
+        "text": "Mi recorrido"
+      },
+      {
+        "level": "H3",
+        "text": "Recorrido"
+      },
+      {
+        "level": "H3",
+        "text": "Formación"
+      },
+      {
+        "level": "H3",
+        "text": "Ahora"
+      },
+      {
+        "level": "H2",
+        "text": "Con qué trabajo"
+      },
+      {
+        "level": "H2",
+        "text": "Mi CV"
+      },
+      {
+        "level": "H2",
+        "text": "¿Hablamos?"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/",
+    "alternate": "/en/",
+    "themeButtons": [
+      "Activar tema claro",
+      "Abrir menú",
+      null
+    ],
+    "links": [
+      "http://127.0.0.1:4175/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/cv.pdf",
+      "http://127.0.0.1:4175/#caso-fracxion",
+      "http://127.0.0.1:4175/#caso-ragnar-suplementos",
+      "http://127.0.0.1:4175/#caso-roadledger",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "http://127.0.0.1:4175/cv-en.pdf",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+      "https://github.com/nelsonvis3"
+    ]
+  },
+  {
+    "route": "/en/",
+    "width": 1440,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Nelson Sivisstum · Junior Full Stack Developer",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Junior Full Stack Developer"
+      },
+      {
+        "level": "H2",
+        "text": "I build from the inside out"
+      },
+      {
+        "level": "H2",
+        "text": "Projects"
+      },
+      {
+        "level": "H2",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H4",
+        "text": "Protected accounts"
+      },
+      {
+        "level": "H4",
+        "text": "Internal invoices"
+      },
+      {
+        "level": "H4",
+        "text": "Payments and balances"
+      },
+      {
+        "level": "H3",
+        "text": "Challenge and solution"
+      },
+      {
+        "level": "H4",
+        "text": "Numbering that never repeats"
+      },
+      {
+        "level": "H2",
+        "text": "My path"
+      },
+      {
+        "level": "H3",
+        "text": "Path"
+      },
+      {
+        "level": "H3",
+        "text": "Learning"
+      },
+      {
+        "level": "H3",
+        "text": "Now"
+      },
+      {
+        "level": "H2",
+        "text": "Tools I work with"
+      },
+      {
+        "level": "H2",
+        "text": "My CV"
+      },
+      {
+        "level": "H2",
+        "text": "Let's talk"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/",
+    "alternate": "/",
+    "themeButtons": [
+      "Switch to light theme",
+      "Open menu",
+      null
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/cv-en.pdf",
+      "http://127.0.0.1:4175/en/#caso-fracxion",
+      "http://127.0.0.1:4175/en/#caso-ragnar-suplementos",
+      "http://127.0.0.1:4175/en/#caso-roadledger",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "http://127.0.0.1:4175/cv.pdf",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+      "https://github.com/nelsonvis3"
+    ]
+  },
+  {
+    "route": "/proyectos/fracxion/",
+    "width": 1440,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Fracxion: Clientes, facturas y cobros de varias empresas en un mismo sistema. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "Un recorrido comercial"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Una numeración que no se repite"
+      },
+      {
+        "level": "H3",
+        "text": "El historial no cambia"
+      },
+      {
+        "level": "H3",
+        "text": "Revertir sin borrar"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/fracxion/",
+    "alternate": "/en/projects/fracxion/",
+    "themeButtons": [
+      "Activar tema claro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/fracxion/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-fracxion",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/proyectos/fracxion/#problem",
+      "http://127.0.0.1:4175/proyectos/fracxion/#solution",
+      "http://127.0.0.1:4175/proyectos/fracxion/#flow",
+      "http://127.0.0.1:4175/proyectos/fracxion/#challenges",
+      "http://127.0.0.1:4175/proyectos/fracxion/#decisions",
+      "http://127.0.0.1:4175/proyectos/fracxion/#architecture",
+      "http://127.0.0.1:4175/proyectos/fracxion/#verification",
+      "http://127.0.0.1:4175/img/fracxion-invoice.png",
+      "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/fracxion/",
+    "width": 1440,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Fracxion: Customers, invoices and payments for several companies in one system. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "A business flow"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Numbering that never repeats"
+      },
+      {
+        "level": "H3",
+        "text": "History stays history"
+      },
+      {
+        "level": "H3",
+        "text": "Reversing without deleting"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/fracxion/",
+    "alternate": "/proyectos/fracxion/",
+    "themeButtons": [
+      "Switch to light theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/fracxion/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-fracxion",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/en/projects/fracxion/#problem",
+      "http://127.0.0.1:4175/en/projects/fracxion/#solution",
+      "http://127.0.0.1:4175/en/projects/fracxion/#flow",
+      "http://127.0.0.1:4175/en/projects/fracxion/#challenges",
+      "http://127.0.0.1:4175/en/projects/fracxion/#decisions",
+      "http://127.0.0.1:4175/en/projects/fracxion/#architecture",
+      "http://127.0.0.1:4175/en/projects/fracxion/#verification",
+      "http://127.0.0.1:4175/img/fracxion-invoice.png",
+      "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/proyectos/ragnar-suplementos/",
+    "width": 1440,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Ragnar Suplementos: Tienda online para un comercio de suplementos de Formosa. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Ragnar Suplementos"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "Del carrito al pedido"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Stock compartido con combos"
+      },
+      {
+        "level": "H3",
+        "text": "Gestión autónoma del catálogo"
+      },
+      {
+        "level": "H3",
+        "text": "Reintentar sin duplicar"
+      },
+      {
+        "level": "H3",
+        "text": "Pagos que llegan tarde"
+      },
+      {
+        "level": "H3",
+        "text": "Desplegar frontend y backend juntos"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/ragnar-suplementos/",
+    "alternate": "/en/projects/ragnar-suplementos/",
+    "themeButtons": [
+      "Activar tema claro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-ragnar-suplementos",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#problem",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#solution",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#flow",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#challenges",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#decisions",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#architecture",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#verification",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/ragnar-suplementos/",
+    "width": 1440,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Ragnar Suplementos: An online store for a supplement shop in Formosa. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Ragnar Suplementos"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "From cart to order"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Stock shared with bundles"
+      },
+      {
+        "level": "H3",
+        "text": "Self-managed product catalog"
+      },
+      {
+        "level": "H3",
+        "text": "Retrying without duplicating"
+      },
+      {
+        "level": "H3",
+        "text": "Payments that arrive late"
+      },
+      {
+        "level": "H3",
+        "text": "Deploying frontend and backend together"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/ragnar-suplementos/",
+    "alternate": "/proyectos/ragnar-suplementos/",
+    "themeButtons": [
+      "Switch to light theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-ragnar-suplementos",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#problem",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#solution",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#flow",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#challenges",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#decisions",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#architecture",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#verification",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/proyectos/roadledger/",
+    "width": 1440,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "RoadLedger: Una ruta, sus paradas y las hojas diarias de un viaje en camión. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "RoadLedger"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "De tres ubicaciones a un plan"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Distancia y duración son cosas distintas"
+      },
+      {
+        "level": "H3",
+        "text": "Dividir el viaje por días"
+      },
+      {
+        "level": "H3",
+        "text": "Seguir mostrando algo si falla el mapa"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/roadledger/",
+    "alternate": "/en/projects/roadledger/",
+    "themeButtons": [
+      "Activar tema claro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/roadledger/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-roadledger",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/proyectos/roadledger/#problem",
+      "http://127.0.0.1:4175/proyectos/roadledger/#solution",
+      "http://127.0.0.1:4175/proyectos/roadledger/#flow",
+      "http://127.0.0.1:4175/proyectos/roadledger/#challenges",
+      "http://127.0.0.1:4175/proyectos/roadledger/#decisions",
+      "http://127.0.0.1:4175/proyectos/roadledger/#architecture",
+      "http://127.0.0.1:4175/proyectos/roadledger/#verification",
+      "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/roadledger/",
+    "width": 1440,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "RoadLedger: A truck trip's route, its stops and its daily logs. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "RoadLedger"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "From three locations to a plan"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Distance and duration are different things"
+      },
+      {
+        "level": "H3",
+        "text": "Splitting the trip into days"
+      },
+      {
+        "level": "H3",
+        "text": "Still showing something if the map fails"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/roadledger/",
+    "alternate": "/proyectos/roadledger/",
+    "themeButtons": [
+      "Switch to light theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/roadledger/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-roadledger",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/en/projects/roadledger/#problem",
+      "http://127.0.0.1:4175/en/projects/roadledger/#solution",
+      "http://127.0.0.1:4175/en/projects/roadledger/#flow",
+      "http://127.0.0.1:4175/en/projects/roadledger/#challenges",
+      "http://127.0.0.1:4175/en/projects/roadledger/#decisions",
+      "http://127.0.0.1:4175/en/projects/roadledger/#architecture",
+      "http://127.0.0.1:4175/en/projects/roadledger/#verification",
+      "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Nelson Sivisstum · Desarrollador Full Stack Junior",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Desarrollador Full Stack Junior"
+      },
+      {
+        "level": "H2",
+        "text": "Construyo de adentro hacia afuera"
+      },
+      {
+        "level": "H2",
+        "text": "Proyectos"
+      },
+      {
+        "level": "H2",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H4",
+        "text": "Cuentas protegidas"
+      },
+      {
+        "level": "H4",
+        "text": "Facturas internas"
+      },
+      {
+        "level": "H4",
+        "text": "Cobros y saldos"
+      },
+      {
+        "level": "H3",
+        "text": "Desafío y solución"
+      },
+      {
+        "level": "H4",
+        "text": "Una numeración que no se repite"
+      },
+      {
+        "level": "H2",
+        "text": "Mi recorrido"
+      },
+      {
+        "level": "H3",
+        "text": "Recorrido"
+      },
+      {
+        "level": "H3",
+        "text": "Formación"
+      },
+      {
+        "level": "H3",
+        "text": "Ahora"
+      },
+      {
+        "level": "H2",
+        "text": "Con qué trabajo"
+      },
+      {
+        "level": "H2",
+        "text": "Mi CV"
+      },
+      {
+        "level": "H2",
+        "text": "¿Hablamos?"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/",
+    "alternate": "/en/",
+    "themeButtons": [
+      "Activar tema claro",
+      "Abrir menú",
+      null
+    ],
+    "links": [
+      "http://127.0.0.1:4175/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/cv.pdf",
+      "http://127.0.0.1:4175/#caso-fracxion",
+      "http://127.0.0.1:4175/#caso-ragnar-suplementos",
+      "http://127.0.0.1:4175/#caso-roadledger",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "http://127.0.0.1:4175/cv-en.pdf",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+      "https://github.com/nelsonvis3"
+    ]
+  },
+  {
+    "route": "/en/",
+    "width": 390,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Nelson Sivisstum · Junior Full Stack Developer",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Junior Full Stack Developer"
+      },
+      {
+        "level": "H2",
+        "text": "I build from the inside out"
+      },
+      {
+        "level": "H2",
+        "text": "Projects"
+      },
+      {
+        "level": "H2",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H4",
+        "text": "Protected accounts"
+      },
+      {
+        "level": "H4",
+        "text": "Internal invoices"
+      },
+      {
+        "level": "H4",
+        "text": "Payments and balances"
+      },
+      {
+        "level": "H3",
+        "text": "Challenge and solution"
+      },
+      {
+        "level": "H4",
+        "text": "Numbering that never repeats"
+      },
+      {
+        "level": "H2",
+        "text": "My path"
+      },
+      {
+        "level": "H3",
+        "text": "Path"
+      },
+      {
+        "level": "H3",
+        "text": "Learning"
+      },
+      {
+        "level": "H3",
+        "text": "Now"
+      },
+      {
+        "level": "H2",
+        "text": "Tools I work with"
+      },
+      {
+        "level": "H2",
+        "text": "My CV"
+      },
+      {
+        "level": "H2",
+        "text": "Let's talk"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/",
+    "alternate": "/",
+    "themeButtons": [
+      "Switch to light theme",
+      "Open menu",
+      null
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/cv-en.pdf",
+      "http://127.0.0.1:4175/en/#caso-fracxion",
+      "http://127.0.0.1:4175/en/#caso-ragnar-suplementos",
+      "http://127.0.0.1:4175/en/#caso-roadledger",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "http://127.0.0.1:4175/cv.pdf",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+      "https://github.com/nelsonvis3"
+    ]
+  },
+  {
+    "route": "/proyectos/fracxion/",
+    "width": 390,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Fracxion: Clientes, facturas y cobros de varias empresas en un mismo sistema. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "Un recorrido comercial"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Una numeración que no se repite"
+      },
+      {
+        "level": "H3",
+        "text": "El historial no cambia"
+      },
+      {
+        "level": "H3",
+        "text": "Revertir sin borrar"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/fracxion/",
+    "alternate": "/en/projects/fracxion/",
+    "themeButtons": [
+      "Activar tema claro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/fracxion/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-fracxion",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/proyectos/fracxion/#problem",
+      "http://127.0.0.1:4175/proyectos/fracxion/#solution",
+      "http://127.0.0.1:4175/proyectos/fracxion/#flow",
+      "http://127.0.0.1:4175/proyectos/fracxion/#challenges",
+      "http://127.0.0.1:4175/proyectos/fracxion/#decisions",
+      "http://127.0.0.1:4175/proyectos/fracxion/#architecture",
+      "http://127.0.0.1:4175/proyectos/fracxion/#verification",
+      "http://127.0.0.1:4175/img/fracxion-invoice.png",
+      "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/fracxion/",
+    "width": 390,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Fracxion: Customers, invoices and payments for several companies in one system. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "A business flow"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Numbering that never repeats"
+      },
+      {
+        "level": "H3",
+        "text": "History stays history"
+      },
+      {
+        "level": "H3",
+        "text": "Reversing without deleting"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/fracxion/",
+    "alternate": "/proyectos/fracxion/",
+    "themeButtons": [
+      "Switch to light theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/fracxion/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-fracxion",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/en/projects/fracxion/#problem",
+      "http://127.0.0.1:4175/en/projects/fracxion/#solution",
+      "http://127.0.0.1:4175/en/projects/fracxion/#flow",
+      "http://127.0.0.1:4175/en/projects/fracxion/#challenges",
+      "http://127.0.0.1:4175/en/projects/fracxion/#decisions",
+      "http://127.0.0.1:4175/en/projects/fracxion/#architecture",
+      "http://127.0.0.1:4175/en/projects/fracxion/#verification",
+      "http://127.0.0.1:4175/img/fracxion-invoice.png",
+      "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/proyectos/ragnar-suplementos/",
+    "width": 390,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Ragnar Suplementos: Tienda online para un comercio de suplementos de Formosa. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Ragnar Suplementos"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "Del carrito al pedido"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Stock compartido con combos"
+      },
+      {
+        "level": "H3",
+        "text": "Gestión autónoma del catálogo"
+      },
+      {
+        "level": "H3",
+        "text": "Reintentar sin duplicar"
+      },
+      {
+        "level": "H3",
+        "text": "Pagos que llegan tarde"
+      },
+      {
+        "level": "H3",
+        "text": "Desplegar frontend y backend juntos"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/ragnar-suplementos/",
+    "alternate": "/en/projects/ragnar-suplementos/",
+    "themeButtons": [
+      "Activar tema claro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-ragnar-suplementos",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#problem",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#solution",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#flow",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#challenges",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#decisions",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#architecture",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#verification",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/ragnar-suplementos/",
+    "width": 390,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Ragnar Suplementos: An online store for a supplement shop in Formosa. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Ragnar Suplementos"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "From cart to order"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Stock shared with bundles"
+      },
+      {
+        "level": "H3",
+        "text": "Self-managed product catalog"
+      },
+      {
+        "level": "H3",
+        "text": "Retrying without duplicating"
+      },
+      {
+        "level": "H3",
+        "text": "Payments that arrive late"
+      },
+      {
+        "level": "H3",
+        "text": "Deploying frontend and backend together"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/ragnar-suplementos/",
+    "alternate": "/proyectos/ragnar-suplementos/",
+    "themeButtons": [
+      "Switch to light theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-ragnar-suplementos",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#problem",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#solution",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#flow",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#challenges",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#decisions",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#architecture",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#verification",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/proyectos/roadledger/",
+    "width": 390,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "RoadLedger: Una ruta, sus paradas y las hojas diarias de un viaje en camión. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "RoadLedger"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "De tres ubicaciones a un plan"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Distancia y duración son cosas distintas"
+      },
+      {
+        "level": "H3",
+        "text": "Dividir el viaje por días"
+      },
+      {
+        "level": "H3",
+        "text": "Seguir mostrando algo si falla el mapa"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/roadledger/",
+    "alternate": "/en/projects/roadledger/",
+    "themeButtons": [
+      "Activar tema claro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/roadledger/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-roadledger",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/proyectos/roadledger/#problem",
+      "http://127.0.0.1:4175/proyectos/roadledger/#solution",
+      "http://127.0.0.1:4175/proyectos/roadledger/#flow",
+      "http://127.0.0.1:4175/proyectos/roadledger/#challenges",
+      "http://127.0.0.1:4175/proyectos/roadledger/#decisions",
+      "http://127.0.0.1:4175/proyectos/roadledger/#architecture",
+      "http://127.0.0.1:4175/proyectos/roadledger/#verification",
+      "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/roadledger/",
+    "width": 390,
+    "theme": "dark",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "RoadLedger: A truck trip's route, its stops and its daily logs. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "RoadLedger"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "From three locations to a plan"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Distance and duration are different things"
+      },
+      {
+        "level": "H3",
+        "text": "Splitting the trip into days"
+      },
+      {
+        "level": "H3",
+        "text": "Still showing something if the map fails"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/roadledger/",
+    "alternate": "/proyectos/roadledger/",
+    "themeButtons": [
+      "Switch to light theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/roadledger/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-roadledger",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/en/projects/roadledger/#problem",
+      "http://127.0.0.1:4175/en/projects/roadledger/#solution",
+      "http://127.0.0.1:4175/en/projects/roadledger/#flow",
+      "http://127.0.0.1:4175/en/projects/roadledger/#challenges",
+      "http://127.0.0.1:4175/en/projects/roadledger/#decisions",
+      "http://127.0.0.1:4175/en/projects/roadledger/#architecture",
+      "http://127.0.0.1:4175/en/projects/roadledger/#verification",
+      "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Nelson Sivisstum · Desarrollador Full Stack Junior",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Desarrollador Full Stack Junior"
+      },
+      {
+        "level": "H2",
+        "text": "Construyo de adentro hacia afuera"
+      },
+      {
+        "level": "H2",
+        "text": "Proyectos"
+      },
+      {
+        "level": "H2",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H4",
+        "text": "Cuentas protegidas"
+      },
+      {
+        "level": "H4",
+        "text": "Facturas internas"
+      },
+      {
+        "level": "H4",
+        "text": "Cobros y saldos"
+      },
+      {
+        "level": "H3",
+        "text": "Desafío y solución"
+      },
+      {
+        "level": "H4",
+        "text": "Una numeración que no se repite"
+      },
+      {
+        "level": "H2",
+        "text": "Mi recorrido"
+      },
+      {
+        "level": "H3",
+        "text": "Recorrido"
+      },
+      {
+        "level": "H3",
+        "text": "Formación"
+      },
+      {
+        "level": "H3",
+        "text": "Ahora"
+      },
+      {
+        "level": "H2",
+        "text": "Con qué trabajo"
+      },
+      {
+        "level": "H2",
+        "text": "Mi CV"
+      },
+      {
+        "level": "H2",
+        "text": "¿Hablamos?"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/",
+    "alternate": "/en/",
+    "themeButtons": [
+      "Activar tema oscuro",
+      "Abrir menú",
+      null
+    ],
+    "links": [
+      "http://127.0.0.1:4175/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/cv.pdf",
+      "http://127.0.0.1:4175/#caso-fracxion",
+      "http://127.0.0.1:4175/#caso-ragnar-suplementos",
+      "http://127.0.0.1:4175/#caso-roadledger",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "http://127.0.0.1:4175/cv-en.pdf",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+      "https://github.com/nelsonvis3"
+    ]
+  },
+  {
+    "route": "/en/",
+    "width": 1440,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Nelson Sivisstum · Junior Full Stack Developer",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Junior Full Stack Developer"
+      },
+      {
+        "level": "H2",
+        "text": "I build from the inside out"
+      },
+      {
+        "level": "H2",
+        "text": "Projects"
+      },
+      {
+        "level": "H2",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H4",
+        "text": "Protected accounts"
+      },
+      {
+        "level": "H4",
+        "text": "Internal invoices"
+      },
+      {
+        "level": "H4",
+        "text": "Payments and balances"
+      },
+      {
+        "level": "H3",
+        "text": "Challenge and solution"
+      },
+      {
+        "level": "H4",
+        "text": "Numbering that never repeats"
+      },
+      {
+        "level": "H2",
+        "text": "My path"
+      },
+      {
+        "level": "H3",
+        "text": "Path"
+      },
+      {
+        "level": "H3",
+        "text": "Learning"
+      },
+      {
+        "level": "H3",
+        "text": "Now"
+      },
+      {
+        "level": "H2",
+        "text": "Tools I work with"
+      },
+      {
+        "level": "H2",
+        "text": "My CV"
+      },
+      {
+        "level": "H2",
+        "text": "Let's talk"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/",
+    "alternate": "/",
+    "themeButtons": [
+      "Switch to dark theme",
+      "Open menu",
+      null
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/cv-en.pdf",
+      "http://127.0.0.1:4175/en/#caso-fracxion",
+      "http://127.0.0.1:4175/en/#caso-ragnar-suplementos",
+      "http://127.0.0.1:4175/en/#caso-roadledger",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "http://127.0.0.1:4175/cv.pdf",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+      "https://github.com/nelsonvis3"
+    ]
+  },
+  {
+    "route": "/proyectos/fracxion/",
+    "width": 1440,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Fracxion: Clientes, facturas y cobros de varias empresas en un mismo sistema. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "Un recorrido comercial"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Una numeración que no se repite"
+      },
+      {
+        "level": "H3",
+        "text": "El historial no cambia"
+      },
+      {
+        "level": "H3",
+        "text": "Revertir sin borrar"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/fracxion/",
+    "alternate": "/en/projects/fracxion/",
+    "themeButtons": [
+      "Activar tema oscuro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/fracxion/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-fracxion",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/proyectos/fracxion/#problem",
+      "http://127.0.0.1:4175/proyectos/fracxion/#solution",
+      "http://127.0.0.1:4175/proyectos/fracxion/#flow",
+      "http://127.0.0.1:4175/proyectos/fracxion/#challenges",
+      "http://127.0.0.1:4175/proyectos/fracxion/#decisions",
+      "http://127.0.0.1:4175/proyectos/fracxion/#architecture",
+      "http://127.0.0.1:4175/proyectos/fracxion/#verification",
+      "http://127.0.0.1:4175/img/fracxion-invoice.png",
+      "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/fracxion/",
+    "width": 1440,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Fracxion: Customers, invoices and payments for several companies in one system. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "A business flow"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Numbering that never repeats"
+      },
+      {
+        "level": "H3",
+        "text": "History stays history"
+      },
+      {
+        "level": "H3",
+        "text": "Reversing without deleting"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/fracxion/",
+    "alternate": "/proyectos/fracxion/",
+    "themeButtons": [
+      "Switch to dark theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/fracxion/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-fracxion",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/en/projects/fracxion/#problem",
+      "http://127.0.0.1:4175/en/projects/fracxion/#solution",
+      "http://127.0.0.1:4175/en/projects/fracxion/#flow",
+      "http://127.0.0.1:4175/en/projects/fracxion/#challenges",
+      "http://127.0.0.1:4175/en/projects/fracxion/#decisions",
+      "http://127.0.0.1:4175/en/projects/fracxion/#architecture",
+      "http://127.0.0.1:4175/en/projects/fracxion/#verification",
+      "http://127.0.0.1:4175/img/fracxion-invoice.png",
+      "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/proyectos/ragnar-suplementos/",
+    "width": 1440,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Ragnar Suplementos: Tienda online para un comercio de suplementos de Formosa. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Ragnar Suplementos"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "Del carrito al pedido"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Stock compartido con combos"
+      },
+      {
+        "level": "H3",
+        "text": "Gestión autónoma del catálogo"
+      },
+      {
+        "level": "H3",
+        "text": "Reintentar sin duplicar"
+      },
+      {
+        "level": "H3",
+        "text": "Pagos que llegan tarde"
+      },
+      {
+        "level": "H3",
+        "text": "Desplegar frontend y backend juntos"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/ragnar-suplementos/",
+    "alternate": "/en/projects/ragnar-suplementos/",
+    "themeButtons": [
+      "Activar tema oscuro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-ragnar-suplementos",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#problem",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#solution",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#flow",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#challenges",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#decisions",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#architecture",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#verification",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/ragnar-suplementos/",
+    "width": 1440,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Ragnar Suplementos: An online store for a supplement shop in Formosa. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Ragnar Suplementos"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "From cart to order"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Stock shared with bundles"
+      },
+      {
+        "level": "H3",
+        "text": "Self-managed product catalog"
+      },
+      {
+        "level": "H3",
+        "text": "Retrying without duplicating"
+      },
+      {
+        "level": "H3",
+        "text": "Payments that arrive late"
+      },
+      {
+        "level": "H3",
+        "text": "Deploying frontend and backend together"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/ragnar-suplementos/",
+    "alternate": "/proyectos/ragnar-suplementos/",
+    "themeButtons": [
+      "Switch to dark theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-ragnar-suplementos",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#problem",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#solution",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#flow",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#challenges",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#decisions",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#architecture",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#verification",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/proyectos/roadledger/",
+    "width": 1440,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "RoadLedger: Una ruta, sus paradas y las hojas diarias de un viaje en camión. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "RoadLedger"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "De tres ubicaciones a un plan"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Distancia y duración son cosas distintas"
+      },
+      {
+        "level": "H3",
+        "text": "Dividir el viaje por días"
+      },
+      {
+        "level": "H3",
+        "text": "Seguir mostrando algo si falla el mapa"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/roadledger/",
+    "alternate": "/en/projects/roadledger/",
+    "themeButtons": [
+      "Activar tema oscuro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/roadledger/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-roadledger",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/proyectos/roadledger/#problem",
+      "http://127.0.0.1:4175/proyectos/roadledger/#solution",
+      "http://127.0.0.1:4175/proyectos/roadledger/#flow",
+      "http://127.0.0.1:4175/proyectos/roadledger/#challenges",
+      "http://127.0.0.1:4175/proyectos/roadledger/#decisions",
+      "http://127.0.0.1:4175/proyectos/roadledger/#architecture",
+      "http://127.0.0.1:4175/proyectos/roadledger/#verification",
+      "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/roadledger/",
+    "width": 1440,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "RoadLedger: A truck trip's route, its stops and its daily logs. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "RoadLedger"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "From three locations to a plan"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Distance and duration are different things"
+      },
+      {
+        "level": "H3",
+        "text": "Splitting the trip into days"
+      },
+      {
+        "level": "H3",
+        "text": "Still showing something if the map fails"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/roadledger/",
+    "alternate": "/proyectos/roadledger/",
+    "themeButtons": [
+      "Switch to dark theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/roadledger/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-roadledger",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/en/projects/roadledger/#problem",
+      "http://127.0.0.1:4175/en/projects/roadledger/#solution",
+      "http://127.0.0.1:4175/en/projects/roadledger/#flow",
+      "http://127.0.0.1:4175/en/projects/roadledger/#challenges",
+      "http://127.0.0.1:4175/en/projects/roadledger/#decisions",
+      "http://127.0.0.1:4175/en/projects/roadledger/#architecture",
+      "http://127.0.0.1:4175/en/projects/roadledger/#verification",
+      "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Nelson Sivisstum · Desarrollador Full Stack Junior",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Desarrollador Full Stack Junior"
+      },
+      {
+        "level": "H2",
+        "text": "Construyo de adentro hacia afuera"
+      },
+      {
+        "level": "H2",
+        "text": "Proyectos"
+      },
+      {
+        "level": "H2",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H4",
+        "text": "Cuentas protegidas"
+      },
+      {
+        "level": "H4",
+        "text": "Facturas internas"
+      },
+      {
+        "level": "H4",
+        "text": "Cobros y saldos"
+      },
+      {
+        "level": "H3",
+        "text": "Desafío y solución"
+      },
+      {
+        "level": "H4",
+        "text": "Una numeración que no se repite"
+      },
+      {
+        "level": "H2",
+        "text": "Mi recorrido"
+      },
+      {
+        "level": "H3",
+        "text": "Recorrido"
+      },
+      {
+        "level": "H3",
+        "text": "Formación"
+      },
+      {
+        "level": "H3",
+        "text": "Ahora"
+      },
+      {
+        "level": "H2",
+        "text": "Con qué trabajo"
+      },
+      {
+        "level": "H2",
+        "text": "Mi CV"
+      },
+      {
+        "level": "H2",
+        "text": "¿Hablamos?"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/",
+    "alternate": "/en/",
+    "themeButtons": [
+      "Activar tema oscuro",
+      "Abrir menú",
+      null
+    ],
+    "links": [
+      "http://127.0.0.1:4175/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/cv.pdf",
+      "http://127.0.0.1:4175/#caso-fracxion",
+      "http://127.0.0.1:4175/#caso-ragnar-suplementos",
+      "http://127.0.0.1:4175/#caso-roadledger",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "http://127.0.0.1:4175/cv-en.pdf",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+      "https://github.com/nelsonvis3"
+    ]
+  },
+  {
+    "route": "/en/",
+    "width": 390,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Nelson Sivisstum · Junior Full Stack Developer",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Junior Full Stack Developer"
+      },
+      {
+        "level": "H2",
+        "text": "I build from the inside out"
+      },
+      {
+        "level": "H2",
+        "text": "Projects"
+      },
+      {
+        "level": "H2",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H4",
+        "text": "Protected accounts"
+      },
+      {
+        "level": "H4",
+        "text": "Internal invoices"
+      },
+      {
+        "level": "H4",
+        "text": "Payments and balances"
+      },
+      {
+        "level": "H3",
+        "text": "Challenge and solution"
+      },
+      {
+        "level": "H4",
+        "text": "Numbering that never repeats"
+      },
+      {
+        "level": "H2",
+        "text": "My path"
+      },
+      {
+        "level": "H3",
+        "text": "Path"
+      },
+      {
+        "level": "H3",
+        "text": "Learning"
+      },
+      {
+        "level": "H3",
+        "text": "Now"
+      },
+      {
+        "level": "H2",
+        "text": "Tools I work with"
+      },
+      {
+        "level": "H2",
+        "text": "My CV"
+      },
+      {
+        "level": "H2",
+        "text": "Let's talk"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/",
+    "alternate": "/",
+    "themeButtons": [
+      "Switch to dark theme",
+      "Open menu",
+      null
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/cv-en.pdf",
+      "http://127.0.0.1:4175/en/#caso-fracxion",
+      "http://127.0.0.1:4175/en/#caso-ragnar-suplementos",
+      "http://127.0.0.1:4175/en/#caso-roadledger",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "http://127.0.0.1:4175/cv.pdf",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+      "https://github.com/nelsonvis3"
+    ]
+  },
+  {
+    "route": "/proyectos/fracxion/",
+    "width": 390,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Fracxion: Clientes, facturas y cobros de varias empresas en un mismo sistema. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "Un recorrido comercial"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Una numeración que no se repite"
+      },
+      {
+        "level": "H3",
+        "text": "El historial no cambia"
+      },
+      {
+        "level": "H3",
+        "text": "Revertir sin borrar"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/fracxion/",
+    "alternate": "/en/projects/fracxion/",
+    "themeButtons": [
+      "Activar tema oscuro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/fracxion/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-fracxion",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/proyectos/fracxion/#problem",
+      "http://127.0.0.1:4175/proyectos/fracxion/#solution",
+      "http://127.0.0.1:4175/proyectos/fracxion/#flow",
+      "http://127.0.0.1:4175/proyectos/fracxion/#challenges",
+      "http://127.0.0.1:4175/proyectos/fracxion/#decisions",
+      "http://127.0.0.1:4175/proyectos/fracxion/#architecture",
+      "http://127.0.0.1:4175/proyectos/fracxion/#verification",
+      "http://127.0.0.1:4175/img/fracxion-invoice.png",
+      "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/fracxion/",
+    "width": 390,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Fracxion: Customers, invoices and payments for several companies in one system. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Fracxion"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "A business flow"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Numbering that never repeats"
+      },
+      {
+        "level": "H3",
+        "text": "History stays history"
+      },
+      {
+        "level": "H3",
+        "text": "Reversing without deleting"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/fracxion/",
+    "alternate": "/proyectos/fracxion/",
+    "themeButtons": [
+      "Switch to dark theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/fracxion/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-fracxion",
+      "https://github.com/nelsonvis3/fracxion-facturador",
+      "http://127.0.0.1:4175/en/projects/fracxion/#problem",
+      "http://127.0.0.1:4175/en/projects/fracxion/#solution",
+      "http://127.0.0.1:4175/en/projects/fracxion/#flow",
+      "http://127.0.0.1:4175/en/projects/fracxion/#challenges",
+      "http://127.0.0.1:4175/en/projects/fracxion/#decisions",
+      "http://127.0.0.1:4175/en/projects/fracxion/#architecture",
+      "http://127.0.0.1:4175/en/projects/fracxion/#verification",
+      "http://127.0.0.1:4175/img/fracxion-invoice.png",
+      "https://github.com/nelsonvis3/fracxion-facturador/blob/main/backend/billing/services.py",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/proyectos/ragnar-suplementos/",
+    "width": 390,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "Ragnar Suplementos: Tienda online para un comercio de suplementos de Formosa. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Ragnar Suplementos"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "Del carrito al pedido"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Stock compartido con combos"
+      },
+      {
+        "level": "H3",
+        "text": "Gestión autónoma del catálogo"
+      },
+      {
+        "level": "H3",
+        "text": "Reintentar sin duplicar"
+      },
+      {
+        "level": "H3",
+        "text": "Pagos que llegan tarde"
+      },
+      {
+        "level": "H3",
+        "text": "Desplegar frontend y backend juntos"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/ragnar-suplementos/",
+    "alternate": "/en/projects/ragnar-suplementos/",
+    "themeButtons": [
+      "Activar tema oscuro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-ragnar-suplementos",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#problem",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#solution",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#flow",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#challenges",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#decisions",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#architecture",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/#verification",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/ragnar-suplementos/",
+    "width": 390,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "Ragnar Suplementos: An online store for a supplement shop in Formosa. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "Ragnar Suplementos"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "From cart to order"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Stock shared with bundles"
+      },
+      {
+        "level": "H3",
+        "text": "Self-managed product catalog"
+      },
+      {
+        "level": "H3",
+        "text": "Retrying without duplicating"
+      },
+      {
+        "level": "H3",
+        "text": "Payments that arrive late"
+      },
+      {
+        "level": "H3",
+        "text": "Deploying frontend and backend together"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/ragnar-suplementos/",
+    "alternate": "/proyectos/ragnar-suplementos/",
+    "themeButtons": [
+      "Switch to dark theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/ragnar-suplementos/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-ragnar-suplementos",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa",
+      "https://ragnarsuplementos.tail7dbbb0.ts.net/",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#problem",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#solution",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#flow",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#challenges",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#decisions",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#architecture",
+      "http://127.0.0.1:4175/en/projects/ragnar-suplementos/#verification",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/views.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/components/admin/AdministracionCatalogo.tsx",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/backend/store/orders.py",
+      "https://github.com/nelsonvis3/ragnarsuplementosfsa/blob/main/compose.yaml",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/proyectos/roadledger/",
+    "width": 390,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "es",
+    "title": "RoadLedger: Una ruta, sus paradas y las hojas diarias de un viaje en camión. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "RoadLedger"
+      },
+      {
+        "level": "H2",
+        "text": "El problema"
+      },
+      {
+        "level": "H2",
+        "text": "La solución"
+      },
+      {
+        "level": "H3",
+        "text": "Qué permite hacer"
+      },
+      {
+        "level": "H2",
+        "text": "De tres ubicaciones a un plan"
+      },
+      {
+        "level": "H2",
+        "text": "Desafíos técnicos"
+      },
+      {
+        "level": "H3",
+        "text": "Distancia y duración son cosas distintas"
+      },
+      {
+        "level": "H3",
+        "text": "Dividir el viaje por días"
+      },
+      {
+        "level": "H3",
+        "text": "Seguir mostrando algo si falla el mapa"
+      },
+      {
+        "level": "H2",
+        "text": "Decisiones"
+      },
+      {
+        "level": "H2",
+        "text": "Arquitectura"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/proyectos/roadledger/",
+    "alternate": "/en/projects/roadledger/",
+    "themeButtons": [
+      "Activar tema oscuro",
+      "Abrir menú"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/proyectos/roadledger/#main",
+      "http://127.0.0.1:4175/",
+      "http://127.0.0.1:4175/#proyectos",
+      "http://127.0.0.1:4175/#sobre-mi",
+      "http://127.0.0.1:4175/#stack",
+      "http://127.0.0.1:4175/#contacto",
+      "http://127.0.0.1:4175/en/projects/roadledger/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/#caso-roadledger",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/proyectos/roadledger/#problem",
+      "http://127.0.0.1:4175/proyectos/roadledger/#solution",
+      "http://127.0.0.1:4175/proyectos/roadledger/#flow",
+      "http://127.0.0.1:4175/proyectos/roadledger/#challenges",
+      "http://127.0.0.1:4175/proyectos/roadledger/#decisions",
+      "http://127.0.0.1:4175/proyectos/roadledger/#architecture",
+      "http://127.0.0.1:4175/proyectos/roadledger/#verification",
+      "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py",
+      "http://127.0.0.1:4175/proyectos/fracxion/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  },
+  {
+    "route": "/en/projects/roadledger/",
+    "width": 390,
+    "theme": "light",
+    "status": 200,
+    "errors": [],
+    "axe": [],
+    "badCoverRatio": false,
+    "lang": "en",
+    "title": "RoadLedger: A truck trip's route, its stops and its daily logs. | Nelson Sivisstum",
+    "h1": 1,
+    "overflow": false,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "headings": [
+      {
+        "level": "H1",
+        "text": "RoadLedger"
+      },
+      {
+        "level": "H2",
+        "text": "The problem"
+      },
+      {
+        "level": "H2",
+        "text": "The solution"
+      },
+      {
+        "level": "H3",
+        "text": "What it lets you do"
+      },
+      {
+        "level": "H2",
+        "text": "From three locations to a plan"
+      },
+      {
+        "level": "H2",
+        "text": "Technical challenges"
+      },
+      {
+        "level": "H3",
+        "text": "Distance and duration are different things"
+      },
+      {
+        "level": "H3",
+        "text": "Splitting the trip into days"
+      },
+      {
+        "level": "H3",
+        "text": "Still showing something if the map fails"
+      },
+      {
+        "level": "H2",
+        "text": "Decisions"
+      },
+      {
+        "level": "H2",
+        "text": "Architecture"
+      }
+    ],
+    "canonical": "https://nelsonsivisstum.vercel.app/en/projects/roadledger/",
+    "alternate": "/proyectos/roadledger/",
+    "themeButtons": [
+      "Switch to dark theme",
+      "Open menu"
+    ],
+    "links": [
+      "http://127.0.0.1:4175/en/projects/roadledger/#main",
+      "http://127.0.0.1:4175/en/",
+      "http://127.0.0.1:4175/en/#projects",
+      "http://127.0.0.1:4175/en/#about",
+      "http://127.0.0.1:4175/en/#stack",
+      "http://127.0.0.1:4175/en/#contact",
+      "http://127.0.0.1:4175/proyectos/roadledger/",
+      "mailto:nelsonsivisstum3@gmail.com",
+      "http://127.0.0.1:4175/en/#caso-roadledger",
+      "https://github.com/nelsonvis3/ELD-trip-planner",
+      "https://eld-trip-planner-5as7.onrender.com/",
+      "http://127.0.0.1:4175/en/projects/roadledger/#problem",
+      "http://127.0.0.1:4175/en/projects/roadledger/#solution",
+      "http://127.0.0.1:4175/en/projects/roadledger/#flow",
+      "http://127.0.0.1:4175/en/projects/roadledger/#challenges",
+      "http://127.0.0.1:4175/en/projects/roadledger/#decisions",
+      "http://127.0.0.1:4175/en/projects/roadledger/#architecture",
+      "http://127.0.0.1:4175/en/projects/roadledger/#verification",
+      "https://github.com/nelsonvis3/ELD-trip-planner/blob/main/trips/views.py",
+      "http://127.0.0.1:4175/en/projects/fracxion/",
+      "https://github.com/nelsonvis3",
+      "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4"
+    ]
+  }
+]

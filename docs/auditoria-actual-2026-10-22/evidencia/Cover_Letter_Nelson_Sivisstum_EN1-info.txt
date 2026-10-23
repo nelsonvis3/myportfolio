@@ -1,0 +1,19 @@
+Title:           Nelson Sivisstum — Short cover letter
+Creator:         Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36
+Producer:        Skia/PDF m155
+CreationDate:    Thu Oct 22 04:14:40 2026 -03
+ModDate:         Thu Oct 22 04:14:40 2026 -03
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          yes
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           1
+Encrypted:       no
+Page size:       594.96 x 841.92 pts (A4)
+Page rot:        0
+File size:       29771 bytes
+Optimized:       no
+PDF version:     1.4

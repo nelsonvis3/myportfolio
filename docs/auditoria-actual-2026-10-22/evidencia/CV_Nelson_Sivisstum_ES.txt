@@ -1,0 +1,56 @@
+Nelson Sivisstum
+Desarrollador Full Stack Junior
+Formosa, Argentina · Disponible para trabajo remoto · +54 11 7062-5896
+nelsonsivisstum3@gmail.com
+GitHub: github.com/nelsonvis3 · LinkedIn · Portfolio: nelsonsivisstum.vercel.app
+
+PERFIL PROFESIONAL
+
+Desarrollador Full Stack Junior con proyectos en React, Next.js, TypeScript y Django. Implementé APIs REST,
+autenticación, permisos por empresa y operaciones de inventario y cobros con PostgreSQL. Busco mi primer
+puesto en un equipo de desarrollo, donde aportar y seguir aprendiendo mediante revisión de código.
+
+HABILIDADES TÉCNICAS
+
+Frontend: HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS
+Backend y datos: Python, Django, Django REST Framework, APIs REST, PostgreSQL, SQL
+Pruebas y herramientas: Playwright, pruebas Django, GitHub Actions, Docker Compose, Git, Linux
+
+PROYECTOS DESTACADOS
+
+Fracxion · Gestión comercial multiempresa
+2026 · Proyecto propio · Desarrollo individual
+Next.js, TypeScript, Django REST Framework, PostgreSQL
+github.com/nelsonvis3/fracxion-facturador
+   Desarrollé clientes, catálogo, facturación interna y cobros, con aislamiento de datos por empresa y permisos
+   según roles.
+   Implementé transacciones y bloqueo de filas en PostgreSQL para proteger la numeración por empresa y los
+   saldos ante operaciones concurrentes.
+   Automaticé pruebas de permisos y flujos de navegador con Django, Playwright y GitHub Actions.
+Ragnar Suplementos · Tienda online
+2026 · Encargo para un comercio local · Demo previa al lanzamiento
+Next.js, React, TypeScript, Django REST Framework, PostgreSQL
+github.com/nelsonvis3/ragnarsuplementosfsa
+   Desarrollé la tienda y un panel de catálogo, centralizando precios, inventario y pedidos en una API con Django
+   REST Framework.
+   Integré Mercado Pago con verificación en el servidor y reservas de stock para productos y combos.
+   Desplegué una demo con Docker Compose y Nginx en Ubuntu Server, con acceso HTTPS por Tailscale Funnel.
+
+RoadLedger · Prototipo de planificación de viajes
+2026 · Evaluación técnica · Desarrollo individual
+React, Django REST Framework, MapLibre, Photon y OSRM
+github.com/nelsonvis3/ELD-trip-planner
+   Desarrollé un prototipo educativo con mapa, cronología y hojas diarias imprimibles, usando estimaciones de
+   conducción y descanso.
+   Integré Photon y OSRM, con 12 pruebas de validación, contrato de API y cambios de día.
+
+FORMACIÓN Y CERTIFICACIONES
+CS50's Web Programming with Python and JavaScript — HarvardX / edX · En curso
+Full Stack JavaScript — The Odin Project · En curso
+Front End Development Libraries — freeCodeCamp · Certificado, agosto de 2026
+Bachiller — E.P.E.P. N.º 179, Formosa · 2023
+
+IDIOMAS
+
+Español: nativo · Inglés: intermedio (B1)
+

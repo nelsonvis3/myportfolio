@@ -1,0 +1,182 @@
+{
+  "name": "Nelson Sivisstum",
+  "location": "Formosa, Argentina",
+  "phone": "+54 11 7062-5896",
+  "email": "nelsonsivisstum3@gmail.com",
+  "website": "https://nelsonsivisstum.vercel.app",
+  "github": "https://github.com/nelsonvis3",
+  "linkedin": "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+  "formalEducation": {
+    "es": "Bachiller — E.P.E.P. N.º 179, Formosa · 2023",
+    "en": "High School Diploma — E.P.E.P. No. 179, Formosa · 2023"
+  },
+  "es": {
+    "role": "Desarrollador Full Stack Junior",
+    "remote": "Disponible para trabajo remoto",
+    "summaryLabel": "Perfil profesional",
+    "summary": "Desarrollador Full Stack Junior con proyectos propios y una tienda desarrollada por encargo. Trabajo con React, Next.js, TypeScript, Django y PostgreSQL. Implementé APIs REST, permisos, inventario y cobros. Busco mi primer puesto en un equipo de desarrollo.",
+    "skillsLabel": "Habilidades técnicas",
+    "skills": [
+      [
+        "Frontend",
+        "HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS"
+      ],
+      [
+        "Backend y datos",
+        "Python, Django, Django REST Framework, APIs REST, PostgreSQL, SQL"
+      ],
+      [
+        "Pruebas y herramientas",
+        "Playwright, pruebas Django, GitHub Actions, Docker Compose, Git, Linux"
+      ]
+    ],
+    "projectsLabel": "Proyectos destacados",
+    "educationLabel": "Formación y certificaciones",
+    "education": [
+      [
+        "CS50's Web Programming with Python and JavaScript",
+        "HarvardX / edX · En curso"
+      ],
+      [
+        "Full Stack JavaScript",
+        "The Odin Project · En curso"
+      ],
+      [
+        "Front End Development Libraries",
+        "freeCodeCamp · Certificado, agosto de 2026"
+      ]
+    ],
+    "languagesLabel": "Idiomas",
+    "languages": "Español: nativo · Inglés: intermedio (B1)",
+    "projects": {
+      "fracxion": {
+        "title": "Fracxion · Gestión comercial multiempresa",
+        "context": "2026 · Proyecto propio · Desarrollo individual",
+        "stack": "Next.js, TypeScript, Django REST Framework, PostgreSQL",
+        "repo": "fracxion-facturador",
+        "bullets": [
+          "Desarrollé módulos de clientes, catálogo, facturación interna y cobros, con aislamiento de datos por empresa y permisos según roles.",
+          "Implementé transacciones y bloqueo de filas en PostgreSQL para proteger la numeración por empresa y los saldos ante operaciones concurrentes.",
+          "Automaticé pruebas de permisos y flujos de navegador con Django, Playwright y GitHub Actions."
+        ]
+      },
+      "ragnar": {
+        "title": "Ragnar Suplementos · Tienda online",
+        "context": "2026 · Encargo para un comercio local · Demo previa al lanzamiento",
+        "stack": "Next.js, React, TypeScript, Django REST Framework, PostgreSQL",
+        "repo": "ragnarsuplementosfsa",
+        "bullets": [
+          "Desarrollé la tienda y un panel de catálogo, centralizando precios, inventario y pedidos en una API con Django REST Framework.",
+          "Integré Mercado Pago con verificación en el servidor y reservas de stock para productos y combos.",
+          "Preparé una demo en Ubuntu Server con Docker Compose y Nginx, con acceso HTTPS desde un servidor local."
+        ]
+      },
+      "roadledger": {
+        "title": "RoadLedger · Prototipo de planificación de viajes",
+        "context": "2026 · Evaluación técnica · Desarrollo individual",
+        "stack": "React, Django REST Framework, MapLibre, Photon y OSRM",
+        "repo": "ELD-trip-planner",
+        "bullets": [
+          "Desarrollé un prototipo educativo con mapa, cronología y hojas diarias imprimibles, usando estimaciones de conducción y descanso.",
+          "Integré Photon y OSRM, con 12 pruebas de validación, contrato de API y cambios de día."
+        ]
+      }
+    },
+    "letter": [
+      "Hola, equipo de selección:",
+      "Busco incorporarme a un equipo como desarrollador full stack o web developer junior. Trabajo con React, Next.js, TypeScript y Django, y mis proyectos me dieron experiencia práctica conectando interfaces, APIs y datos.",
+      "En Fracxion desarrollé permisos por empresa y operaciones de facturación interna y cobros con PostgreSQL. Implementé transacciones y bloqueo de filas, y trabajé en pruebas para permisos y operaciones concurrentes. En Ragnar Suplementos, un encargo para un comercio local que está en demostración, desarrollé la tienda, el panel de catálogo y la lógica de inventario.",
+      "Me interesa aportar en tareas de desarrollo web, aprender del equipo y mejorar a partir de la revisión de código. Uso Claude Code y Codex como apoyo, y me hago responsable de revisar, depurar y validar los cambios.",
+      "Mi portfolio y GitHub incluyen código y decisiones técnicas. Quedo disponible para conversar sobre una oportunidad y explicar mi trabajo.",
+      "Saludos,"
+    ]
+  },
+  "en": {
+    "role": "Junior Full Stack Developer",
+    "remote": "Open to remote work",
+    "summaryLabel": "Professional summary",
+    "summary": "Junior Full Stack Developer with personal projects and a commissioned online store. I work with React, Next.js, TypeScript, Django and PostgreSQL, implementing REST APIs, permissions, inventory and payment workflows. Looking for my first role on a development team.",
+    "skillsLabel": "Technical skills",
+    "skills": [
+      [
+        "Frontend",
+        "HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS"
+      ],
+      [
+        "Backend and data",
+        "Python, Django, Django REST Framework, REST APIs, PostgreSQL, SQL"
+      ],
+      [
+        "Testing and tools",
+        "Playwright, Django testing, GitHub Actions, Docker Compose, Git, Linux"
+      ]
+    ],
+    "projectsLabel": "Featured projects",
+    "educationLabel": "Education and certifications",
+    "education": [
+      [
+        "CS50's Web Programming with Python and JavaScript",
+        "HarvardX / edX · In progress"
+      ],
+      [
+        "Full Stack JavaScript",
+        "The Odin Project · In progress"
+      ],
+      [
+        "Front End Development Libraries",
+        "freeCodeCamp · Certified, August 2026"
+      ]
+    ],
+    "languagesLabel": "Languages",
+    "languages": "Spanish: native · English: intermediate (B1)",
+    "projects": {
+      "fracxion": {
+        "title": "Fracxion · Multi-tenant business management",
+        "context": "2026 · Personal project · Individual development",
+        "stack": "Next.js, TypeScript, Django REST Framework, PostgreSQL",
+        "repo": "fracxion-facturador",
+        "bullets": [
+          "Built customer, catalog, internal invoicing and payment modules with tenant data isolation and role-based permissions.",
+          "Used PostgreSQL transactions and row-level locks to protect per-company invoice numbering and balances during concurrent operations.",
+          "Automated permission and browser-flow tests with Django, Playwright and GitHub Actions."
+        ]
+      },
+      "ragnar": {
+        "title": "Ragnar Suplementos · E-commerce store",
+        "context": "2026 · Commissioned by a local business · Pre-launch demo",
+        "stack": "Next.js, React, TypeScript, Django REST Framework, PostgreSQL",
+        "repo": "ragnarsuplementosfsa",
+        "bullets": [
+          "Built the storefront and catalog admin panel, with pricing, inventory and orders managed by a Django REST Framework API.",
+          "Integrated Mercado Pago with server-side payment verification and stock reservations for products and bundles.",
+          "Set up an HTTPS demo on a local Ubuntu Server instance using Docker Compose and Nginx."
+        ]
+      },
+      "roadledger": {
+        "title": "RoadLedger · Trip-planning prototype",
+        "context": "2026 · Technical assessment · Individual development",
+        "stack": "React, Django REST Framework, MapLibre, Photon and OSRM",
+        "repo": "ELD-trip-planner",
+        "bullets": [
+          "Built an educational prototype showing routes, a timeline and printable daily logs based on estimated driving and rest periods.",
+          "Integrated Photon and OSRM for geocoding and routing, with 12 tests covering validation, the API contract and events crossing midnight."
+        ]
+      }
+    },
+    "letter": [
+      "Dear Hiring Team,",
+      "I'm looking to join a development team as a junior full stack or web developer. I work with React, Next.js, TypeScript and Django, and my projects have given me practical experience connecting interfaces, APIs and data.",
+      "In Fracxion, I built company-level permissions and internal invoicing and payment workflows backed by PostgreSQL. I implemented transactions and row-level locking, and worked on tests for permissions and concurrent operations. For Ragnar Suplementos, a commissioned store currently at the demonstration stage, I built the storefront, catalog admin panel and inventory logic.",
+      "I'd like to contribute to web development tasks, learn from the team and improve through code review. I use Claude Code and Codex as development tools, taking responsibility for reviewing, debugging and validating changes.",
+      "My portfolio and GitHub include code and technical decisions. I'd welcome the opportunity to discuss a role and walk through my work.",
+      "Kind regards,"
+    ],
+    "shortLetter": [
+      "Dear Hiring Team,",
+      "I'm a Junior Full Stack Developer based in Argentina, looking to join a team working with React, Next.js or Django.",
+      "My projects include Fracxion, a multi-tenant business application with company-level permissions and transactional payment workflows, and Ragnar Suplementos, a commissioned store currently in demonstration. My contributions include interfaces, APIs, inventory logic and tests.",
+      "I'd like to contribute to web development tasks and grow through feedback and code review. My portfolio and GitHub provide code and explanations of the decisions behind these projects. I'm available to discuss a role and explain my work.",
+      "Kind regards,"
+    ]
+  }
+}
