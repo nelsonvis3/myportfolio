@@ -203,7 +203,7 @@ export const es: Content = {
         { src: "/img/ragnar-mobile.webp", alt: "Catálogo de Ragnar Suplementos en el celular", phone: true },
       ],
       phoneShot: "/img/ragnar-mobile.webp",
-      repo: "https://github.com/nelsonvis3/ragnarsuplementosfsa", demo: "https://ragnarsuplementos.tail7dbbb0.ts.net/", demoLabel: "Ver demo en vivo",
+      repo: "https://github.com/nelsonvis3/ragnarsuplementosfsa", demo: "", demoLabel: "",
       video: "", videoLabel: "",
       stack: ["Next.js", "React", "TypeScript", "Django", "PostgreSQL", "Zustand", "Docker", "Nginx"],
       role: "Desarrollé la tienda y la API, armé el panel de administración del catálogo y trabajé en los pedidos, el inventario y las integraciones. También monté una demostración del sistema en Ubuntu Server con Docker Compose y Nginx.",
