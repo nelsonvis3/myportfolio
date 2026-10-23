@@ -111,7 +111,8 @@ img,svg {display:block;max-width:100%}img {width:100%}
 .project-story {margin-top:21px;border-top:1px solid var(--line)}
 .story-line {display:grid;grid-template-columns:minmax(100px,.25fr) minmax(0,.75fr);gap:20px;border-bottom:1px solid var(--line);padding:15px 0}
 .story-line h2,.project-tech h2 {font:640 12px/1.6 var(--sans);color:var(--accent);letter-spacing:0}
-.story-line p {font-size:13px;line-height:1.75;color:var(--soft);max-width:620px}
+.story-line p,.story-list {font-size:13px;line-height:1.75;color:var(--soft);max-width:620px}
+.story-list {display:grid;gap:6px;padding-left:16px;list-style:disc}
 .project-tech {display:grid;grid-template-columns:minmax(100px,.25fr) minmax(0,.75fr);gap:20px;padding-top:20px}
 .tech-list {display:flex;align-items:flex-start;flex-wrap:wrap;gap:7px}
 .tech-tag {display:inline-flex;align-items:center;gap:7px;padding:5px 9px;border:1px solid #34476B;background:rgba(170,155,255,.065);border-radius:5px;font-size:11px;font-weight:520;line-height:1.35;color:var(--text);white-space:nowrap;transition:border-color .2s,background-color .2s}
@@ -120,14 +121,11 @@ img,svg {display:block;max-width:100%}img {width:100%}
 .tech-tag .brand-icon {width:15px;height:15px;color:var(--accent)}
 .github-cta {display:inline-flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--accent);margin-top:23px;color:var(--text);font-size:12px;font-weight:640;transition:color .2s,border-color .2s}
 .github-cta:hover {color:var(--accent)}
-/* Journey: compressed timeline, studies and visibly outlined skill tags. */
+/* Education: studies list and visibly outlined skill tags. */
 .journey-block {margin-top:27px}
 .mini-heading {font:650 12px/1.5 var(--sans);letter-spacing:.01em;color:var(--text);margin-bottom:10px}
-.timeline,.studies-list {border-top:1px solid var(--line)}
-.timeline li {display:grid;grid-template-columns:minmax(105px,.22fr) 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
-.timeline-time {font-size:11px;color:var(--accent);line-height:1.55}
-.timeline h3 {font:620 14px/1.4 var(--display);letter-spacing:-.008em;margin-bottom:3px}
-.timeline p,.study-row p {font-size:12px;line-height:1.65;color:var(--soft)}
+.studies-list {border-top:1px solid var(--line)}
+.study-row p {font-size:12px;line-height:1.65;color:var(--soft)}
 .study-row {display:grid;grid-template-columns:minmax(105px,.22fr) minmax(0,1fr);align-items:start;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
 .study-date {font-size:11px;line-height:1.55;color:var(--accent)}
 .study-info {min-width:0}
@@ -197,8 +195,8 @@ img,svg {display:block;max-width:100%}img {width:100%}
   .story-line,.project-tech {grid-template-columns:1fr;gap:6px}
   .story-line {padding:15px 0}
   .project-tech {padding-top:16px}
-  .timeline li,.study-row {grid-template-columns:91px minmax(0,1fr);gap:11px}
-  .timeline h3,.study-info h3 {font-size:13px}
+  .study-row {grid-template-columns:91px minmax(0,1fr);gap:11px}
+  .study-info h3 {font-size:13px}
   .contact-view h1 {font-size:34px}
   .contact-main {font-size:17px}
 }

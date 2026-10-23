@@ -158,6 +158,8 @@ function ProjectDetail({ lang, project, navigate }: { lang: Lang; project: Proje
       <section className="story-line"><h2>{c.development}</h2><p>{project.development}</p></section>
       <section className="story-line"><h2>{c.problem}</h2><p>{project.problem}</p></section>
       <section className="story-line"><h2>{c.solution}</h2><p>{project.solution}</p></section>
+      {project.details && <section className="story-line"><h2>{c.details}</h2><ul className="story-list">{project.details.map(d=><li key={d}>{d}</li>)}</ul></section>}
+      {project.status && <section className="story-line"><h2>{c.status}</h2><p>{project.status}</p></section>}
     </div>
     <div className="project-tech"><h2>{c.technologies}</h2><div className="tech-list">{project.stack.map(t=><Technology key={t.label} tech={t}/>)}</div></div>
     <a className="github-cta" href={project.repo} target="_blank" rel="noopener noreferrer"><BrandIcon name="github" size={19}/>{c.repository}</a>
@@ -167,11 +169,8 @@ function ProjectDetail({ lang, project, navigate }: { lang: Lang; project: Proje
 function Journey({ lang }: { lang: Lang }) {
   const c = copy[lang];
   return <section className="view-body journey-view" aria-label={c.journeyTitle}>
-    <PageHead eyebrow={c.journeyEyebrow} title={c.journeyTitle} intro={c.journeyIntro}/>
-    <div className="journey-block"><h2 className="mini-heading">{lang === "es" ? "Recorrido" : "Journey"}</h2>
-      <ol className="timeline">{c.timeline.map(item=><li key={item.date}><span className="timeline-time">{item.date}</span><div><h3>{item.title}</h3><p>{item.detail}</p></div></li>)}</ol>
-    </div>
-    <div className="journey-block"><h2 className="mini-heading">{c.studiesTitle}</h2><div className="studies-list">{c.studies.map(item=><div className="study-row" key={item.name}><time className="study-date" dateTime={item.iso}>{item.date}</time><div className="study-info"><h3>{item.name}</h3><p>{item.info}</p></div></div>)}</div></div>
+    <PageHead eyebrow={c.journeyEyebrow} title={c.journeyTitle}/>
+    <div className="journey-block"><div className="studies-list">{c.studies.map(item=><div className="study-row" key={item.name}><time className="study-date" dateTime={item.iso}>{item.date}</time><div className="study-info"><h3>{item.name}</h3><p>{item.info}</p></div></div>)}</div></div>
   </section>;
 }
 
