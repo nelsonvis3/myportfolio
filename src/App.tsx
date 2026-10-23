@@ -18,14 +18,20 @@ const skillGroups = [
   ] },
   { id: "backend", titles: { es: "Backend", en: "Backend" }, skills: [
     { key: "python", label: "Python" },
-    { key: "django", label: "Django" },
+    { key: "django", label: "Django / DRF" },
     { key: "nodejs", label: "Node.js" },
   ] },
-  { id: "data", titles: { es: "Datos e infraestructura", en: "Data & infrastructure" }, skills: [
+  { id: "databases", titles: { es: "Bases de datos y caché", en: "Databases & caching" }, skills: [
     { key: "postgresql", label: "PostgreSQL" },
     { key: "mysql", label: "MySQL" },
+    { key: "redis", label: "Redis" },
+  ] },
+  { id: "devops", titles: { es: "DevOps y herramientas", en: "DevOps & tools" }, skills: [
     { key: "docker", label: "Docker" },
     { key: "linux", label: "Linux" },
+    { key: "nginx", label: "Nginx" },
+    { key: "git", label: "Git" },
+    { key: "github", label: "GitHub" },
   ] },
   { id: "quality", titles: { es: "Testing y diseño", en: "Testing & design" }, skills: [
     { key: "playwright", label: "Playwright" },
