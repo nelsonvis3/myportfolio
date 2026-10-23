@@ -231,8 +231,8 @@ contactForm?.addEventListener("submit", async event => {
   }
 });
 
-// Animaciones en bucle (brillos, orbe, cinta del stack): se pausan mientras no están en pantalla.
-const loops = document.querySelectorAll<HTMLElement>(".glow, .orb, .marquee");
+// Animaciones en bucle (brillos y orbe): se pausan mientras no están en pantalla.
+const loops = document.querySelectorAll<HTMLElement>(".glow, .orb");
 if (loops.length) {
   const looper = new IntersectionObserver(entries => {
     for (const { target, isIntersecting } of entries) target.classList.toggle("is-paused", !isIntersecting);

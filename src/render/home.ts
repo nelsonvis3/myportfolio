@@ -126,14 +126,14 @@ function about(c: Content, photo?: string): string {
 
 function stack(c: Content): string {
   const s = c.stack;
-  const tiles = (hidden: boolean) => s.tools.map(t => `<li${hidden ? ` aria-hidden="true"` : ""}>${logo(t.logo)}<span>${esc(t.name)}</span></li>`).join("");
+  const tiles = s.tools.map(t => `<li>${logo(t.logo)}<span>${esc(t.name)}</span></li>`).join("");
   return `<section class="section stack tone-deep" id="${c.ids.stack}" aria-labelledby="stack-title">
   <div class="wrap center">
     <p class="eyebrow" data-reveal>${esc(s.eyebrow)}</p>
     <h2 id="stack-title" class="display" data-reveal>${esc(s.title)}</h2>
-    <p class="muted stack-lead" data-reveal>${esc(s.lead)}</p>
+    ${s.lead ? `<p class="muted stack-lead" data-reveal>${esc(s.lead)}</p>` : ""}
   </div>
-  <div class="marquee" data-reveal><ul class="marquee-track">${tiles(false)}${tiles(true)}</ul></div>
+  <ul class="stack-grid wrap" data-reveal>${tiles}</ul>
   <div class="ai-studio wrap center">
     <p class="eyebrow">${esc(s.aiEyebrow)}</p>
     <ul>${s.ai.map(t => `<li data-reveal>${logo(t.logo)}<span>${esc(t.name)}</span></li>`).join("")}</ul>

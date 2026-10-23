@@ -287,18 +287,15 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .now li + li, .check-list li + li { margin-top: 12px; }
 .now svg, .check-list svg { width: 18px; height: 18px; flex: none; margin-top: 3px; color: var(--accent); }
 
-/* Stack: cinta de herramientas y AI Studio. */
+/* Stack: herramientas en una grilla estática y AI Studio. */
 .stack-lead { margin-top: 20px; max-width: 52ch; }
 .stack .display { max-width: 20ch; }
-.marquee { margin-top: clamp(48px, 6vw, 72px); overflow: hidden; padding-block: 6px; transition: var(--reveal-t);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-.marquee-track { display: flex; gap: 16px; width: max-content; animation: marquee 48s linear infinite; }
-.marquee li { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 118px; height: 118px; border-radius: 22px;
+.stack-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 800px; margin-top: clamp(32px, 4vw, 48px); }
+.stack-grid li { display: flex; flex: 0 0 100px; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 88px; padding: 12px 6px; border-radius: 16px;
   background: #191714; border: 1px solid var(--line-soft); color: #8b8378; transition: color .3s, border-color .3s, background-color .3s; }
-.marquee li:hover { color: var(--fg); border-color: rgba(242, 236, 226, .2); background: var(--surface); }
-.marquee .logo { width: 34px; height: 34px; }
-.marquee span { font-size: 12.5px; color: var(--muted); }
-@keyframes marquee { to { transform: translateX(calc(-50% - 8px)); } }
+.stack-grid li:hover { color: var(--fg); border-color: rgba(242, 236, 226, .2); background: var(--surface); }
+.stack-grid .logo { width: 24px; height: 24px; flex: none; }
+.stack-grid span { font-size: 12.5px; color: var(--muted); }
 .ai-studio { margin-top: clamp(72px, 8vw, 110px); }
 .ai-studio ul { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px clamp(56px, 12vw, 180px); margin-top: 30px; }
 .ai-studio li { display: flex; align-items: center; gap: 10px; color: #8b8378; transition: var(--reveal-t), color .3s; }
@@ -456,8 +453,9 @@ html.has-star, html.has-star * { cursor: none !important; }
 .case-tabs a { padding: 9px 14px; font-size: 13px; }
   .card { padding: 22px; }
   .challenge-row { padding: 22px; }
-  .marquee li { width: 98px; height: 98px; border-radius: 18px; }
-  .marquee .logo { width: 28px; height: 28px; }
+  .stack-grid { gap: 10px; }
+  .stack-grid li { flex-basis: calc((100% - 20px) / 3); max-width: 100px; min-height: 80px; border-radius: 14px; }
+  .stack-grid .logo { width: 22px; height: 22px; }
   .footer-row { flex-direction: column; text-align: center; }
   .footer-nav { justify-content: center; }
   .next-card { flex-direction: column; align-items: flex-start; }
@@ -469,7 +467,4 @@ html.has-star, html.has-star * { cursor: none !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-  .marquee { -webkit-mask-image: none; mask-image: none; }
-  .marquee-track { flex-wrap: wrap; justify-content: center; width: auto; padding-inline: var(--gutter); }
-  .marquee-track li[aria-hidden] { display: none; }
 }

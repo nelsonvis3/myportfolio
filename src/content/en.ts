@@ -82,9 +82,9 @@ export const en: Content = {
     ],
   },
   stack: {
-    eyebrow: "Built with",
-    title: "A stack for shipping complete sites and apps",
-    lead: "The tools I use in my own projects and in client work, from the interface to deployment.",
+    eyebrow: "Tools I work with",
+    title: "Development stack",
+    lead: "",
     tools: es.stack.tools,
     aiEyebrow: "AI Studio",
     ai: es.stack.ai,

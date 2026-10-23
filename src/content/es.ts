@@ -79,18 +79,18 @@ export const es: Content = {
   },
   stack: {
     eyebrow: "Con qué trabajo",
-    title: "Un stack para entregar sitios y aplicaciones completas",
-    lead: "Las herramientas que uso en mis proyectos y en los trabajos dia a diaw.",
+    title: "Stack de desarrollo",
     tools: [
       { name: "React", logo: "react" }, { name: "Next.js", logo: "nextjs" }, { name: "TypeScript", logo: "typescript" },
-      { name: "JavaScript", logo: "javascript" }, { name: "Tailwind CSS", logo: "tailwind" }, { name: "Redux Toolkit", logo: "redux" },
-      { name: "Supabase", logo: "supabase" }, { name: "Python", logo: "python" }, { name: "Django", logo: "django" },
-      { name: "PostgreSQL", logo: "postgresql" }, { name: "PHP", logo: "php" }, { name: "WordPress", logo: "wordpress" },
+      { name: "JavaScript", logo: "javascript" }, { name: "Tailwind CSS", logo: "tailwind" }, { name: "Vite", logo: "vite" },
+      { name: "Python", logo: "python" }, { name: "Django", logo: "django" },
+      { name: "PostgreSQL", logo: "postgresql" }, { name: "WordPress", logo: "wordpress" },
       { name: "Docker", logo: "docker" }, { name: "Linux", logo: "linux" },
-      { name: "GitHub", logo: "github" }, { name: "Vercel", logo: "vercel" },
+      { name: "GitHub", logo: "github" }, { name: "Figma", logo: "figma" },
     ],
     aiEyebrow: "AI Studio",
     ai: [{ name: "OpenAI", logo: "openai" }, { name: "Claude", logo: "claude" }],
+    lead: ""
   },
   availability: {
     eyebrow: "Disponible",
