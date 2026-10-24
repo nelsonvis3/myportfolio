@@ -61,8 +61,8 @@ const projects: Record<Lang, Project[]> = {
     {
       id: "space-tasks", name: "SPACE Tasks", category: "Código abierto · Productividad",
       development: "Desarrollé una aplicación de productividad con tareas, calendario, estadísticas, un lector de PDF y música, para escritorio y navegador.",
-      problem: "La IA, el OCR y la traducción tenían que funcionar sin APIs pagas y sin enviar documentos ni consultas a servicios externos.",
-      solution: "Construí la interfaz en React y TypeScript, y un servidor Node con SQLite para cuentas, versiones y archivos. La traducción, el OCR y el asistente corren en el dispositivo dentro de Web Workers. La versión de escritorio usa Electron.",
+      problem: "Necesitaba una herramienta para organizar mis tareas, horarios y planes en un solo lugar, sin suscripciones y con mis datos en mi propia computadora.",
+      solution: "Creé mi propio programa, pensado para cómo me organizo: espacios de trabajo, prioridades, fechas y calendario. La interfaz es React y TypeScript, y un servidor Node con SQLite guarda las cuentas y el historial de versiones. La IA, el OCR y la traducción corren en el dispositivo, y en escritorio funciona con Electron.",
       stack: [{label:"React",icon:"react"},{label:"TypeScript",icon:"typescript"},{label:"Node.js"},{label:"SQLite"},{label:"Electron"}],
       image: "/img/space-tasks.webp", imageAlt: "Panel principal de SPACE Tasks",
       repo: "https://github.com/nelsonvis3/space-tasks",
@@ -111,8 +111,8 @@ const projects: Record<Lang, Project[]> = {
     {
       id: "space-tasks", name: "SPACE Tasks", category: "Open source · Productivity",
       development: "I built a productivity app with tasks, a calendar, statistics, a PDF reader, and music, for desktop and the browser.",
-      problem: "AI, OCR, and translation had to work without paid APIs and without sending documents or questions to outside services.",
-      solution: "I built the interface with React and TypeScript, and a Node server with SQLite for accounts, version history, and files. Translation, OCR, and the assistant run on the device in Web Workers. The desktop version uses Electron.",
+      problem: "I needed one place to organize my tasks, schedule, and plans, without subscriptions and with my data on my own computer.",
+      solution: "I built my own app around the way I organize my work: workspaces, priorities, due dates, and a calendar. The interface uses React and TypeScript, and a Node server with SQLite stores accounts and version history. AI, OCR, and translation run on the device, and the desktop version runs on Electron.",
       stack: [{label:"React",icon:"react"},{label:"TypeScript",icon:"typescript"},{label:"Node.js"},{label:"SQLite"},{label:"Electron"}],
       image: "/img/space-tasks.webp", imageAlt: "SPACE Tasks overview dashboard",
       repo: "https://github.com/nelsonvis3/space-tasks",
