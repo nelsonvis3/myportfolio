@@ -5,7 +5,7 @@
   "email": "nelsonsivisstum3@gmail.com",
   "website": "https://nelsonsivisstum.vercel.app",
   "github": "https://github.com/nelsonvis3",
-  "linkedin": "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4",
+  "linkedin": "https://www.linkedin.com/in/nelsonsivisstum1",
   "formalEducation": {
     "es": "Bachiller — E.P.E.P. N.º 179, Formosa · 2023",
     "en": "High School Diploma — E.P.E.P. No. 179, Formosa · 2023"
@@ -83,12 +83,13 @@
       }
     },
     "letter": [
-      "Hola, equipo de selección:",
-      "Busco incorporarme a un equipo como desarrollador full stack o web developer junior. Trabajo con React, Next.js, TypeScript y Django, y mis proyectos me dieron experiencia práctica conectando interfaces, APIs y datos.",
-      "En Fracxion desarrollé permisos por empresa y operaciones de facturación interna y cobros con PostgreSQL. Implementé transacciones y bloqueo de filas, y trabajé en pruebas para permisos y operaciones concurrentes. En Ragnar Suplementos, un encargo para un comercio local que está en demostración, desarrollé la tienda, el panel de catálogo y la lógica de inventario.",
-      "Me interesa aportar en tareas de desarrollo web, aprender del equipo y mejorar a partir de la revisión de código. Uso Claude Code y Codex como apoyo, y me hago responsable de revisar, depurar y validar los cambios.",
-      "Mi portfolio y GitHub incluyen código y decisiones técnicas. Quedo disponible para conversar sobre una oportunidad y explicar mi trabajo.",
-      "Saludos,"
+      "Estimado equipo de selección:",
+      "Soy desarrollador full stack junior de Formosa, Argentina, y busco mi primer puesto en un equipo de desarrollo. Trabajo con React, Next.js, TypeScript, Python y Django.",
+      "En Fracxion, un sistema de gestión comercial para varias empresas, desarrollé la API y la interfaz: permisos por rol, facturación interna y cobros. Usé transacciones y bloqueo de filas en PostgreSQL para que dos operaciones simultáneas no generen números repetidos ni cobros mayores al saldo.",
+      "También desarrollé Ragnar Suplementos, una tienda online encargada por un comercio local, con panel de administración, control de stock y pagos con Mercado Pago verificados en el servidor.",
+      "Me interesa aportar en el trabajo diario del equipo, recibir revisiones de código y seguir aprendiendo. Uso herramientas de IA como Claude Code y Codex, y reviso y pruebo cada cambio antes de darlo por terminado.",
+      "En mi portfolio y en GitHub está el código de cada proyecto, con las decisiones técnicas que tomé. Quedo a disposición para una entrevista.",
+      "Saludos cordiales,"
     ]
   },
   "en": {
@@ -165,17 +166,11 @@
     },
     "letter": [
       "Dear Hiring Team,",
-      "I'm looking to join a development team as a junior full stack or web developer. I work with React, Next.js, TypeScript and Django, and my projects have given me practical experience connecting interfaces, APIs and data.",
-      "In Fracxion, I built company-level permissions and internal invoicing and payment workflows backed by PostgreSQL. I implemented transactions and row-level locking, and worked on tests for permissions and concurrent operations. For Ragnar Suplementos, a commissioned store currently at the demonstration stage, I built the storefront, catalog admin panel and inventory logic.",
-      "I'd like to contribute to web development tasks, learn from the team and improve through code review. I use Claude Code and Codex as development tools, taking responsibility for reviewing, debugging and validating changes.",
-      "My portfolio and GitHub include code and technical decisions. I'd welcome the opportunity to discuss a role and walk through my work.",
-      "Kind regards,"
-    ],
-    "shortLetter": [
-      "Dear Hiring Team,",
-      "I'm a Junior Full Stack Developer based in Argentina, looking to join a team working with React, Next.js or Django.",
-      "My projects include Fracxion, a multi-tenant business application with company-level permissions and transactional payment workflows, and Ragnar Suplementos, a commissioned store currently in demonstration. My contributions include interfaces, APIs, inventory logic and tests.",
-      "I'd like to contribute to web development tasks and grow through feedback and code review. My portfolio and GitHub provide code and explanations of the decisions behind these projects. I'm available to discuss a role and explain my work.",
+      "I'm a junior full stack developer from Formosa, Argentina, looking for my first role on a development team. I work with React, Next.js, TypeScript, Python and Django.",
+      "In Fracxion, a business management system for multiple companies, I built the API and the interface: role-based permissions, internal invoicing and payments. I used PostgreSQL transactions and row locks so that simultaneous operations cannot create duplicate numbers or payments above the balance.",
+      "I also built Ragnar Suplementos, an online store commissioned by a local business, with an admin dashboard, stock control and Mercado Pago payments verified on the server.",
+      "I want to contribute to the team's day-to-day work, learn through code review and keep improving. I use AI tools such as Claude Code and Codex, and I review and test every change before considering it done.",
+      "My portfolio and GitHub show the code for each project and the technical decisions behind it. I'd be glad to talk in an interview.",
       "Kind regards,"
     ]
   }

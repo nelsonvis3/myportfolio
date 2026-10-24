@@ -19,7 +19,7 @@ export type Project = {
 
 export const links = {
   github: "https://github.com/nelsonvis3",
-  linkedin: "https://www.linkedin.com/in/nelson-sivisstum-4777a32b4/",
+  linkedin: "https://www.linkedin.com/in/nelsonsivisstum1/",
   email: "nelsonsivisstum3@gmail.com",
   cv: { es: "/cv.pdf", en: "/cv-en.pdf" }
 } as const;

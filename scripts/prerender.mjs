@@ -42,7 +42,7 @@ try {
       `<meta property="og:url" content="${url(pathname)}" />`,
       `<meta property="og:image" content="${url(route.lang === "es" ? "/img/social-preview.png" : "/img/social-preview-en.png")}" />`,
       `<meta name="twitter:card" content="summary_large_image" />`,
-      `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Person",name:"Nelson Sivisstum",jobTitle:route.lang === "es" ? "Desarrollador Full Stack Junior" : "Junior Full Stack Developer",url:origin,sameAs:["https://github.com/nelsonvis3","https://www.linkedin.com/in/nelson-sivisstum-4777a32b4/"]})}</script>`
+      `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Person",name:"Nelson Sivisstum",jobTitle:route.lang === "es" ? "Desarrollador Full Stack Junior" : "Junior Full Stack Developer",url:origin,sameAs:["https://github.com/nelsonvis3","https://www.linkedin.com/in/nelsonsivisstum1/"]})}</script>`
     ].join("\n");
     html = html.replace("</head>",`${head}\n</head>`);
     // Retain visible, indexable project URLs even when no client JavaScript runs.
