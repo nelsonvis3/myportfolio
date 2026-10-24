@@ -1,6 +1,6 @@
 export type Lang = "es" | "en";
 export type Section = "about" | "projects" | "journey" | "contact";
-export type ProjectId = "fracxion" | "ragnar-suplementos" | "roadledger";
+export type ProjectId = "fracxion" | "ragnar-suplementos" | "space-tasks";
 export type Route = { lang: Lang; section: Section; projectId?: ProjectId };
 export type Project = {
   id: ProjectId;
@@ -59,13 +59,20 @@ const projects: Record<Lang, Project[]> = {
       status: "Encargo de un comercio local. Está probada en entorno local y todavía no se publicó."
     },
     {
-      id: "roadledger", name: "RoadLedger", category: "Proyecto personal · Planificador de rutas",
-      development: "Creé un prototipo para planificar viajes en camión, con rutas en el mapa, cronología de paradas y registros diarios imprimibles.",
-      problem: "Una ruta geográfica no alcanza para planificar un viaje: también hay que considerar tiempos de conducción, descansos y eventos del recorrido.",
-      solution: "Integré React y MapLibre con una API Django REST Framework. El servidor obtiene coordenadas y rutas, calcula una planificación estimada y divide los eventos en registros diarios. Es un prototipo educativo, no un ELD certificado.",
-      stack: [{label:"React",icon:"react"},{label:"Python",icon:"python"},{label:"Django REST",icon:"django"},{label:"MapLibre"},{label:"OSRM"}],
-      image: "/img/roadledger.webp", imageAlt: "Plan de viaje en RoadLedger",
-      repo: "https://github.com/nelsonvis3/ELD-trip-planner"
+      id: "space-tasks", name: "SPACE Tasks", category: "Código abierto · Productividad",
+      development: "Desarrollé una aplicación de productividad con tareas, calendario, estadísticas, un lector de PDF y música, para escritorio y navegador.",
+      problem: "La IA, el OCR y la traducción tenían que funcionar sin APIs pagas y sin enviar documentos ni consultas a servicios externos.",
+      solution: "Construí la interfaz en React y TypeScript, y un servidor Node con SQLite para cuentas, versiones y archivos. La traducción, el OCR y el asistente corren en el dispositivo dentro de Web Workers. La versión de escritorio usa Electron.",
+      stack: [{label:"React",icon:"react"},{label:"TypeScript",icon:"typescript"},{label:"Node.js"},{label:"SQLite"},{label:"Electron"}],
+      image: "/img/space-tasks.webp", imageAlt: "Panel principal de SPACE Tasks",
+      repo: "https://github.com/nelsonvis3/space-tasks",
+      details: [
+        "El asistente usa WebLLM sobre WebGPU y la traducción usa Transformers.js con modelos OPUS y M2M100: las consultas no salen del equipo.",
+        "En escritorio, Electron responde la API dentro del proceso con un protocolo propio, sin abrir puertos de red.",
+        "Las contraseñas se guardan con scrypt, la sesión usa cookies HttpOnly con protección CSRF y el servidor rechaza los guardados de una versión vieja.",
+        "Los motores de PDF, OCR e IA se sirven desde la propia app, verificados por sha512, y la CSP no permite scripts de CDN."
+      ],
+      status: "Proyecto propio de código abierto (GPL-3.0). Publicado para Linux como AppImage."
     }
   ],
   en: [
@@ -102,13 +109,20 @@ const projects: Record<Lang, Project[]> = {
       status: "Built for a local business. Tested locally and not yet launched."
     },
     {
-      id: "roadledger", name: "RoadLedger", category: "Personal project · Route planning",
-      development: "I built a truck trip-planning prototype with route maps, a timeline of stops, and printable daily logs.",
-      problem: "A route on a map alone cannot account for driving hours, rest periods, and other events needed to plan a trip.",
-      solution: "I integrated React and MapLibre with a Django REST Framework API. The backend geocodes locations, calculates routes and estimated schedules, and splits events into daily logs. This is an educational prototype, not a certified ELD.",
-      stack: [{label:"React",icon:"react"},{label:"Python",icon:"python"},{label:"Django REST",icon:"django"},{label:"MapLibre"},{label:"OSRM"}],
-      image: "/img/roadledger.webp", imageAlt: "RoadLedger trip planning map",
-      repo: "https://github.com/nelsonvis3/ELD-trip-planner"
+      id: "space-tasks", name: "SPACE Tasks", category: "Open source · Productivity",
+      development: "I built a productivity app with tasks, a calendar, statistics, a PDF reader, and music, for desktop and the browser.",
+      problem: "AI, OCR, and translation had to work without paid APIs and without sending documents or questions to outside services.",
+      solution: "I built the interface with React and TypeScript, and a Node server with SQLite for accounts, version history, and files. Translation, OCR, and the assistant run on the device in Web Workers. The desktop version uses Electron.",
+      stack: [{label:"React",icon:"react"},{label:"TypeScript",icon:"typescript"},{label:"Node.js"},{label:"SQLite"},{label:"Electron"}],
+      image: "/img/space-tasks.webp", imageAlt: "SPACE Tasks overview dashboard",
+      repo: "https://github.com/nelsonvis3/space-tasks",
+      details: [
+        "The assistant uses WebLLM on WebGPU, and translation uses Transformers.js with OPUS and M2M100 models, so questions never leave the device.",
+        "On desktop, Electron answers the API in-process through a custom protocol, without opening network ports.",
+        "Passwords are hashed with scrypt, sessions use HttpOnly cookies with CSRF protection, and the server rejects saves based on an outdated version.",
+        "The PDF, OCR, and AI engines are served by the app itself, verified by sha512, and the CSP allows no CDN scripts."
+      ],
+      status: "Open-source personal project (GPL-3.0). Released for Linux as an AppImage."
     }
   ]
 };
@@ -123,7 +137,7 @@ export function sectionUrl(lang: Lang, section: Section) {
 }
 export function readRoute(pathname: string): Route {
   const lang: Lang = /^\/en(?:\/|$)/.test(pathname) ? "en" : "es";
-  const match = pathname.match(/^\/(?:en\/projects|proyectos)\/(fracxion|ragnar-suplementos|roadledger)\/?$/);
+  const match = pathname.match(/^\/(?:en\/projects|proyectos)\/(fracxion|ragnar-suplementos|space-tasks)\/?$/);
   return match ? {lang,section:"projects",projectId:match[1] as ProjectId} : {lang,section:"about"};
 }
 export function readBrowserRoute(pathname: string, hash: string): Route {
@@ -131,7 +145,7 @@ export function readBrowserRoute(pathname: string, hash: string): Route {
   if (base.projectId) return base;
   const section = hash.replace(/^#/, "");
   // Backward compatibility with links shared from the previous homepage.
-  const oldProject = section.match(/^caso-(fracxion|ragnar-suplementos|roadledger)$/);
+  const oldProject = section.match(/^caso-(fracxion|ragnar-suplementos|space-tasks)$/);
   if (oldProject) return {...base,section:"projects",projectId:oldProject[1] as ProjectId};
   return ["about","projects","journey","contact"].includes(section)
     ? {...base,section:section as Section}

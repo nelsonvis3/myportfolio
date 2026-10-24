@@ -8,7 +8,7 @@ import { resolve, dirname } from "node:path";
 
 const origin = (process.env.SITE_URL || "https://nelsonsivisstum.vercel.app").replace(/\/$/, "");
 if (!/^https?:\/\//.test(origin)) throw new Error("SITE_URL must be a valid absolute URL");
-const paths = ["/", "/en/", ...["fracxion", "ragnar-suplementos", "roadledger"].flatMap(id => [`/proyectos/${id}/`, `/en/projects/${id}/`])];
+const paths = ["/", "/en/", ...["fracxion", "ragnar-suplementos", "space-tasks"].flatMap(id => [`/proyectos/${id}/`, `/en/projects/${id}/`])];
 const template = await readFile(resolve("dist/index.html"), "utf8");
 if (!template.includes('<div id="root"></div>')) throw new Error("Root HTML placeholder not found");
 const vite = await createServer({ server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
