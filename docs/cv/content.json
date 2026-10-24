@@ -71,14 +71,14 @@
           "Preparé una demo en Ubuntu Server con Docker Compose y Nginx, con acceso HTTPS desde un servidor local."
         ]
       },
-      "roadledger": {
-        "title": "RoadLedger · Prototipo de planificación de viajes",
-        "context": "2026 · Evaluación técnica · Desarrollo individual",
-        "stack": "React, Django REST Framework, MapLibre, Photon y OSRM",
-        "repo": "ELD-trip-planner",
+      "space": {
+        "title": "SPACE Tasks · App de productividad de código abierto",
+        "context": "2026 · Proyecto propio · Publicado para Linux como AppImage",
+        "stack": "React, TypeScript, Node.js, SQLite, Electron",
+        "repo": "space-tasks",
         "bullets": [
-          "Desarrollé un prototipo educativo con mapa, cronología y hojas diarias imprimibles, usando estimaciones de conducción y descanso.",
-          "Integré Photon y OSRM, con 12 pruebas de validación, contrato de API y cambios de día."
+          "Desarrollé una app para organizar tareas, horarios y planes, con calendario, estadísticas, lector de PDF y versión de escritorio en Electron.",
+          "Implementé IA, OCR y traducción que corren en el dispositivo, y cuentas con scrypt, protección CSRF e historial de versiones en SQLite."
         ]
       }
     },
@@ -153,14 +153,14 @@
           "Set up an HTTPS demo on a local Ubuntu Server instance using Docker Compose and Nginx."
         ]
       },
-      "roadledger": {
-        "title": "RoadLedger · Trip-planning prototype",
-        "context": "2026 · Technical assessment · Individual development",
-        "stack": "React, Django REST Framework, MapLibre, Photon and OSRM",
-        "repo": "ELD-trip-planner",
+      "space": {
+        "title": "SPACE Tasks · Open-source productivity app",
+        "context": "2026 · Personal project · Released for Linux as an AppImage",
+        "stack": "React, TypeScript, Node.js, SQLite, Electron",
+        "repo": "space-tasks",
         "bullets": [
-          "Built an educational prototype showing routes, a timeline and printable daily logs based on estimated driving and rest periods.",
-          "Integrated Photon and OSRM for geocoding and routing, with 12 tests covering validation, the API contract and events crossing midnight."
+          "Built an app to organize tasks, schedules and plans, with a calendar, statistics, a PDF reader and an Electron desktop version.",
+          "Implemented on-device AI, OCR and translation, plus accounts with scrypt, CSRF protection and version history in SQLite."
         ]
       }
     },
