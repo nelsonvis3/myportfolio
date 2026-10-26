@@ -220,7 +220,7 @@ img,svg {display:block;max-width:100%}img {width:100%}
 .about-stack {margin-top:clamp(29px,4.5vh,41px);border-top:1px solid var(--line);padding-top:17px;max-width:740px}
 .about-stack>.mini-heading {font-size:13px;letter-spacing:-.005em;margin-bottom:12px}
 .about-stack-scroll {
-  max-height:240px;
+  max-height:280px;
   overflow-y:auto;
   overflow-x:hidden;
   overscroll-behavior-y:contain;

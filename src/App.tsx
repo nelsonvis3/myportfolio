@@ -8,34 +8,35 @@ const sections: Section[] = ["about", "projects", "journey", "contact"];
 // Each brand uses the original Simple Icons paths; Node.js is added to BrandIcon.
 // Playwright has no current Simple Icons entry, so it uses a non-brand test symbol.
 const skillGroups = [
+  { id: "languages", titles: { es: "Lenguajes", en: "Languages" }, skills: [
+    { key: "typescript", label: "TypeScript" },
+    { key: "javascript", label: "JavaScript" },
+    { key: "python", label: "Python" },
+  ] },
   { id: "frontend", titles: { es: "Frontend", en: "Frontend" }, skills: [
     { key: "react", label: "React" },
     { key: "nextjs", label: "Next.js" },
-    { key: "typescript", label: "TypeScript" },
-    { key: "javascript", label: "JavaScript" },
     { key: "tailwind", label: "Tailwind CSS" },
     { key: "vite", label: "Vite" },
   ] },
   { id: "backend", titles: { es: "Backend", en: "Backend" }, skills: [
-    { key: "python", label: "Python" },
     { key: "django", label: "Django / DRF" },
     { key: "nodejs", label: "Node.js" },
   ] },
-  { id: "databases", titles: { es: "Bases de datos y caché", en: "Databases & caching" }, skills: [
+  { id: "databases", titles: { es: "Bases de datos", en: "Databases" }, skills: [
     { key: "postgresql", label: "PostgreSQL" },
     { key: "mysql", label: "MySQL" },
-    { key: "redis", label: "Redis" },
+    { key: "sqlite", label: "SQLite" },
   ] },
-  { id: "devops", titles: { es: "DevOps y herramientas", en: "DevOps & tools" }, skills: [
+  { id: "infrastructure", titles: { es: "Infraestructura", en: "Infrastructure" }, skills: [
     { key: "docker", label: "Docker" },
-    { key: "linux", label: "Linux" },
     { key: "nginx", label: "Nginx" },
+    { key: "linux", label: "Linux" },
+  ] },
+  { id: "tools", titles: { es: "Herramientas y testing", en: "Tools & testing" }, skills: [
     { key: "git", label: "Git" },
     { key: "github", label: "GitHub" },
-  ] },
-  { id: "quality", titles: { es: "Testing y diseño", en: "Testing & design" }, skills: [
     { key: "playwright", label: "Playwright" },
-    { key: "figma", label: "Figma" },
   ] },
 ] as const;
 

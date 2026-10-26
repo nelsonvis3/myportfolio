@@ -165,7 +165,6 @@ export const copy = {
     journeyEyebrow:"FORMACIÓN", journeyTitle:"Estudios y certificaciones",
     studies:[
       {date:"Sep 2026 — actualidad",iso:"2026-09",name:"Harvard CS50 Web Programming",info:"Python, JavaScript y desarrollo de aplicaciones web · En curso"},
-      {date:"Sep 2026 — actualidad",iso:"2026-09",name:"The Odin Project",info:"Full Stack JavaScript · En curso"},
       {date:"Ago 2026",iso:"2026-08",name:"freeCodeCamp",info:"Front End Development Libraries · Certificación obtenida"},
       {date:"2023",iso:"2023",name:"Bachiller",info:"E.P.E.P. N.º 179, Formosa"}
     ],
@@ -184,7 +183,6 @@ export const copy = {
     journeyEyebrow:"EDUCATION",journeyTitle:"Studies & certifications",
     studies:[
       {date:"Sep 2026 — present",iso:"2026-09",name:"Harvard CS50 Web Programming",info:"Python, JavaScript, and web applications · In progress"},
-      {date:"Sep 2026 — present",iso:"2026-09",name:"The Odin Project",info:"Full Stack JavaScript · In progress"},
       {date:"Aug 2026",iso:"2026-08",name:"freeCodeCamp",info:"Front End Development Libraries · Certified"},
       {date:"2023",iso:"2023",name:"High School Diploma",info:"E.P.E.P. No. 179, Formosa"}
     ],
