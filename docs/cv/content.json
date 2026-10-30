@@ -11,23 +11,23 @@
     "en": "High School Diploma — E.P.E.P. No. 179, Formosa · 2023"
   },
   "es": {
-    "role": "Desarrollador Full Stack Junior",
+    "role": "Desarrollador Backend Junior",
     "remote": "Disponible para trabajo remoto",
     "summaryLabel": "Perfil profesional",
-    "summary": "Desarrollador Full Stack Junior con proyectos propios y una tienda desarrollada por encargo. Trabajo con React, Next.js, TypeScript, Django y PostgreSQL. Implementé APIs REST, permisos, inventario y cobros. Busco mi primer puesto en un equipo de desarrollo.",
+    "summary": "Construyo backends donde los datos tienen que ser correctos: no se vende stock que no existe, la numeración de facturas y los saldos se mantienen consistentes ante solicitudes concurrentes, y cada empresa ve solo sus datos. Uso Django REST Framework, PostgreSQL y Next.js, con pruebas automatizadas y CI (367 tests de backend y 92% de cobertura en Fracxion). Busco mi primer puesto en un equipo de backend o full stack.",
     "skillsLabel": "Habilidades técnicas",
     "skills": [
       [
-        "Frontend",
-        "HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS"
-      ],
-      [
         "Backend y datos",
-        "Python, Django, Django REST Framework, APIs REST, PostgreSQL, SQL"
+        "Python, Django, Django REST Framework, Node.js, APIs REST, PostgreSQL, MySQL, SQL"
       ],
       [
         "Pruebas y herramientas",
-        "Playwright, pruebas Django, GitHub Actions, Docker Compose, Git, Linux"
+        "Playwright, tests Django, CI/CD con GitHub Actions, Docker Compose, Git, Linux"
+      ],
+      [
+        "Frontend",
+        "JavaScript, TypeScript, React, Next.js, Tailwind CSS"
       ]
     ],
     "projectsLabel": "Proyectos destacados",
@@ -35,15 +35,11 @@
     "education": [
       [
         "CS50's Web Programming with Python and JavaScript",
-        "HarvardX / edX · En curso"
-      ],
-      [
-        "Full Stack JavaScript",
-        "The Odin Project · En curso"
+        "HarvardX / edX · Sep 2026 – Actualidad"
       ],
       [
         "Front End Development Libraries",
-        "freeCodeCamp · Certificado, agosto de 2026"
+        "freeCodeCamp · Certificado, ago 2026"
       ]
     ],
     "languagesLabel": "Idiomas",
@@ -51,35 +47,37 @@
     "projects": {
       "fracxion": {
         "title": "Fracxion · Gestión comercial multiempresa",
-        "context": "2026 · Proyecto propio · Desarrollo individual",
+        "context": "Sep 2026 – Oct 2026 · Proyecto propio",
         "stack": "Next.js, TypeScript, Django REST Framework, PostgreSQL",
         "repo": "fracxion-facturador",
         "bullets": [
-          "Desarrollé módulos de clientes, catálogo, facturación interna y cobros, con aislamiento de datos por empresa y permisos según roles.",
-          "Implementé transacciones y bloqueo de filas en PostgreSQL para proteger la numeración por empresa y los saldos ante operaciones concurrentes.",
-          "Automaticé pruebas de permisos y flujos de navegador con Django, Playwright y GitHub Actions."
+          "Desarrollé módulos de clientes, catálogo, facturación, cobros, compras e inventario, con aislamiento de datos por empresa y cinco niveles de permisos por rol.",
+          "Usé transacciones y bloqueo de filas en PostgreSQL para mantener correctos la numeración de facturas y los saldos ante solicitudes concurrentes.",
+          "367 tests de backend (92% de cobertura) y 53 escenarios de Playwright, ejecutados en GitHub Actions."
         ]
       },
       "ragnar": {
         "title": "Ragnar Suplementos · Tienda online",
-        "context": "2026 · Encargo para un comercio local · Demo previa al lanzamiento",
+        "context": "Ago 2026 – Sep 2026 · Encargo para un comercio local · Pre-lanzamiento",
         "stack": "Next.js, React, TypeScript, Django REST Framework, PostgreSQL",
         "repo": "ragnarsuplementosfsa",
         "bullets": [
-          "Desarrollé la tienda y un panel de catálogo, centralizando precios, inventario y pedidos en una API con Django REST Framework.",
-          "Integré Mercado Pago con verificación en el servidor y reservas de stock para productos y combos.",
-          "Preparé una demo en Ubuntu Server con Docker Compose y Nginx, con acceso HTTPS desde un servidor local."
+          "Desarrollé la tienda y un panel de administración para el dueño (catálogo, combos, stock, pedidos) con Next.js y una API en Django REST Framework que controla precios y stock.",
+          "Evité la sobreventa con bloqueo de filas en el stock, incluidos los combos que comparten inventario con los productos, y protegí el checkout ante solicitudes duplicadas.",
+          "Integré Mercado Pago con confirmación de pagos en el servidor y preparé una demo con Docker Compose y Nginx en Ubuntu Server. 106 tests de backend."
         ]
       },
       "space": {
         "title": "SPACE Tasks · App de productividad de código abierto",
-        "context": "2026 · Proyecto propio · Publicado para Linux como AppImage",
+        "context": "Oct 2026 · Proyecto propio",
         "stack": "React, TypeScript, Node.js, SQLite, Electron",
         "repo": "space-tasks",
         "bullets": [
-          "Desarrollé una app para organizar tareas, horarios y planes, con calendario, estadísticas, lector de PDF y versión de escritorio en Electron.",
-          "Implementé IA, OCR y traducción que corren en el dispositivo, y cuentas con scrypt, protección CSRF e historial de versiones en SQLite."
-        ]
+          "Desarrollé una app de tareas, calendario y lector de PDF con React, TypeScript y Node.js (SQLite integrado), publicada como demo web y como AppImage para Linux (Electron).",
+          "Implementé cuentas con scrypt, protección CSRF y autenticación con límite de intentos, además de IA, OCR y traducción que corren en el dispositivo.",
+          "87 tests unitarios y de Playwright en Chromium y Firefox, ejecutados en GitHub Actions."
+        ],
+        "demo": "https://nelsonvis3.github.io/space-tasks"
       }
     },
     "letter": [
@@ -90,26 +88,27 @@
       "Me interesa aportar en el trabajo diario del equipo, recibir revisiones de código y seguir aprendiendo. Uso herramientas de IA como Claude Code y Codex, y reviso y pruebo cada cambio antes de darlo por terminado.",
       "En mi portfolio y en GitHub está el código de cada proyecto, con las decisiones técnicas que tomé. Quedo a disposición para una entrevista.",
       "Saludos cordiales,"
-    ]
+    ],
+    "demoLabel": "Demo en vivo"
   },
   "en": {
-    "role": "Junior Full Stack Developer",
+    "role": "Junior Backend Developer",
     "remote": "Open to remote work",
     "summaryLabel": "Professional summary",
-    "summary": "Junior Full Stack Developer with personal projects and a commissioned online store. I work with React, Next.js, TypeScript, Django and PostgreSQL, implementing REST APIs, permissions, inventory and payment workflows. Looking for my first role on a development team.",
+    "summary": "I build backends where data has to stay correct: stock isn't oversold, invoice numbers and balances stay consistent under concurrent requests, and each company sees only its own data. I use Django REST Framework, PostgreSQL and Next.js, backed by automated tests and CI (367 backend tests, 92% coverage, in Fracxion). Looking for my first role on a backend or full stack team.",
     "skillsLabel": "Technical skills",
     "skills": [
       [
+        "Backend & Data",
+        "Python, Django, Django REST Framework, Node.js, REST APIs, PostgreSQL, MySQL, SQL"
+      ],
+      [
+        "Testing & Tools",
+        "Playwright, Django tests, CI/CD with GitHub Actions, Docker Compose, Git, Linux"
+      ],
+      [
         "Frontend",
-        "HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS"
-      ],
-      [
-        "Backend and data",
-        "Python, Django, Django REST Framework, REST APIs, PostgreSQL, SQL"
-      ],
-      [
-        "Testing and tools",
-        "Playwright, Django testing, GitHub Actions, Docker Compose, Git, Linux"
+        "JavaScript, TypeScript, React, Next.js, Tailwind CSS"
       ]
     ],
     "projectsLabel": "Featured projects",
@@ -117,51 +116,49 @@
     "education": [
       [
         "CS50's Web Programming with Python and JavaScript",
-        "HarvardX / edX · In progress"
-      ],
-      [
-        "Full Stack JavaScript",
-        "The Odin Project · In progress"
+        "HarvardX / edX · Sep 2026 – Present"
       ],
       [
         "Front End Development Libraries",
-        "freeCodeCamp · Certified, August 2026"
+        "freeCodeCamp · Certified, Aug 2026"
       ]
     ],
     "languagesLabel": "Languages",
     "languages": "Spanish: native · English: intermediate (B1)",
     "projects": {
       "fracxion": {
-        "title": "Fracxion · Multi-tenant business management",
-        "context": "2026 · Personal project · Individual development",
+        "title": "Fracxion · Multi-Company Business Management",
+        "context": "Sep 2026 – Oct 2026 · Personal project",
         "stack": "Next.js, TypeScript, Django REST Framework, PostgreSQL",
         "repo": "fracxion-facturador",
         "bullets": [
-          "Built customer, catalog, internal invoicing and payment modules with tenant data isolation and role-based permissions.",
-          "Used PostgreSQL transactions and row-level locks to protect per-company invoice numbering and balances during concurrent operations.",
-          "Automated permission and browser-flow tests with Django, Playwright and GitHub Actions."
+          "Built customer, catalog, invoicing, payment collection, purchasing, and inventory modules with company-level data isolation and five role-based permission levels.",
+          "Used PostgreSQL transactions and row-level locking to keep invoice numbers and balances consistent under concurrent requests.",
+          "367 backend tests (92% coverage) and 53 Playwright scenarios, run in GitHub Actions."
         ]
       },
       "ragnar": {
-        "title": "Ragnar Suplementos · E-commerce store",
-        "context": "2026 · Commissioned by a local business · Pre-launch demo",
+        "title": "Ragnar Suplementos · Online Store",
+        "context": "Aug 2026 – Sep 2026 · Commissioned by a local business · Pre-launch demo",
         "stack": "Next.js, React, TypeScript, Django REST Framework, PostgreSQL",
         "repo": "ragnarsuplementosfsa",
         "bullets": [
-          "Built the storefront and catalog admin panel, with pricing, inventory and orders managed by a Django REST Framework API.",
-          "Integrated Mercado Pago with server-side payment verification and stock reservations for products and bundles.",
-          "Set up an HTTPS demo on a local Ubuntu Server instance using Docker Compose and Nginx."
+          "Built the storefront and an owner-facing admin dashboard (catalog, bundles, stock, orders) using Next.js and a Django REST Framework API that validates pricing and inventory.",
+          "Prevented overselling through row-level stock locking, including bundles that share inventory with individual products, and protected checkout against duplicate requests.",
+          "Integrated Mercado Pago with server-side payment confirmation and prepared a demo using Docker Compose and Nginx on Ubuntu Server. 106 backend tests."
         ]
       },
       "space": {
-        "title": "SPACE Tasks · Open-source productivity app",
-        "context": "2026 · Personal project · Released for Linux as an AppImage",
+        "title": "SPACE Tasks · Open-Source Productivity App",
+        "context": "Oct 2026 · Personal project",
         "stack": "React, TypeScript, Node.js, SQLite, Electron",
         "repo": "space-tasks",
         "bullets": [
-          "Built an app to organize tasks, schedules and plans, with a calendar, statistics, a PDF reader and an Electron desktop version.",
-          "Implemented on-device AI, OCR and translation, plus accounts with scrypt, CSRF protection and version history in SQLite."
-        ]
+          "Built a task manager, calendar, and PDF reader with React, TypeScript, and Node.js (embedded SQLite), released as a web demo and an Electron-based Linux AppImage.",
+          "Implemented accounts with scrypt, CSRF protection, and rate-limited authentication, as well as on-device AI, OCR, and translation.",
+          "87 unit and Playwright tests across Chromium and Firefox, run in GitHub Actions."
+        ],
+        "demo": "https://nelsonvis3.github.io/space-tasks"
       }
     },
     "letter": [
@@ -172,6 +169,7 @@
       "I want to contribute to the team's day-to-day work, learn through code review and keep improving. I use AI tools such as Claude Code and Codex, and I review and test every change before considering it done.",
       "My portfolio and GitHub show the code for each project and the technical decisions behind it. I'd be glad to talk in an interview.",
       "Kind regards,"
-    ]
+    ],
+    "demoLabel": "Live demo"
   }
 }
