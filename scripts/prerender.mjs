@@ -22,8 +22,8 @@ try {
   for (const pathname of paths) {
     const route = readRoute(pathname);
     const project = route.projectId ? getProjects(route.lang).find(p => p.id === route.projectId) : null;
-    const title = project ? `${project.name} | Nelson Sivisstum` : route.lang === "es" ? "Nelson Sivisstum | Desarrollador Full Stack Junior" : "Nelson Sivisstum | Junior Full Stack Developer";
-    const description = project ? project.development : route.lang === "es" ? "Portfolio de Nelson Sivisstum: desarrollador Full Stack Junior. Proyectos con React, Next.js, TypeScript, Python y Django." : "Portfolio of Nelson Sivisstum, Junior Full Stack Developer. Projects using React, Next.js, TypeScript, Python and Django.";
+    const title = project ? `${project.name} | Nelson Sivisstum` : route.lang === "es" ? "Nelson Sivisstum | Desarrollador Backend Junior" : "Nelson Sivisstum | Junior Backend Developer";
+    const description = project ? project.development : route.lang === "es" ? "Portfolio de Nelson Sivisstum: desarrollador Backend Junior. Proyectos con React, Next.js, TypeScript, Python y Django." : "Portfolio of Nelson Sivisstum, Junior Backend Developer. Projects using React, Next.js, TypeScript, Python and Django.";
     const counterpart = project ? caseUrl(route.lang === "es" ? "en" : "es",project.id) : route.lang === "es" ? "/en/" : "/";
     const esUrl = route.lang === "es" ? pathname : counterpart;
     const enUrl = route.lang === "en" ? pathname : counterpart;
@@ -42,7 +42,7 @@ try {
       `<meta property="og:url" content="${url(pathname)}" />`,
       `<meta property="og:image" content="${url(route.lang === "es" ? "/img/social-preview.png" : "/img/social-preview-en.png")}" />`,
       `<meta name="twitter:card" content="summary_large_image" />`,
-      `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Person",name:"Nelson Sivisstum",jobTitle:route.lang === "es" ? "Desarrollador Full Stack Junior" : "Junior Full Stack Developer",url:origin,sameAs:["https://github.com/nelsonvis3","https://www.linkedin.com/in/nelsonsivisstum1/"]})}</script>`
+      `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Person",name:"Nelson Sivisstum",jobTitle:route.lang === "es" ? "Desarrollador Backend Junior" : "Junior Backend Developer",url:origin,sameAs:["https://github.com/nelsonvis3","https://www.linkedin.com/in/nelsonsivisstum1/"]})}</script>`
     ].join("\n");
     html = html.replace("</head>",`${head}\n</head>`);
     // Retain visible, indexable project URLs even when no client JavaScript runs.

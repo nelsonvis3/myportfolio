@@ -271,8 +271,8 @@ export function App({ initial }: { initial: Route }) {
 
   useEffect(() => {
     const project = route.projectId ? getProjects(route.lang).find(p => p.id === route.projectId) : undefined;
-    const title = project ? `${project.name} | Nelson Sivisstum` : route.lang === "es" ? "Nelson Sivisstum | Desarrollador Full Stack Junior" : "Nelson Sivisstum | Junior Full Stack Developer";
-    const description = project?.development ?? (route.lang === "es" ? "Portfolio de Nelson Sivisstum: desarrollador Full Stack Junior." : "Nelson Sivisstum's Junior Full Stack Developer portfolio.");
+    const title = project ? `${project.name} | Nelson Sivisstum` : route.lang === "es" ? "Nelson Sivisstum | Desarrollador Backend Junior" : "Nelson Sivisstum | Junior Backend Developer";
+    const description = project?.development ?? (route.lang === "es" ? "Portfolio de Nelson Sivisstum: desarrollador Backend Junior." : "Nelson Sivisstum's Junior Backend Developer portfolio.");
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute("content",description);
     document.querySelector('meta[property="og:title"]')?.setAttribute("content",title);

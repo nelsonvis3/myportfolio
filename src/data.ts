@@ -161,9 +161,9 @@ export function readBrowserRoute(pathname: string, hash: string): Route {
 
 export const copy = {
   es: {
-    role: "Desarrollador Full Stack Junior",
+    role: "Desarrollador Backend Junior",
     menu: { about:"Sobre mí", projects:"Proyectos", journey:"Formación", contact:"Contacto" },
-    kicker: "SOBRE MÍ", heading: "Desarrollador full stack junior",
+    kicker: "SOBRE MÍ", heading: "Desarrollador backend junior",
     intro: "Soy Nelson, de Formosa, Argentina. Empecé a aprender desarrollo web por mi cuenta y fui aplicando lo aprendido en proyectos cada vez más completos.",
     intro2: "Mi foco está en el backend: APIs con Django REST Framework y PostgreSQL, permisos por rol y concurrencia. Lo que más me interesa es entender cómo funciona una aplicación más allá de su interfaz: cómo se gestionan los datos, cómo se controlan los permisos y qué ocurre cuando algo falla. Disfruto resolver esos problemas, escribir código fácil de mantener y crear experiencias simples para quienes utilizan el sistema.",
     intro3: "Sigo profundizando mis conocimientos en desarrollo de software, pruebas y despliegue. Busco mi primera oportunidad profesional para aportar en un equipo, aprender de otros desarrolladores y continuar creciendo.",
@@ -175,12 +175,12 @@ export const copy = {
       {date:"2023",iso:"2023",name:"Bachiller",info:"E.P.E.P. N.º 179, Formosa"}
     ],
     skillsTitle:"Stack técnico",
-    contactEyebrow:"CONTACTO", contactTitle:"Trabajemos juntos.", contactIntro:"Estoy disponible para mi primera oportunidad como desarrollador Full Stack Junior y para proyectos freelance.", contactEmail:"Escribirme por correo", contactCv:"Descargar CV", contactGithub:"GitHub", contactLinkedin:"LinkedIn"
+    contactEyebrow:"CONTACTO", contactTitle:"Trabajemos juntos.", contactIntro:"Estoy disponible para mi primera oportunidad como desarrollador Backend Junior y para proyectos freelance.", contactEmail:"Escribirme por correo", contactCv:"Descargar CV", contactGithub:"GitHub", contactLinkedin:"LinkedIn"
   },
   en: {
-    role:"Junior Full Stack Developer",
+    role:"Junior Backend Developer",
     menu:{about:"About me",projects:"Projects",journey:"Education",contact:"Contact"},
-    kicker:"ABOUT ME",heading:"Junior full stack developer",
+    kicker:"ABOUT ME",heading:"Junior backend developer",
     intro:"I'm Nelson, from Formosa, Argentina. I started learning web development on my own and gradually applied what I learned to increasingly complex projects.",
     intro2:"My focus is the backend: APIs with Django REST Framework and PostgreSQL, role-based permissions, and concurrency. What interests me most is understanding how an application works beyond its interface: how data is handled, how permissions are enforced, and what happens when something goes wrong. I enjoy solving these problems, writing maintainable code, and creating experiences that feel simple to the people using them.",
     intro3:"I'm constantly improving my skills in software development, testing, and deployment. I'm looking for my first professional opportunity where I can contribute to a team, learn from other developers, and continue growing.",
@@ -192,6 +192,6 @@ export const copy = {
       {date:"2023",iso:"2023",name:"High School Diploma",info:"E.P.E.P. No. 179, Formosa"}
     ],
     skillsTitle:"Technical stack",
-    contactEyebrow:"CONTACT",contactTitle:"Let's work together.",contactIntro:"I'm open to my first Junior Full Stack Developer role and to freelance projects.",contactEmail:"Send an email",contactCv:"Download CV",contactGithub:"GitHub",contactLinkedin:"LinkedIn"
+    contactEyebrow:"CONTACT",contactTitle:"Let's work together.",contactIntro:"I'm open to my first Junior Backend Developer role and to freelance projects.",contactEmail:"Send an email",contactCv:"Download CV",contactGithub:"GitHub",contactLinkedin:"LinkedIn"
   }
 } as const;
