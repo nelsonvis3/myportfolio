@@ -16,7 +16,6 @@ const skillGroups = [
   { id: "frontend", titles: { es: "Frontend", en: "Frontend" }, skills: [
     { key: "react", label: "React" },
     { key: "nextjs", label: "Next.js" },
-    { key: "tailwind", label: "Tailwind CSS" },
     { key: "vite", label: "Vite" },
   ] },
   { id: "backend", titles: { es: "Backend", en: "Backend" }, skills: [
@@ -37,6 +36,7 @@ const skillGroups = [
     { key: "git", label: "Git" },
     { key: "github", label: "GitHub" },
     { key: "playwright", label: "Playwright" },
+    { key: "cicd", label: "CI/CD" },
   ] },
 ] as const;
 
@@ -52,6 +52,8 @@ function Skills({ lang }: { lang: Lang }) {
             {group.skills.map(tech => <span className="skill-tag" key={tech.key}>
               {tech.key === "playwright"
                 ? <svg className="skill-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.5"/><path d="M20 13.5V19H4V5h10"/></svg>
+                : tech.key === "cicd"
+                ? <svg className="skill-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14-4.5L4 9M4 5v4h4"/><path d="M4 13a8 8 0 0 0 14 4.5L20 15M20 19v-4h-4"/></svg>
                 : <BrandIcon name={tech.key} size={19}/>}
               <span>{tech.label}</span>
             </span>)}
