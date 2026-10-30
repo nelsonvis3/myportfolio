@@ -164,6 +164,7 @@ function ProjectDetail({ lang, project, navigate }: { lang: Lang; project: Proje
     </div>
     <div className="project-tech"><h2>{c.technologies}</h2><div className="tech-list">{project.stack.map(t=><Technology key={t.label} tech={t}/>)}</div></div>
     <a className="github-cta" href={project.repo} target="_blank" rel="noopener noreferrer"><BrandIcon name="github" size={19}/>{c.repository}</a>
+    {project.demo && <a className="github-cta" href={project.demo} target="_blank" rel="noopener noreferrer">{c.demo}</a>}
   </article>;
 }
 

@@ -13,6 +13,7 @@ export type Project = {
   image: string;
   imageAlt: string;
   repo: string;
+  demo?: string;
   details?: string[];
   status?: string;
 };
@@ -38,7 +39,7 @@ const projects: Record<Lang, Project[]> = {
         "Cada consulta se filtra en el backend según la empresa activa y el rol del usuario.",
         "La emisión de facturas y los cobros usan transacciones y bloqueo de filas en PostgreSQL para evitar números repetidos y cobros mayores al saldo.",
         "Los totales se calculan en el servidor con los precios del catálogo, no con los valores que envía el navegador.",
-        "Pruebas de permisos y concurrencia en Django, y flujos de navegador con Playwright, ejecutados en GitHub Actions."
+        "367 tests de backend (92% de cobertura), con pruebas de permisos y concurrencia, y 53 escenarios de Playwright, ejecutados en GitHub Actions."
       ],
       status: "Proyecto propio. Se ejecuta en local con Docker Compose."
     },
@@ -54,7 +55,8 @@ const projects: Record<Lang, Project[]> = {
         "El backend recalcula precios y totales desde la base de datos; el navegador no define los importes.",
         "Los combos descuentan stock de los productos que los componen, y el bloqueo de filas evita que dos compras simultáneas reserven la última unidad.",
         "Los pagos con Mercado Pago se confirman en el servidor: se valida la firma del webhook y se consulta el pago antes de aprobar el pedido.",
-        "Un panel protegido permite al comercio gestionar productos, combos, imágenes, precios y pedidos."
+        "Un panel protegido permite al comercio gestionar productos, combos, imágenes, precios y pedidos.",
+        "106 tests de backend."
       ],
       status: "Encargo de un comercio local. Está probada en entorno local y todavía no se publicó."
     },
@@ -66,11 +68,13 @@ const projects: Record<Lang, Project[]> = {
       stack: [{label:"React",icon:"react"},{label:"TypeScript",icon:"typescript"},{label:"Node.js"},{label:"SQLite"},{label:"Electron"}],
       image: "/img/space-tasks.webp", imageAlt: "Panel principal de SPACE Tasks",
       repo: "https://github.com/nelsonvis3/space-tasks",
+      demo: "https://nelsonvis3.github.io/space-tasks",
       details: [
         "El asistente usa WebLLM sobre WebGPU y la traducción usa Transformers.js con modelos OPUS y M2M100: las consultas no salen del equipo.",
         "En escritorio, Electron responde la API dentro del proceso con un protocolo propio, sin abrir puertos de red.",
         "Las contraseñas se guardan con scrypt, la sesión usa cookies HttpOnly con protección CSRF y el servidor rechaza los guardados de una versión vieja.",
-        "Los motores de PDF, OCR e IA se sirven desde la propia app, verificados por sha512, y la CSP no permite scripts de CDN."
+        "Los motores de PDF, OCR e IA se sirven desde la propia app, verificados por sha512, y la CSP no permite scripts de CDN.",
+        "87 tests unitarios y de Playwright en Chromium y Firefox, ejecutados en GitHub Actions."
       ],
       status: "Proyecto propio de código abierto (GPL-3.0). Publicado para Linux como AppImage."
     }
@@ -88,7 +92,7 @@ const projects: Record<Lang, Project[]> = {
         "Every query is filtered on the backend by the active company and the user's role.",
         "Issuing invoices and recording payments use PostgreSQL transactions and row locks to prevent duplicate numbers and payments above the balance.",
         "Totals are calculated on the server from catalog prices, not from values sent by the browser.",
-        "Permission and concurrency tests in Django, plus Playwright browser flows, run on GitHub Actions."
+        "367 backend tests (92% coverage), including permission and concurrency tests, plus 53 Playwright scenarios, run on GitHub Actions."
       ],
       status: "Personal project. Runs locally with Docker Compose."
     },
@@ -104,7 +108,8 @@ const projects: Record<Lang, Project[]> = {
         "The backend recalculates prices and totals from the database; the browser never sets the amounts.",
         "Bundles consume stock from their component products, and row locks stop two simultaneous purchases from reserving the last unit.",
         "Mercado Pago payments are confirmed on the server: the webhook signature is validated and the payment is checked before the order is approved.",
-        "A protected dashboard lets the business manage products, bundles, images, prices, and orders."
+        "A protected dashboard lets the business manage products, bundles, images, prices, and orders.",
+        "106 backend tests."
       ],
       status: "Built for a local business. Tested locally and not yet launched."
     },
@@ -116,11 +121,13 @@ const projects: Record<Lang, Project[]> = {
       stack: [{label:"React",icon:"react"},{label:"TypeScript",icon:"typescript"},{label:"Node.js"},{label:"SQLite"},{label:"Electron"}],
       image: "/img/space-tasks.webp", imageAlt: "SPACE Tasks overview dashboard",
       repo: "https://github.com/nelsonvis3/space-tasks",
+      demo: "https://nelsonvis3.github.io/space-tasks",
       details: [
         "The assistant uses WebLLM on WebGPU, and translation uses Transformers.js with OPUS and M2M100 models, so questions never leave the device.",
         "On desktop, Electron answers the API in-process through a custom protocol, without opening network ports.",
         "Passwords are hashed with scrypt, sessions use HttpOnly cookies with CSRF protection, and the server rejects saves based on an outdated version.",
-        "The PDF, OCR, and AI engines are served by the app itself, verified by sha512, and the CSP allows no CDN scripts."
+        "The PDF, OCR, and AI engines are served by the app itself, verified by sha512, and the CSP allows no CDN scripts.",
+        "87 unit and Playwright tests on Chromium and Firefox, run on GitHub Actions."
       ],
       status: "Open-source personal project (GPL-3.0). Released for Linux as an AppImage."
     }
@@ -158,14 +165,13 @@ export const copy = {
     menu: { about:"Sobre mí", projects:"Proyectos", journey:"Formación", contact:"Contacto" },
     kicker: "SOBRE MÍ", heading: "Desarrollador full stack junior",
     intro: "Soy Nelson, de Formosa, Argentina. Empecé a aprender desarrollo web por mi cuenta y fui aplicando lo aprendido en proyectos cada vez más completos.",
-    intro2: "Lo que más me interesa es entender cómo funciona una aplicación más allá de su interfaz: cómo se gestionan los datos, cómo se controlan los permisos y qué ocurre cuando algo falla. Disfruto resolver esos problemas, escribir código fácil de mantener y crear experiencias simples para quienes utilizan el sistema.",
+    intro2: "Mi foco está en el backend: APIs con Django REST Framework y PostgreSQL, permisos por rol y concurrencia. Lo que más me interesa es entender cómo funciona una aplicación más allá de su interfaz: cómo se gestionan los datos, cómo se controlan los permisos y qué ocurre cuando algo falla. Disfruto resolver esos problemas, escribir código fácil de mantener y crear experiencias simples para quienes utilizan el sistema.",
     intro3: "Sigo profundizando mis conocimientos en desarrollo de software, pruebas y despliegue. Busco mi primera oportunidad profesional para aportar en un equipo, aprender de otros desarrolladores y continuar creciendo.",
     location:"Formosa, Argentina", sidebarDescription:"Desarrollo aplicaciones web completas, desde la interfaz hasta la base de datos.", explore:"Ver proyectos", download:"Descargar CV", social:"Perfiles",
-    projectsEyebrow:"PROYECTOS", projectsTitle:"Proyectos seleccionados", projectsIntro:"Qué desarrollé, qué problema resolví y cómo lo hice.", open:"Ver proyecto", back:"Volver a proyectos", development:"Desarrollo", problem:"Problema", solution:"Solución", technologies:"Tecnologías", repository:"Ver código en GitHub", details:"Detalles técnicos", status:"Estado",
+    projectsEyebrow:"PROYECTOS", projectsTitle:"Proyectos seleccionados", projectsIntro:"Qué desarrollé, qué problema resolví y cómo lo hice.", open:"Ver proyecto", back:"Volver a proyectos", development:"Desarrollo", problem:"Problema", solution:"Solución", technologies:"Tecnologías", repository:"Ver código en GitHub", demo:"Ver demo", details:"Detalles técnicos", status:"Estado",
     journeyEyebrow:"FORMACIÓN", journeyTitle:"Estudios y certificaciones",
     studies:[
-      {date:"Sep 2026 — actualidad",iso:"2026-09",name:"Harvard CS50 Web Programming",info:"Python, JavaScript y desarrollo de aplicaciones web · En curso"},
-      {date:"Ago 2026",iso:"2026-08",name:"freeCodeCamp",info:"Front End Development Libraries · Certificación obtenida"},
+      {date:"Sep 2026 — actualidad",iso:"2026-09",name:"CS50's Web Programming with Python and JavaScript",info:"HarvardX / edX · En curso"},
       {date:"2023",iso:"2023",name:"Bachiller",info:"E.P.E.P. N.º 179, Formosa"}
     ],
     skillsTitle:"Stack técnico",
@@ -176,14 +182,13 @@ export const copy = {
     menu:{about:"About me",projects:"Projects",journey:"Education",contact:"Contact"},
     kicker:"ABOUT ME",heading:"Junior full stack developer",
     intro:"I'm Nelson, from Formosa, Argentina. I started learning web development on my own and gradually applied what I learned to increasingly complex projects.",
-    intro2:"What interests me most is understanding how an application works beyond its interface: how data is handled, how permissions are enforced, and what happens when something goes wrong. I enjoy solving these problems, writing maintainable code, and creating experiences that feel simple to the people using them.",
+    intro2:"My focus is the backend: APIs with Django REST Framework and PostgreSQL, role-based permissions, and concurrency. What interests me most is understanding how an application works beyond its interface: how data is handled, how permissions are enforced, and what happens when something goes wrong. I enjoy solving these problems, writing maintainable code, and creating experiences that feel simple to the people using them.",
     intro3:"I'm constantly improving my skills in software development, testing, and deployment. I'm looking for my first professional opportunity where I can contribute to a team, learn from other developers, and continue growing.",
     location:"Formosa, Argentina",sidebarDescription:"I build complete web applications, from the interface to the database.", explore:"View projects",download:"Download CV",social:"Profiles",
-    projectsEyebrow:"PROJECTS", projectsTitle:"Selected projects", projectsIntro:"What I built, the problem it addressed, and how I solved it.",open:"View project",back:"Back to projects",development:"Development",problem:"Problem",solution:"Solution",technologies:"Technologies",repository:"View code on GitHub",details:"Technical details",status:"Status",
+    projectsEyebrow:"PROJECTS", projectsTitle:"Selected projects", projectsIntro:"What I built, the problem it addressed, and how I solved it.",open:"View project",back:"Back to projects",development:"Development",problem:"Problem",solution:"Solution",technologies:"Technologies",repository:"View code on GitHub",demo:"View live demo",details:"Technical details",status:"Status",
     journeyEyebrow:"EDUCATION",journeyTitle:"Studies & certifications",
     studies:[
-      {date:"Sep 2026 — present",iso:"2026-09",name:"Harvard CS50 Web Programming",info:"Python, JavaScript, and web applications · In progress"},
-      {date:"Aug 2026",iso:"2026-08",name:"freeCodeCamp",info:"Front End Development Libraries · Certified"},
+      {date:"Sep 2026 — present",iso:"2026-09",name:"CS50's Web Programming with Python and JavaScript",info:"HarvardX / edX · In progress"},
       {date:"2023",iso:"2023",name:"High School Diploma",info:"E.P.E.P. No. 179, Formosa"}
     ],
     skillsTitle:"Technical stack",

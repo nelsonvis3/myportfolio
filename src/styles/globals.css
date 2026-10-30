@@ -121,6 +121,7 @@ img,svg {display:block;max-width:100%}img {width:100%}
 .tech-tag .brand-icon {width:15px;height:15px;color:var(--accent)}
 .github-cta {display:inline-flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--accent);margin-top:23px;color:var(--text);font-size:12px;font-weight:640;transition:color .2s,border-color .2s}
 .github-cta:hover {color:var(--accent)}
+.github-cta + .github-cta {margin-left:24px}
 /* Education: studies list and visibly outlined skill tags. */
 .journey-block {margin-top:27px}
 .mini-heading {font:650 12px/1.5 var(--sans);letter-spacing:.01em;color:var(--text);margin-bottom:10px}
