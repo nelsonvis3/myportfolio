@@ -8,35 +8,32 @@ const sections: Section[] = ["about", "projects", "journey", "contact"];
 // Each brand uses the original Simple Icons paths; Node.js is added to BrandIcon.
 // Playwright has no current Simple Icons entry, so it uses a non-brand test symbol.
 const skillGroups = [
-  { id: "languages", titles: { es: "Lenguajes", en: "Languages" }, skills: [
-    { key: "typescript", label: "TypeScript" },
-    { key: "javascript", label: "JavaScript" },
+  { id: "backend", titles: { es: "Backend y datos", en: "Backend & Data" }, skills: [
     { key: "python", label: "Python" },
-  ] },
-  { id: "frontend", titles: { es: "Frontend", en: "Frontend" }, skills: [
-    { key: "react", label: "React" },
-    { key: "nextjs", label: "Next.js" },
-    { key: "vite", label: "Vite" },
-  ] },
-  { id: "backend", titles: { es: "Backend", en: "Backend" }, skills: [
     { key: "django", label: "Django / DRF" },
     { key: "nodejs", label: "Node.js" },
-  ] },
-  { id: "databases", titles: { es: "Bases de datos", en: "Databases" }, skills: [
+    { key: "rest", label: "REST APIs" },
     { key: "postgresql", label: "PostgreSQL" },
     { key: "mysql", label: "MySQL" },
     { key: "sqlite", label: "SQLite" },
+    { key: "sql", label: "SQL" },
   ] },
-  { id: "infrastructure", titles: { es: "Infraestructura", en: "Infrastructure" }, skills: [
-    { key: "docker", label: "Docker" },
+  { id: "tools", titles: { es: "Pruebas y herramientas", en: "Testing & Tools" }, skills: [
+    { key: "playwright", label: "Playwright" },
+    { key: "djangotests", label: "Django tests" },
+    { key: "cicd", label: "CI/CD" },
+    { key: "docker", label: "Docker Compose" },
     { key: "nginx", label: "Nginx" },
-    { key: "linux", label: "Linux" },
-  ] },
-  { id: "tools", titles: { es: "Herramientas y testing", en: "Tools & testing" }, skills: [
     { key: "git", label: "Git" },
     { key: "github", label: "GitHub" },
-    { key: "playwright", label: "Playwright" },
-    { key: "cicd", label: "CI/CD" },
+    { key: "linux", label: "Linux" },
+  ] },
+  { id: "frontend", titles: { es: "Frontend", en: "Frontend" }, skills: [
+    { key: "javascript", label: "JavaScript" },
+    { key: "typescript", label: "TypeScript" },
+    { key: "react", label: "React" },
+    { key: "nextjs", label: "Next.js" },
+    { key: "tailwind", label: "Tailwind CSS" },
   ] },
 ] as const;
 
@@ -155,7 +152,7 @@ function ProjectDetail({ lang, project, navigate }: { lang: Lang; project: Proje
   const goBack = (e: MouseEvent<HTMLAnchorElement>) => {if(e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)return;e.preventDefault();navigate({lang,section:"projects"});};
   return <article className="view-body project-detail" aria-label={project.name}>
     <a className="back-link" href={sectionUrl(lang,"projects")} onClick={goBack}>{c.back}</a>
-    <div className="project-detail-head"><span className="eyebrow">{project.category}</span><h1>{project.name}</h1></div>
+    <div className="project-detail-head"><span className="eyebrow">{project.category} · {project.period}</span><h1>{project.name}</h1></div>
     <figure className="detail-media"><img src={project.image} alt={project.imageAlt}/></figure>
     <div className="project-story">
       <section className="story-line"><h2>{c.development}</h2><p>{project.development}</p></section>

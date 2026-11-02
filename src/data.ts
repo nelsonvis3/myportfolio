@@ -6,6 +6,7 @@ export type Project = {
   id: ProjectId;
   name: string;
   category: string;
+  period: string;
   development: string;
   problem: string;
   solution: string;
@@ -28,7 +29,7 @@ export const links = {
 const projects: Record<Lang, Project[]> = {
   es: [
     {
-      id: "fracxion", name: "Fracxion", category: "SaaS · Gestión comercial",
+      id: "fracxion", name: "Fracxion", category: "SaaS · Gestión comercial", period: "Sep 2026 – Oct 2026",
       development: "Desarrollé un sistema full stack para administrar clientes, productos, facturas internas, cobros e inventario de varias empresas.",
       problem: "Cada empresa necesitaba trabajar con sus propios datos y permisos, sin duplicar comprobantes ni perder el historial de operaciones.",
       solution: "Construí la interfaz en Next.js y una API en Django REST Framework. Implementé aislamiento por empresa, permisos por rol, operaciones transaccionales y restricciones en PostgreSQL para mantener la integridad de los datos.",
@@ -36,7 +37,7 @@ const projects: Record<Lang, Project[]> = {
       image: "/img/fracxion-overview.png", imageAlt: "Panel principal de Fracxion",
       repo: "https://github.com/nelsonvis3/fracxion-facturador",
       details: [
-        "Cada consulta se filtra en el backend según la empresa activa y el rol del usuario.",
+        "Cada consulta se filtra en el backend según la empresa activa y el rol del usuario (cinco niveles de permisos).",
         "La emisión de facturas y los cobros usan transacciones y bloqueo de filas en PostgreSQL para evitar números repetidos y cobros mayores al saldo.",
         "Los totales se calculan en el servidor con los precios del catálogo, no con los valores que envía el navegador.",
         "367 tests de backend (92% de cobertura), con pruebas de permisos y concurrencia, y 53 escenarios de Playwright, ejecutados en GitHub Actions."
@@ -44,7 +45,7 @@ const projects: Record<Lang, Project[]> = {
       status: "Proyecto propio. Se ejecuta en local con Docker Compose."
     },
     {
-      id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Cliente · E-commerce",
+      id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Cliente · E-commerce", period: "Ago 2026 – Sep 2026",
       development: "Desarrollé una tienda online con catálogo, combos, carrito, pedidos y un panel para gestionar productos, imágenes, precios y stock.",
       problem: "El cliente necesitaba administrar su catálogo sin depender de un desarrollador y evitar inconsistencias de inventario al recibir compras.",
       solution: "Implementé la tienda con Next.js y una API Django. El panel protegido permite actualizar el catálogo y el backend valida precios, disponibilidad y reservas de stock. Preparé una demostración con Docker Compose y Nginx en Ubuntu Server.",
@@ -58,10 +59,10 @@ const projects: Record<Lang, Project[]> = {
         "Un panel protegido permite al comercio gestionar productos, combos, imágenes, precios y pedidos.",
         "106 tests de backend."
       ],
-      status: "Encargo de un comercio local. Está probada en entorno local y todavía no se publicó."
+      status: "Encargo de un comercio local. Pre-lanzamiento: probada en entorno local."
     },
     {
-      id: "space-tasks", name: "SPACE Tasks", category: "Código abierto · Productividad",
+      id: "space-tasks", name: "SPACE Tasks", category: "Código abierto · Productividad", period: "Oct 2026",
       development: "Desarrollé una aplicación de productividad con tareas, calendario, estadísticas, un lector de PDF y música, para escritorio y navegador.",
       problem: "Necesitaba una herramienta para organizar mis tareas, horarios y planes en un solo lugar, sin suscripciones y con mis datos en mi propia computadora.",
       solution: "Creé mi propio programa, pensado para cómo me organizo: espacios de trabajo, prioridades, fechas y calendario. La interfaz es React y TypeScript, y un servidor Node con SQLite guarda las cuentas y el historial de versiones. La IA, el OCR y la traducción corren en el dispositivo, y en escritorio funciona con Electron.",
@@ -81,7 +82,7 @@ const projects: Record<Lang, Project[]> = {
   ],
   en: [
     {
-      id: "fracxion", name: "Fracxion", category: "SaaS · Business management",
+      id: "fracxion", name: "Fracxion", category: "SaaS · Business management", period: "Sep 2026 – Oct 2026",
       development: "I built a full-stack system to manage customers, products, internal invoices, payments, and inventory for multiple companies.",
       problem: "Each company needed its own data and access permissions, with reliable invoice numbering and auditable transactions.",
       solution: "I developed a Next.js interface and a Django REST Framework API, implementing tenant isolation, role-based permissions, database transactions, and PostgreSQL constraints to protect data integrity.",
@@ -89,7 +90,7 @@ const projects: Record<Lang, Project[]> = {
       image: "/img/fracxion-overview.png", imageAlt: "Fracxion business management dashboard",
       repo: "https://github.com/nelsonvis3/fracxion-facturador",
       details: [
-        "Every query is filtered on the backend by the active company and the user's role.",
+        "Every query is filtered on the backend by the active company and the user's role (five permission levels).",
         "Issuing invoices and recording payments use PostgreSQL transactions and row locks to prevent duplicate numbers and payments above the balance.",
         "Totals are calculated on the server from catalog prices, not from values sent by the browser.",
         "367 backend tests (92% coverage), including permission and concurrency tests, plus 53 Playwright scenarios, run on GitHub Actions."
@@ -97,7 +98,7 @@ const projects: Record<Lang, Project[]> = {
       status: "Personal project. Runs locally with Docker Compose."
     },
     {
-      id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Client project · E-commerce",
+      id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Client project · E-commerce", period: "Aug 2026 – Sep 2026",
       development: "I developed an online store with products, bundles, a shopping cart, orders, and a dashboard to manage catalog images, prices, and stock.",
       problem: "The client needed to manage the catalog without developer assistance while keeping inventory accurate when customers placed orders.",
       solution: "I built the storefront with Next.js and a Django API. A protected dashboard controls the catalog, while the backend validates prices, availability, and stock reservations. I also deployed a demo with Docker Compose and Nginx on Ubuntu Server.",
@@ -111,10 +112,10 @@ const projects: Record<Lang, Project[]> = {
         "A protected dashboard lets the business manage products, bundles, images, prices, and orders.",
         "106 backend tests."
       ],
-      status: "Built for a local business. Tested locally and not yet launched."
+      status: "Built for a local business. Pre-launch: tested locally."
     },
     {
-      id: "space-tasks", name: "SPACE Tasks", category: "Open source · Productivity",
+      id: "space-tasks", name: "SPACE Tasks", category: "Open source · Productivity", period: "Oct 2026",
       development: "I built a productivity app with tasks, a calendar, statistics, a PDF reader, and music, for desktop and the browser.",
       problem: "I needed one place to organize my tasks, schedule, and plans, without subscriptions and with my data on my own computer.",
       solution: "I built my own app around the way I organize my work: workspaces, priorities, due dates, and a calendar. The interface uses React and TypeScript, and a Node server with SQLite stores accounts and version history. AI, OCR, and translation run on the device, and the desktop version runs on Electron.",
