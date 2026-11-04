@@ -41,9 +41,9 @@ const projects: Record<Lang, Project[]> = {
         "Cada consulta se filtra en el backend según la empresa activa y el rol del usuario (cinco niveles de permisos).",
         "La emisión de facturas y los cobros usan transacciones y bloqueo de filas en PostgreSQL para evitar números repetidos y cobros mayores al saldo.",
         "Los totales se calculan en el servidor con los precios del catálogo, no con los valores que envía el navegador.",
-        "367 tests de backend (92% de cobertura), con pruebas de permisos y concurrencia, y 53 escenarios de Playwright, ejecutados en GitHub Actions."
+        "Pruebas de backend con 92 % de cobertura, incluidas pruebas de permisos y concurrencia, y escenarios E2E con Playwright, ejecutados en GitHub Actions."
       ],
-      status: "Proyecto propio. Demo pública de solo lectura con el botón \"Probar demo\"; la primera carga puede tardar alrededor de un minuto porque el servidor gratuito se duerme."
+      status: "Proyecto propio, desplegado en Netlify, Render y Neon. Demo pública de solo lectura con el botón \"Probar demo\"; la primera carga puede tardar alrededor de un minuto porque el servidor gratuito se duerme."
     },
     {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Cliente · E-commerce", period: "Ago 2026 – Sep 2026",
@@ -57,8 +57,7 @@ const projects: Record<Lang, Project[]> = {
         "El backend recalcula precios y totales desde la base de datos; el navegador no define los importes.",
         "Los combos descuentan stock de los productos que los componen, y el bloqueo de filas evita que dos compras simultáneas reserven la última unidad.",
         "Los pagos con Mercado Pago se confirman en el servidor: se valida la firma del webhook y se consulta el pago antes de aprobar el pedido.",
-        "Un panel protegido permite al comercio gestionar productos, combos, imágenes, precios y pedidos.",
-        "106 tests de backend."
+        "Un panel protegido permite al comercio gestionar productos, combos, imágenes, precios y pedidos."
       ],
       status: "Encargo de un comercio local. Pre-lanzamiento: probada en entorno local."
     },
@@ -76,7 +75,7 @@ const projects: Record<Lang, Project[]> = {
         "En escritorio, Electron responde la API dentro del proceso con un protocolo propio, sin abrir puertos de red.",
         "Las contraseñas se guardan con scrypt, la sesión usa cookies HttpOnly con protección CSRF y el servidor rechaza los guardados de una versión vieja.",
         "Los motores de PDF, OCR e IA se sirven desde la propia app, verificados por sha512, y la CSP no permite scripts de CDN.",
-        "87 tests unitarios y de Playwright en Chromium y Firefox, ejecutados en GitHub Actions."
+        "Pruebas unitarias y de Playwright en Chromium y Firefox, ejecutadas en GitHub Actions."
       ],
       status: "Proyecto propio de código abierto (GPL-3.0). Publicado para Linux como AppImage."
     }
@@ -95,9 +94,9 @@ const projects: Record<Lang, Project[]> = {
         "Every query is filtered on the backend by the active company and the user's role (five permission levels).",
         "Issuing invoices and recording payments use PostgreSQL transactions and row locks to prevent duplicate numbers and payments above the balance.",
         "Totals are calculated on the server from catalog prices, not from values sent by the browser.",
-        "367 backend tests (92% coverage), including permission and concurrency tests, plus 53 Playwright scenarios, run on GitHub Actions."
+        "Backend tests with 92% coverage, including permission and concurrency tests, plus Playwright E2E scenarios, run on GitHub Actions."
       ],
-      status: "Personal project. Public read-only demo via the \"Probar demo\" button; the first load can take about a minute because the free server sleeps when idle."
+      status: "Personal project, deployed on Netlify, Render, and Neon. Public read-only demo via the \"Probar demo\" button; the first load can take about a minute because the free server sleeps when idle."
     },
     {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Client project · E-commerce", period: "Aug 2026 – Sep 2026",
@@ -111,8 +110,7 @@ const projects: Record<Lang, Project[]> = {
         "The backend recalculates prices and totals from the database; the browser never sets the amounts.",
         "Bundles consume stock from their component products, and row locks stop two simultaneous purchases from reserving the last unit.",
         "Mercado Pago payments are confirmed on the server: the webhook signature is validated and the payment is checked before the order is approved.",
-        "A protected dashboard lets the business manage products, bundles, images, prices, and orders.",
-        "106 backend tests."
+        "A protected dashboard lets the business manage products, bundles, images, prices, and orders."
       ],
       status: "Built for a local business. Pre-launch: tested locally."
     },
@@ -130,7 +128,7 @@ const projects: Record<Lang, Project[]> = {
         "On desktop, Electron answers the API in-process through a custom protocol, without opening network ports.",
         "Passwords are hashed with scrypt, sessions use HttpOnly cookies with CSRF protection, and the server rejects saves based on an outdated version.",
         "The PDF, OCR, and AI engines are served by the app itself, verified by sha512, and the CSP allows no CDN scripts.",
-        "87 unit and Playwright tests on Chromium and Firefox, run on GitHub Actions."
+        "Unit and Playwright tests on Chromium and Firefox, run on GitHub Actions."
       ],
       status: "Open-source personal project (GPL-3.0). Released for Linux as an AppImage."
     }

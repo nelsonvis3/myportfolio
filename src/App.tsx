@@ -23,7 +23,6 @@ const skillGroups = [
     { key: "docker", label: "Docker Compose" },
     { key: "nginx", label: "Nginx" },
     { key: "git", label: "Git" },
-    { key: "github", label: "GitHub" },
     { key: "linux", label: "Linux" },
   ] },
   { id: "frontend", titles: { es: "Frontend", en: "Frontend" }, skills: [
@@ -31,6 +30,7 @@ const skillGroups = [
     { key: "typescript", label: "TypeScript" },
     { key: "react", label: "React" },
     { key: "nextjs", label: "Next.js" },
+    { key: "tailwind", label: "Tailwind CSS" },
   ] },
 ] as const;
 

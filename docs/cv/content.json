@@ -14,16 +14,16 @@
     "role": "Desarrollador Backend Junior",
     "remote": "Disponible para trabajo remoto",
     "summaryLabel": "Perfil profesional",
-    "summary": "Construyo backends donde los datos tienen que ser correctos: no se vende stock que no existe, la numeración de facturas y los saldos se mantienen consistentes ante solicitudes concurrentes, y cada empresa ve solo sus datos. Uso Django REST Framework, PostgreSQL y Next.js, con pruebas automatizadas y CI (367 tests de backend y 92% de cobertura en Fracxion). Busco mi primer puesto en un equipo de backend o full stack.",
+    "summary": "Construyo backends donde los datos tienen que ser correctos: no se vende stock que no existe, la numeración de facturas y los saldos se mantienen consistentes ante solicitudes concurrentes, y cada empresa ve solo sus datos. Uso Django REST Framework, PostgreSQL y Next.js, con pruebas automatizadas y CI (92 % de cobertura de backend en Fracxion). Busco mi primer puesto en un equipo de backend o full stack.",
     "skillsLabel": "Habilidades técnicas",
     "skills": [
       [
         "Backend y datos",
-        "Python, Django, Django REST Framework, Node.js, APIs REST, PostgreSQL, MySQL, SQL"
+        "Python, Django, Django REST Framework, Node.js, APIs REST, PostgreSQL, MySQL, SQLite"
       ],
       [
         "Pruebas y herramientas",
-        "Playwright, tests Django, CI/CD con GitHub Actions, Docker Compose, Git, Linux"
+        "Playwright, tests de Django, GitHub Actions, Docker Compose, Nginx, Git, Linux"
       ],
       [
         "Frontend",
@@ -49,8 +49,9 @@
         "bullets": [
           "Desarrollé módulos de clientes, catálogo, facturación, cobros, compras e inventario, con aislamiento de datos por empresa y cinco niveles de permisos por rol.",
           "Usé transacciones y bloqueo de filas en PostgreSQL para mantener correctos la numeración de facturas y los saldos ante solicitudes concurrentes.",
-          "367 tests de backend (92% de cobertura) y 53 escenarios de Playwright, ejecutados en GitHub Actions."
-        ]
+          "Pruebas de backend con 92 % de cobertura y escenarios E2E con Playwright en GitHub Actions. Desplegada en Netlify, Render (Docker) y Neon, con la API detrás de un proxy que valida un secreto compartido."
+        ],
+        "demo": "https://fracxion.netlify.app"
       },
       "ragnar": {
         "title": "Ragnar Suplementos · Tienda online",
@@ -60,7 +61,7 @@
         "bullets": [
           "Desarrollé la tienda y un panel de administración para el dueño (catálogo, combos, stock, pedidos) con Next.js y una API en Django REST Framework que controla precios y stock.",
           "Evité la sobreventa con bloqueo de filas en el stock, incluidos los combos que comparten inventario con los productos, y protegí el checkout ante solicitudes duplicadas.",
-          "Integré Mercado Pago con confirmación de pagos en el servidor y preparé una demo con Docker Compose y Nginx en Ubuntu Server. 106 tests de backend."
+          "Integré Mercado Pago con confirmación de pagos en el servidor y preparé una demo con Docker Compose y Nginx en Ubuntu Server."
         ]
       },
       "space": {
@@ -71,7 +72,7 @@
         "bullets": [
           "Desarrollé una app de tareas, calendario y lector de PDF con React, TypeScript y Node.js (SQLite integrado), publicada como demo web y como AppImage para Linux (Electron).",
           "Implementé cuentas con scrypt, protección CSRF y autenticación con límite de intentos, además de IA, OCR y traducción que corren en el dispositivo.",
-          "87 tests unitarios y de Playwright en Chromium y Firefox, ejecutados en GitHub Actions."
+          "Pruebas unitarias y de Playwright en Chromium y Firefox, ejecutadas en GitHub Actions."
         ],
         "demo": "https://nelsonvis3.github.io/space-tasks"
       }
@@ -79,7 +80,7 @@
     "letter": [
       "Estimado equipo de selección:",
       "Soy desarrollador backend junior de Formosa, Argentina, y busco mi primer puesto en un equipo de backend o full stack. Trabajo con Python, Django, Django REST Framework y PostgreSQL, y también con React, Next.js y TypeScript.",
-      "En Fracxion, un sistema de gestión comercial para varias empresas, desarrollé la API y la interfaz: permisos por rol, facturación interna y cobros. Usé transacciones y bloqueo de filas en PostgreSQL para que dos operaciones simultáneas no generen números repetidos ni cobros mayores al saldo. Lo respaldé con 367 tests de backend y CI en GitHub Actions.",
+      "En Fracxion, un sistema de gestión comercial para varias empresas, desarrollé la API y la interfaz: permisos por rol, facturación interna y cobros. Usé transacciones y bloqueo de filas en PostgreSQL para que dos operaciones simultáneas no generen números repetidos ni cobros mayores al saldo. Lo respaldé con pruebas automatizadas (92 % de cobertura de backend) y CI en GitHub Actions, y está publicado con una demo de solo lectura.",
       "También desarrollé Ragnar Suplementos, una tienda online encargada por un comercio local, con panel de administración, control de stock y pagos con Mercado Pago verificados en el servidor.",
       "Me interesa aportar en el trabajo diario del equipo, recibir revisiones de código y seguir aprendiendo. Uso herramientas de IA como Claude Code y Codex, y reviso y pruebo cada cambio antes de darlo por terminado.",
       "En mi portfolio y en GitHub está el código de cada proyecto, con las decisiones técnicas que tomé. Quedo a disposición para una entrevista.",
@@ -91,16 +92,16 @@
     "role": "Junior Backend Developer",
     "remote": "Open to remote work",
     "summaryLabel": "Professional summary",
-    "summary": "I build backends where data has to stay correct: stock isn't oversold, invoice numbers and balances stay consistent under concurrent requests, and each company sees only its own data. I use Django REST Framework, PostgreSQL and Next.js, backed by automated tests and CI (367 backend tests, 92% coverage, in Fracxion). Looking for my first role on a backend or full stack team.",
+    "summary": "I build backends where data has to stay correct: stock isn't oversold, invoice numbers and balances stay consistent under concurrent requests, and each company sees only its own data. I use Django REST Framework, PostgreSQL and Next.js, backed by automated tests and CI (92% backend coverage in Fracxion). Looking for my first role on a backend or full stack team.",
     "skillsLabel": "Technical skills",
     "skills": [
       [
         "Backend & Data",
-        "Python, Django, Django REST Framework, Node.js, REST APIs, PostgreSQL, MySQL, SQL"
+        "Python, Django, Django REST Framework, Node.js, REST APIs, PostgreSQL, MySQL, SQLite"
       ],
       [
         "Testing & Tools",
-        "Playwright, Django tests, CI/CD with GitHub Actions, Docker Compose, Git, Linux"
+        "Playwright, Django tests, GitHub Actions, Docker Compose, Nginx, Git, Linux"
       ],
       [
         "Frontend",
@@ -126,8 +127,9 @@
         "bullets": [
           "Built customer, catalog, invoicing, payment collection, purchasing, and inventory modules with company-level data isolation and five role-based permission levels.",
           "Used PostgreSQL transactions and row-level locking to keep invoice numbers and balances consistent under concurrent requests.",
-          "367 backend tests (92% coverage) and 53 Playwright scenarios, run in GitHub Actions."
-        ]
+          "Backend tests with 92% coverage and Playwright E2E scenarios on GitHub Actions. Deployed on Netlify, Render (Docker), and Neon, with the API behind a proxy that checks a shared secret."
+        ],
+        "demo": "https://fracxion.netlify.app"
       },
       "ragnar": {
         "title": "Ragnar Suplementos · Online Store",
@@ -137,7 +139,7 @@
         "bullets": [
           "Built the storefront and an owner-facing admin dashboard (catalog, bundles, stock, orders) using Next.js and a Django REST Framework API that validates pricing and inventory.",
           "Prevented overselling through row-level stock locking, including bundles that share inventory with individual products, and protected checkout against duplicate requests.",
-          "Integrated Mercado Pago with server-side payment confirmation and prepared a demo using Docker Compose and Nginx on Ubuntu Server. 106 backend tests."
+          "Integrated Mercado Pago with server-side payment confirmation and prepared a demo using Docker Compose and Nginx on Ubuntu Server."
         ]
       },
       "space": {
@@ -148,7 +150,7 @@
         "bullets": [
           "Built a task manager, calendar, and PDF reader with React, TypeScript, and Node.js (embedded SQLite), released as a web demo and an Electron-based Linux AppImage.",
           "Implemented accounts with scrypt, CSRF protection, and rate-limited authentication, as well as on-device AI, OCR, and translation.",
-          "87 unit and Playwright tests across Chromium and Firefox, run in GitHub Actions."
+          "Unit and Playwright tests across Chromium and Firefox, run in GitHub Actions."
         ],
         "demo": "https://nelsonvis3.github.io/space-tasks"
       }
@@ -156,7 +158,7 @@
     "letter": [
       "Dear Hiring Team,",
       "I'm a junior backend developer from Formosa, Argentina, looking for my first role on a backend or full stack team. I work with Python, Django, Django REST Framework and PostgreSQL, and also with React, Next.js and TypeScript.",
-      "In Fracxion, a business management system for multiple companies, I built the API and the interface: role-based permissions, internal invoicing and payments. I used PostgreSQL transactions and row locks so that simultaneous operations cannot create duplicate numbers or payments above the balance. It is backed by 367 backend tests and CI in GitHub Actions.",
+      "In Fracxion, a business management system for multiple companies, I built the API and the interface: role-based permissions, internal invoicing and payments. I used PostgreSQL transactions and row locks so that simultaneous operations cannot create duplicate numbers or payments above the balance. It is backed by automated tests (92% backend coverage) and CI in GitHub Actions, and it is live with a read-only demo.",
       "I also built Ragnar Suplementos, an online store commissioned by a local business, with an admin dashboard, stock control and Mercado Pago payments verified on the server.",
       "I want to contribute to the team's day-to-day work, learn through code review and keep improving. I use AI tools such as Claude Code and Codex, and I review and test every change before considering it done.",
       "My portfolio and GitHub show the code for each project and the technical decisions behind it. I'd be glad to talk in an interview.",
