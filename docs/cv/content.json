@@ -14,7 +14,7 @@
     "role": "Desarrollador Backend Junior",
     "remote": "Disponible para trabajo remoto",
     "summaryLabel": "Perfil profesional",
-    "summary": "Construyo backends donde los datos tienen que ser correctos: no se vende stock que no existe, la numeración de facturas y los saldos se mantienen consistentes ante solicitudes concurrentes, y cada empresa ve solo sus datos. Uso Django REST Framework, PostgreSQL y Next.js, con pruebas automatizadas y CI (92 % de cobertura de backend en Fracxion). Busco mi primer puesto en un equipo de backend o full stack.",
+    "summary": "Soy desarrollador web autodidacta de Formosa, Argentina. Trabajo sobre todo en el backend con Python, Django REST Framework y PostgreSQL, y uso Next.js para el frontend. Busco mi primer puesto en un equipo de backend o full stack.",
     "skillsLabel": "Habilidades técnicas",
     "skills": [
       [
@@ -92,7 +92,7 @@
     "role": "Junior Backend Developer",
     "remote": "Open to remote work",
     "summaryLabel": "Professional summary",
-    "summary": "I build backends where data has to stay correct: stock isn't oversold, invoice numbers and balances stay consistent under concurrent requests, and each company sees only its own data. I use Django REST Framework, PostgreSQL and Next.js, backed by automated tests and CI (92% backend coverage in Fracxion). Looking for my first role on a backend or full stack team.",
+    "summary": "I'm a self-taught web developer from Formosa, Argentina. I work mostly on the backend with Python, Django REST Framework and PostgreSQL, and use Next.js for the frontend. I'm looking for my first role on a backend or full stack team.",
     "skillsLabel": "Technical skills",
     "skills": [
       [
