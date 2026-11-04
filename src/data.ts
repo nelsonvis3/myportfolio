@@ -36,13 +36,14 @@ const projects: Record<Lang, Project[]> = {
       stack: [{label:"Next.js",icon:"nextjs"},{label:"TypeScript",icon:"typescript"},{label:"Django REST",icon:"django"},{label:"PostgreSQL",icon:"postgresql"},{label:"Docker",icon:"docker"}],
       image: "/img/fracxion-overview.png", imageAlt: "Panel principal de Fracxion",
       repo: "https://github.com/nelsonvis3/fracxion-facturador",
+      demo: "https://fracxion.netlify.app",
       details: [
         "Cada consulta se filtra en el backend según la empresa activa y el rol del usuario (cinco niveles de permisos).",
         "La emisión de facturas y los cobros usan transacciones y bloqueo de filas en PostgreSQL para evitar números repetidos y cobros mayores al saldo.",
         "Los totales se calculan en el servidor con los precios del catálogo, no con los valores que envía el navegador.",
         "367 tests de backend (92% de cobertura), con pruebas de permisos y concurrencia, y 53 escenarios de Playwright, ejecutados en GitHub Actions."
       ],
-      status: "Proyecto propio. Se ejecuta en local con Docker Compose."
+      status: "Proyecto propio. Demo pública de solo lectura con el botón \"Probar demo\"; la primera carga puede tardar alrededor de un minuto porque el servidor gratuito se duerme."
     },
     {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Cliente · E-commerce", period: "Ago 2026 – Sep 2026",
@@ -89,13 +90,14 @@ const projects: Record<Lang, Project[]> = {
       stack: [{label:"Next.js",icon:"nextjs"},{label:"TypeScript",icon:"typescript"},{label:"Django REST",icon:"django"},{label:"PostgreSQL",icon:"postgresql"},{label:"Docker",icon:"docker"}],
       image: "/img/fracxion-overview.png", imageAlt: "Fracxion business management dashboard",
       repo: "https://github.com/nelsonvis3/fracxion-facturador",
+      demo: "https://fracxion.netlify.app",
       details: [
         "Every query is filtered on the backend by the active company and the user's role (five permission levels).",
         "Issuing invoices and recording payments use PostgreSQL transactions and row locks to prevent duplicate numbers and payments above the balance.",
         "Totals are calculated on the server from catalog prices, not from values sent by the browser.",
         "367 backend tests (92% coverage), including permission and concurrency tests, plus 53 Playwright scenarios, run on GitHub Actions."
       ],
-      status: "Personal project. Runs locally with Docker Compose."
+      status: "Personal project. Public read-only demo via the \"Probar demo\" button; the first load can take about a minute because the free server sleeps when idle."
     },
     {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Client project · E-commerce", period: "Aug 2026 – Sep 2026",
