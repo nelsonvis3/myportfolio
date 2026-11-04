@@ -16,11 +16,9 @@ const skillGroups = [
     { key: "postgresql", label: "PostgreSQL" },
     { key: "mysql", label: "MySQL" },
     { key: "sqlite", label: "SQLite" },
-    { key: "sql", label: "SQL" },
   ] },
   { id: "tools", titles: { es: "Pruebas y herramientas", en: "Testing & Tools" }, skills: [
     { key: "playwright", label: "Playwright" },
-    { key: "djangotests", label: "Django tests" },
     { key: "cicd", label: "CI/CD" },
     { key: "docker", label: "Docker Compose" },
     { key: "nginx", label: "Nginx" },
@@ -33,7 +31,6 @@ const skillGroups = [
     { key: "typescript", label: "TypeScript" },
     { key: "react", label: "React" },
     { key: "nextjs", label: "Next.js" },
-    { key: "tailwind", label: "Tailwind CSS" },
   ] },
 ] as const;
 
