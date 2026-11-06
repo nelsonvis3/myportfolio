@@ -5,7 +5,15 @@
   "outputDirectory": "dist",
   "trailingSlash": true,
   "redirects": [
-    { "source": "/proyectos/ledgercore", "destination": "/proyectos/fracxion/", "permanent": true },
-    { "source": "/proyectos/ledgercore/", "destination": "/proyectos/fracxion/", "permanent": true }
+    {
+      "source": "/proyectos/:id(ledgercore|fracxion|space-tasks)/?",
+      "destination": "/#projects",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/:id(fracxion|space-tasks)/?",
+      "destination": "/en/#projects",
+      "permanent": true
+    }
   ]
 }

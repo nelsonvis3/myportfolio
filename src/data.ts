@@ -1,6 +1,6 @@
 export type Lang = "es" | "en";
 export type Section = "about" | "projects" | "journey" | "contact";
-export type ProjectId = "fracxion" | "ragnar-suplementos" | "space-tasks";
+export type ProjectId = "ragnar-suplementos";
 export type Route = { lang: Lang; section: Section; projectId?: ProjectId };
 export type Project = {
   id: ProjectId;
@@ -29,23 +29,6 @@ export const links = {
 const projects: Record<Lang, Project[]> = {
   es: [
     {
-      id: "fracxion", name: "Fracxion", category: "SaaS · Gestión comercial", period: "Sep 2026 – Oct 2026",
-      development: "Desarrollé un sistema full stack para administrar clientes, productos, facturas internas, cobros e inventario de varias empresas.",
-      problem: "Cada empresa necesitaba trabajar con sus propios datos y permisos, sin duplicar comprobantes ni perder el historial de operaciones.",
-      solution: "Construí la interfaz en Next.js y una API en Django REST Framework. Implementé aislamiento por empresa, permisos por rol, operaciones transaccionales y restricciones en PostgreSQL para mantener la integridad de los datos.",
-      stack: [{label:"Next.js",icon:"nextjs"},{label:"TypeScript",icon:"typescript"},{label:"Django REST",icon:"django"},{label:"PostgreSQL",icon:"postgresql"},{label:"Docker",icon:"docker"}],
-      image: "/img/fracxion-overview.png", imageAlt: "Panel principal de Fracxion",
-      repo: "https://github.com/nelsonvis3/fracxion-facturador",
-      demo: "https://fracxion.netlify.app",
-      details: [
-        "Cada consulta se filtra en el backend según la empresa activa y el rol del usuario (cinco niveles de permisos).",
-        "La emisión de facturas y los cobros usan transacciones y bloqueo de filas en PostgreSQL para evitar números repetidos y cobros mayores al saldo.",
-        "Los totales se calculan en el servidor con los precios del catálogo, no con los valores que envía el navegador.",
-        "Pruebas de backend con 92 % de cobertura, incluidas pruebas de permisos y concurrencia, y escenarios E2E con Playwright, ejecutados en GitHub Actions."
-      ],
-      status: "Proyecto propio, desplegado en Netlify, Render y Neon. Demo pública de solo lectura con el botón \"Probar demo\"; la primera carga puede tardar alrededor de un minuto porque el servidor gratuito se duerme."
-    },
-    {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Cliente · E-commerce", period: "Ago 2026 – Sep 2026",
       development: "Desarrollé una tienda online con catálogo, combos, carrito, pedidos y un panel para gestionar productos, imágenes, precios y stock.",
       problem: "El cliente necesitaba administrar su catálogo sin depender de un desarrollador y evitar inconsistencias de inventario al recibir compras.",
@@ -60,44 +43,9 @@ const projects: Record<Lang, Project[]> = {
         "Un panel protegido permite al comercio gestionar productos, combos, imágenes, precios y pedidos."
       ],
       status: "Encargo de un comercio local. Pre-lanzamiento: probada en entorno local."
-    },
-    {
-      id: "space-tasks", name: "SPACE Tasks", category: "Código abierto · Productividad", period: "Oct 2026",
-      development: "Desarrollé una aplicación de productividad con tareas, calendario, estadísticas, un lector de PDF y música, para escritorio y navegador.",
-      problem: "Necesitaba una herramienta para organizar mis tareas, horarios y planes en un solo lugar, sin suscripciones y con mis datos en mi propia computadora.",
-      solution: "Creé mi propio programa, pensado para cómo me organizo: espacios de trabajo, prioridades, fechas y calendario. La interfaz es React y TypeScript, y un servidor Node con SQLite guarda las cuentas y el historial de versiones. La IA, el OCR y la traducción corren en el dispositivo, y en escritorio funciona con Electron.",
-      stack: [{label:"React",icon:"react"},{label:"TypeScript",icon:"typescript"},{label:"Node.js"},{label:"SQLite"},{label:"Electron"}],
-      image: "/img/space-tasks.webp", imageAlt: "Panel principal de SPACE Tasks",
-      repo: "https://github.com/nelsonvis3/space-tasks",
-      demo: "https://nelsonvis3.github.io/space-tasks",
-      details: [
-        "El asistente usa WebLLM sobre WebGPU y la traducción usa Transformers.js con modelos OPUS y M2M100: las consultas no salen del equipo.",
-        "En escritorio, Electron responde la API dentro del proceso con un protocolo propio, sin abrir puertos de red.",
-        "Las contraseñas se guardan con scrypt, la sesión usa cookies HttpOnly con protección CSRF y el servidor rechaza los guardados de una versión vieja.",
-        "Los motores de PDF, OCR e IA se sirven desde la propia app, verificados por sha512, y la CSP no permite scripts de CDN.",
-        "Pruebas unitarias y de Playwright en Chromium y Firefox, ejecutadas en GitHub Actions."
-      ],
-      status: "Proyecto propio de código abierto (GPL-3.0). Publicado para Linux como AppImage."
     }
   ],
   en: [
-    {
-      id: "fracxion", name: "Fracxion", category: "SaaS · Business management", period: "Sep 2026 – Oct 2026",
-      development: "I built a full-stack system to manage customers, products, internal invoices, payments, and inventory for multiple companies.",
-      problem: "Each company needed its own data and access permissions, with reliable invoice numbering and auditable transactions.",
-      solution: "I developed a Next.js interface and a Django REST Framework API, implementing tenant isolation, role-based permissions, database transactions, and PostgreSQL constraints to protect data integrity.",
-      stack: [{label:"Next.js",icon:"nextjs"},{label:"TypeScript",icon:"typescript"},{label:"Django REST",icon:"django"},{label:"PostgreSQL",icon:"postgresql"},{label:"Docker",icon:"docker"}],
-      image: "/img/fracxion-overview.png", imageAlt: "Fracxion business management dashboard",
-      repo: "https://github.com/nelsonvis3/fracxion-facturador",
-      demo: "https://fracxion.netlify.app",
-      details: [
-        "Every query is filtered on the backend by the active company and the user's role (five permission levels).",
-        "Issuing invoices and recording payments use PostgreSQL transactions and row locks to prevent duplicate numbers and payments above the balance.",
-        "Totals are calculated on the server from catalog prices, not from values sent by the browser.",
-        "Backend tests with 92% coverage, including permission and concurrency tests, plus Playwright E2E scenarios, run on GitHub Actions."
-      ],
-      status: "Personal project, deployed on Netlify, Render, and Neon. Public read-only demo via the \"Probar demo\" button; the first load can take about a minute because the free server sleeps when idle."
-    },
     {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Client project · E-commerce", period: "Aug 2026 – Sep 2026",
       development: "I developed an online store with products, bundles, a shopping cart, orders, and a dashboard to manage catalog images, prices, and stock.",
@@ -114,24 +62,6 @@ const projects: Record<Lang, Project[]> = {
       ],
       status: "Built for a local business. Pre-launch: tested locally."
     },
-    {
-      id: "space-tasks", name: "SPACE Tasks", category: "Open source · Productivity", period: "Oct 2026",
-      development: "I built a productivity app with tasks, a calendar, statistics, a PDF reader, and music, for desktop and the browser.",
-      problem: "I needed one place to organize my tasks, schedule, and plans, without subscriptions and with my data on my own computer.",
-      solution: "I built my own app around the way I organize my work: workspaces, priorities, due dates, and a calendar. The interface uses React and TypeScript, and a Node server with SQLite stores accounts and version history. AI, OCR, and translation run on the device, and the desktop version runs on Electron.",
-      stack: [{label:"React",icon:"react"},{label:"TypeScript",icon:"typescript"},{label:"Node.js"},{label:"SQLite"},{label:"Electron"}],
-      image: "/img/space-tasks.webp", imageAlt: "SPACE Tasks overview dashboard",
-      repo: "https://github.com/nelsonvis3/space-tasks",
-      demo: "https://nelsonvis3.github.io/space-tasks",
-      details: [
-        "The assistant uses WebLLM on WebGPU, and translation uses Transformers.js with OPUS and M2M100 models, so questions never leave the device.",
-        "On desktop, Electron answers the API in-process through a custom protocol, without opening network ports.",
-        "Passwords are hashed with scrypt, sessions use HttpOnly cookies with CSRF protection, and the server rejects saves based on an outdated version.",
-        "The PDF, OCR, and AI engines are served by the app itself, verified by sha512, and the CSP allows no CDN scripts.",
-        "Unit and Playwright tests on Chromium and Firefox, run on GitHub Actions."
-      ],
-      status: "Open-source personal project (GPL-3.0). Released for Linux as an AppImage."
-    }
   ]
 };
 
@@ -145,7 +75,7 @@ export function sectionUrl(lang: Lang, section: Section) {
 }
 export function readRoute(pathname: string): Route {
   const lang: Lang = /^\/en(?:\/|$)/.test(pathname) ? "en" : "es";
-  const match = pathname.match(/^\/(?:en\/projects|proyectos)\/(fracxion|ragnar-suplementos|space-tasks)\/?$/);
+  const match = pathname.match(/^\/(?:en\/projects|proyectos)\/(ragnar-suplementos)\/?$/);
   return match ? {lang,section:"projects",projectId:match[1] as ProjectId} : {lang,section:"about"};
 }
 export function readBrowserRoute(pathname: string, hash: string): Route {
@@ -153,7 +83,7 @@ export function readBrowserRoute(pathname: string, hash: string): Route {
   if (base.projectId) return base;
   const section = hash.replace(/^#/, "");
   // Backward compatibility with links shared from the previous homepage.
-  const oldProject = section.match(/^caso-(fracxion|ragnar-suplementos|space-tasks)$/);
+  const oldProject = section.match(/^caso-(ragnar-suplementos)$/);
   if (oldProject) return {...base,section:"projects",projectId:oldProject[1] as ProjectId};
   return ["about","projects","journey","contact"].includes(section)
     ? {...base,section:section as Section}
@@ -169,7 +99,7 @@ export const copy = {
     intro2: "Me interesa lo que pasa detrás de la interfaz: cómo se guardan los datos, quién puede hacer qué y qué ocurre cuando algo falla. Con Django REST Framework y PostgreSQL trabajo permisos por rol y concurrencia, y me gusta escribir código fácil de mantener.",
     intro3: "Busco mi primera oportunidad en un equipo donde aportar, aprender de otros desarrolladores y seguir creciendo.",
     location:"Formosa, Argentina", sidebarDescription:"Desarrollo aplicaciones web completas, desde la interfaz hasta la base de datos.", explore:"Ver proyectos", download:"Descargar CV", social:"Perfiles",
-    projectsEyebrow:"PROYECTOS", projectsTitle:"Proyectos seleccionados", projectsIntro:"Qué desarrollé, qué problema resolví y cómo lo hice.", open:"Ver proyecto", back:"Volver a proyectos", development:"Desarrollo", problem:"Problema", solution:"Solución", technologies:"Tecnologías", repository:"Ver código en GitHub", demo:"Ver demo", details:"Detalles técnicos", status:"Estado",
+    projectsEyebrow:"PROYECTOS", projectsTitle:"Proyecto destacado", projectsIntro:"Qué desarrollé, qué problema resolví y cómo lo hice.", open:"Ver proyecto", back:"Volver a proyectos", development:"Desarrollo", problem:"Problema", solution:"Solución", technologies:"Tecnologías", repository:"Ver código en GitHub", demo:"Ver demo", details:"Detalles técnicos", status:"Estado",
     journeyEyebrow:"FORMACIÓN", journeyTitle:"Estudios y certificaciones",
     studies:[
       {date:"Sep 2026 — actualidad",iso:"2026-09",name:"CS50's Web Programming with Python and JavaScript",info:"HarvardX / edX · En curso"},
@@ -186,7 +116,7 @@ export const copy = {
     intro2:"I'm interested in what happens behind the interface: how data is stored, who can do what, and what happens when something fails. With Django REST Framework and PostgreSQL I work on role-based permissions and concurrency, and I like writing maintainable code.",
     intro3:"I'm looking for my first opportunity on a team where I can contribute, learn from other developers, and keep growing.",
     location:"Formosa, Argentina",sidebarDescription:"I build complete web applications, from the interface to the database.", explore:"View projects",download:"Download CV",social:"Profiles",
-    projectsEyebrow:"PROJECTS", projectsTitle:"Selected projects", projectsIntro:"What I built, the problem it addressed, and how I solved it.",open:"View project",back:"Back to projects",development:"Development",problem:"Problem",solution:"Solution",technologies:"Technologies",repository:"View code on GitHub",demo:"View live demo",details:"Technical details",status:"Status",
+    projectsEyebrow:"PROJECTS", projectsTitle:"Featured project", projectsIntro:"What I built, the problem it addressed, and how I solved it.",open:"View project",back:"Back to projects",development:"Development",problem:"Problem",solution:"Solution",technologies:"Technologies",repository:"View code on GitHub",demo:"View live demo",details:"Technical details",status:"Status",
     journeyEyebrow:"EDUCATION",journeyTitle:"Studies & certifications",
     studies:[
       {date:"Sep 2026 — present",iso:"2026-09",name:"CS50's Web Programming with Python and JavaScript",info:"HarvardX / edX · In progress"},
