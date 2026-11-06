@@ -6,12 +6,52 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/proyectos/:id(ledgercore|fracxion|space-tasks)/?",
+      "source": "/proyectos/ledgercore",
       "destination": "/#projects",
       "permanent": true
     },
     {
-      "source": "/en/projects/:id(fracxion|space-tasks)/?",
+      "source": "/proyectos/ledgercore/",
+      "destination": "/#projects",
+      "permanent": true
+    },
+    {
+      "source": "/proyectos/fracxion",
+      "destination": "/#projects",
+      "permanent": true
+    },
+    {
+      "source": "/proyectos/fracxion/",
+      "destination": "/#projects",
+      "permanent": true
+    },
+    {
+      "source": "/proyectos/space-tasks",
+      "destination": "/#projects",
+      "permanent": true
+    },
+    {
+      "source": "/proyectos/space-tasks/",
+      "destination": "/#projects",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/fracxion",
+      "destination": "/en/#projects",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/fracxion/",
+      "destination": "/en/#projects",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/space-tasks",
+      "destination": "/en/#projects",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/space-tasks/",
       "destination": "/en/#projects",
       "permanent": true
     }
