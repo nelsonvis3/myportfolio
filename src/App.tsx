@@ -28,6 +28,7 @@ const skillGroups = [
     { key: "javascript", label: "JavaScript" },
     { key: "typescript", label: "TypeScript" },
     { key: "react", label: "React" },
+    { key: "nextjs", label: "Next.js" },
     { key: "vite", label: "Vite" },
   ] },
 ] as const;
@@ -109,7 +110,7 @@ function About({ lang, navigate }: { lang: Lang; navigate: Navigate }) {
   return <section className="view-body about-view" aria-label={c.menu.about}>
     <span className="eyebrow">{c.kicker}</span>
     <h1>{c.heading}</h1>
-    <div className="about-copy"><p>{c.intro}</p><p>{c.intro2}</p><p>{c.intro3}</p></div>
+    <div className="about-copy"><p>{c.intro}</p><p>{c.intro2}</p></div>
     <div className="about-actions"><a className="action-primary" href={sectionUrl(lang,"projects")} onClick={e=>{if(e.button !== 0 || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey)return;e.preventDefault();navigate({lang,section:"projects"});}}>{c.explore}</a><a className="action-secondary" href={links.cv[lang]} download>{c.download}</a></div>
     <Skills lang={lang}/>
   </section>;
