@@ -94,9 +94,8 @@ export const copy = {
   es: {
     role: "Desarrollador Backend Junior",
     menu: { about:"Sobre mí", projects:"Proyectos", journey:"Formación", contact:"Contacto" },
-    kicker: "SOBRE MÍ", heading: "Backends donde los datos se mantienen correctos",
-    intro: "Soy Nelson, desarrollador full stack junior con enfoque en backend.",
-    intro2: "Desarrollo aplicaciones web de principio a fin: frontend, backend, modelado de datos y despliegue.",
+    intro: "Soy Nelson, desarrollador full stack junior con enfoque en backend. Desarrollo aplicaciones web de principio a fin: frontend, backend, modelado de datos y despliegue.",
+    intro2: "Automatizo tareas repetitivas para simplificar el desarrollo y mantenimiento de mis proyectos.",
     location:"Formosa, Argentina", sidebarDescription:"Desarrollo aplicaciones web completas, desde la interfaz hasta la base de datos.", explore:"Ver proyectos", download:"Descargar CV", social:"Perfiles",
     projectsEyebrow:"PROYECTOS", projectsTitle:"Proyecto destacado", projectsIntro:"Qué desarrollé, qué problema resolví y cómo lo hice.", open:"Ver proyecto", back:"Volver a proyectos", development:"Desarrollo", problem:"Problema", solution:"Solución", technologies:"Tecnologías", repository:"Ver código en GitHub", demo:"Ver demo", details:"Detalles técnicos", status:"Estado",
     journeyEyebrow:"FORMACIÓN", journeyTitle:"Estudios y certificaciones",
@@ -110,9 +109,8 @@ export const copy = {
   en: {
     role:"Junior Backend Developer",
     menu:{about:"About me",projects:"Projects",journey:"Education",contact:"Contact"},
-    kicker:"ABOUT ME",heading:"Backends where data stays correct",
-    intro:"I'm Nelson, a junior full stack developer focused on backend development.",
-    intro2:"I build web applications from start to finish: frontend, backend, data modeling, and deployment.",
+    intro:"I'm Nelson, a junior full stack developer focused on backend development. I build web applications from start to finish: frontend, backend, data modeling, and deployment.",
+    intro2:"I automate repetitive tasks to simplify the development and maintenance of my projects.",
     location:"Formosa, Argentina",sidebarDescription:"I build complete web applications, from the interface to the database.", explore:"View projects",download:"Download CV",social:"Profiles",
     projectsEyebrow:"PROJECTS", projectsTitle:"Featured project", projectsIntro:"What I built, the problem it addressed, and how I solved it.",open:"View project",back:"Back to projects",development:"Development",problem:"Problem",solution:"Solution",technologies:"Technologies",repository:"View code on GitHub",demo:"View live demo",details:"Technical details",status:"Status",
     journeyEyebrow:"EDUCATION",journeyTitle:"Studies & certifications",

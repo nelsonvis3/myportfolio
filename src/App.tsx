@@ -108,8 +108,7 @@ function PageHead({ eyebrow, title, intro }: { eyebrow: string; title: string; i
 function About({ lang, navigate }: { lang: Lang; navigate: Navigate }) {
   const c = copy[lang];
   return <section className="view-body about-view" aria-label={c.menu.about}>
-    <span className="eyebrow">{c.kicker}</span>
-    <h1>{c.heading}</h1>
+    <h1 className="visually-hidden">{c.menu.about}</h1>
     <div className="about-copy"><p>{c.intro}</p><p>{c.intro2}</p></div>
     <div className="about-actions"><a className="action-primary" href={sectionUrl(lang,"projects")} onClick={e=>{if(e.button !== 0 || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey)return;e.preventDefault();navigate({lang,section:"projects"});}}>{c.explore}</a><a className="action-secondary" href={links.cv[lang]} download>{c.download}</a></div>
     <Skills lang={lang}/>
