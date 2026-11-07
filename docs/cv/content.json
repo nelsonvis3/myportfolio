@@ -11,7 +11,7 @@
     "en": "High School Diploma — E. P. E. P. Nº 179 - Dr. Juan Bautista Alberdi, Formosa · 2023"
   },
   "es": {
-    "role": "Desarrollador Full Stack Junior",
+    "role": "Desarrollador Backend Junior",
     "remote": "Disponible para trabajo remoto",
     "summaryLabel": "Perfil profesional",
     "summary": "Desarrollador full stack junior con foco en backend. Me interesa la seguridad de los datos y encontrar soluciones simples a problemas complejos. Me gusta trabajar en la lógica que el usuario no ve, pero de la que depende que una aplicación funcione correctamente.",
@@ -55,7 +55,7 @@
     },
     "letter": [
       "Estimado equipo de selección:",
-      "Soy desarrollador backend junior de Formosa, Argentina, y busco mi primer puesto en un equipo de backend o full stack. Trabajo con Python, Django, Django REST Framework y PostgreSQL, y también con React y TypeScript.",
+      "Soy desarrollador backend junior de Formosa, Argentina, y busco mi primer puesto en un equipo de backend o full stack. Trabajo con Python, Django, Django REST Framework, Node.js y PostgreSQL, y también con React y TypeScript.",
       "Desarrollé Ragnar Suplementos, una tienda online encargada por un comercio local: la API en Django REST Framework y el panel donde el comercio administra catálogo, combos, stock y pedidos. El backend recalcula los precios desde la base de datos, bloquea el stock para que dos compras simultáneas no se lleven la última unidad y confirma los pagos de Mercado Pago en el servidor antes de aprobar el pedido.",
       "Estoy cursando CS50's Web Programming with Python and JavaScript (HarvardX), donde sigo practicando Django, JavaScript y pruebas automatizadas.",
       "Me interesa aportar en el trabajo diario del equipo, recibir revisiones de código y seguir aprendiendo. Uso herramientas de IA como Claude Code y Codex, y reviso y pruebo cada cambio antes de darlo por terminado.",
@@ -65,7 +65,7 @@
     "demoLabel": "Demo en vivo"
   },
   "en": {
-    "role": "Junior Full Stack Developer",
+    "role": "Junior Backend Developer",
     "remote": "Open to remote work",
     "summaryLabel": "Professional summary",
     "summary": "Junior full stack developer with a backend focus. I'm interested in data security and finding simple solutions to complex problems. I enjoy working on the logic users don't see but depend on for an application to work properly.",
@@ -109,7 +109,7 @@
     },
     "letter": [
       "Dear Hiring Team,",
-      "I'm a junior backend developer from Formosa, Argentina, looking for my first role on a backend or full stack team. I work with Python, Django, Django REST Framework and PostgreSQL, and also with React and TypeScript.",
+      "I'm a junior backend developer from Formosa, Argentina, looking for my first role on a backend or full stack team. I work with Python, Django, Django REST Framework, Node.js and PostgreSQL, and also with React and TypeScript.",
       "I built Ragnar Suplementos, an online store commissioned by a local business: the Django REST Framework API and the dashboard where the business manages its catalog, bundles, stock and orders. The backend recalculates prices from the database, locks stock so two simultaneous purchases cannot take the last unit, and confirms Mercado Pago payments on the server before approving the order.",
       "I'm taking CS50's Web Programming with Python and JavaScript (HarvardX), where I keep practicing Django, JavaScript and automated testing.",
       "I want to contribute to the team's day-to-day work, learn through code review and keep improving. I use AI tools such as Claude Code and Codex, and I review and test every change before considering it done.",

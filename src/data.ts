@@ -103,7 +103,7 @@ export const copy = {
     journeyEyebrow:"FORMACIÓN", journeyTitle:"Estudios y certificaciones",
     studies:[
       {date:"Sep 2026 — actualidad",iso:"2026-09",name:"CS50's Web Programming with Python and JavaScript",info:"HarvardX / edX · En curso"},
-      {date:"2023",iso:"2023",name:"Bachiller",info:"E.P.E.P. N.º 179, Formosa"}
+      {date:"2023",iso:"2023",name:"Bachiller",info:"E. P. E. P. Nº 179 - Dr. Juan Bautista Alberdi, Formosa"}
     ],
     skillsTitle:"Stack técnico",
     contactEyebrow:"CONTACTO", contactTitle:"Trabajemos juntos.", contactIntro:"Estoy disponible para mi primera oportunidad como desarrollador Backend Junior y para proyectos freelance.", contactEmail:"Escribirme por correo", contactCv:"Descargar CV", contactGithub:"GitHub", contactLinkedin:"LinkedIn"
@@ -120,7 +120,7 @@ export const copy = {
     journeyEyebrow:"EDUCATION",journeyTitle:"Studies & certifications",
     studies:[
       {date:"Sep 2026 — present",iso:"2026-09",name:"CS50's Web Programming with Python and JavaScript",info:"HarvardX / edX · In progress"},
-      {date:"2023",iso:"2023",name:"High School Diploma",info:"E.P.E.P. No. 179, Formosa"}
+      {date:"2023",iso:"2023",name:"High School Diploma",info:"E. P. E. P. Nº 179 - Dr. Juan Bautista Alberdi, Formosa"}
     ],
     skillsTitle:"Technical stack",
     contactEyebrow:"CONTACT",contactTitle:"Let's work together.",contactIntro:"I'm open to my first Junior Backend Developer role and to freelance projects.",contactEmail:"Send an email",contactCv:"Download CV",contactGithub:"GitHub",contactLinkedin:"LinkedIn"

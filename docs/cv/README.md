@@ -24,7 +24,7 @@ node tools/render-career-documents.mjs --cv-only --photo="$HOME/Imágenes/Curric
 
 ## Contenido acordado el 04/11/2026
 
-- Título: Desarrollador Full Stack Junior / Junior Full Stack Developer.
+- Título: Desarrollador Backend Junior / Junior Backend Developer (desde el 06/11/2026, igual que el portfolio).
 - Perfil en español elegido por Nelson: “Desarrollador full stack junior con foco en backend. Me interesa la seguridad de los datos y encontrar soluciones simples a problemas complejos. Me gusta trabajar en la lógica que el usuario no ve, pero de la que depende que una aplicación funcione correctamente.” El inglés mantiene el mismo sentido.
 - Omitir disponibilidad remota en los CV.
 - Desde el 05/11/2026 los CV solo llevan Ragnar Suplementos (Fracxion y SPACE Tasks se sacaron).
