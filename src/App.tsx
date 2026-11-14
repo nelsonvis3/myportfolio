@@ -16,20 +16,20 @@ const skillGroups = [
     { key: "mysql", label: "MySQL" },
     { key: "sqlite", label: "SQLite" },
   ] },
-  { id: "tools", titles: { es: "Pruebas y herramientas", en: "Testing & Tools" }, skills: [
-    { key: "playwright", label: "Playwright" },
-    { key: "selenium", label: "Selenium" },
-    { key: "cicd", label: "CI/CD" },
-    { key: "docker", label: "Docker Compose" },
-    { key: "git", label: "Git" },
-    { key: "linux", label: "Linux" },
-  ] },
   { id: "frontend", titles: { es: "Frontend", en: "Frontend" }, skills: [
     { key: "javascript", label: "JavaScript" },
     { key: "typescript", label: "TypeScript" },
     { key: "react", label: "React" },
     { key: "nextjs", label: "Next.js" },
-    { key: "vite", label: "Vite" },
+  ] },
+  { id: "tools", titles: { es: "Pruebas y herramientas", en: "Testing & Tools" }, skills: [
+    { key: "git", label: "Git" },
+    { key: "linux", label: "Linux" },
+    { key: "docker", label: "Docker Compose" },
+    { key: "nginx", label: "Nginx" },
+    { key: "cicd", label: "GitHub Actions" },
+    { key: "python", label: "unittest" },
+    { key: "playwright", label: "Playwright" },
   ] },
 ] as const;
 
