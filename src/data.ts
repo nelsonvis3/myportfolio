@@ -45,7 +45,7 @@ const projects: Record<Lang, Project[]> = {
         "Sesión con CSRF para el frontend y JWT para clientes externos. BM25 evita descargar modelos, pero no entiende paráfrasis.",
         "El umbral de abstención se calibró tras un criterio inicial con 64 % de falsas abstenciones.",
       ],
-      status: "Demo pública en Render; tests con pytest y CI en GitHub Actions. Evaluación propia (30 preguntas: 22 respondibles y 8 sin respuesta; 10 fragmentos): Hit@1 95 %, Hit@3/4 100 %. Con umbral 2,5: 88 % de abstenciones correctas, 9 % falsas abstenciones y 86 % Top-1 correcto y respondido. Recuperación: mediana 0,01 ms, máximo 0,03 ms. Corpus pequeño; resultado inicial, no garantía.",
+      status: "Demo pública en Render; pruebas con pytest y CI en GitHub Actions. En una evaluación propia de 30 preguntas (22 con respuesta y 8 sin respuesta), la búsqueda acertó en el primer resultado en el 95 % de las preguntas con respuesta.",
     },
     {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Cliente · E-commerce", period: "Ago 2026 – Sep 2026",
@@ -81,7 +81,7 @@ const projects: Record<Lang, Project[]> = {
         "CSRF-protected sessions for the frontend and JWT for external clients. BM25 avoids model downloads but does not understand paraphrases.",
         "The abstention threshold was calibrated after an initial criterion produced 64% false abstentions.",
       ],
-      status: "Public demo on Render; pytest tests and GitHub Actions CI. Evaluation (30 questions: 22 answerable, 8 unanswerable; 10 chunks): 95% Hit@1, 100% Hit@3/4. At threshold 2.5: 88% correct abstentions, 9% false abstentions, and 86% correct and answered top-1 responses. Retrieval: 0.01 ms median, 0.03 ms max. Small corpus; initial result, not a guarantee.",
+      status: "Public demo on Render; tests with pytest and CI through GitHub Actions. In my evaluation of 30 questions (22 answerable and 8 unanswerable), search returned the expected answer first for 95% of answerable questions.",
     },
     {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Client project · E-commerce", period: "Aug 2026 – Sep 2026",
