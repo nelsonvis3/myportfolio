@@ -11,11 +11,6 @@ export type Project = {
   development: string;
   problem: string;
   solution: string;
-  architecture?: string;
-  functionalities?: string[];
-  challenges?: string[];
-  decisions?: string[];
-  result?: string;
   stack: { label: string; icon?: string }[];
   image: string;
   imageAlt: string;
@@ -40,29 +35,17 @@ const projects: Record<Lang, Project[]> = {
       development: "Aplicación de soporte estilo Freshdesk con roles, historial de auditoría, base de conocimiento y un asistente que responde con fuentes. Un único servicio Django sirve la API y el frontend.",
       problem: "Las consultas de soporte llegan dispersas y se pierde quién las atiende, en qué estado están y qué se respondió.",
       solution: "API REST en Django con tres roles (cliente, agente y administrador), máquina de estados, notas privadas e historial inmutable de cada cambio. Un asistente busca en la base de conocimiento y responde con fuentes, o se abstiene si no tiene información.",
-      architecture: "Un solo servicio Django: vistas, serializers y una capa de servicios con reglas de negocio atómicas. PostgreSQL como base; frontend en HTML, CSS y ES modules servido por el mismo servicio; y un módulo de conocimiento con búsqueda BM25 y un LLM por API opcional. Docker, GitHub Actions y despliegue en Render.",
       stack: [{label:"Python",icon:"python"},{label:"Django",icon:"django"},{label:"Django REST Framework",icon:"django"},{label:"PostgreSQL",icon:"postgresql"},{label:"Docker",icon:"docker"},{label:"GitHub Actions"},{label:"pytest",icon:"python"},{label:"HTML"},{label:"CSS"},{label:"JavaScript",icon:"javascript"}],
       image: "/img/whodesk.png", imageAlt: "Interfaz de Whodesk con la bandeja de tickets y el asistente de IA",
       repo: "https://github.com/nelsonvis3/Whodesk", demo: "https://helpdesk-ea50.onrender.com",
-      functionalities: [
-        "Roles y permisos por objeto: un cliente nunca ve los tickets de otro",
-        "Máquina de estados con transiciones validadas por rol",
-        "Historial de auditoría y notas privadas para el equipo",
-        "Base de conocimiento y asistente con fuentes para clientes",
-        "Sugerencia de respuesta para agentes dentro de cada ticket",
+      details: [
+        "Tres roles con permisos por objeto, máquina de estados y notas privadas; cada cambio y su auditoría se guardan juntos.",
+        "Un servicio Django con reglas atómicas, PostgreSQL y frontend HTML/CSS/ES modules.",
+        "El asistente responde con fuentes a clientes y sugiere respuestas a agentes. Solo consulta artículos públicos y notas de resolución; el código arma las fuentes y el LLM por API es opcional.",
+        "Sesión con CSRF para el frontend y JWT para clientes externos. BM25 evita descargar modelos, pero no entiende paráfrasis.",
+        "El umbral de abstención se calibró tras un criterio inicial con 64 % de falsas abstenciones.",
       ],
-      challenges: [
-        "El primer criterio para que el asistente se abstuviera falló (64 % de falsas abstenciones); lo reemplacé por un umbral calibrado con preguntas de evaluación",
-        "Evitar que el asistente filtre datos: los clientes solo consultan artículos públicos y de los tickets solo se indexa la nota de resolución",
-        "Guardar cada cambio y su evento de auditoría juntos o no guardar ninguno",
-      ],
-      decisions: [
-        "Sesión con CSRF para el frontend y JWT para clientes externos, en vez de guardar tokens en el navegador",
-        "BM25 en lugar de embeddings: sin dependencias ni modelos que descargar, a costa de no entender paráfrasis",
-        "El código arma las fuentes del asistente; el modelo no las decide",
-        "Un solo servicio para API y frontend, para desplegar en un único hosting",
-      ],
-      result: "Demo pública desplegada en Render y repositorio con integración continua. En una evaluación propia de 30 preguntas (22 respondibles y 8 sin respuesta), BM25 obtuvo Hit@1 de 95 %, Hit@3 y Hit@4 de 100 % y una latencia de recuperación mediana de 0,01 ms (máx. 0,03 ms). Con umbral 2,5: 88 % de abstenciones correctas, 9 % de falsas abstenciones y 86 % de respuestas Top-1 correctas y respondidas. El corpus es pequeño y escrito por mí; tomo estos resultados como punto de partida, no como garantía.",
+      status: "Demo pública en Render; tests con pytest y CI en GitHub Actions. Evaluación propia (30 preguntas: 22 respondibles y 8 sin respuesta; 10 fragmentos): Hit@1 95 %, Hit@3/4 100 %. Con umbral 2,5: 88 % de abstenciones correctas, 9 % falsas abstenciones y 86 % Top-1 correcto y respondido. Recuperación: mediana 0,01 ms, máximo 0,03 ms. Corpus pequeño; resultado inicial, no garantía.",
     },
     {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Cliente · E-commerce", period: "Ago 2026 – Sep 2026",
@@ -88,29 +71,17 @@ const projects: Record<Lang, Project[]> = {
       development: "A Freshdesk-style support application with roles, an audit trail, a knowledge base, and an assistant that answers with sources. One Django service serves both the API and frontend.",
       problem: "Support requests arrive across separate channels, making it hard to see who owns each one, its current status, or what has already been answered.",
       solution: "A Django REST API with three roles (customer, agent, and administrator), a state machine, private notes, and an immutable history of every change. An assistant searches the knowledge base and answers with sources, or abstains when it lacks information.",
-      architecture: "One Django service: views, serializers, and a service layer with atomic business rules. PostgreSQL for storage; an HTML, CSS, and ES modules frontend served by the same service; and a knowledge module with BM25 search and an optional LLM API. Docker, GitHub Actions, and deployment on Render.",
       stack: [{label:"Python",icon:"python"},{label:"Django",icon:"django"},{label:"Django REST Framework",icon:"django"},{label:"PostgreSQL",icon:"postgresql"},{label:"Docker",icon:"docker"},{label:"GitHub Actions"},{label:"pytest",icon:"python"},{label:"HTML"},{label:"CSS"},{label:"JavaScript",icon:"javascript"}],
       image: "/img/whodesk.png", imageAlt: "Whodesk interface showing the ticket inbox and AI assistant",
       repo: "https://github.com/nelsonvis3/Whodesk", demo: "https://helpdesk-ea50.onrender.com",
-      functionalities: [
-        "Object-level roles and permissions: a customer never sees another customer's tickets",
-        "A state machine with role-validated transitions",
-        "An audit trail and private team notes",
-        "A knowledge base and source-backed assistant for customers",
-        "Suggested replies for agents within each ticket",
+      details: [
+        "Three roles with object-level permissions, a state machine, and private notes; each change and its audit event are saved together.",
+        "One Django service with atomic rules, PostgreSQL, and an HTML/CSS/ES modules frontend.",
+        "The assistant answers customers with sources and suggests replies for agents. It only uses public articles and resolution notes; application code assembles sources, with an optional LLM API.",
+        "CSRF-protected sessions for the frontend and JWT for external clients. BM25 avoids model downloads but does not understand paraphrases.",
+        "The abstention threshold was calibrated after an initial criterion produced 64% false abstentions.",
       ],
-      challenges: [
-        "My first abstention criterion failed (64% false abstentions), so I replaced it with a threshold calibrated against evaluation questions",
-        "Preventing data leaks: customers can search only public articles, and only ticket resolution notes are indexed",
-        "Saving every change and its audit event together, or saving neither",
-      ],
-      decisions: [
-        "CSRF-protected sessions for the frontend and JWT for external clients, instead of storing tokens in the browser",
-        "BM25 instead of embeddings: no dependencies or models to download, at the cost of weaker paraphrase matching",
-        "Application code assembles assistant sources; the model does not choose them",
-        "One service for the API and frontend, so it can be deployed on a single host",
-      ],
-      result: "Public demo deployed on Render and a repository with continuous integration. In my evaluation of 30 questions (22 answerable and 8 unanswerable), BM25 achieved 95% Hit@1, 100% Hit@3 and Hit@4, and 0.01 ms median retrieval latency (0.03 ms max). At threshold 2.5: 88% correct abstentions, 9% false abstentions, and 86% correct and answered top-1 responses. The corpus is small and self-written, so I treat these results as a starting point, not a guarantee.",
+      status: "Public demo on Render; pytest tests and GitHub Actions CI. Evaluation (30 questions: 22 answerable, 8 unanswerable; 10 chunks): 95% Hit@1, 100% Hit@3/4. At threshold 2.5: 88% correct abstentions, 9% false abstentions, and 86% correct and answered top-1 responses. Retrieval: 0.01 ms median, 0.03 ms max. Small corpus; initial result, not a guarantee.",
     },
     {
       id: "ragnar-suplementos", name: "Ragnar Suplementos", category: "Client project · E-commerce", period: "Aug 2026 – Sep 2026",
@@ -167,7 +138,7 @@ export const copy = {
     intro: "Soy Nelson, desarrollador Fullstack Junior con foco en backend. Desarrollo aplicaciones web de principio a fin: frontend, backend, modelado de datos y despliegue.",
     intro2: "Automatizo tareas repetitivas para simplificar el desarrollo y mantenimiento de mis proyectos.",
     location:"Formosa, Argentina", sidebarDescription:"Desarrollo aplicaciones web completas, desde la interfaz hasta la base de datos.", explore:"Ver proyectos", download:"Descargar CV", social:"Perfiles",
-    projectsEyebrow:"PROYECTOS", projectsTitle:"Proyectos", projectsIntro:"Qué desarrollé, qué problema resolví y cómo lo hice.", open:"Ver proyecto", back:"Volver a proyectos", development:"Desarrollo", problem:"Problema", solution:"Solución", architecture:"Arquitectura", functionalities:"Funcionalidades", challenges:"Desafíos", decisions:"Decisiones", result:"Resultado", technologies:"Tecnologías", repository:"Ver código en GitHub", demo:"Ver demo", details:"Detalles técnicos", status:"Estado",
+    projectsEyebrow:"PROYECTOS", projectsTitle:"Proyectos", projectsIntro:"Qué desarrollé, qué problema resolví y cómo lo hice.", open:"Ver proyecto", back:"Volver a proyectos", development:"Desarrollo", problem:"Problema", solution:"Solución", technologies:"Tecnologías", repository:"Ver código en GitHub", demo:"Ver demo", details:"Detalles técnicos", status:"Estado",
     journeyEyebrow:"FORMACIÓN", journeyTitle:"Estudios y certificaciones",
     studies:[
       {date:"Sep 2026 — actualidad",iso:"2026-09",name:"CS50's Web Programming with Python and JavaScript",info:"HarvardX / edX · En curso"},
@@ -182,7 +153,7 @@ export const copy = {
     intro:"I'm Nelson, a Junior Full Stack Developer focused on backend development. I build web applications from start to finish: frontend, backend, data modeling, and deployment.",
     intro2:"I automate repetitive tasks to simplify the development and maintenance of my projects.",
     location:"Formosa, Argentina",sidebarDescription:"I build complete web applications, from the interface to the database.", explore:"View projects",download:"Download CV",social:"Profiles",
-    projectsEyebrow:"PROJECTS", projectsTitle:"Projects", projectsIntro:"What I built, the problem it addressed, and how I solved it.",open:"View project",back:"Back to projects",development:"Development",problem:"Problem",solution:"Solution",architecture:"Architecture",functionalities:"Features",challenges:"Challenges",decisions:"Decisions",result:"Result",technologies:"Technologies",repository:"View code on GitHub",demo:"View live demo",details:"Technical details",status:"Status",
+    projectsEyebrow:"PROJECTS", projectsTitle:"Projects", projectsIntro:"What I built, the problem it addressed, and how I solved it.",open:"View project",back:"Back to projects",development:"Development",problem:"Problem",solution:"Solution",technologies:"Technologies",repository:"View code on GitHub",demo:"View live demo",details:"Technical details",status:"Status",
     journeyEyebrow:"EDUCATION",journeyTitle:"Studies & certifications",
     studies:[
       {date:"Sep 2026 — present",iso:"2026-09",name:"CS50's Web Programming with Python and JavaScript",info:"HarvardX / edX · In progress"},

@@ -157,11 +157,6 @@ function ProjectDetail({ lang, project, navigate }: { lang: Lang; project: Proje
       <section className="story-line"><h2>{c.development}</h2><p>{project.development}</p></section>
       <section className="story-line"><h2>{c.problem}</h2><p>{project.problem}</p></section>
       <section className="story-line"><h2>{c.solution}</h2><p>{project.solution}</p></section>
-      {project.architecture && <section className="story-line"><h2>{c.architecture}</h2><p>{project.architecture}</p></section>}
-      {project.functionalities && <section className="story-line"><h2>{c.functionalities}</h2><ul className="story-list">{project.functionalities.map(item=><li key={item}>{item}</li>)}</ul></section>}
-      {project.challenges && <section className="story-line"><h2>{c.challenges}</h2><ul className="story-list">{project.challenges.map(item=><li key={item}>{item}</li>)}</ul></section>}
-      {project.decisions && <section className="story-line"><h2>{c.decisions}</h2><ul className="story-list">{project.decisions.map(item=><li key={item}>{item}</li>)}</ul></section>}
-      {project.result && <section className="story-line"><h2>{c.result}</h2><p>{project.result}</p></section>}
       {project.details && <section className="story-line"><h2>{c.details}</h2><ul className="story-list">{project.details.map(d=><li key={d}>{d}</li>)}</ul></section>}
       {project.status && <section className="story-line"><h2>{c.status}</h2><p>{project.status}</p></section>}
     </div>

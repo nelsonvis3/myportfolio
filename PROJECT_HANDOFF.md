@@ -54,7 +54,7 @@
 
 ## 2026-11-22 — Whodesk, CV y perfil del portfolio
 
-- Se agregó Whodesk primero en Proyectos, en ES y EN, con la imagen `public/img/whodesk.png`, repositorio, demo, arquitectura, funciones, desafíos, decisiones y resultados de evaluación. El sitio ahora genera `/proyectos/whodesk/` y `/en/projects/whodesk/`.
+- Se agregó Whodesk primero en Proyectos, en ES y EN, con la imagen `public/img/whodesk.png`, repositorio y demo. La ficha queda en las secciones Desarrollo, Problema, Solución, Detalles técnicos, Estado y Tecnologías; genera `/proyectos/whodesk/` y `/en/projects/whodesk/`.
 - Se alineó el rol visible con “Fullstack Junior”; el stack del inicio coincide con los CV actuales: HTML y CSS en Frontend, pytest en Pruebas y herramientas, y sin Nginx en ese grupo. Nginx se conserva en la ficha de Ragnar, donde describe el proyecto.
 - `public/cv.pdf` se actualizó desde `~/Imágenes/Curriculum/Nelson_Sivisstum_Fullstack_Junior.pdf`; esta versión española incluye foto. `public/cv-en.pdf` se actualizó desde `~/Imágenes/Curriculum/CV_Nelson_Sivisstum.pdf`.
 - El 95 % Hit@1 y las otras métricas se incorporaron desde la corrida local que Nelson compartió: 30 preguntas, 22 respondibles y 8 sin respuesta. No se ejecutó `eval_rag` desde este checkout.
