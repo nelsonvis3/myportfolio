@@ -5,8 +5,7 @@ import { caseUrl, copy, getProjects, links, readBrowserRoute, sectionUrl, type L
 
 type Navigate = (route: Route) => void;
 const sections: Section[] = ["about", "projects", "journey", "contact"];
-// Each brand uses the original Simple Icons paths.
-// Playwright has no current Simple Icons entry, so it uses a non-brand test symbol.
+
 const skillGroups = [
   { id: "backend", titles: { es: "Backend y datos", en: "Backend & Data" }, skills: [
     { key: "python", label: "Python" },
