@@ -10,13 +10,16 @@ const sections: Section[] = ["about", "projects", "journey", "contact"];
 const skillGroups = [
   { id: "backend", titles: { es: "Backend y datos", en: "Backend & Data" }, skills: [
     { key: "python", label: "Python" },
-    { key: "django", label: "Django / DRF" },
+    { key: "django", label: "Django" },
+    { key: "django", label: "Django REST Framework" },
     { key: "rest", label: "REST APIs" },
     { key: "postgresql", label: "PostgreSQL" },
     { key: "mysql", label: "MySQL" },
     { key: "sqlite", label: "SQLite" },
   ] },
   { id: "frontend", titles: { es: "Frontend", en: "Frontend" }, skills: [
+    { key: "html", label: "HTML" },
+    { key: "css", label: "CSS" },
     { key: "javascript", label: "JavaScript" },
     { key: "typescript", label: "TypeScript" },
     { key: "react", label: "React" },
@@ -26,8 +29,8 @@ const skillGroups = [
     { key: "git", label: "Git" },
     { key: "linux", label: "Linux" },
     { key: "docker", label: "Docker Compose" },
-    { key: "nginx", label: "Nginx" },
     { key: "cicd", label: "GitHub Actions" },
+    { key: "python", label: "pytest" },
     { key: "python", label: "unittest" },
     { key: "playwright", label: "Playwright" },
   ] },
@@ -42,7 +45,7 @@ function Skills({ lang }: { lang: Lang }) {
         {skillGroups.map(group => <div className="skill-group" key={group.id}>
           <h3 className="skill-group-name">{group.titles[lang]}</h3>
           <div className="skill-items">
-            {group.skills.map(tech => <span className="skill-tag" key={tech.key}>
+            {group.skills.map(tech => <span className="skill-tag" key={`${group.id}-${tech.label}`}>
               {tech.key === "playwright"
                 ? <svg className="skill-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.5"/><path d="M20 13.5V19H4V5h10"/></svg>
                 : tech.key === "cicd"
@@ -127,6 +130,7 @@ function Projects({ lang, navigate }: { lang: Lang; navigate: Navigate }) {
         <div className="project-meta">
           <p className="project-category">{p.category}</p>
           <h2>{p.name}</h2>
+          {p.subtitle && <p className="project-subtitle">{p.subtitle}</p>}
           <p className="project-development">{p.development}</p>
           <span className="project-open">{c.open}</span>
         </div>
@@ -147,12 +151,17 @@ function ProjectDetail({ lang, project, navigate }: { lang: Lang; project: Proje
   const goBack = (e: MouseEvent<HTMLAnchorElement>) => {if(e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)return;e.preventDefault();navigate({lang,section:"projects"});};
   return <article className="view-body project-detail" aria-label={project.name}>
     <a className="back-link" href={sectionUrl(lang,"projects")} onClick={goBack}>{c.back}</a>
-    <div className="project-detail-head"><span className="eyebrow">{project.category} · {project.period}</span><h1>{project.name}</h1></div>
+    <div className="project-detail-head"><span className="eyebrow">{project.category} · {project.period}</span><h1>{project.name}</h1>{project.subtitle && <p className="project-subtitle">{project.subtitle}</p>}</div>
     <figure className="detail-media"><img src={project.image} alt={project.imageAlt}/></figure>
     <div className="project-story">
       <section className="story-line"><h2>{c.development}</h2><p>{project.development}</p></section>
       <section className="story-line"><h2>{c.problem}</h2><p>{project.problem}</p></section>
       <section className="story-line"><h2>{c.solution}</h2><p>{project.solution}</p></section>
+      {project.architecture && <section className="story-line"><h2>{c.architecture}</h2><p>{project.architecture}</p></section>}
+      {project.functionalities && <section className="story-line"><h2>{c.functionalities}</h2><ul className="story-list">{project.functionalities.map(item=><li key={item}>{item}</li>)}</ul></section>}
+      {project.challenges && <section className="story-line"><h2>{c.challenges}</h2><ul className="story-list">{project.challenges.map(item=><li key={item}>{item}</li>)}</ul></section>}
+      {project.decisions && <section className="story-line"><h2>{c.decisions}</h2><ul className="story-list">{project.decisions.map(item=><li key={item}>{item}</li>)}</ul></section>}
+      {project.result && <section className="story-line"><h2>{c.result}</h2><p>{project.result}</p></section>}
       {project.details && <section className="story-line"><h2>{c.details}</h2><ul className="story-list">{project.details.map(d=><li key={d}>{d}</li>)}</ul></section>}
       {project.status && <section className="story-line"><h2>{c.status}</h2><p>{project.status}</p></section>}
     </div>
@@ -263,8 +272,8 @@ export function App({ initial }: { initial: Route }) {
 
   useEffect(() => {
     const project = route.projectId ? getProjects(route.lang).find(p => p.id === route.projectId) : undefined;
-    const title = project ? `${project.name} | Nelson Sivisstum` : route.lang === "es" ? "Nelson Sivisstum | Desarrollador Backend Junior" : "Nelson Sivisstum | Junior Backend Developer";
-    const description = project?.development ?? (route.lang === "es" ? "Portfolio de Nelson Sivisstum: desarrollador Backend Junior." : "Nelson Sivisstum's Junior Backend Developer portfolio.");
+    const title = project ? `${project.name} | Nelson Sivisstum` : route.lang === "es" ? "Nelson Sivisstum | Fullstack Junior" : "Nelson Sivisstum | Junior Full Stack Developer";
+    const description = project?.development ?? (route.lang === "es" ? "Portfolio de Nelson Sivisstum: Fullstack Junior con foco en backend." : "Nelson Sivisstum's portfolio: Junior Full Stack Developer focused on backend.");
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute("content",description);
     document.querySelector('meta[property="og:title"]')?.setAttribute("content",title);

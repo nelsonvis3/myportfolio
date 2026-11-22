@@ -8,13 +8,14 @@ import { resolve, dirname } from "node:path";
 
 const origin = (process.env.SITE_URL || "https://nelsonsivisstum.vercel.app").replace(/\/$/, "");
 if (!/^https?:\/\//.test(origin)) throw new Error("SITE_URL must be a valid absolute URL");
-const paths = ["/", "/en/", ...["ragnar-suplementos"].flatMap(id => [`/proyectos/${id}/`, `/en/projects/${id}/`])];
+let paths;
 const template = await readFile(resolve("dist/index.html"), "utf8");
 if (!template.includes('<div id="root"></div>')) throw new Error("Root HTML placeholder not found");
 const vite = await createServer({ server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
 try {
   const { App } = await vite.ssrLoadModule("/src/App.tsx");
   const { readRoute, getProjects, caseUrl } = await vite.ssrLoadModule("/src/data.ts");
+  paths = ["/", "/en/", ...getProjects("es").flatMap(project => [caseUrl("es",project.id),caseUrl("en",project.id)])];
   const esc = s => String(s).replaceAll("&","&amp;").replaceAll('"',"&quot;").replaceAll("<","&lt;").replaceAll(">","&gt;");
   const replaceMeta = (html, regex, replacement) => html.replace(regex, () => replacement);
   const url = pathname => `${origin}${pathname}`;
@@ -22,8 +23,8 @@ try {
   for (const pathname of paths) {
     const route = readRoute(pathname);
     const project = route.projectId ? getProjects(route.lang).find(p => p.id === route.projectId) : null;
-    const title = project ? `${project.name} | Nelson Sivisstum` : route.lang === "es" ? "Nelson Sivisstum | Desarrollador Backend Junior" : "Nelson Sivisstum | Junior Backend Developer";
-    const description = project ? project.development : route.lang === "es" ? "Portfolio de Nelson Sivisstum: desarrollador Backend Junior. Proyectos con React, Next.js, TypeScript, Python y Django." : "Portfolio of Nelson Sivisstum, Junior Backend Developer. Projects using React, Next.js, TypeScript, Python and Django.";
+    const title = project ? `${project.name} | Nelson Sivisstum` : route.lang === "es" ? "Nelson Sivisstum | Fullstack Junior" : "Nelson Sivisstum | Junior Full Stack Developer";
+    const description = project ? project.development : route.lang === "es" ? "Portfolio de Nelson Sivisstum: Fullstack Junior con foco en backend. Proyectos con React, Next.js, TypeScript, Python y Django." : "Portfolio of Nelson Sivisstum, Junior Full Stack Developer focused on backend. Projects using React, Next.js, TypeScript, Python and Django.";
     const counterpart = project ? caseUrl(route.lang === "es" ? "en" : "es",project.id) : route.lang === "es" ? "/en/" : "/";
     const esUrl = route.lang === "es" ? pathname : counterpart;
     const enUrl = route.lang === "en" ? pathname : counterpart;
@@ -42,7 +43,7 @@ try {
       `<meta property="og:url" content="${url(pathname)}" />`,
       `<meta property="og:image" content="${url(route.lang === "es" ? "/img/social-preview.png" : "/img/social-preview-en.png")}" />`,
       `<meta name="twitter:card" content="summary_large_image" />`,
-      `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Person",name:"Nelson Sivisstum",jobTitle:route.lang === "es" ? "Desarrollador Backend Junior" : "Junior Backend Developer",url:origin,sameAs:["https://github.com/nelsonvis3","https://www.linkedin.com/in/nelsonsivisstum1/"]})}</script>`
+      `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Person",name:"Nelson Sivisstum",jobTitle:route.lang === "es" ? "Fullstack Junior" : "Junior Full Stack Developer",url:origin,sameAs:["https://github.com/nelsonvis3","https://www.linkedin.com/in/nelsonsivisstum1/"]})}</script>`
     ].join("\n");
     html = html.replace("</head>",`${head}\n</head>`);
     // Retain visible, indexable project URLs even when no client JavaScript runs.

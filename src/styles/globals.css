@@ -90,6 +90,7 @@ img,svg {display:block;max-width:100%}img {width:100%}
 .project-category {font-size:10px;line-height:1.5;color:var(--accent)}
 .project-meta h2 {font-size:clamp(18px,1.65vw,22px);font-weight:640;letter-spacing:-.02em;color:var(--text);transition:color .2s}
 .project-row:hover h2,.project-row:focus-visible h2 {color:var(--accent)}
+.project-meta .project-subtitle {font-size:12px;line-height:1.5;color:var(--soft);max-width:75ch}
 .project-development {display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;color:var(--muted);font-size:12px;line-height:1.62;max-width:75ch}
 .project-open {display:inline-block;font-size:11px;line-height:1.4;color:var(--soft);margin-top:3px;border-bottom:1px solid transparent}
 .project-row:hover .project-open,.project-row:focus-visible .project-open {color:var(--accent);border-color:var(--accent)}
@@ -106,6 +107,7 @@ img,svg {display:block;max-width:100%}img {width:100%}
 .back-link:hover {border-color:var(--accent)}
 .project-detail-head {margin:25px 0 21px}
 .project-detail-head h1 {font-size:clamp(26px,3.3vw,40px);margin-top:6px}
+.project-detail-head .project-subtitle {max-width:65ch;margin-top:8px;color:var(--soft);font-size:14px;line-height:1.65}
 .detail-media {background:var(--surface);overflow:hidden;border:1px solid var(--line);border-radius:7px;aspect-ratio:16/8.8}
 .detail-media img {height:100%;object-fit:cover;object-position:left top}
 .project-story {margin-top:21px;border-top:1px solid var(--line)}
