@@ -19,15 +19,19 @@
     "skills": [
       [
         "Backend y datos",
-        "Python, Django, Django REST Framework, Node.js, APIs REST, PostgreSQL, MySQL, SQLite"
-      ],
-      [
-        "Pruebas y herramientas",
-        "Playwright, Selenium, tests de Django, GitHub Actions, Docker Compose, Git, Linux"
+        "Python, Django, Django REST Framework, PostgreSQL, MySQL, SQLite"
       ],
       [
         "Frontend",
-        "JavaScript, TypeScript, React, Vite"
+        "HTML, CSS, JavaScript, React, Next.js"
+      ],
+      [
+        "Prácticas",
+        "APIs REST, Seguridad web, Pruebas unitarias, CI/CD"
+      ],
+      [
+        "Herramientas",
+        "Git, Linux, Docker Compose, GitHub Actions, pytest, Playwright"
       ]
     ],
     "projectsLabel": "Proyecto destacado",
@@ -73,15 +77,19 @@
     "skills": [
       [
         "Backend & Data",
-        "Python, Django, Django REST Framework, Node.js, REST APIs, PostgreSQL, MySQL, SQLite"
-      ],
-      [
-        "Testing & Tools",
-        "Playwright, Selenium, Django tests, GitHub Actions, Docker Compose, Git, Linux"
+        "Python, Django, Django REST Framework, PostgreSQL, MySQL, SQLite"
       ],
       [
         "Frontend",
-        "JavaScript, TypeScript, React, Vite"
+        "HTML, CSS, JavaScript, React, Next.js"
+      ],
+      [
+        "Practices",
+        "REST APIs, Web Security, Unit Testing, CI/CD"
+      ],
+      [
+        "Tools",
+        "Git, Linux, Docker Compose, GitHub Actions, pytest, Playwright"
       ]
     ],
     "projectsLabel": "Featured project",

@@ -11,7 +11,6 @@ const skillGroups = [
     { key: "python", label: "Python" },
     { key: "django", label: "Django" },
     { key: "django", label: "Django REST Framework" },
-    { key: "rest", label: "REST APIs" },
     { key: "postgresql", label: "PostgreSQL" },
     { key: "mysql", label: "MySQL" },
     { key: "sqlite", label: "SQLite" },
@@ -20,17 +19,21 @@ const skillGroups = [
     { key: "html", label: "HTML" },
     { key: "css", label: "CSS" },
     { key: "javascript", label: "JavaScript" },
-    { key: "typescript", label: "TypeScript" },
     { key: "react", label: "React" },
     { key: "nextjs", label: "Next.js" },
   ] },
-  { id: "tools", titles: { es: "Pruebas y herramientas", en: "Testing & Tools" }, skills: [
+  { id: "practices", titles: { es: "Prácticas", en: "Practices" }, skills: [
+    { key: "rest", label: "REST APIs" },
+    { key: "security", label: "Web Security" },
+    { key: "python", label: "Unit Testing" },
+    { key: "cicd", label: "CI/CD" },
+  ] },
+  { id: "tools", titles: { es: "Herramientas", en: "Tools" }, skills: [
     { key: "git", label: "Git" },
     { key: "linux", label: "Linux" },
     { key: "docker", label: "Docker Compose" },
     { key: "cicd", label: "GitHub Actions" },
     { key: "python", label: "pytest" },
-    { key: "python", label: "unittest" },
     { key: "playwright", label: "Playwright" },
   ] },
 ] as const;
@@ -49,6 +52,10 @@ function Skills({ lang }: { lang: Lang }) {
                 ? <svg className="skill-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.5"/><path d="M20 13.5V19H4V5h10"/></svg>
                 : tech.key === "cicd"
                 ? <svg className="skill-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14-4.5L4 9M4 5v4h4"/><path d="M4 13a8 8 0 0 0 14 4.5L20 15M20 19v-4h-4"/></svg>
+                : tech.key === "security"
+                ? <svg className="skill-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.3 2.8 7.8 7 10 4.2-2.2 7-5.7 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+                : tech.key === "rest"
+                ? <svg className="skill-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>
                 : <BrandIcon name={tech.key} size={19}/>}
               <span>{tech.label}</span>
             </span>)}
